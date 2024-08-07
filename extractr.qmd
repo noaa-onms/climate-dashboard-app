@@ -1,0 +1,128 @@
+---
+title: "Extractr"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Get Data using `extractr`
+
+```{r}
+# devtools::install_local(here("~/Github/marinebon/extractr"), force = T)
+# devtools::load_all(here("~/Github/marinebon/extractr"))
+librarian::shelf(
+  dplyr, DT, furrr, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
+  marinebon/extractr)
+
+sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
+# mapView(sanctuaries)
+# sanctuaries |> 
+#   st_drop_geometry() |> 
+#   datatable()
+
+sanctuaries <- sanctuaries |> 
+  filter(nms %in% c("CINMS", "FKNMS"))
+
+dir_out <- here("data/NOAA_DHW")
+
+# ed <- ed_info("https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html")   
+# CoralTemp eddaily
+ed <- ed_info("https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html")   # CoralTemp eddaily
+ed
+
+
+times <- ed_dim(ed, "time")
+length(times)
+range(times)
+
+(vars <- ed_vars(ed))
+v <- "CRW_SST"
+
+sanctuary_years <- sanctuaries |> 
+  st_drop_geometry() |> 
+  select(nms) |> 
+  cross_join(
+    tibble(
+      year = year(min(times)):year(max(times))))
+sanctuary_years
+
+n_cores <- parallel::detectCores() - 1
+plan(multisession, workers = n_cores)
+
+sanctuary_years |> 
+  # tail()
+  # future_pmap(
+  pmap(
+    \(nms, year){
+      # nms = "CINMS"; year = 2024
+      # nms = "FKNMS"; year = 2024
+      times_yr <- times[lubridate::year(times) == year]
+      
+      # DEBUG
+      # ed <- ed_info("https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html")
+      # var = "analysed_sst"
+      # time_min = as.POSIXct("1985-01-01 12:00:00 UTC")
+      # time_max = as.POSIXct("1985-12-31 12:00:00 UTC")
+      
+      # devtools::load_all(here("~/Github/marinebon/extractr"))
+      # dir_out <- dir_out
+      
+      # tif <- here("data/noaacrwsstDaily/FKNMS/2024.tif")
+      # rast(tif)
+      # -83.15, -80.05, 24.3, 25.7  (xmin, xmax, ymin, ymax)
+      
+      # browser()
+      ply <- sanctuaries |> 
+          filter(nms == !!nms)
+      bb <- st_bbox(ply) # |> round(2)
+        # stars:::bb_shrink(-0.1) # expand by 10%
+      
+      devtools::load_all(here("~/Github/marinebon/extractr"))
+      ed_extract(
+        ed, 
+        var       = v,
+        sf_zones  = ply,
+        bbox      = bb,
+        rast_tif  = glue("{dir_out}/{nms}/{year}.tif"),
+        zonal_csv = glue("{dir_out}/{nms}/{year}.csv"),
+        dir_nc    = glue("{dir_out}/{nms}/{year}_nc"),
+        time_min  = min(times_yr),
+        time_max  = max(times_yr))
+      
+    })
+
+```
+
+
+### DEBUG
+
+```{r}
+tif <- "~/Github/noaa-onms/climate-dashboard-app/data/noaacrwsstDaily/FKNMS/2024.tif"
+tif <- "/Users/bbest/Downloads/climate-dashboard-data-noaacrwsstDaily_CINMS-FKNMS/FKNMS/2024.tif"
+r <- rast(tif)
+nlyr(r)
+values(subset(r, 1), na.rm=T)
+
+plet(subset(r, 1))
+terra::time(r)
+terra::plet(rast(r, 1))
+
+mapview(r[1])
+
+```
+
+
+```
+Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
+  Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
+Error in FUN(X[[i]], ...) : 
+  Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
+```
+
+## Visualize Data
+
+```{r}
+#| echo: false
+2 * 2
+```
