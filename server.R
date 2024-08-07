@@ -83,9 +83,11 @@ function(input, output, session) {
   # plot_doy ----
   output$plot_doy <- renderPlotly({
 
+    # input <- list(sel_nms = "FKNMS")
     d_sst |>
       filter(
         nms == input$sel_nms) |>
+      # tail()
       select(time, val = mean) |>
       plot_doy(
         days_smooth = input$sld_days_smooth)

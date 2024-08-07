@@ -20,7 +20,8 @@ dir_sst <- here("data/NOAA_DHW")
 d_sst <- tibble(
   csv = list.files(dir_sst, ".csv$", recursive = T, full.names = T)) |>
   mutate(
-    data = map(csv, read_csv)) |>
+    nms  = basename(dirname(csv)),
+    data = map(csv, \(x) read_csv(x) |> select(-any_of("nms")))) |> # TODO: sanctuary nms zone/sf_zone in exract_ed()?
   unnest(data) |>
   mutate(
     date = as.Date(time)) |>
