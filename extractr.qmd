@@ -17,20 +17,19 @@ librarian::shelf(
 
 sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 # mapView(sanctuaries)
-# sanctuaries |> 
-#   st_drop_geometry() |> 
+# sanctuaries |>
+#   st_drop_geometry() |>
 #   datatable()
 
-sanctuaries <- sanctuaries |> 
-  filter(nms %in% c("CINMS", "FKNMS"))
+# sanctuaries <- sanctuaries |> 
+#   filter(nms %in% c("CINMS", "FKNMS"))
 
 dir_out <- here("data/NOAA_DHW")
 
 # ed <- ed_info("https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html")   
 # CoralTemp eddaily
 ed <- ed_info("https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html")   # CoralTemp eddaily
-ed
-
+# ed
 
 times <- ed_dim(ed, "time")
 length(times)
@@ -51,7 +50,6 @@ n_cores <- parallel::detectCores() - 1
 plan(multisession, workers = n_cores)
 
 sanctuary_years |> 
-  # tail()
   # future_pmap(
   pmap(
     \(nms, year){
@@ -94,7 +92,6 @@ sanctuary_years |>
 
 ```
 
-
 ### DEBUG
 
 ```{r}
@@ -112,17 +109,9 @@ mapview(r[1])
 
 ```
 
-
-```
+```         
 Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
   Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
 Error in FUN(X[[i]], ...) : 
   Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
-```
-
-## Visualize Data
-
-```{r}
-#| echo: false
-2 * 2
 ```
