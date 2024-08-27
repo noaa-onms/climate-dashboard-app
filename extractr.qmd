@@ -21,20 +21,11 @@ sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 #   st_drop_geometry() |>
 #   datatable()
 
-# sanctuaries <- sanctuaries |> 
-#   filter(nms %in% c("CINMS", "FKNMS"))
-
 dir_out <- here("data/NOAA_DHW")
 
-# ed <- ed_info("https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html")   
 # CoralTemp eddaily
 ed <- ed_info("https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html")   # CoralTemp eddaily
-# ed
-
 times <- ed_dim(ed, "time")
-length(times)
-range(times)
-
 (vars <- ed_vars(ed))
 v <- "CRW_SST"
 
@@ -44,52 +35,39 @@ sanctuary_years <- sanctuaries |>
   cross_join(
     tibble(
       year = year(min(times)):year(max(times))))
-sanctuary_years
 
 n_cores <- parallel::detectCores() - 1
 plan(multisession, workers = n_cores)
 
-sanctuary_years |> 
-  # future_pmap(
-  pmap(
-    \(nms, year){
-      # nms = "CINMS"; year = 2024
-      # nms = "FKNMS"; year = 2024
+res <- sanctuary_years |> 
+  # slice(11:13) |> 
+  future_pmap(
+    # pmap(
+    \(nms, year){   #  nms = "CINMS"; year = 2024   # DEBUG
       times_yr <- times[lubridate::year(times) == year]
       
-      # DEBUG
-      # ed <- ed_info("https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html")
-      # var = "analysed_sst"
-      # time_min = as.POSIXct("1985-01-01 12:00:00 UTC")
-      # time_max = as.POSIXct("1985-12-31 12:00:00 UTC")
-      
-      # devtools::load_all(here("~/Github/marinebon/extractr"))
-      # dir_out <- dir_out
-      
-      # tif <- here("data/noaacrwsstDaily/FKNMS/2024.tif")
-      # rast(tif)
-      # -83.15, -80.05, 24.3, 25.7  (xmin, xmax, ymin, ymax)
-      
-      # browser()
       ply <- sanctuaries |> 
-          filter(nms == !!nms)
-      bb <- st_bbox(ply) # |> round(2)
-        # stars:::bb_shrink(-0.1) # expand by 10%
+        dplyr::filter(nms == !!nms)
+      bb <- sf::st_bbox(ply)
+      # TODO: consider expanding by 10% and rounding 2 digits
+      # |> stars:::bb_shrink(-0.1) |> round(2)
       
-      devtools::load_all(here("~/Github/marinebon/extractr"))
-      ed_extract(
+      extractr::ed_extract(
         ed, 
         var       = v,
         sf_zones  = ply,
         bbox      = bb,
-        rast_tif  = glue("{dir_out}/{nms}/{year}.tif"),
-        zonal_csv = glue("{dir_out}/{nms}/{year}.csv"),
-        dir_nc    = glue("{dir_out}/{nms}/{year}_nc"),
+        rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
+        zonal_csv = glue::glue("{dir_out}/{nms}/{year}.csv"),
+        dir_nc    = glue::glue("{dir_out}/{nms}/{year}_nc"),
         time_min  = min(times_yr),
         time_max  = max(times_yr))
       
-    })
-
+    },
+    .options = furrr_options(
+      packages = c("dplyr","extractr","glue","lubridate","sf"),
+      globals  = c("dir_out","ed","sanctuaries","times","v"),
+      seed     = T))
 ```
 
 ### DEBUG
