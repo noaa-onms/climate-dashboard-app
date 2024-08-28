@@ -2,8 +2,7 @@ function(input, output, session) {
 
   # theme ----
   observe(session$setCurrentTheme(
-    # if (isTRUE(input$dark_mode)) dark else light
-    dark))
+    if (isTRUE(input$dark_mode)) dark else light ))
 
   # rx_r_sst() ----
   rx_r_sst <- reactive({
@@ -35,7 +34,7 @@ function(input, output, session) {
         var  = "CRW_SST", # override OLD analysed_sst
         date = as.Date(date))
 
-    var_lbl    = "Sea Surface Temperature (°C)"
+    var_lbl    = "SST (°C)"
     md         = format(input$sld_md, "%m-%d")
     yrs_now    = input$sld_yrs_now[1]:input$sld_yrs_now[2]
     yrs_then   = input$sld_yrs_then[1]:input$sld_yrs_then[2]

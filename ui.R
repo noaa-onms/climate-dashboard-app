@@ -17,7 +17,12 @@ page_sidebar(
     selectInput(
       "sel_variable",
       "Variable",
-      c("Temperature, Sea Surface")) ),
+      c("Temperature, Sea Surface")),
+
+    input_switch(
+      "dark_mode",
+      bs_icon("moon-stars-fill"),
+      TRUE) ),
 
   # map ----
   card(
