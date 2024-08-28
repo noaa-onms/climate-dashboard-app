@@ -9,8 +9,9 @@ editor_options:
 ## Get Data using `extractr`
 
 ```{r}
-# devtools::install_local(here("~/Github/marinebon/extractr"), force = T)
-# devtools::load_all(here("~/Github/marinebon/extractr"))
+# devtools::install_local("/share/github/marinebon/extractr", force = T)
+devtools::load_all("/share/github/marinebon/extractr")
+# TODO: extractr -- git commit, push 
 librarian::shelf(
   dplyr, DT, furrr, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
   marinebon/extractr)
@@ -26,24 +27,51 @@ dir_out <- here("data/NOAA_DHW")
 # CoralTemp eddaily
 ed <- ed_info("https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html")   # CoralTemp eddaily
 times <- ed_dim(ed, "time")
-(vars <- ed_vars(ed))
+# (vars <- ed_vars(ed))
 v <- "CRW_SST"
 
 sanctuary_years <- sanctuaries |> 
   st_drop_geometry() |> 
+  arrange(nms) |> 
   select(nms) |> 
   cross_join(
     tibble(
-      year = year(min(times)):year(max(times))))
+      year = year(min(times)):year(max(times)))) |> 
+  # TODO: remove DEBUG
+  filter(
+    !nms %in% c("CINMS","FKNMS"),                # TODO: update '24
+    !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","SBNMS"), # done '24-08-28
+    !(nms == "HIHWNMS" & year < 2020),
+    !(nms == "SBNMS"   & year < 2022))
+# View(sanctuary_years)
 
-n_cores <- parallel::detectCores() - 1
-plan(multisession, workers = n_cores)
+# rerddap::cache_delete_all()
 
-res <- sanctuary_years |> 
-  # slice(11:13) |> 
-  future_pmap(
-    # pmap(
-    \(nms, year){   #  nms = "CINMS"; year = 2024   # DEBUG
+# TODO: GDAL Message 1: Metadata exceeding 32000 bytes cannot be written into GeoTIFF. Transferred to PAM instead.
+# TODO: retry if code=500 like...
+  # HIHWNMS, 2020
+  # Downloading 15 requests, up to 25 time slices each
+  # ...
+  # Fetching request 4 of 15 (2020-03-16 to 2020-04-09) ~ 08:06:54 UTC
+  # Error : Error {
+  #     code=500;
+  #     message="Internal Server Error:
+  #       FileNotFoundException:
+  #         /usr/local/erddap/cache/km/dhw_5km/f631_ca87_9367_570740621_0
+  #       (No such file or directory)" ; }
+
+# n_cores <- parallel::detectCores() - 1
+# plan(multisession, workers = n_cores)
+
+# View(sanctuary_years)
+
+sanctuary_years |> 
+  # slice(21:nrow(sanctuary_years)) |> 
+  # future_pmap(
+  pmap(
+    \(nms, year){   #  nms = "CBNMS"; year = 1985   # DEBUG
+      message(glue::glue("{nms}, {year}"))
+      
       times_yr <- times[lubridate::year(times) == year]
       
       ply <- sanctuaries |> 
@@ -62,12 +90,12 @@ res <- sanctuary_years |>
         dir_nc    = glue::glue("{dir_out}/{nms}/{year}_nc"),
         time_min  = min(times_yr),
         time_max  = max(times_yr))
-      
-    },
-    .options = furrr_options(
-      packages = c("dplyr","extractr","glue","lubridate","sf"),
-      globals  = c("dir_out","ed","sanctuaries","times","v"),
-      seed     = T))
+    })  
+    # },
+    # .options = furrr_options(
+    #   packages = c("dplyr","extractr","glue","lubridate","sf"),
+    #   globals  = c("dir_out","ed","sanctuaries","times","v"),
+    #   seed     = T))
 ```
 
 ### DEBUG
@@ -87,9 +115,7 @@ mapview(r[1])
 
 ```
 
-```         
-Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
-  Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
-Error in FUN(X[[i]], ...) : 
-  Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
-```
+    Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
+      Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
+    Error in FUN(X[[i]], ...) : 
+      Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time

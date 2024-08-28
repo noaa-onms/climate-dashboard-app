@@ -10,7 +10,8 @@ function(input, output, session) {
 
     nms         <- input$sel_nms
     dir_sst_nms <- glue("{dir_sst}/{nms}")
-    r_sst <- list.files(dir_sst_nms, ".tif$", full.names = T) |>
+
+    list.files(dir_sst_nms, ".tif$", full.names = T) |>
       map(rast) |>
       rast() |>
       project(leaflet:::epsg3857)

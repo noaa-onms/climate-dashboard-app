@@ -48,6 +48,8 @@ d_sst <- tibble(
 # 4 FKNMS  1986   365   365   NaN
 
 yrs_sst <- range(year(d_sst$date))
-now_sst <- max(d_sst$date)
+# now_sst <- max(d_sst$date)
+# TODO: fix so gets max based on sanctuary
+now_sst <- as.Date("2024-08-05")
 
 sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
