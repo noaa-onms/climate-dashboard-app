@@ -59,8 +59,8 @@ page_sidebar(
 
     absolutePanel(
       id        = "pnl_md",
-      bottom    = "2%", left = "8%", right = "8%",
-      width     = "84%",
+      bottom    = "2%", left = "10%", right = "10%",
+      width     = "80%",
 
       sliderInput(
         "sld_md",

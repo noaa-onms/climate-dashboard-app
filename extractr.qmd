@@ -40,9 +40,9 @@ sanctuary_years <- sanctuaries |>
   # TODO: remove DEBUG
   filter(
     !nms %in% c("CINMS","FKNMS"),                # TODO: update '24
-    !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","SBNMS"), # done '24-08-28
-    !(nms == "HIHWNMS" & year < 2020),
-    !(nms == "SBNMS"   & year < 2022))
+    !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","HIHWNMS","MBNMS","SBNMS"), # done '24-08-28
+    !(nms == "MBNMS-david" & year < 1986),
+    !(nms == "SBNMS"       & year < 2022))
 # View(sanctuary_years)
 
 # rerddap::cache_delete_all()
@@ -59,6 +59,13 @@ sanctuary_years <- sanctuaries |>
   #       FileNotFoundException:
   #         /usr/local/erddap/cache/km/dhw_5km/f631_ca87_9367_570740621_0
   #       (No such file or directory)" ; }
+  # MBNMS-david, 1986
+  # Downloading 1 requests, up to 1250 time slices each
+  # Fetching request 1 of 1 (1986-01-01 to 1986-12-31) ~ 13:07:20 UTC
+  # Error : Error {
+  #     code=500;
+  #     message="Internal Server Error: FileNotFoundException: /usr/local/erddap/cache/km/dhw_5km/6f3e_396a_1a53_1437553582_0 (No such file or directory)";
+  # }
 
 # n_cores <- parallel::detectCores() - 1
 # plan(multisession, workers = n_cores)
