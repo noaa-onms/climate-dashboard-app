@@ -9,10 +9,26 @@ source(here("functions.R"))
 options(readr.show_col_types = F)
 
 # themes ----
+sldr_css <- "
+  .irs-grid-text {
+    font-size: 12px !important; }  /* default: 9px */
+  .irs-from, .irs-to, .irs-single {
+    font-size: 16px !important;    /* default: 11px  */
+    line-height:  1 !important; }  /* default: 1.333 */
+  .irs-min, .irs-max {
+    font-size: 14px !important;    /* default: 10px  */
+    line-height:  1 !important;}   /* default: 1.333 */"
+font_scale <- 1.3
 light <- bs_theme(
-  preset    = "flatly",
-  base_font = font_google("Playwright+MX"))
-dark  <- bs_theme(preset = "darkly")
+  preset     = "flatly",
+  font_scale = font_scale) |>
+  bs_add_rules(sldr_css)
+dark  <- bs_theme(
+  preset     = "darkly",
+  font_scale = font_scale) |>
+  bs_add_rules(sldr_css)
+
+
 
 # sst ----
 dir_sst <- here("data/NOAA_DHW")

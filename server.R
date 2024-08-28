@@ -76,8 +76,10 @@ function(input, output, session) {
       lgnd_then,
       lgnd_now,
       var_lbl,
-      # dark_mode = isTRUE(input$dark_mode),
-      bbox = b)
+      dark_mode = isTRUE(input$dark_mode),
+      bbox = b,
+      lyrs_ctrl = F,
+      attr_ctrl = F)
   })
 
   # plot_doy ----
@@ -91,6 +93,7 @@ function(input, output, session) {
       select(time, val = mean) |>
       plot_doy(
         days_smooth = input$sld_days_smooth)
+        # text_size   = 16)
   })
 
 }

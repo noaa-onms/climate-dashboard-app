@@ -1,6 +1,11 @@
-thematic_shiny()
+thematic_shiny(font = "auto")
 page_sidebar(
-  title = "Sanctuaries Climate Change App",
+  title = tagList(
+    "Sanctuaries Climate Change App",
+    input_switch(
+      "dark_mode",
+      bs_icon("moon-stars-fill"),
+      TRUE)),
   theme = dark,
 
   # sidebar ----
@@ -17,12 +22,7 @@ page_sidebar(
     selectInput(
       "sel_variable",
       "Variable",
-      c("Temperature, Sea Surface")),
-
-    input_switch(
-      "dark_mode",
-      bs_icon("moon-stars-fill"),
-      TRUE) ),
+      c("Sea Surface Temperature (SST)")) ),
 
   # map ----
   card(
@@ -59,8 +59,8 @@ page_sidebar(
 
     absolutePanel(
       id        = "pnl_md",
-      bottom    = "5%", left = "5%", right = "5%",
-      width     = "90%",
+      bottom    = "2%", left = "8%", right = "8%",
+      width     = "84%",
 
       sliderInput(
         "sld_md",

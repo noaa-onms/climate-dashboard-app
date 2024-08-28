@@ -19,7 +19,9 @@ map_then_now <- function(
     palette     = "Spectral",
     palette_rev = TRUE,
     bbox        = NULL,
-    dark_mode   = T){
+    dark_mode   = T,
+    lyrs_ctrl   = T,
+    attr_ctrl   = T){
 
   tiles = ifelse(
     dark_mode,
@@ -35,7 +37,9 @@ map_then_now <- function(
   pal  <- colorNumeric(
     palette, vals, reverse = palette_rev, na.color = "transparent")
 
-  m <- leaflet() |>
+  m <- leaflet(
+    options = leafletOptions(
+      attributionControl = attr_ctrl)) |>
     addMapPane("left",  zIndex = 0) |>
     addMapPane("right", zIndex = 0) |>
     addProviderTiles(
@@ -56,7 +60,6 @@ map_then_now <- function(
       r_now, colors = pal, opacity = 0.8, project = F,
       options = leafletOptions(pane = "right"),
       group = "r_now") |>
-    addLayersControl(overlayGroups = c("r_then", "r_now")) |>
     addSidebyside(
       layerId = "sidecontrols",
       leftId  = "base_l",
@@ -80,6 +83,9 @@ map_then_now <- function(
       values = vals,
       title  = var_lbl)
 
+  if (lyrs_ctrl)
+    m <- m |> addLayersControl(overlayGroups = c("r_then", "r_now"))
+
   if (!is.null(bbox))
     m <- m |>
       fitBounds(
@@ -100,6 +106,7 @@ plot_doy <- function(
     size_thisyear    = 1.5,
     size_lastyear    = 1,
     size_otheryears  = 0.5,
+    # text_size        = 11,
     interactive      = TRUE){
   # bay_segment = "BCB"
   # df = d_sst_z
@@ -182,18 +189,20 @@ plot_doy <- function(
     # theme(legend.position = "") +
     theme(
       legend.position = c(0.5, 0.15)) +
+      # text            = element_text(size = text_size)) +
     scale_x_datetime(
       labels = date_format("%b %d"),
       limits = md_lims,
       expand = c(0, 0)) +
     labs(
       x = "Day of year",
-      y = "Temperature (ºC)")
+      y = "SST (ºC)")
 
   if (!interactive)
     return(g)
 
   ggplotly(g, tooltip=c("date","value")) |>
-    layout(legend = list(x = 0.5, y = 0.15))
+    # layout(legend = list(x = 0.5, y = 0.15))
+    layout(legend = list(x = 0.5, y = 0.05))
 }
 
