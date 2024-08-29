@@ -40,12 +40,21 @@ sanctuary_years <- sanctuaries |>
   # TODO: remove DEBUG
   filter(
     !nms %in% c("CINMS","FKNMS"),                # TODO: update '24
-    !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","HIHWNMS","MBNMS","SBNMS"), # done '24-08-28
-    !(nms == "MBNMS-david" & year < 1986),
-    !(nms == "SBNMS"       & year < 2022))
+    !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","HIHWNMS","MBNMS-david","MBNMS","MBNMS-main","MNMS","SBNMS"), # done '24-08-28
+    !(nms == "NMSAS" & year < 2010),
+    !(nms == "SBNMS" & year < 2022))
 # View(sanctuary_years)
 
 # rerddap::cache_delete_all()
+
+# TODO: ed_extract(): differentiate existing done vs todo for given year
+# TODO: break up ed_extract() into functions, not exported
+# TODO: make ed_extract() to single MBNMS with features for main vs david; add ALL option to ed_extract()
+# TODO: add buffer to all (and redo)
+# TODO: wrap retry with extractr::ed_dim() too
+# NMSAS, 2010
+# Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0xbf5a>),  : 
+#   HTTP error 503.
 
 # TODO: GDAL Message 1: Metadata exceeding 32000 bytes cannot be written into GeoTIFF. Transferred to PAM instead.
 # TODO: retry if code=500 like...
