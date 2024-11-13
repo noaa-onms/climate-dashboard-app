@@ -31,8 +31,6 @@ dark  <- bs_theme(
 
 
 # sst ----
-dir_sst <- here("data/NOAA_DHW")
-
 d_sst <- tibble(
   csv = list.files(dir_sst, ".csv$", recursive = T, full.names = T)) |>
   mutate(

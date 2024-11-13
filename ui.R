@@ -38,7 +38,9 @@ page_sidebar(
     selectInput(
       "sel_variable",
       "Variable",
-      c("Sea Surface Temperature (SST)")) ),
+      c(
+        "Sea Surface Temperature (SST)" = "NOAA_DHW"
+      ))),
 
   # map ----
   card(

@@ -8,7 +8,7 @@ function(input, output, session) {
   rx_r_sst <- reactive({
 
     nms         <- input$sel_nms
-    dir_sst_nms <- glue("{dir_sst}/{nms}")
+    dir_sst_nms <- glue("data/{input$sel_variable}/{nms}")
 
     list.files(dir_sst_nms, ".tif$", full.names = T) |>
       map(rast) |>
