@@ -29,10 +29,9 @@ dark  <- bs_theme(
   bs_add_rules(sldr_css)
 
 
-
+# TODO: load in all datasets here and include necessary data for server.R
+#       like `var  = "CRW_SST"` and `var_lbl    = "SST (°C)"`
 # sst ----
-dir_sst <- here("data/NOAA_DHW")
-
 d_sst <- tibble(
   csv = list.files(dir_sst, ".csv$", recursive = T, full.names = T)) |>
   mutate(

@@ -4,13 +4,17 @@ format: html
 editor: visual
 editor_options: 
   chunk_output_type: console
+params:
+  datasetName: NOAA_SMOS
+  erddapLink: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  variableName: sss
 ---
 
 ## Get Data using `extractr`
 
 ```{r}
 # devtools::install_local("/share/github/marinebon/extractr", force = T)
-devtools::load_all("/share/github/marinebon/extractr")
+devtools::load_all("../extractr")
 # TODO: extractr -- git commit, push 
 librarian::shelf(
   dplyr, DT, furrr, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
@@ -22,14 +26,14 @@ sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 #   st_drop_geometry() |>
 #   datatable()
 
-dir_out <- here("data/NOAA_DHW")
+dir_out <- here(glue("data/{params$datasetName}"))
 
 # CoralTemp eddaily
-ed <- ed_info("https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html")   # CoralTemp eddaily
+ed <- ed_info(params$erddapLink)   
 times <- ed_dim(ed, "time")
 # (vars <- ed_vars(ed))
-v <- "CRW_SST"
-
+v <- params$variableName
+  
 sanctuary_years <- sanctuaries |> 
   st_drop_geometry() |> 
   arrange(nms) |> 
@@ -132,7 +136,10 @@ mapview(r[1])
 
 ```
 
-    Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
-      Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
-    Error in FUN(X[[i]], ...) : 
-      Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
+```         
+Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
+  Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
+Error in FUN(X[[i]], ...) : 
+  Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
+```
+

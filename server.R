@@ -8,7 +8,7 @@ function(input, output, session) {
   rx_r_sst <- reactive({
 
     nms         <- input$sel_nms
-    dir_sst_nms <- glue("{dir_sst}/{nms}")
+    dir_sst_nms <- glue("data/{input$sel_variable}/{nms}")
 
     list.files(dir_sst_nms, ".tif$", full.names = T) |>
       map(rast) |>
@@ -18,6 +18,7 @@ function(input, output, session) {
 
   # map ----
   output$map <- renderLeaflet({
+    # TODO: select with input$sel_variable
 
     # DEBUG
     # input <- list(
@@ -84,6 +85,7 @@ function(input, output, session) {
 
   # plot_doy ----
   output$plot_doy <- renderPlotly({
+    # TODO: select with input$sel_variable
 
     # input <- list(sel_nms = "FKNMS")
     d_sst |>
