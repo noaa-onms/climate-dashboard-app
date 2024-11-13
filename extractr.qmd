@@ -5,8 +5,9 @@ editor: visual
 editor_options: 
   chunk_output_type: console
 params:
-  datasetName: NOAA_DHW
-  erddapLink: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html
+  datasetName: NOAA_SMOS
+  erddapLink: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  variableName: sss
 ---
 
 ## Get Data using `extractr`
@@ -31,8 +32,8 @@ dir_out <- here(glue("data/{params$datasetName}"))
 ed <- ed_info(params$erddapLink)   
 times <- ed_dim(ed, "time")
 # (vars <- ed_vars(ed))
-v <- "CRW_SST"
-
+v <- params$variableName
+  
 sanctuary_years <- sanctuaries |> 
   st_drop_geometry() |> 
   arrange(nms) |> 
@@ -141,3 +142,4 @@ Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id 
 Error in FUN(X[[i]], ...) : 
   Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
 ```
+
