@@ -18,6 +18,7 @@ function(input, output, session) {
 
   # map ----
   output$map <- renderLeaflet({
+    # TODO: select with input$sel_variable
 
     # DEBUG
     # input <- list(
@@ -84,6 +85,7 @@ function(input, output, session) {
 
   # plot_doy ----
   output$plot_doy <- renderPlotly({
+    # TODO: select with input$sel_variable
 
     # input <- list(sel_nms = "FKNMS")
     d_sst |>
