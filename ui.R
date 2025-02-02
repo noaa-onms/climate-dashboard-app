@@ -16,14 +16,32 @@ page_sidebar(
     selectInput(
       "sel_nms",
       "Sanctuary",
-      c("Channel Islands" = "CINMS",
-        "Florida Keys"    = "FKNMS"),
+      c(
+        "Cordell Bank" = "CBNMS",
+        "Channel Islands" = "CINMS",
+        "Chumash Proposed Action" = "CPNMS",
+        "Flower Garden Banks" = "FGBNMS",
+        "Florida Keys" = "FKNMS",
+        "Greater Farallones" = "GFNMS",
+        "Gray's Reef" = "GRNMS",
+        "Hawaiian Islands Humpback Whale" = "HIHWNMS",
+        "Monterey Bay" = "MBNMS",
+        "Monitor" = "MNMS",
+        "American Samoa" = "NMSAS",
+        "Olympic Coast" = "OCNMS",
+        "Stellwagen Bank" = "SBNMS",
+        "Thunder Bay" = "TBNMS",
+        "Monterey Bay - Davidson Seamount" = "MBNMS-david",
+        "Monterey Bay - Mainland" = "MBNMS-main"
+      ),
       selected = "FKNMS"),
 
     selectInput(
       "sel_variable",
       "Variable",
-      c("Sea Surface Temperature (SST)")) ),
+      c(
+        "Sea Surface Temperature (SST)" = "NOAA_DHW"
+      ))),
 
   # map ----
   card(

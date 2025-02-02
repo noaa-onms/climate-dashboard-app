@@ -1,0 +1,27 @@
+---
+title: "cefi"
+format: html
+editor: visual
+---
+
+## `ncdf4`
+
+```{r}
+library("ncdf4")
+
+# Specify the OPeNDAP server URL (using regular grid output)
+url <- "http://psl.noaa.gov/thredds/dodsC/Projects/CEFI/regional_mom6/northwest_atlantic/forecast/regrid/tob_forecast_i202212.nc"
+
+# Open a NetCDF file lazily and remotely
+ncopendap <- nc_open(url)
+
+# Read the coordinate into memory
+timeslice = 1
+lon <- ncvar_get(ncopendap, "lon")
+lat <- ncvar_get(ncopendap, "lat")
+time <- ncvar_get(ncopendap, "init",start = c(timeslice), count = c(1))
+
+# Read a slice of the data into memory
+tob <- ncvar_get(ncopendap, "tob", start = c(1, 1, 1, 1), count = c(-1, -1, -1, -1))
+
+```

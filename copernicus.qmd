@@ -1,0 +1,126 @@
+---
+title: "Copernicus"
+format:
+  html:
+    embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## R `reticulate` to Py `copernicusmarine`
+
+-   [How to sign up for Copernicus Marine Service? | Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/4220332-how-to-sign-up-for-copernicus-marine-service)
+-   [How to download data via the Copernicus Marine Toolbox in R? \| Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/8638253-how-to-download-data-via-the-copernicus-marine-toolbox-in-r#h_c480a903fd)
+
+### Fetch bottom temperature (`tob`)
+
+- [Global Ocean Physics Analysis and Forecast | Copernicus Marine Service](https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/download?dataset=cmems_mod_glo_phy_anfc_0.083deg_P1M-m_202406)
+
+- Product identifier: `GLOBAL_ANALYSISFORECAST_PHY_001_024`
+- Product name: "Global Ocean Physics Analysis and Forecast"
+  - [manual](https://catalogue.marine.copernicus.eu/documents/PUM/CMEMS-GLO-PUM-001-024.pdf)
+    - **cmems_mod_glo_phy_anfc_0.083deg_P1M-m** which contains the 2D monthly mean fields: sea surface level, bottom pressure, bottom salinity, bottom potential temperature, mixed layer thickness, sea ice albedo, sea ice age, sea ice surface temperature, sea ice
+speed, snow thickness, sea ice thickness, sea ice fraction and sea ice velocities information.
+    - Sea water **_potential_ temperature** at sea floor **`tob`** [°C]
+
+```{r}
+# libraries
+librarian::shelf(
+  glue, here, reticulate, terra,
+  quiet = T)
+
+# copernicusmarine username and password
+user     <- "bbest1"
+pass_txt <- "~/My Drive/private/data.marine.copernicus.eu_bbest1-password.txt"
+
+# do once: create virtual enviroment and install copernicusmarine Python module
+# virtualenv_create(envname = "CopernicusMarine")
+# virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
+
+# TODO: check for CopernicusMarine env with copernicusmarine Python module
+
+# use virtualenv and reticulate::import copernicusmarine Python module
+use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
+cmt <- import("copernicusmarine")
+
+# login
+pass <- readLines(pass_txt)
+cmt$login(user, pass, skip_if_user_logged_in = T) # py_help(cmt$login)
+# writes to /Users/bbest/.copernicusmarine/.copernicusmarine-credentials
+
+# describe dataset
+dataset_id <- "cmems_mod_glo_phy_anfc_0.083deg_P1M-m"
+d          <- cmt$describe(contains=list(dataset_id))  # py_help(cmt$describe)
+d
+
+# subset dataset
+dir_data   <- here("data/copernicus")
+s <- cmt$subset(
+  dataset_id            = dataset_id,
+  # dataset_version     = "202309",
+  variables             = list("tob"),
+  minimum_longitude     = -6.93,
+  maximum_longitude     = 2.3,
+  minimum_latitude      = 47.49,
+  maximum_latitude      = 51.65,
+  start_datetime        = "2024-01-01T00:00:00",
+  end_datetime          = "2024-03-01T00:00:00",
+  output_directory      = dir_data,
+  force_download        = T,
+  overwrite_output_data = T
+  # minimum_depth   = 0.4940253794193268,
+  # maximum_depth   = 11.4
+  )
+
+# show output_filename with parameters embedded
+cat(glue("output_filename (basename): {basename(as.character(s))}"))
+
+# show terra::rast object
+r <- rast(as.character(s))
+print(r)
+
+i      <- 1
+cat(glue("index: {i}; layer_index: {names(r)[i]};  time_index: {time(r)[i]}"))
+
+# plot interactive map
+plet(
+  r[[i]], 
+  main  = glue("Bottom\nTemp. (°C)\n{time(r)[i]}"), 
+  tiles = "Esri.OceanBasemap")
+```
+
+## OLD: `CopernicusMarine` R pkg
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+Below is superceded by above, so skipping evaluation of R chunks.
+
+```{r}
+librarian::shelf(
+  pepijn-devries/CopernicusMarine)
+```
+
+```{r}
+pass_txt = "~/My Drive/private/data.marine.copernicus.eu_bbest1-password.txt"
+
+options(
+  CopernicusMarine_uid = "bbest1",
+  CopernicusMarine_pwd = readLines(pass_txt))
+
+destination <- tempfile("copernicus_test", fileext = ".nc")
+
+cms_download_subset(
+  destination   = destination,
+  product       = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+  layer         = "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m",
+  variable      = "sea_water_velocity",
+  region        = c(-1, 50, 10, 55),
+  timerange     = c("2021-01-01", "2021-01-02"),
+  verticalrange = c(0, -2) )
+
+mydata <- stars::read_stars(destination)
+
+plot(mydata["vo"], col = hcl.colors(100), axes = TRUE)
+```
