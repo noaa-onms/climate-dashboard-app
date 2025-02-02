@@ -1,5 +1,6 @@
 thematic_shiny(font = "auto")
 page_sidebar(
+  window_title = "Sanctuaries Climate Change App",
   title = tagList(
     "Sanctuaries Climate Change App",
     input_switch(

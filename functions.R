@@ -146,6 +146,7 @@ plot_doy <- function(
       doy   = sprintf(
         "%d-%02d-%02d",
         year(today()), month(time), day(time) ) |>
+        as.Date() |>
         as.POSIXct(),
       yr_cat = case_when(
         year == yrs[2]  ~ yrs[2] |> as.character(),
