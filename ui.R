@@ -40,7 +40,8 @@ page_sidebar(
       "sel_variable",
       "Variable",
       c(
-        "Sea Surface Temperature (SST)" = "NOAA_DHW"
+        "Sea Surface Temperature (SST)" = "NOAA_DHW",
+        "Sea Surface Salinity (SSS)"    = "NOAA_SMOS"
       ))),
 
   # map ----

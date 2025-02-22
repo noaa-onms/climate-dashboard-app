@@ -1,10 +1,10 @@
-get_sst_r <- function(r_sst, d_sst_r, dates){  # dates = dates_then
-  lyrs <- d_sst_r |>
+get_r <- function(r, d, dates){  # dates = dates_then
+  lyrs <- d |>
     filter(
       date %in% !!dates) |>
     pull(lyr)
 
-  r_sst |>
+  r |>
     subset(lyrs) |>
     mean() |>
     project(leaflet:::epsg3857)

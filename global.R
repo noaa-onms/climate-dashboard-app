@@ -33,6 +33,7 @@ dark  <- bs_theme(
 #       like `var  = "CRW_SST"` and `var_lbl    = "SST (°C)"`
 # sst ----
 dir_sst <- here("data/NOAA_DHW")
+dir_sss <- here("data/NOAA_SMOS")
 
 d_sst <- tibble(
   csv = list.files(dir_sst, ".csv$", recursive = T, full.names = T)) |>
@@ -44,6 +45,18 @@ d_sst <- tibble(
     date = as.Date(time)) |>
   arrange(time) |>
   filter(year(time) >= 1987)
+
+d_sss <- tibble(
+  csv = list.files(dir_sss, ".csv$", recursive = T, full.names = T)) |>
+  mutate(
+    nms  = basename(dirname(csv)),
+    data = map(csv, \(x) read_csv(x) |> select(-any_of("nms")))) |> # TODO: sanctuary nms zone/sf_zone in exract_ed()?
+  unnest(data) |>
+  mutate(
+    date = as.Date(time)) |>
+  arrange(time) |>
+  filter(year(time) >= 1987)
+
 # TODO: sanctuary nms   lyr     val var
 
 # d_sst |>

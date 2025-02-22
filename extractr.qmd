@@ -14,10 +14,11 @@ params:
 
 ```{r}
 # devtools::install_local("/share/github/marinebon/extractr", force = T)
-devtools::load_all("../extractr")
+devtools::load_all("/share/github/marinebon/extractr")
 # TODO: extractr -- git commit, push 
 librarian::shelf(
-  dplyr, DT, furrr, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
+  # furrr
+  dplyr, DT, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
   marinebon/extractr)
 
 sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
@@ -27,6 +28,7 @@ sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 #   datatable()
 
 dir_out <- here(glue("data/{params$datasetName}"))
+dir.create(dir_out, showWarnings = F, recursive = T)
 
 # CoralTemp eddaily
 ed <- ed_info(params$erddapLink)   
@@ -142,4 +144,3 @@ Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id 
 Error in FUN(X[[i]], ...) : 
   Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
 ```
-
