@@ -42,7 +42,8 @@ page_sidebar(
       c(
         "Sea Surface Temperature (SST)" = "NOAA_DHW",
         "Sea Surface Salinity (SSS)"    = "NOAA_SMOS"
-      ))),
+      ))
+    ),
 
   # map ----
   card(

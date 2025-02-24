@@ -1,8 +1,13 @@
 get_r <- function(r, d, dates){  # dates = dates_then
+  # r = r_var; d = d_var_r; dates = dates_now
+
   lyrs <- d |>
     filter(
       date %in% !!dates) |>
     pull(lyr)
+
+  if (length(lyrs) == 0)
+    browser()
 
   r |>
     subset(lyrs) |>
