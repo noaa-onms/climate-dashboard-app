@@ -105,13 +105,13 @@ function(input, output, session) {
 
   # map ----
   output$map <- renderLeaflet({
-    req(rx$var, rx$nms, rx$yrs_then, rx$yrs_now, rx$md)
+    req(rx$var, rx$nms, input$sld_yrs_then, input$sld_yrs_now, input$sld_md)
 
     var          <- rx$var
     nms          <- rx$nms
-    sld_yrs_then <- rx$yrs_then
-    sld_yrs_now  <- rx$yrs_now
-    sld_md       <- rx$md
+    sld_yrs_then <- input$sld_yrs_then
+    sld_yrs_now  <- input$sld_yrs_now
+    sld_md       <- input$sld_md
     d_var        <- get_d_var()
     r_var        <- get_r_var()
 
