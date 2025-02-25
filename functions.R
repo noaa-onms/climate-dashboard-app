@@ -6,13 +6,27 @@ get_r <- function(r, d, dates){  # dates = dates_then
       date %in% !!dates) |>
     pull(lyr)
 
-  if (length(lyrs) == 0)
-    browser()
+  stopifnot(length(lyrs) > 0)
 
   r |>
     subset(lyrs) |>
     mean() |>
     project(leaflet:::epsg3857)
+}
+
+get_d <- function(var, nms){
+  dir <- here(glue("data/{var}/{nms}"))
+  if (!dir.exists(dir))
+    return(NULL)
+
+  tibble(
+    csv = list.files(dir, ".csv$", full.names = T)) |>
+    mutate(
+      data = map(csv, \(x) read_csv(x))) |>
+    unnest(data) |>
+    mutate(
+      date = as.Date(time)) |>
+    arrange(time)
 }
 
 map_then_now <- function(
@@ -112,7 +126,8 @@ plot_doy <- function(
     size_lastyear    = 1,
     size_otheryears  = 0.5,
     # text_size        = 11,
-    interactive      = TRUE){
+    interactive      = TRUE,
+    y_lab            = "SST (ºC)"){
   # bay_segment = "BCB"
   # df = d_sst_z
 
@@ -194,7 +209,7 @@ plot_doy <- function(
       values = yr_szs, guide="none") +
     # theme(legend.position = "") +
     theme(
-      legend.position = c(0.5, 0.15)) +
+      legend.position.inside = c(0.5, 0.15)) +
       # text            = element_text(size = text_size)) +
     scale_x_datetime(
       labels = date_format("%b %d"),
@@ -202,7 +217,7 @@ plot_doy <- function(
       expand = c(0, 0)) +
     labs(
       x = "Day of year",
-      y = "SST (ºC)")
+      y = y_lab)
 
   if (!interactive)
     return(g)

@@ -16,34 +16,14 @@ page_sidebar(
     selectInput(
       "sel_nms",
       "Sanctuary",
-      c(
-        "Cordell Bank" = "CBNMS",
-        "Channel Islands" = "CINMS",
-        "Chumash Proposed Action" = "CPNMS",
-        "Flower Garden Banks" = "FGBNMS",
-        "Florida Keys" = "FKNMS",
-        "Greater Farallones" = "GFNMS",
-        "Gray's Reef" = "GRNMS",
-        "Hawaiian Islands Humpback Whale" = "HIHWNMS",
-        "Monterey Bay" = "MBNMS",
-        "Monitor" = "MNMS",
-        "American Samoa" = "NMSAS",
-        "Olympic Coast" = "OCNMS",
-        "Stellwagen Bank" = "SBNMS",
-        "Thunder Bay" = "TBNMS",
-        "Monterey Bay - Davidson Seamount" = "MBNMS-david",
-        "Monterey Bay - Mainland" = "MBNMS-main"
-      ),
-      selected = "FKNMS"),
+      choices_nms,
+      selected_nms),
 
     selectInput(
-      "sel_variable",
+      "sel_var",
       "Variable",
-      c(
-        "Sea Surface Temperature (SST)" = "NOAA_DHW",
-        "Sea Surface Salinity (SSS)"    = "NOAA_SMOS"
-      ))
-    ),
+      choices_var,
+      selected_var) ),
 
   # map ----
   card(
@@ -59,9 +39,9 @@ page_sidebar(
         sliderInput(
           "sld_yrs_then",
           "Year(s), Then",
-          min     = yrs_sst[1],
-          value   = c(yrs_sst[1], yrs_sst[1]+20),
-          max     = yrs_sst[2] - 1,
+          min     = 1800,
+          value   = c(1800, 1899),
+          max     = 1899,
           step    = 1,
           animate = T,
           sep     = ""),
@@ -69,9 +49,9 @@ page_sidebar(
         sliderInput(
           "sld_yrs_now",
           "Year(s), Now",
-          min     = yrs_sst[1] + 1,
-          value   = c(yrs_sst[2], yrs_sst[2]),
-          max     = yrs_sst[2],
+          min     = 1801,
+          value   = c(1801, 1900),
+          max     = 1900,
           step    = 1,
           animate = T,
           sep     = "")) ),
@@ -86,9 +66,9 @@ page_sidebar(
       sliderInput(
         "sld_md",
         "Month and day of year",
-        min        = as.Date(glue("{year(now_sst)}-01-01")),
-        value      = now_sst,
-        max        = as.Date(glue("{year(now_sst)}-12-31")),
+        min        = as.Date("1900-01-01"),
+        value      = as.Date("1900-06-01"),
+        max        = as.Date("1900-12-31"),
         timeFormat = "%b %d",
         animate    = T,
         width     = "100%") )),
