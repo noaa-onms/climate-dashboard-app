@@ -1,9 +1,12 @@
 librarian::shelf(
-  dplyr, fs, glue, here, logger, quarto, yaml)
+  dplyr, fs, gitcreds, glue, here, logger, quarto, stringr, yaml)
 
-dir_meta <- here("meta")
-dir_log  <- here("log")
-log_txt  <- glue("{dir_log}/update_data.txt")
+dir_meta   <- here("meta")
+dir_log    <- here("log")
+log_txt    <- glue("{dir_log}/update_data.txt")
+
+github_pat <- gitcreds_get(use_cache = FALSE)$password
+stopifnot(str_sub(github_pat, 1, 3) == "ghp")
 
 if (file_exists(log_txt))
   file_delete(log_txt)
@@ -42,9 +45,15 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
   })
 
 }
-log_info("Script finished")
+log_info("Script done rendering, next git commit & push")
 
-system(
-  "git add --all;
-   git commit -m 'ran update_data.R';
-   git push")
+# setup in Terminal
+# git config --global user.name "$github_username"
+# git config --global user.email "$github_email"
+# git add --all; git commit -m 'test creds'; git push
+# # enter GITHUB_PAT on password prompt
+# git config --global credential.helper store
+
+system("git add --all")
+system("git commit -m 'ran update_data.R'")
+system("git push")

@@ -1,4 +1,4 @@
-INFO [2025-05-05 21:17:08] Script starting up...
-INFO [2025-05-05 21:17:08] noaa_sss.yaml -[ extractr.qmd ]-> noaa_sss.html
-INFO [2025-05-05 21:17:27] noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html
-INFO [2025-05-05 21:17:42] Script finished
+INFO [2025-05-05 21:39:50] Script starting up...
+INFO [2025-05-05 21:39:50] noaa_sss.yaml -[ extractr.qmd ]-> noaa_sss.html
+INFO [2025-05-05 21:40:04] noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html
+INFO [2025-05-05 21:40:14] Script done rendering, next git commit & push
