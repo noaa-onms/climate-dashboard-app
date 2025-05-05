@@ -41,4 +41,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_yaml, glob 
 }
 log_info("Script finished")
 
-system("git add --all")
+system(
+  "git add --all;
+   git commit -m 'ran update_data.R';
+   git push")
