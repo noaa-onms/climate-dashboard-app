@@ -1,6 +1,9 @@
 # climate-dashboard-app
 Shiny app for climate dashboard
 
+# log
+
+- [logs](./log)
 
 # install
 ```bash
