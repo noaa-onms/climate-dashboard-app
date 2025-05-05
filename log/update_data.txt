@@ -1,4 +1,4 @@
-INFO [2025-05-05 16:40:39] Script starting up...
-INFO [2025-05-05 16:40:39] noaa_smos.yaml -[ extractr.qmd ]-> noaa_sss.html
-INFO [2025-05-05 16:40:49] noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html
-INFO [2025-05-05 16:40:58] Script finished
+INFO [2025-05-05 21:17:08] Script starting up...
+INFO [2025-05-05 21:17:08] noaa_sss.yaml -[ extractr.qmd ]-> noaa_sss.html
+INFO [2025-05-05 21:17:27] noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html
+INFO [2025-05-05 21:17:42] Script finished

@@ -10,12 +10,15 @@ if (file_exists(log_txt))
 log_appender(appender_tee(log_txt))
 log_info("Script starting up...")
 
-for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_yaml, glob = "*.yaml")[1]
+for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob = "*.yaml")[1]
 
   tryCatch({
 
-    y <- read_yaml(yaml)
+    # parameters
+    y          <- read_yaml(yaml)
+    y$data_var <- path_ext_remove(basename(yaml))
 
+    # paths
     in_qmd   <- here("extractr.qmd")
     tmp_html <- path_ext_set(in_qmd, ".html")
     out_html <- here(glue("{dir_log}/{y$data_var}.html"))

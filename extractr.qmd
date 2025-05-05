@@ -6,12 +6,12 @@ editor:
 editor_options: 
   chunk_output_type: console
 params:
-  # data_var: noaa_sss
-  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
-  # erddap_variable: sss
-  data_var: noaa_sst
-  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
-  erddap_variable: analysed_sst
+  data_var: noaa_sss
+  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  erddap_variable: sss
+  # data_var: noaa_sst
+  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
+  # erddap_variable: analysed_sst
 ---
 
 ## Get Data using `extractr`
@@ -27,7 +27,8 @@ librarian::shelf(
   dplyr, DT, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
   marinebon/extractr)
 
-sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
+sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) |> 
+  filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
 # mapView(sanctuaries)
 # sanctuaries |>
 #   st_drop_geometry() |>
@@ -61,9 +62,10 @@ sanctuary_years <- sanctuaries |>
 # rerddap::cache_delete_all()
 
 sanctuary_years |> 
-  slice(1:2) |> 
+  # filter(nms == "GRNMS")
+  slice(97:98) |> # DEBUG
   pmap(
-    \(i, nms, year){   #  nms = "CBNMS"; year = 2011 ; i = 1    # DEBUG
+    \(i, nms, year){   #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
       message(glue("{sprintf('%03d', i)}: {nms}, {year}"))
       
       times_yr <- times[year(times) == year]
@@ -73,19 +75,24 @@ sanctuary_years |>
       # TODO: consider expanding by 10% and rounding 2 digits
       # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
       
-      extractr::ed_extract(
-        ed, 
-        var       = v,
-        sf_zones  = ply,
-        mask_tif  = T,
-        rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
-        zonal_fun = "mean",
-        zonal_csv = glue::glue("{dir_out}/{nms}/{year}.csv"),
-        dir_nc    = glue::glue("{dir_out}/{nms}/{year}_nc"),
-        keep_nc   = F,
-        n_max_vals_per_req = 1e+05,
-        time_min  = min(times_yr),
-        time_max  = max(times_yr))
+      tryCatch({
+        extractr::ed_extract(
+          ed, 
+          var       = v,
+          sf_zones  = ply,
+          mask_tif  = T,
+          rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
+          zonal_fun = "mean",
+          zonal_csv = glue::glue("{dir_out}/{nms}/{year}.csv"),
+          dir_nc    = glue::glue("{dir_out}/{nms}/{year}_nc"),
+          keep_nc   = F,
+          n_max_vals_per_req = 1e+05,
+          time_min  = min(times_yr),
+          time_max  = max(times_yr))
+      }, error = function(e) {
+        warning(glue(
+          "Error: {conditionMessage(e)}"))
+      })
     })
 ```
 
