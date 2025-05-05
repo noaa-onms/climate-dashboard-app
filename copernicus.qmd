@@ -32,6 +32,9 @@ speed, snow thickness, sea ice thickness, sea ice fraction and sea ice velocitie
     - Sea water **_potential_ temperature** at sea floor **`tob`** [°C]
 
 ```{r}
+#| label: stars_mdim
+#| eval: false
+
 librarian::shelf(stars)
 
 # [Implement support for ZARR file subsetting and downloading · Issue #34 · pepijn-devries/CopernicusMarine](https://github.com/pepijn-devries/CopernicusMarine/issues/34)

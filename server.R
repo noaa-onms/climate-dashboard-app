@@ -93,14 +93,8 @@ function(input, output, session) {
     rx$yrs_then = yrs_then
     rx$yrs_now  = yrs_now
     rx$md       = now_var
-    rx$label    = case_match(
-      var,
-      "NOAA_DHW"  ~ "Surface Temperature (°C)",
-      "NOAA_SMOS" ~ "Surface Salinity (PSU)")
-    rx$lbl      = case_match(
-      var,
-      "NOAA_DHW"  ~ "SST (°C)",
-      "NOAA_SMOS" ~ "SSS (PSU)")
+    rx$label    = var_label[var]
+    rx$lbl      = var_lbl[var]
   })
 
   # map ----
@@ -151,7 +145,7 @@ function(input, output, session) {
     if (length(yrs_then_rng) > 2)
       yrs_then_rng <- range(yrs_then_rng)
 
-    browser()
+    # browser()
     r_now  <- get_r(r_var, d_var_r, dates_now)
     r_then <- get_r(r_var, d_var_r, dates_then)
 

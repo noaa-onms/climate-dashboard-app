@@ -6,9 +6,12 @@ editor:
 editor_options: 
   chunk_output_type: console
 params:
-  data_var: noaa_sss
-  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
-  erddap_variable: sss
+  # data_var: noaa_sss
+  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  # erddap_variable: sss
+  data_var: noaa_sst
+  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
+  erddap_variable: analysed_sst
 ---
 
 ## Get Data using `extractr`
@@ -40,8 +43,8 @@ dir.create(dir_out, showWarnings = F, recursive = T)
 ```{r}
 #| label: dataset
 
-ed <- ed_info(params$erddap_url)
-v <- params$erddap_variable
+(ed <- ed_info(params$erddap_url))
+(v <- params$erddap_variable)
 times <- ed_dim(ed, "time")
 ```
 
@@ -102,10 +105,11 @@ sanctuary_years <- sanctuaries |>
 # View(sanctuary_years)
 
 sanctuary_years |> 
+  filter(nms == "CBNMS") |> 
   # slice(21:nrow(sanctuary_years)) |> 
   # future_pmap(
   pmap(
-    \(nms, year){   #  nms = "CBNMS"; year = 2010   # DEBUG
+    \(nms, year){   #  nms = "CBNMS"; year = 2011   # DEBUG
       message(glue::glue("{nms}, {year}"))
       
       times_yr <- times[lubridate::year(times) == year]
@@ -120,7 +124,7 @@ sanctuary_years |>
         ed, 
         var       = v,
         sf_zones  = ply,
-        fld_zones = "nms",
+        # fld_zones = "nms",
         # bbox      = bb,
         mask_tif  = T,
         rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
@@ -131,13 +135,44 @@ sanctuary_years |>
         n_max_vals_per_req = 1e+05,
         time_min  = min(times_yr),
         time_max  = max(times_yr))
-    })  
+    })
+
+# for (csv in list.files(here("data/noaa_sss/CBNMS"), pattern = "\\.csv$", full.names = T)) {
+#   read_csv(csv) |> 
+#     select(-any_of("nms")) |> 
+#     write_csv(csv)
+# }
     # },
     # .options = furrr_options(
     #   packages = c("dplyr","extractr","glue","lubridate","sf"),
     #   globals  = c("dir_out","ed","sanctuaries","times","v"),
     #   seed     = T))
 ```
+
+## fix: NOAA_DHW -> noaa_sst
+
+Whoah, they're slightly different
+
+```{r}
+
+r_crw <- rast(here("data/noaa_sst/CBNMS/1985.tif"))
+r_dhw <- rast(here("data/NOAA_DHW/CBNMS/1985.tif"))
+
+nlyr(r_crw)
+plot(r_crw[[nlyr(r_crw)]])
+plot(r_dhw[[nlyr(r_dhw)]])
+
+names(r_crw)
+names(r_dhw)
+
+d_crw <- read_csv(here("data/noaa_sst/CBNMS/1985.csv"))
+d_dhw <- read_csv(here("data/NOAA_DHW/CBNMS/1985.csv"))
+
+tail(d_crw)
+tail(d_dhw)
+
+```
+
 
 ### DEBUG
 

@@ -35,9 +35,19 @@ choices_nms <- sanctuaries |>
   st_drop_geometry() |>
   arrange(sanctuary) |>
   deframe()
-selected_nms = "FKNMS"
 
-choices_var <- c(
-    "Sea Surface Temperature (SST)" = "NOAA_DHW",
-    "Sea Surface Salinity (SSS)"    = "NOAA_SMOS")
-selected_var = "NOAA_DHW"
+d_vars <- tribble(
+  ~var      ,  ~label,                          ~lbl,
+  # "NOAA_DHW",  "Sea Surface Temperature (SST)", "SST (°C)",
+  "noaa_sst",  "Sea Surface Temperature (SST)", "SST (°C)",
+  # "NOAA_SMOS", "Sea Surface Salinity (SSS)",    "SSS (PSU)",
+  "noaa_sss",  "Sea Surface Salinity (SSS)",    "SSS (PSU)")
+var_label   <- select(d_vars, var, label) |> deframe()
+var_lbl     <- select(d_vars, var, lbl)   |> deframe()
+choices_var <- select(d_vars, label, var) |> deframe()
+
+# selected_nms = "FKNMS"
+# selected_var = "NOAA_DHW"
+# DEBUG
+selected_nms = "CBNMS"
+selected_var = "noaa_sst"
