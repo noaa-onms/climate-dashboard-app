@@ -19,16 +19,13 @@ params:
 ```{r}
 #| label: setup
 
-# devtools::install_local("/share/github/marinebon/extractr", force = T)
-# devtools::install_local("~/Github/marinebon/extractr", force = T)
+# dir_extractr = "/share/github/marinebon/extractr" # dir_extractr = "~/Github/marinebon/extractr"
+# devtools::load_all(dir_extractr)
+# devtools::install_local(dir_extractr, force = T)
 # devtools::install_github("marinebon/extractr")
-# devtools::load_all("/share/github/marinebon/extractr")
-# TODO: extractr -- git commit, push 
 librarian::shelf(
-  # furrr
   dplyr, DT, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
   marinebon/extractr)
-
 
 sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 # mapView(sanctuaries)
@@ -50,7 +47,7 @@ times <- ed_dim(ed, "time")
 
 
 ```{r}
-# (vars <- ed_vars(ed))
+#| label: iterate
 
 sanctuary_years <- sanctuaries |> 
   st_drop_geometry() |> 
@@ -58,74 +55,28 @@ sanctuary_years <- sanctuaries |>
   select(nms) |> 
   cross_join(
     tibble(
-      year = year(min(times)):year(max(times)))) # |> 
-  # TODO: remove DEBUG
-  # filter(
-  #   nms %in% c("CINMS","FKNMS"))                # TODO: update '24
-    # !nms %in% c("CBNMS","CPNMS","FGBNMS","GFNMS","GRNMS","HIHWNMS","MBNMS-david","MBNMS","MBNMS-main","MNMS","SBNMS"), # done '24-08-28
-    # !(nms == "NMSAS" & year < 2010),
-    # !(nms == "SBNMS" & year < 2022))
-# View(sanctuary_years)
-
+      year = year(min(times)):year(max(times)))) |> 
+  mutate(
+    i = 1:n())
 # rerddap::cache_delete_all()
 
-# TODO: cleanup CRW_SST (new) vs noaacrwsstDaily (old) on server (rstudio.marinesensitivity.org)
-# TODO: ed_extract(): differentiate existing done vs todo for given year
-# TODO: break up ed_extract() into functions, not exported
-# TODO: make ed_extract() to single MBNMS with features for main vs david; add ALL option to ed_extract()
-# TODO: add buffer to all (and redo)
-# TODO: wrap retry with extractr::ed_dim() too
-# NMSAS, 2010
-# Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0xbf5a>),  : 
-#   HTTP error 503.
-
-# TODO: GDAL Message 1: Metadata exceeding 32000 bytes cannot be written into GeoTIFF. Transferred to PAM instead.
-# TODO: retry if code=500 like...
-  # HIHWNMS, 2020
-  # Downloading 15 requests, up to 25 time slices each
-  # ...
-  # Fetching request 4 of 15 (2020-03-16 to 2020-04-09) ~ 08:06:54 UTC
-  # Error : Error {
-  #     code=500;
-  #     message="Internal Server Error:
-  #       FileNotFoundException:
-  #         /usr/local/erddap/cache/km/dhw_5km/f631_ca87_9367_570740621_0
-  #       (No such file or directory)" ; }
-  # MBNMS-david, 1986
-  # Downloading 1 requests, up to 1250 time slices each
-  # Fetching request 1 of 1 (1986-01-01 to 1986-12-31) ~ 13:07:20 UTC
-  # Error : Error {
-  #     code=500;
-  #     message="Internal Server Error: FileNotFoundException: /usr/local/erddap/cache/km/dhw_5km/6f3e_396a_1a53_1437553582_0 (No such file or directory)";
-  # }
-
-# n_cores <- parallel::detectCores() - 1
-# plan(multisession, workers = n_cores)
-
-# View(sanctuary_years)
-
 sanctuary_years |> 
-  filter(nms == "CBNMS") |> 
-  # slice(21:nrow(sanctuary_years)) |> 
-  # future_pmap(
+  slice(1:2) |> 
   pmap(
-    \(nms, year){   #  nms = "CBNMS"; year = 2011   # DEBUG
-      message(glue::glue("{nms}, {year}"))
+    \(i, nms, year){   #  nms = "CBNMS"; year = 2011 ; i = 1    # DEBUG
+      message(glue("{sprintf('%03d', i)}: {nms}, {yearasf}"))
       
-      times_yr <- times[lubridate::year(times) == year]
+      times_yr <- times[year(times) == year]
       
       ply <- sanctuaries |> 
-        dplyr::filter(nms == !!nms)
-      # bb <- sf::st_bbox(ply)
+        filter(nms == !!nms)
       # TODO: consider expanding by 10% and rounding 2 digits
-      # |> stars:::bb_shrink(-0.1) |> round(2)
+      # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
       
       extractr::ed_extract(
         ed, 
         var       = v,
         sf_zones  = ply,
-        # fld_zones = "nms",
-        # bbox      = bb,
         mask_tif  = T,
         rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
         zonal_fun = "mean",
@@ -136,64 +87,18 @@ sanctuary_years |>
         time_min  = min(times_yr),
         time_max  = max(times_yr))
     })
-
-# for (csv in list.files(here("data/noaa_sss/CBNMS"), pattern = "\\.csv$", full.names = T)) {
-#   read_csv(csv) |> 
-#     select(-any_of("nms")) |> 
-#     write_csv(csv)
-# }
-    # },
-    # .options = furrr_options(
-    #   packages = c("dplyr","extractr","glue","lubridate","sf"),
-    #   globals  = c("dir_out","ed","sanctuaries","times","v"),
-    #   seed     = T))
 ```
 
-## fix: NOAA_DHW -> noaa_sst
+## TODO
 
-Whoah, they're slightly different
+- [ ] `ed_extract()`: differentiate existing done vs todo for given year
+- [ ] break up `ed_extract()` into functions, not exported
+- [ ] make `ed_extract()` to single MBNMS with features for main vs david; add "ALL" option to `ed_extract()`
+- [ ] add buffer to all (and redo)
+- [ ] wrap retry with `ed_dim()` too
+
 
 ```{r}
-
-r_crw <- rast(here("data/noaa_sst/CBNMS/1985.tif"))
-r_dhw <- rast(here("data/NOAA_DHW/CBNMS/1985.tif"))
-
-nlyr(r_crw)
-plot(r_crw[[nlyr(r_crw)]])
-plot(r_dhw[[nlyr(r_dhw)]])
-
-names(r_crw)
-names(r_dhw)
-
-d_crw <- read_csv(here("data/noaa_sst/CBNMS/1985.csv"))
-d_dhw <- read_csv(here("data/NOAA_DHW/CBNMS/1985.csv"))
-
-tail(d_crw)
-tail(d_dhw)
-
+devtools::session_info()
 ```
 
-
-### DEBUG
-
-```{r}
-tif <- "~/Github/noaa-onms/climate-dashboard-app/data/noaacrwsstDaily/FKNMS/2024.tif"
-tif <- "/Users/bbest/Downloads/climate-dashboard-data-noaacrwsstDaily_CINMS-FKNMS/FKNMS/2024.tif"
-r <- rast(tif)
-nlyr(r)
-values(subset(r, 1), na.rm=T)
-
-plet(subset(r, 1))
-terra::time(r)
-terra::plet(rast(r, 1))
-
-mapview(r[1])
-
-```
-
-```         
-Error in open.connection(structure(3L, class = c("curl", "connection"), conn_id = <pointer: 0x18f0>),  : 
-  Timeout was reached: [coastwatch.pfeg.noaa.gov] Resolving timed out after 10004 milliseconds
-Error in FUN(X[[i]], ...) : 
-  Problem fetching dimension time from ERDDAP: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csvp?time
-```

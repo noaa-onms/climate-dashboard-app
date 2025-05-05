@@ -1,0 +1,10 @@
+INFO [2025-05-05 16:26:14] Script starting up...
+INFO [2025-05-05 16:26:14] noaa_smos.yaml -[ extractr.qmd ]-> noaa_sss.html
+ERROR [2025-05-05 16:26:22] Error rendering noaa_smos.yaml -[ extractr.qmd ]-> noaa_sss.html: [38;5;251m[31m✖[38;5;251m Error running quarto cli.[39m
+[1mCaused by error:[22m
+[33m![39m System command 'quarto' failed
+INFO [2025-05-05 16:26:23] noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html
+ERROR [2025-05-05 16:26:29] Error rendering noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html: [38;5;251m[31m✖[38;5;251m Error running quarto cli.[39m
+[1mCaused by error:[22m
+[33m![39m System command 'quarto' failed
+INFO [2025-05-05 16:26:29] Script finished
