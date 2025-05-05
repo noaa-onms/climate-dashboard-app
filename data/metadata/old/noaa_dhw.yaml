@@ -1,0 +1,3 @@
+  datasetName: NOAA_DHW
+  erddapLink: https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html
+  variableName: CRW_SST

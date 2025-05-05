@@ -151,6 +151,7 @@ function(input, output, session) {
     if (length(yrs_then_rng) > 2)
       yrs_then_rng <- range(yrs_then_rng)
 
+    browser()
     r_now  <- get_r(r_var, d_var_r, dates_now)
     r_then <- get_r(r_var, d_var_r, dates_then)
 

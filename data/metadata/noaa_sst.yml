@@ -1,0 +1,3 @@
+data_var: noaa_sst
+erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
+erddap_variable: analysed_sst

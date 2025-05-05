@@ -6,7 +6,10 @@ get_r <- function(r, d, dates){  # dates = dates_then
       date %in% !!dates) |>
     pull(lyr)
 
-  stopifnot(length(lyrs) > 0)
+  if (length(lyrs) == 0){
+    browser()
+    stop("length(lyrs) == 0")
+  }
 
   r |>
     subset(lyrs) |>

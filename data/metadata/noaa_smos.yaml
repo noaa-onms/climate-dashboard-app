@@ -1,3 +1,3 @@
-  datasetName: NOAA_SMOS
-  erddapLink: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
-  variableName: sss
+data_var: noaa_sss
+erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+erddap_variable: sss
