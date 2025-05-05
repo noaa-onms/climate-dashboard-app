@@ -64,7 +64,7 @@ sanctuary_years |>
   slice(1:2) |> 
   pmap(
     \(i, nms, year){   #  nms = "CBNMS"; year = 2011 ; i = 1    # DEBUG
-      message(glue("{sprintf('%03d', i)}: {nms}, {yearasf}"))
+      message(glue("{sprintf('%03d', i)}: {nms}, {year}"))
       
       times_yr <- times[year(times) == year]
       
