@@ -32,7 +32,7 @@ execute:
 # dir_extractr = "/share/github/marinebon/extractr" # dir_extractr = "~/Github/marinebon/extractr"
 # devtools::load_all(dir_extractr)
 # devtools::install_local(dir_extractr, force = T)
-# devtools::install_github("marinebon/extractr")
+# devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
   dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
   terra,
