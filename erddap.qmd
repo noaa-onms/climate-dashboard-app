@@ -184,8 +184,24 @@ res |>
 #| echo: false
 
 # find empty directories ending in _nc and delete them
+d_dirs <- tibble(
+  dir = list.dirs(here("data"), full.names = T, recursive = T)) |> 
+  filter(str_detect(dir, "_nc$")) |> 
+  mutate(
+    n_files = map_int(dir, \(x) {length(list.files(x))}))
 
+# show non-empty directories
+d_dirs |> 
+  filter(n_files > 0) |> 
+  datatable()
 
+# delete empty directories
+d_dirs |> 
+  filter(n_files == 0) |> 
+  pull(dir) |>
+  walk(\(x) {
+    message(glue("Deleting {x}"))
+    unlink(x, recursive = T) })
 ```
 
 
