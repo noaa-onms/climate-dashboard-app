@@ -1,5 +1,7 @@
 ---
 title: "Extractr"
+date: today
+date-format: iso
 format: html
 editor: 
   mode: source
@@ -27,8 +29,9 @@ librarian::shelf(
   dplyr, DT, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,
   marinebon/extractr)
 
-sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) |> 
-  filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
+sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) # |> 
+  # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
+
 # mapView(sanctuaries)
 # sanctuaries |>
 #   st_drop_geometry() |>
@@ -63,7 +66,7 @@ sanctuary_years <- sanctuaries |>
 
 sanctuary_years |> 
   # filter(nms == "GRNMS")
-  slice(97:98) |> # DEBUG
+  # slice(97:98) |> # DEBUG
   pmap(
     \(i, nms, year){   #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
       message(glue("{sprintf('%03d', i)}: {nms}, {year}"))

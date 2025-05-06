@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-05-05">
 
 <title>Extractr</title>
 <style>
@@ -87,6 +88,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-05-05</p>
+    </div>
+  </div>
   
     
   </div>
@@ -107,15 +114,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  dplyr, DT, glue, here, lubridate, mapview, purrr, readr, sf, stringr, terra,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  marinebon<span class="sc">/</span>extractr)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sanctuaries <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"../climate-dashboard/data/sanctuaries.rds"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nms <span class="sc">!=</span> <span class="st">"HIHWNMS"</span>)  <span class="co"># </span><span class="al">TODO</span><span class="co">: sort dateline sanctuary later</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mapView(sanctuaries)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># sanctuaries |&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   st_drop_geometry() |&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   datatable()</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>dir_out <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="fu">glue</span>(<span class="st">"data/{params$data_var}"</span>))</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(dir_out, <span class="at">showWarnings =</span> F, <span class="at">recursive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sanctuaries <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"../climate-dashboard/data/sanctuaries.rds"</span>)) <span class="co"># |&gt; </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(nms != "HIHWNMS")  # </span><span class="al">TODO</span><span class="co">: sort dateline sanctuary later</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># mapView(sanctuaries)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># sanctuaries |&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   st_drop_geometry() |&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   datatable()</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>dir_out <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="fu">glue</span>(<span class="st">"data/{params$data_var}"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(dir_out, <span class="at">showWarnings =</span> F, <span class="at">recursive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(ed <span class="ot">&lt;-</span> <span class="fu">ed_info</span>(params<span class="sc">$</span>erddap_url))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -154,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>sanctuary_years <span class="sc">|&gt;</span> </span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(nms == "GRNMS")</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">97</span><span class="sc">:</span><span class="dv">98</span>) <span class="sc">|&gt;</span> <span class="co"># DEBUG</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># slice(97:98) |&gt; # DEBUG</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmap</span>(</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    \(i, nms, year){   <span class="co">#  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG</span></span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="fu">glue</span>(<span class="st">"{sprintf('%03d', i)}: {nms}, {year}"</span>))</span>
@@ -186,13 +194,589 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>      })</span>
 <span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
+<pre><code>001: CBNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>002: CBNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>003: CBNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>004: CBNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>005: CBNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>006: CBNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>007: CBNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>008: CBNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>009: CBNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>010: CBNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>011: CBNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>012: CBNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>013: CBNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>014: CBNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>015: CBNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>016: CBNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>017: CINMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>018: CINMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>019: CINMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>020: CINMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>021: CINMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>022: CINMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>023: CINMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>024: CINMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>025: CINMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>026: CINMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>027: CINMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>028: CINMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>029: CINMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>030: CINMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>031: CINMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>032: CINMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>033: CPNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>034: CPNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>035: CPNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>036: CPNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>037: CPNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>038: CPNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>039: CPNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>040: CPNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>041: CPNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>042: CPNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>043: CPNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>044: CPNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>045: CPNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>046: CPNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>047: CPNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>048: CPNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>049: FGBNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>050: FGBNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>051: FGBNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>052: FGBNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>053: FGBNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>054: FGBNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>055: FGBNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>056: FGBNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>057: FGBNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>058: FGBNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>059: FGBNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>060: FGBNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>061: FGBNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>062: FGBNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>063: FGBNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>064: FGBNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>065: FKNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>066: FKNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>067: FKNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>068: FKNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>069: FKNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>070: FKNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>071: FKNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>072: FKNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>073: FKNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>074: FKNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>075: FKNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>076: FKNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>077: FKNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>078: FKNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>079: FKNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>080: FKNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>081: GFNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>082: GFNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>083: GFNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>084: GFNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>085: GFNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>086: GFNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>087: GFNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>088: GFNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>089: GFNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>090: GFNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>091: GFNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>092: GFNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>093: GFNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>094: GFNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>095: GFNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>096: GFNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
 <pre><code>097: GRNMS, 2010</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 21:40:00 UTC</code></pre>
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 21:58:12 UTC</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
@@ -221,7 +805,7 @@ TRUE</code></pre>
 <pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 21:40:02 UTC</code></pre>
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 21:58:14 UTC</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
@@ -243,12 +827,2673 @@ TRUE</code></pre>
 <pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
 TRUE</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>099: GRNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 21:58:16 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100: GRNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 21:58:18 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>101: GRNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 21:58:20 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>102: GRNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 21:58:21 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>103: GRNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 21:58:23 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>104: GRNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 21:58:26 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>105: GRNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 21:58:28 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>106: GRNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 21:58:30 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>107: GRNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 21:58:32 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>108: GRNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 21:58:34 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>109: GRNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 21:58:36 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>110: GRNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 21:58:38 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>111: GRNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 21:58:40 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>112: GRNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 21:58:41 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>113: HIHWNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>114: HIHWNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>115: HIHWNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>116: HIHWNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>117: HIHWNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>118: HIHWNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>119: HIHWNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>120: HIHWNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>121: HIHWNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>122: HIHWNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>123: HIHWNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>124: HIHWNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>125: HIHWNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>126: HIHWNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>127: HIHWNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>128: HIHWNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>129: MBNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>130: MBNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>131: MBNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>132: MBNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>133: MBNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>134: MBNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>135: MBNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>136: MBNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>137: MBNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>138: MBNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2019-01-01 12:00:00 to 2019-12-30 12:00:00) are already present in 2019.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>139: MBNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2020-01-01 12:00:00 to 2020-12-29 12:00:00) are already present in 2020.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>140: MBNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2021-01-01 12:00:00 to 2021-12-30 12:00:00) are already present in 2021.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>141: MBNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2022-01-01 12:00:00 to 2022-12-30 12:00:00) are already present in 2022.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>142: MBNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2023-01-01 12:00:00 to 2023-12-30 12:00:00) are already present in 2023.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>143: MBNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2024-01-01 12:00:00 to 2024-12-29 12:00:00) are already present in 2024.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>144: MBNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2025-01-01 12:00:00 to 2025-04-28 12:00:00) are already present in 2025.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>145: MBNMS-david, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2010-06-03 12:00:00 to 2010-12-24 12:00:00) are already present in 2010.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>146: MBNMS-david, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2011-01-13 12:00:00 to 2011-12-30 12:00:00) are already present in 2011.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>147: MBNMS-david, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2012-01-01 12:00:00 to 2012-12-29 12:00:00) are already present in 2012.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>148: MBNMS-david, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2013-01-01 12:00:00 to 2013-12-30 12:00:00) are already present in 2013.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>149: MBNMS-david, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2014-01-01 12:00:00 to 2014-12-30 12:00:00) are already present in 2014.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>150: MBNMS-david, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2015-01-01 12:00:00 to 2015-12-30 12:00:00) are already present in 2015.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>151: MBNMS-david, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2016-01-01 12:00:00 to 2016-12-29 12:00:00) are already present in 2016.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>152: MBNMS-david, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2017-01-01 12:00:00 to 2017-12-30 12:00:00) are already present in 2017.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>153: MBNMS-david, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All times (2018-02-27 12:00:00 to 2018-12-30 12:00:00) are already present in 2018.csv, skipping ERDDAP fetch.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>154: MBNMS-david, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 21:59:34 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>155: MBNMS-david, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 21:59:41 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>156: MBNMS-david, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 21:59:47 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>157: MBNMS-david, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 21:59:55 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>158: MBNMS-david, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:00:02 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>159: MBNMS-david, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:00:10 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>160: MBNMS-david, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 25000 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:00:15 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>161: MBNMS-main, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:00:18 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>162: MBNMS-main, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:00:23 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>163: MBNMS-main, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:00:29 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>164: MBNMS-main, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:00:34 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>165: MBNMS-main, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:00:37 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>166: MBNMS-main, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:00:42 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>167: MBNMS-main, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:00:47 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>168: MBNMS-main, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:00:51 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>169: MBNMS-main, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:00:56 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>170: MBNMS-main, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:01:00 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>171: MBNMS-main, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:01:03 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>172: MBNMS-main, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:01:07 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>173: MBNMS-main, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:01:10 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>174: MBNMS-main, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:01:13 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>175: MBNMS-main, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:01:17 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>176: MBNMS-main, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1111 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:01:19 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>177: MNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:01:22 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>178: MNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:01:24 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>179: MNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:01:28 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>180: MNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:01:30 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>181: MNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:01:33 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>182: MNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:01:35 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>183: MNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:01:37 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>184: MNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:01:39 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>185: MNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:01:42 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>186: MNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:01:48 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>187: MNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:01:50 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>188: MNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:01:52 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>189: MNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:01:56 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>190: MNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:02:01 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>191: MNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:02:04 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>192: MNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 1e+05 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:02:08 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message
+1: 1-pixel width/height files not supported, xdim: 1 ydim: 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in max(rs): no non-missing arguments to max; returning -Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in min(rs): no non-missing arguments to min; returning Inf</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: [rast] cells are not equally spaced; extent is not defined</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value[[3L]](cond): Error: terra::crs(r, proj = T) == wgs84 is not
+TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>193: NMSAS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:02:10 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>194: NMSAS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:02:16 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>195: NMSAS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:02:22 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>196: NMSAS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:02:29 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>197: NMSAS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:02:35 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>198: NMSAS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:03:12 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>199: NMSAS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:03:20 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>200: NMSAS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:03:26 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>201: NMSAS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:04:22 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>202: NMSAS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:04:44 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>203: NMSAS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:04:52 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>204: NMSAS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:05:02 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>205: NMSAS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:05:09 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>206: NMSAS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:05:27 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>207: NMSAS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:05:41 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>208: NMSAS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 347 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:06:07 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>209: OCNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:06:11 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>210: OCNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:06:22 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>211: OCNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:06:30 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>212: OCNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:06:39 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>213: OCNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:06:44 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>214: OCNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:06:48 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>215: OCNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:06:53 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>216: OCNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:06:57 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>217: OCNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:07:01 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>218: OCNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:07:09 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>219: OCNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:07:12 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>220: OCNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:07:16 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>221: OCNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:07:19 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>222: OCNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:07:21 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>223: OCNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:07:24 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>224: OCNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 3333 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:07:26 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>225: SBNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:07:28 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>226: SBNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:07:31 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>227: SBNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:07:32 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>228: SBNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:07:35 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>229: SBNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:07:37 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>230: SBNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:07:39 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>231: SBNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:07:42 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>232: SBNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:07:44 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>233: SBNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:07:46 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>234: SBNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:07:48 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>235: SBNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:07:50 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>236: SBNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:07:52 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>237: SBNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:07:54 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>238: SBNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:07:56 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>239: SBNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:07:58 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>240: SBNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 16666 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:08:00 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>241: TBNMS, 2010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2010-06-03 to 2010-12-24) ~ 22:08:02 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>242: TBNMS, 2011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2011-01-13 to 2011-12-30) ~ 22:08:07 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>243: TBNMS, 2012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2012-01-01 to 2012-12-29) ~ 22:08:14 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>244: TBNMS, 2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2013-01-01 to 2013-12-30) ~ 22:08:16 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>245: TBNMS, 2014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2014-01-01 to 2014-12-30) ~ 22:08:20 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>246: TBNMS, 2015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2015-01-01 to 2015-12-30) ~ 22:08:23 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>247: TBNMS, 2016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2016-01-01 to 2016-12-29) ~ 22:08:27 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>248: TBNMS, 2017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2017-01-01 to 2017-12-30) ~ 22:08:30 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>249: TBNMS, 2018</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2018-02-27 to 2018-12-30) ~ 22:08:33 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>250: TBNMS, 2019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2019-01-01 to 2019-12-30) ~ 22:08:36 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>251: TBNMS, 2020</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2020-01-01 to 2020-12-29) ~ 22:08:39 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>252: TBNMS, 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2021-01-01 to 2021-12-30) ~ 22:08:43 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>253: TBNMS, 2022</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2022-01-01 to 2022-12-30) ~ 22:08:46 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>254: TBNMS, 2023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2023-01-01 to 2023-12-30) ~ 22:08:50 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>255: TBNMS, 2024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2024-01-01 to 2024-12-29) ~ 22:08:53 UTC</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>256: TBNMS, 2025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading 1 requests, up to 2500 time slices each</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fetching request 1 of 1 (2025-01-01 to 2025-04-28) ~ 22:08:56 UTC</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+NULL
 
 [[2]]
-[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"</code></pre>
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+NULL
+
+[[14]]
+NULL
+
+[[15]]
+NULL
+
+[[16]]
+NULL
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+NULL
+
+[[20]]
+NULL
+
+[[21]]
+NULL
+
+[[22]]
+NULL
+
+[[23]]
+NULL
+
+[[24]]
+NULL
+
+[[25]]
+NULL
+
+[[26]]
+NULL
+
+[[27]]
+NULL
+
+[[28]]
+NULL
+
+[[29]]
+NULL
+
+[[30]]
+NULL
+
+[[31]]
+NULL
+
+[[32]]
+NULL
+
+[[33]]
+NULL
+
+[[34]]
+NULL
+
+[[35]]
+NULL
+
+[[36]]
+NULL
+
+[[37]]
+NULL
+
+[[38]]
+NULL
+
+[[39]]
+NULL
+
+[[40]]
+NULL
+
+[[41]]
+NULL
+
+[[42]]
+NULL
+
+[[43]]
+NULL
+
+[[44]]
+NULL
+
+[[45]]
+NULL
+
+[[46]]
+NULL
+
+[[47]]
+NULL
+
+[[48]]
+NULL
+
+[[49]]
+NULL
+
+[[50]]
+NULL
+
+[[51]]
+NULL
+
+[[52]]
+NULL
+
+[[53]]
+NULL
+
+[[54]]
+NULL
+
+[[55]]
+NULL
+
+[[56]]
+NULL
+
+[[57]]
+NULL
+
+[[58]]
+NULL
+
+[[59]]
+NULL
+
+[[60]]
+NULL
+
+[[61]]
+NULL
+
+[[62]]
+NULL
+
+[[63]]
+NULL
+
+[[64]]
+NULL
+
+[[65]]
+NULL
+
+[[66]]
+NULL
+
+[[67]]
+NULL
+
+[[68]]
+NULL
+
+[[69]]
+NULL
+
+[[70]]
+NULL
+
+[[71]]
+NULL
+
+[[72]]
+NULL
+
+[[73]]
+NULL
+
+[[74]]
+NULL
+
+[[75]]
+NULL
+
+[[76]]
+NULL
+
+[[77]]
+NULL
+
+[[78]]
+NULL
+
+[[79]]
+NULL
+
+[[80]]
+NULL
+
+[[81]]
+NULL
+
+[[82]]
+NULL
+
+[[83]]
+NULL
+
+[[84]]
+NULL
+
+[[85]]
+NULL
+
+[[86]]
+NULL
+
+[[87]]
+NULL
+
+[[88]]
+NULL
+
+[[89]]
+NULL
+
+[[90]]
+NULL
+
+[[91]]
+NULL
+
+[[92]]
+NULL
+
+[[93]]
+NULL
+
+[[94]]
+NULL
+
+[[95]]
+NULL
+
+[[96]]
+NULL
+
+[[97]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[98]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[99]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[100]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[101]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[102]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[103]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[104]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[105]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[106]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[107]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[108]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[109]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[110]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[111]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[112]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[113]]
+NULL
+
+[[114]]
+NULL
+
+[[115]]
+NULL
+
+[[116]]
+NULL
+
+[[117]]
+NULL
+
+[[118]]
+NULL
+
+[[119]]
+NULL
+
+[[120]]
+NULL
+
+[[121]]
+NULL
+
+[[122]]
+NULL
+
+[[123]]
+NULL
+
+[[124]]
+NULL
+
+[[125]]
+NULL
+
+[[126]]
+NULL
+
+[[127]]
+NULL
+
+[[128]]
+NULL
+
+[[129]]
+NULL
+
+[[130]]
+NULL
+
+[[131]]
+NULL
+
+[[132]]
+NULL
+
+[[133]]
+NULL
+
+[[134]]
+NULL
+
+[[135]]
+NULL
+
+[[136]]
+NULL
+
+[[137]]
+NULL
+
+[[138]]
+NULL
+
+[[139]]
+NULL
+
+[[140]]
+NULL
+
+[[141]]
+NULL
+
+[[142]]
+NULL
+
+[[143]]
+NULL
+
+[[144]]
+NULL
+
+[[145]]
+NULL
+
+[[146]]
+NULL
+
+[[147]]
+NULL
+
+[[148]]
+NULL
+
+[[149]]
+NULL
+
+[[150]]
+NULL
+
+[[151]]
+NULL
+
+[[152]]
+NULL
+
+[[153]]
+NULL
+
+[[154]]
+[1] 0
+
+[[155]]
+[1] 0
+
+[[156]]
+[1] 0
+
+[[157]]
+[1] 0
+
+[[158]]
+[1] 0
+
+[[159]]
+[1] 0
+
+[[160]]
+[1] 0
+
+[[161]]
+[1] 0
+
+[[162]]
+[1] 0
+
+[[163]]
+[1] 0
+
+[[164]]
+[1] 0
+
+[[165]]
+[1] 0
+
+[[166]]
+[1] 0
+
+[[167]]
+[1] 0
+
+[[168]]
+[1] 0
+
+[[169]]
+[1] 0
+
+[[170]]
+[1] 0
+
+[[171]]
+[1] 0
+
+[[172]]
+[1] 0
+
+[[173]]
+[1] 0
+
+[[174]]
+[1] 0
+
+[[175]]
+[1] 0
+
+[[176]]
+[1] 0
+
+[[177]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[178]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[179]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[180]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[181]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[182]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[183]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[184]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[185]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[186]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[187]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[188]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[189]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[190]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[191]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[192]]
+[1] "Error: terra::crs(r, proj = T) == wgs84 is not TRUE"
+
+[[193]]
+[1] 0
+
+[[194]]
+[1] 0
+
+[[195]]
+[1] 0
+
+[[196]]
+[1] 0
+
+[[197]]
+[1] 0
+
+[[198]]
+[1] 0
+
+[[199]]
+[1] 0
+
+[[200]]
+[1] 0
+
+[[201]]
+[1] 0
+
+[[202]]
+[1] 0
+
+[[203]]
+[1] 0
+
+[[204]]
+[1] 0
+
+[[205]]
+[1] 0
+
+[[206]]
+[1] 0
+
+[[207]]
+[1] 0
+
+[[208]]
+[1] 0
+
+[[209]]
+[1] 0
+
+[[210]]
+[1] 0
+
+[[211]]
+[1] 0
+
+[[212]]
+[1] 0
+
+[[213]]
+[1] 0
+
+[[214]]
+[1] 0
+
+[[215]]
+[1] 0
+
+[[216]]
+[1] 0
+
+[[217]]
+[1] 0
+
+[[218]]
+[1] 0
+
+[[219]]
+[1] 0
+
+[[220]]
+[1] 0
+
+[[221]]
+[1] 0
+
+[[222]]
+[1] 0
+
+[[223]]
+[1] 0
+
+[[224]]
+[1] 0
+
+[[225]]
+[1] 0
+
+[[226]]
+[1] 0
+
+[[227]]
+[1] 0
+
+[[228]]
+[1] 0
+
+[[229]]
+[1] 0
+
+[[230]]
+[1] 0
+
+[[231]]
+[1] 0
+
+[[232]]
+[1] 0
+
+[[233]]
+[1] 0
+
+[[234]]
+[1] 0
+
+[[235]]
+[1] 0
+
+[[236]]
+[1] 0
+
+[[237]]
+[1] 0
+
+[[238]]
+[1] 0
+
+[[239]]
+[1] 0
+
+[[240]]
+[1] 0
+
+[[241]]
+[1] 0
+
+[[242]]
+[1] 0
+
+[[243]]
+[1] 0
+
+[[244]]
+[1] 0
+
+[[245]]
+[1] 0
+
+[[246]]
+[1] 0
+
+[[247]]
+[1] 0
+
+[[248]]
+[1] 0
+
+[[249]]
+[1] 0
+
+[[250]]
+[1] 0
+
+[[251]]
+[1] 0
+
+[[252]]
+[1] 0
+
+[[253]]
+[1] 0
+
+[[254]]
+[1] 0
+
+[[255]]
+[1] 0
+
+[[256]]
+[1] 0</code></pre>
 </div>
 </div>
 </section>
@@ -262,7 +3507,7 @@ TRUE</code></pre>
 <li><label><input type="checkbox">wrap retry with <code>ed_dim()</code> too</label></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb832"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb832-1"><a href="#cb832-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value

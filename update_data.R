@@ -30,7 +30,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
     log_error("Error reading {basename(yaml)}: {conditionMessage(e)}")
   })
 
-  log_info("{basename(yaml)} -[ {basename(in_qmd)} ]-> {basename(out_html)}")
+  log_info("meta/{basename(yaml)} -[ {basename(in_qmd)} ]-> data/{y$data_var}/*, log/{basename(out_html)}")
 
   tryCatch({
 
