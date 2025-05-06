@@ -8,7 +8,7 @@ librarian::shelf(
 # crontab -e
 # minute hour day_of_month month day_of_week command_to_run
 # 0 0 * * * Rscript "/share/github/noaa-onms/climate-dashboard-app/update_data.R"
-# 38 11 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript update_data.R
+# 38 11 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript update_data.R > update_data_cron.txt 2>&1
 
 dir_meta   <- here("meta")
 dir_log    <- here("log")
