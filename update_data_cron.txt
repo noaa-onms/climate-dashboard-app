@@ -1,74 +1,0 @@
-INFO [2025-05-06 11:43:25] Script starting up...
-INFO [2025-05-06 11:43:25] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
-[31m
-
-processing file: erddap.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |...                                              |   6%                       |                                                         |......                                           |  12% [setup]               |                                                         |.........                                        |  18%                       |                                                         |............                                     |  24% [ed_info]             |                                                         |..............                                   |  29%                       |                                                         |.................                                |  35% [d_nms_yr]            |                                                         |....................                             |  41%                       |                                                         |.......................                          |  47% [iterate_ed_extract][31mINFO [2025-05-06 11:43:31] 001: CBNMS, 2010
-[39m[31mINFO [2025-05-06 11:43:32] 002: CBNMS, 2011
-[39m[31mINFO [2025-05-06 11:43:33] 003: CBNMS, 2012
-[39m  |                                                         |..........................                       |  53%                       |                                                         |.............................                    |  59% [success_summary]     |                                                         |................................                 |  65%                       |                                                         |...................................              |  71% [error_summary]       |                                                         |.....................................            |  76%                       |                                                         |........................................         |  82% [rm_empty_nc_dirs]    |                                                         |...........................................      |  88%                       |                                                         |..............................................   |  94% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
-[31moutput file: erddap.knit.md
-
-[39m[1mpandoc --output noaa_sss.html --embed-resources[22m
-  to: html
-  standalone: true
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  toc: true
-  toc-depth: 3
-  number-sections: true
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  lang: en
-  title: ERDDAP Data Extraction
-  date: today
-  date-format: iso
-  editor:
-    mode: source
-  editor_options:
-    chunk_output_type: console
-  toc-expand: 2
-  
-Output created: noaa_sss.html
-
-INFO [2025-05-06 11:43:36] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
-[31m
-
-processing file: erddap.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |...                                              |   6%                       |                                                         |......                                           |  12% [setup]               |                                                         |.........                                        |  18%                       |                                                         |............                                     |  24% [ed_info]             |                                                         |..............                                   |  29%                       |                                                         |.................                                |  35% [d_nms_yr]            |                                                         |....................                             |  41%                       |                                                         |.......................                          |  47% [iterate_ed_extract][31mINFO [2025-05-06 11:43:42] 001: CBNMS, 1985
-[39m[31mINFO [2025-05-06 11:43:43] 002: CBNMS, 1986
-[39m[31mINFO [2025-05-06 11:43:44] 003: CBNMS, 1987
-[39m  |                                                         |..........................                       |  53%                       |                                                         |.............................                    |  59% [success_summary]     |                                                         |................................                 |  65%                       |                                                         |...................................              |  71% [error_summary]       |                                                         |.....................................            |  76%                       |                                                         |........................................         |  82% [rm_empty_nc_dirs]    |                                                         |...........................................      |  88%                       |                                                         |..............................................   |  94% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
-[31moutput file: erddap.knit.md
-
-[39m[1mpandoc --output noaa_sst.html --embed-resources[22m
-  to: html
-  standalone: true
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  toc: true
-  toc-depth: 3
-  number-sections: true
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  lang: en
-  title: ERDDAP Data Extraction
-  date: today
-  date-format: iso
-  editor:
-    mode: source
-  editor_options:
-    chunk_output_type: console
-  toc-expand: 2
-  
-Output created: noaa_sst.html
-
-INFO [2025-05-06 11:43:46] Script done rendering, next git commit & push

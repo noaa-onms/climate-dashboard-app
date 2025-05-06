@@ -1,0 +1,106 @@
+INFO [2025-05-06 11:54:02] Script starting up...
+INFO [2025-05-06 11:54:02] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
+[31m
+
+processing file: erddap.qmd
+[39m1/17                     
+2/17 [setup]             
+3/17                     
+4/17 [ed_info]           
+5/17                     
+6/17 [d_nms_yr]          
+7/17                     
+8/17 [iterate_ed_extract]
+[31mINFO [2025-05-06 11:54:08] 001: CBNMS, 2010
+[39m[31mINFO [2025-05-06 11:54:09] 002: CBNMS, 2011
+[39m[31mINFO [2025-05-06 11:54:11] 003: CBNMS, 2012
+[39m9/17                     
+10/17 [success_summary]   
+11/17                     
+12/17 [error_summary]     
+13/17                     
+14/17 [rm_empty_nc_dirs]  
+15/17                     
+16/17 [unnamed-chunk-1]   
+17/17                     
+[31moutput file: erddap.knit.md
+
+[39m[1mpandoc --output noaa_sss.html --embed-resources[22m
+  to: html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  title: ERDDAP Data Extraction
+  date: today
+  date-format: iso
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  
+Output created: noaa_sss.html
+
+INFO [2025-05-06 11:54:14] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+[31m
+
+processing file: erddap.qmd
+[39m1/17                     
+2/17 [setup]             
+3/17                     
+4/17 [ed_info]           
+5/17                     
+6/17 [d_nms_yr]          
+7/17                     
+8/17 [iterate_ed_extract]
+[31mINFO [2025-05-06 11:54:20] 001: CBNMS, 1985
+[39m[31mINFO [2025-05-06 11:54:21] 002: CBNMS, 1986
+[39m[31mINFO [2025-05-06 11:54:22] 003: CBNMS, 1987
+[39m9/17                     
+10/17 [success_summary]   
+11/17                     
+12/17 [error_summary]     
+13/17                     
+14/17 [rm_empty_nc_dirs]  
+15/17                     
+16/17 [unnamed-chunk-1]   
+17/17                     
+[31moutput file: erddap.knit.md
+
+[39m[1mpandoc --output noaa_sst.html --embed-resources[22m
+  to: html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  title: ERDDAP Data Extraction
+  date: today
+  date-format: iso
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  
+Output created: noaa_sst.html
+
+INFO [2025-05-06 11:54:24] Script done rendering, next git commit & push
