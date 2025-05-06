@@ -2,6 +2,36 @@
 
 Shiny app for climate dashboard:
 
+
+- [Include diagrams in your Markdown files with Mermaid. https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/](https://gist.github.com/toshimaru/1c85d6a7dc002663e27d39af220b3225)
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }
+```
+
+
 ## data processing
 
 Metadata for datasets (`/meta/*.yaml`) are used by the update script 
