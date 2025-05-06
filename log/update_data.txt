@@ -1,4 +1,0 @@
-INFO [2025-05-06 11:43:25] Script starting up...
-INFO [2025-05-06 11:43:25] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
-INFO [2025-05-06 11:43:36] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
-INFO [2025-05-06 11:43:46] Script done rendering, next git commit & push

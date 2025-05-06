@@ -130,8 +130,7 @@ fxn <- function(i, nms, year, ...){
 } 
 
 res <- d_nms_yr |> 
-  # filter(nms == "GRNMS")
-  slice(1:3) |>  # DEBUG
+  # slice(1:3) |>  # DEBUG
   mutate(
     error = pmap_chr(list(i, nms, year), fxn))
 ```
