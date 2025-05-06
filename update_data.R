@@ -4,6 +4,7 @@ librarian::shelf(
 dir_meta   <- here("meta")
 dir_log    <- here("log")
 log_txt    <- glue("{dir_log}/update_data.txt")
+do_git     <- FALSE
 
 github_pat <- gitcreds_get(use_cache = FALSE)$password
 stopifnot(str_sub(github_pat, 1, 3) == "ghp")
@@ -22,7 +23,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
     y$data_var <- path_ext_remove(basename(yaml))
 
     # paths
-    in_qmd   <- here("extractr.qmd")
+    in_qmd   <- here("erddap.qmd")
     tmp_html <- glue("{y$data_var}.html")
     out_html <- here(glue("{dir_log}/{y$data_var}.html"))
 
@@ -36,9 +37,13 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
 
     quarto_render(
       input          = in_qmd,
-      execute_params = y)
+      output_format  = "html",
+      output_file    = tmp_html,
+      execute_params = y,
+      execute_dir    = dirname(in_qmd),
+      pandoc_args    = "--embed-resources")
 
-    file_move(tmp_html, out_html)
+    file_move(glue("{dirname(in_qmd)}/{tmp_html}"), out_html)
 
   }, error = function(e) {
     log_error("Error rendering {basename(yaml)} -[ {basename(in_qmd)} ]-> {basename(out_html)}: {conditionMessage(e)}")
@@ -54,6 +59,8 @@ log_info("Script done rendering, next git commit & push")
 # # enter GITHUB_PAT on password prompt
 # git config --global credential.helper store
 
-system("git add --all")
-system("git commit -m 'ran update_data.R'")
-system("git push")
+if (do_git){
+  system("git add --all")
+  system("git commit -m 'ran update_data.R'")
+  system("git push")
+}
