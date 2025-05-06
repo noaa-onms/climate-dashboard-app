@@ -1,10 +1,19 @@
 librarian::shelf(
   dplyr, fs, gitcreds, glue, here, logger, quarto, stringr, yaml)
 
+# setup as CRON
+# sudo apt update
+# sudo apt install cron
+# sudo systemctl enable cron
+# crontab -e
+# minute hour day_of_month month day_of_week command_to_run
+# 0 0 * * * Rscript "/share/github/noaa-onms/climate-dashboard-app/update_data.R"
+# 38 11 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript update_data.R
+
 dir_meta   <- here("meta")
 dir_log    <- here("log")
 log_txt    <- glue("{dir_log}/update_data.txt")
-do_git     <- FALSE
+do_git     <- TRUE
 
 github_pat <- gitcreds_get(use_cache = FALSE)$password
 stopifnot(str_sub(github_pat, 1, 3) == "ghp")
