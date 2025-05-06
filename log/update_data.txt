@@ -1,4 +1,6 @@
-INFO [2025-05-05 21:56:02] Script starting up...
-INFO [2025-05-05 21:56:02] meta/noaa_sss.yaml -[ extractr.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
-INFO [2025-05-05 22:08:59] meta/noaa_sst.yaml -[ extractr.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
-INFO [2025-05-06 03:48:13] Script done rendering, next git commit & push
+INFO [2025-05-06 05:35:55] Script starting up...
+INFO [2025-05-06 05:35:55] meta/noaa_sss.yaml -[ extractr.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
+ERROR [2025-05-06 05:41:39] Error rendering noaa_sss.yaml -[ extractr.qmd ]-> noaa_sss.html: [ENOENT] Failed to move 'noaa_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sss.html': no such file or directory
+INFO [2025-05-06 05:41:39] meta/noaa_sst.yaml -[ extractr.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+ERROR [2025-05-06 05:59:44] Error rendering noaa_sst.yaml -[ extractr.qmd ]-> noaa_sst.html: [ENOENT] Failed to move 'noaa_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sst.html': no such file or directory
+INFO [2025-05-06 05:59:44] Script done rendering, next git commit & push

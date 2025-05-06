@@ -23,7 +23,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
 
     # paths
     in_qmd   <- here("extractr.qmd")
-    tmp_html <- path_ext_set(in_qmd, ".html")
+    tmp_html <- glue("{y$data_var}.html")
     out_html <- here(glue("{dir_log}/{y$data_var}.html"))
 
   }, error = function(e) {
