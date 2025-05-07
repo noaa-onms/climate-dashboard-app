@@ -1,4 +1,4 @@
-# Logs for climate-dashboard-app
+## logs
 
 Here are the latest output log files:
 
