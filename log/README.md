@@ -9,4 +9,6 @@ Here are the latest output log files:
   {% endif %}
 {% endfor %}
 
-For more, see {{ site.github.repository_url }}.
+<!-- [Using site.github](https://jekyll.github.io/github-metadata/site.github/) -->
+For more, including app and data processing, see the Github repository 
+<a href = "{{ site.github.repository_url }}">{{ site.github.owner_name }}/{{ site.github.repository_name }}</a>.
