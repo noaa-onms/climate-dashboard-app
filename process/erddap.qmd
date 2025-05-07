@@ -14,10 +14,10 @@ editor:
 editor_options: 
   chunk_output_type: console
 params:
-  data_var: noaa_sss
+  data_var: erddap_sss
   erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
   erddap_variable: sss
-  # data_var: noaa_sst
+  # data_var: erddap_sst
   # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
   # erddap_variable: analysed_sst
 execute: 
