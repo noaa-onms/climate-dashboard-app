@@ -27,7 +27,7 @@ function(input, output, session) {
     var  <- rx$var
     nms  <- rx$nms
 
-    dir_var_nms <- glue("data/{var}/{nms}")
+    dir_var_nms <- glue(here("data/{var}/{nms}"))
     list.files(dir_var_nms, ".tif$", full.names = T) |>
       map(rast) |>
       rast() |>

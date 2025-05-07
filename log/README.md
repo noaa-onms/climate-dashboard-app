@@ -1,0 +1,12 @@
+## logs
+
+Here are the latest output log files:
+
+<!-- Jekyll render any text (*.txt) web (*.html) files -->
+{% for file in site.static_files %}
+  {% if file.extname == '.html' or file.extname == '.txt' %}
+* [{{ file.basename }}]({{ site.baseurl }}{{ file.path }}) ({{ file.modified_time | date: "%Y-%m-%d %H:%M:%S" }}) 
+  {% endif %}
+{% endfor %}
+
+For more, see {{ site.github.repository_url }}.
