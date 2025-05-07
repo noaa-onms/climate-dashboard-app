@@ -1,14 +1,14 @@
-INFO [2025-05-07 10:14:15] Script starting up...
-INFO [2025-05-07 10:14:15] meta/noaa_productivity.yaml -[ erddap.qmd ]-> data/noaa_productivity/*, log/noaa_productivity.html
-ERROR [2025-05-07 10:14:15] Error rendering noaa_productivity.yaml -[ erddap.qmd ]-> noaa_productivity.html: ✖ Error running quarto cli.
+INFO [2025-05-07 10:16:06] Script starting up...
+INFO [2025-05-07 10:16:06] meta/noaa_productivity.yaml -[ erddap.qmd ]-> data/noaa_productivity/*, log/noaa_productivity.html
+ERROR [2025-05-07 10:16:06] Error rendering noaa_productivity.yaml -[ erddap.qmd ]-> noaa_productivity.html: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-05-07 10:14:15] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
-ERROR [2025-05-07 10:14:15] Error rendering noaa_sss.yaml -[ erddap.qmd ]-> noaa_sss.html: ✖ Error running quarto cli.
+INFO [2025-05-07 10:16:06] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
+ERROR [2025-05-07 10:16:06] Error rendering noaa_sss.yaml -[ erddap.qmd ]-> noaa_sss.html: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-05-07 10:14:15] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
-ERROR [2025-05-07 10:14:16] Error rendering noaa_sst.yaml -[ erddap.qmd ]-> noaa_sst.html: ✖ Error running quarto cli.
+INFO [2025-05-07 10:16:06] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+ERROR [2025-05-07 10:16:07] Error rendering noaa_sst.yaml -[ erddap.qmd ]-> noaa_sst.html: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-05-07 10:14:16] Script done rendering, next git commit & push
+INFO [2025-05-07 10:16:07] Script done rendering, next git commit & push

@@ -7,11 +7,8 @@ librarian::shelf(
 # sudo systemctl enable cron
 # crontab -e
 # minute hour day_of_month month day_of_week command_to_run
-# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app/process; Rscript update_data.R > ../log/update_data_cron.txt 2>&1
+# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron.txt 2>&1
 # sudo service cron restart
-
-# run in background ----
-# cd /share/github/noaa-onms/climate-dashboard-app; Rscript update_data.R > log/update_data_cron.txt 2>&1 &
 
 dir_meta   <- here("meta")
 dir_log    <- here("log")
