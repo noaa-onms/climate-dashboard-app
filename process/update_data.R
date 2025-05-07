@@ -28,19 +28,19 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
   tryCatch({
 
     # parameters
-    y          <- read_yaml(yaml)
-    y$data_var <- path_ext_remove(basename(yaml))
+    params          <- read_yaml(yaml)
+    params$data_var <- path_ext_remove(basename(yaml))
 
     # paths
-    in_qmd   <- here("erddap.qmd")
-    tmp_html <- glue("{y$data_var}.html")
-    out_html <- here(glue("{dir_log}/{y$data_var}.html"))
+    in_qmd   <- here("process/erddap.qmd")  # TODO: switch to copernicus based on params
+    tmp_html <- glue("{params$data_var}.html")
+    out_html <- here(glue("{dir_log}/{params$data_var}.html"))
 
   }, error = function(e) {
     log_error("Error reading {basename(yaml)}: {conditionMessage(e)}")
   })
 
-  log_info("meta/{basename(yaml)} -[ {basename(in_qmd)} ]-> data/{y$data_var}/*, log/{basename(out_html)}")
+  log_info("meta/{basename(yaml)} -[ {basename(in_qmd)} ]-> data/{params$data_var}/*, log/{basename(out_html)}")
 
   tryCatch({
 
@@ -48,7 +48,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
       input          = in_qmd,
       output_format  = "html",
       output_file    = tmp_html,
-      execute_params = y,
+      execute_params = params,
       execute_dir    = dirname(in_qmd),
       pandoc_args    = "--embed-resources")
 

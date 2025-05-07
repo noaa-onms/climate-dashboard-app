@@ -186,8 +186,9 @@ res |>
 
 `ed_extract()`:
 
-- [ ] delete *_nc dir
-- [ ] differentiate existing done vs todo for given year
+- [x] delete *_nc dir
+- [x] differentiate existing done vs todo for given year
+- [ ] allow irregular datasets, like `meta/irregular/*.yaml`: `ERROR: x cell sizes are not regular`
 - [ ] break up into functions, not exported
 
 `erddap.qmd`:
@@ -221,7 +222,6 @@ d_dirs |>
     message(glue("Deleting {x}"))
     unlink(x, recursive = T) })
 ```
-
 
 ## R package versions
 
