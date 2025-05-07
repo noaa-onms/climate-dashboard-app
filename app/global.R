@@ -6,7 +6,7 @@ librarian::shelf(
   lubridate, markdown, plotly, purrr,
   readr, scales, sf, shiny, slider,
   terra, thematic, tibble, tidyr)
-source(here("functions.R"))
+source(here("app/functions.R"))
 options(readr.show_col_types = F)
 
 # themes ----
@@ -46,8 +46,14 @@ var_label   <- select(d_vars, var, label) |> deframe()
 var_lbl     <- select(d_vars, var, lbl)   |> deframe()
 choices_var <- select(d_vars, label, var) |> deframe()
 
-# selected_nms = "FKNMS"
-# selected_var = "NOAA_DHW"
-# DEBUG
-selected_nms = "CBNMS"
+selected_nms = "FKNMS"
 selected_var = "noaa_sst"
+# DEBUG
+# selected_nms = "CBNMS"
+# selected_var = "noaa_sst"
+
+# read_csv("data/noaa_sst/FKNMS/2025.csv") |>
+#   arrange(time) |>
+#   tail(1)
+# 2025-04-28 12:00:00
+

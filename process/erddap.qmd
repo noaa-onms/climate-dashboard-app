@@ -73,15 +73,34 @@ d_nms_yr <- ply_sanctuaries |>
     tibble(
       year = year(min(times)):year(max(times)))) |> 
   mutate(
+    all_in_csv = map2_chr(nms, year, \(nms, year) { # nms = "GRNMS"; year = 2010
+      times_yr <- times[year(times) == year]
+      csv <- glue("{dir_out}/{nms}/{year}.csv")
+      if (!file.exists(csv))
+        return(F)
+      times_csv <- read_csv(csv) |> 
+        pull(time)
+      all(times_yr %in% times_csv) }) )
+
+d_nms_yr_todo <- d_nms_yr |>
+  filter(all_in_csv == F) |> 
+  mutate(
     i = 1:n()) |> 
   relocate(i)
 
 d_nms_yr |> 
+  group_by(nms) |>
+  filter(all_in_csv == F) |> 
+  summarize(
+    n_years   = n(),
+    year_min  = min(year),
+    year_max = max(year)) |>
   datatable(
+    caption  = "Sanctuaries with existing CSVs missing available ERDDAP times.",
     rownames = F,
-    options = list(
-    pageLength = 5,
-    lengthMenu = c(5, 50, nrow(d_nms_yr))))
+    options  = list(
+      pageLength = 5,
+      lengthMenu = c(5, 50, nrow(d_nms_yr))))
 ```
 
 ## Iterate over sanctuary years
@@ -129,7 +148,7 @@ fxn <- function(i, nms, year, ...){
  err
 } 
 
-res <- d_nms_yr |> 
+res <- d_nms_yr_todo |> 
   # slice(1:3) |>  # DEBUG
   mutate(
     error = pmap_chr(list(i, nms, year), fxn))
