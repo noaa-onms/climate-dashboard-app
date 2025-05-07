@@ -103,7 +103,7 @@ map_then_now <- function(
     addLegend(
       pal    = pal,
       values = vals,
-      title  = var_lbl)
+      title  = as.character(var_lbl))
 
   if (lyrs_ctrl)
     m <- m |> addLayersControl(overlayGroups = c("r_then", "r_now"))
