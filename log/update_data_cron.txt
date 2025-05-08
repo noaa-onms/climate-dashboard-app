@@ -1,47 +1,297 @@
-INFO [2025-05-07 10:16:06] Script starting up...
-INFO [2025-05-07 10:16:06] meta/noaa_productivity.yaml -[ erddap.qmd ]-> data/noaa_productivity/*, log/noaa_productivity.html
-[91mERROR: No valid input files passed to render
+INFO [2025-05-08 00:00:01] Script starting up...
+INFO [2025-05-08 00:00:01] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
+[31m
 
-Stack trace:
-    at Command.actionHandler (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:83100:15)
-    at eventLoopTick (ext:core/01_core.js:153:7)
-    at async Command.execute (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:8017:13)
-    at async Command.parseCommand (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:7907:20)
-    at async quarto (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118224:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118244:9
-    at async mainRunner (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118128:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118235:5[39m
-ERROR [2025-05-07 10:16:06] Error rendering noaa_productivity.yaml -[ erddap.qmd ]-> noaa_productivity.html: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-07 10:16:06] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
-[91mERROR: No valid input files passed to render
+processing file: erddap.qmd
+[39m1/17                     
+2/17 [setup]             
+3/17                     
+4/17 [ed_info]           
+5/17                     
+6/17 [d_nms_yr]          
+7/17                     
+8/17 [iterate_ed_extract]
+[31mINFO [2025-05-08 00:00:12] 001: GRNMS, 2010
+[39m[31mERROR [2025-05-08 00:00:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:15] 002: GRNMS, 2011
+[39m[31mERROR [2025-05-08 00:00:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:17] 003: GRNMS, 2012
+[39m[31mERROR [2025-05-08 00:00:19] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:19] 004: GRNMS, 2013
+[39m[31mERROR [2025-05-08 00:00:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:20] 005: GRNMS, 2014
+[39m[31mERROR [2025-05-08 00:00:22] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:22] 006: GRNMS, 2015
+[39m[31mERROR [2025-05-08 00:00:24] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:24] 007: GRNMS, 2016
+[39m[31mERROR [2025-05-08 00:00:26] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:26] 008: GRNMS, 2017
+[39m[31mERROR [2025-05-08 00:00:27] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:27] 009: GRNMS, 2018
+[39m[31mERROR [2025-05-08 00:00:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:29] 010: GRNMS, 2019
+[39m[31mERROR [2025-05-08 00:00:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:31] 011: GRNMS, 2020
+[39m[31mERROR [2025-05-08 00:00:33] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:33] 012: GRNMS, 2021
+[39m[31mERROR [2025-05-08 00:00:36] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:36] 013: GRNMS, 2022
+[39m[31mERROR [2025-05-08 00:00:38] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:38] 014: GRNMS, 2023
+[39m[31mERROR [2025-05-08 00:00:40] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:40] 015: GRNMS, 2024
+[39m[31mERROR [2025-05-08 00:00:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:42] 016: GRNMS, 2025
+[39m[31mERROR [2025-05-08 00:00:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:44] 017: MNMS, 2010
+[39m[31mERROR [2025-05-08 00:00:45] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:45] 018: MNMS, 2011
+[39m[31mERROR [2025-05-08 00:00:47] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:47] 019: MNMS, 2012
+[39m[31mERROR [2025-05-08 00:00:49] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:49] 020: MNMS, 2013
+[39m[31mERROR [2025-05-08 00:00:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:50] 021: MNMS, 2014
+[39m[31mERROR [2025-05-08 00:00:52] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:52] 022: MNMS, 2015
+[39m[31mERROR [2025-05-08 00:00:54] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:54] 023: MNMS, 2016
+[39m[31mERROR [2025-05-08 00:00:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:56] 024: MNMS, 2017
+[39m[31mERROR [2025-05-08 00:00:57] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:57] 025: MNMS, 2018
+[39m[31mERROR [2025-05-08 00:00:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:00:59] 026: MNMS, 2019
+[39m[31mERROR [2025-05-08 00:01:01] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:01] 027: MNMS, 2020
+[39m[31mERROR [2025-05-08 00:01:03] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:03] 028: MNMS, 2021
+[39m[31mERROR [2025-05-08 00:01:04] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:04] 029: MNMS, 2022
+[39m[31mERROR [2025-05-08 00:01:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:06] 030: MNMS, 2023
+[39m[31mERROR [2025-05-08 00:01:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:07] 031: MNMS, 2024
+[39m[31mERROR [2025-05-08 00:01:09] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:01:09] 032: MNMS, 2025
+[39m[31mERROR [2025-05-08 00:01:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m9/17                     
+10/17 [success_summary]   
+11/17                     
+12/17 [error_summary]     
+13/17                     
+14/17 [rm_empty_nc_dirs]  
+15/17                     
+16/17 [unnamed-chunk-1]   
+17/17                     
+[31moutput file: erddap.knit.md
 
-Stack trace:
-    at Command.actionHandler (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:83100:15)
-    at eventLoopTick (ext:core/01_core.js:153:7)
-    at async Command.execute (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:8017:13)
-    at async Command.parseCommand (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:7907:20)
-    at async quarto (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118224:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118244:9
-    at async mainRunner (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118128:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118235:5[39m
-ERROR [2025-05-07 10:16:06] Error rendering noaa_sss.yaml -[ erddap.qmd ]-> noaa_sss.html: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-07 10:16:06] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
-[91mERROR: No valid input files passed to render
+[39m[1mpandoc --output ../noaa_sss.html --embed-resources[22m
+  to: html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  title: ERDDAP Data Extraction
+  date: today
+  date-format: iso
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  
+[WARNING] Could not fetch resource erddap_files/libs/clipboard/clipboard.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/quarto.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/popper.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/tippy.umd.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/anchor.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/tippy.css
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/quarto-syntax-highlighting.css
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap.min.js
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap-icons.css
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap.min.css
+[WARNING] Could not fetch resource erddap_files/libs/htmltools-fill-0.5.8.1/fill.css
+[WARNING] Could not fetch resource erddap_files/libs/htmlwidgets-1.6.4/htmlwidgets.js
+[WARNING] Could not fetch resource erddap_files/libs/datatables-css-0.0.0/datatables-crosstalk.css
+[WARNING] Could not fetch resource erddap_files/libs/datatables-binding-0.33/datatables.js
+[WARNING] Could not fetch resource erddap_files/libs/jquery-3.6.0/jquery-3.6.0.min.js
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js
+[WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/css/crosstalk.min.css
+[WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/js/crosstalk.min.js
+Output created: ../noaa_sss.html
 
-Stack trace:
-    at Command.actionHandler (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:83100:15)
-    at eventLoopTick (ext:core/01_core.js:153:7)
-    at async Command.execute (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:8017:13)
-    at async Command.parseCommand (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:7907:20)
-    at async quarto (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118224:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118244:9
-    at async mainRunner (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118128:9)
-    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118235:5[39m
-ERROR [2025-05-07 10:16:07] Error rendering noaa_sst.yaml -[ erddap.qmd ]-> noaa_sst.html: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-07 10:16:07] Script done rendering, next git commit & push
+ERROR [2025-05-08 00:01:13] Error rendering noaa_sss.yaml -[ erddap.qmd ]-> noaa_sss.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/noaa_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sss.html': no such file or directory
+INFO [2025-05-08 00:01:13] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+[31m
+
+processing file: erddap.qmd
+[39m1/17                     
+2/17 [setup]             
+3/17                     
+4/17 [ed_info]           
+5/17                     
+6/17 [d_nms_yr]          
+7/17                     
+8/17 [iterate_ed_extract]
+[31mINFO [2025-05-08 00:01:32] 001: CPNMS, 2025
+[39m[31mINFO [2025-05-08 00:01:58] 002: FKNMS, 2025
+[39m[31mINFO [2025-05-08 00:02:13] 003: GFNMS, 2025
+[39m[31mINFO [2025-05-08 00:02:23] 004: HIHWNMS, 2025
+[39m[31mINFO [2025-05-08 00:02:33] 005: MBNMS, 2025
+[39m[31mINFO [2025-05-08 00:02:42] 006: MBNMS-main, 2025
+[39m[31mINFO [2025-05-08 00:02:51] 007: MNMS, 1985
+[39m[31mERROR [2025-05-08 00:02:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:02:56] 008: MNMS, 1986
+[39m[31mERROR [2025-05-08 00:03:01] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:01] 009: MNMS, 1987
+[39m[31mERROR [2025-05-08 00:03:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:06] 010: MNMS, 1988
+[39m[31mERROR [2025-05-08 00:03:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:11] 011: MNMS, 1989
+[39m[31mERROR [2025-05-08 00:03:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:17] 012: MNMS, 1990
+[39m[31mERROR [2025-05-08 00:03:23] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:23] 013: MNMS, 1991
+[39m[31mERROR [2025-05-08 00:03:28] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:28] 014: MNMS, 1992
+[39m[31mERROR [2025-05-08 00:03:34] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:34] 015: MNMS, 1993
+[39m[31mERROR [2025-05-08 00:03:39] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:39] 016: MNMS, 1994
+[39m[31mERROR [2025-05-08 00:03:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:44] 017: MNMS, 1995
+[39m[31mERROR [2025-05-08 00:03:49] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:49] 018: MNMS, 1996
+[39m[31mERROR [2025-05-08 00:03:54] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:54] 019: MNMS, 1997
+[39m[31mERROR [2025-05-08 00:03:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:03:59] 020: MNMS, 1998
+[39m[31mERROR [2025-05-08 00:04:04] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:04] 021: MNMS, 1999
+[39m[31mERROR [2025-05-08 00:04:10] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:10] 022: MNMS, 2000
+[39m[31mERROR [2025-05-08 00:04:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:15] 023: MNMS, 2001
+[39m[31mERROR [2025-05-08 00:04:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:20] 024: MNMS, 2002
+[39m[31mERROR [2025-05-08 00:04:25] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:25] 025: MNMS, 2003
+[39m[31mERROR [2025-05-08 00:04:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:31] 026: MNMS, 2004
+[39m[31mERROR [2025-05-08 00:04:35] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:35] 027: MNMS, 2005
+[39m[31mERROR [2025-05-08 00:04:41] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:41] 028: MNMS, 2006
+[39m[31mERROR [2025-05-08 00:04:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:46] 029: MNMS, 2007
+[39m[31mERROR [2025-05-08 00:04:51] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:51] 030: MNMS, 2008
+[39m[31mERROR [2025-05-08 00:04:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:04:56] 031: MNMS, 2009
+[39m[31mERROR [2025-05-08 00:05:01] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:01] 032: MNMS, 2010
+[39m[31mERROR [2025-05-08 00:05:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:07] 033: MNMS, 2011
+[39m[31mERROR [2025-05-08 00:05:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:11] 034: MNMS, 2012
+[39m[31mERROR [2025-05-08 00:05:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:17] 035: MNMS, 2013
+[39m[31mERROR [2025-05-08 00:05:25] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:25] 036: MNMS, 2014
+[39m[31mERROR [2025-05-08 00:05:33] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:33] 037: MNMS, 2015
+[39m[31mERROR [2025-05-08 00:05:39] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:39] 038: MNMS, 2016
+[39m[31mERROR [2025-05-08 00:05:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:50] 039: MNMS, 2017
+[39m[31mERROR [2025-05-08 00:05:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:05:56] 040: MNMS, 2018
+[39m[31mERROR [2025-05-08 00:06:00] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:00] 041: MNMS, 2019
+[39m[31mERROR [2025-05-08 00:06:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:06] 042: MNMS, 2020
+[39m[31mERROR [2025-05-08 00:06:14] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:14] 043: MNMS, 2021
+[39m[31mERROR [2025-05-08 00:06:22] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:22] 044: MNMS, 2022
+[39m[31mERROR [2025-05-08 00:06:28] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:28] 045: MNMS, 2023
+[39m[31mERROR [2025-05-08 00:06:32] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:32] 046: MNMS, 2024
+[39m[31mERROR [2025-05-08 00:06:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:44] 047: MNMS, 2025
+[39m[31mERROR [2025-05-08 00:06:48] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-08 00:06:48] 048: NMSAS, 2025
+[39m[31mINFO [2025-05-08 00:07:21] 049: OCNMS, 2025
+[39m[31mINFO [2025-05-08 00:07:46] 050: TBNMS, 2025
+[39m9/17                     
+10/17 [success_summary]   
+11/17                     
+12/17 [error_summary]     
+13/17                     
+14/17 [rm_empty_nc_dirs]  
+15/17                     
+16/17 [unnamed-chunk-1]   
+17/17                     
+[31moutput file: erddap.knit.md
+
+[39m[1mpandoc --output ../noaa_sst.html --embed-resources[22m
+  to: html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  title: ERDDAP Data Extraction
+  date: today
+  date-format: iso
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  
+[WARNING] Could not fetch resource erddap_files/libs/clipboard/clipboard.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/quarto.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/popper.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/tippy.umd.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/anchor.min.js
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/tippy.css
+[WARNING] Could not fetch resource erddap_files/libs/quarto-html/quarto-syntax-highlighting.css
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap.min.js
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap-icons.css
+[WARNING] Could not fetch resource erddap_files/libs/bootstrap/bootstrap.min.css
+[WARNING] Could not fetch resource erddap_files/libs/htmltools-fill-0.5.8.1/fill.css
+[WARNING] Could not fetch resource erddap_files/libs/htmlwidgets-1.6.4/htmlwidgets.js
+[WARNING] Could not fetch resource erddap_files/libs/datatables-css-0.0.0/datatables-crosstalk.css
+[WARNING] Could not fetch resource erddap_files/libs/datatables-binding-0.33/datatables.js
+[WARNING] Could not fetch resource erddap_files/libs/jquery-3.6.0/jquery-3.6.0.min.js
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css
+[WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js
+[WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/css/crosstalk.min.css
+[WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/js/crosstalk.min.js
+Output created: ../noaa_sst.html
+
+ERROR [2025-05-08 00:08:13] Error rendering noaa_sst.yaml -[ erddap.qmd ]-> noaa_sst.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/noaa_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sst.html': no such file or directory
+INFO [2025-05-08 00:08:13] Script done rendering, next git commit & push
