@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-08">
+<meta name="dcterms.date" content="2025-05-09">
 
 <title>ERDDAP Data Extraction</title>
 <style>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-05-08</p>
+      <p class="date">2025-05-09</p>
     </div>
   </div>
   
@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  Base URL: https://coastwatch.noaa.gov/erddap 
  Dataset Type: griddap 
  Dimensions (range):  
-     time: (2010-06-03T12:00:00Z, 2025-04-28T12:00:00Z) 
+     time: (2010-06-03T12:00:00Z, 2025-05-01T12:00:00Z) 
      altitude: (0.0, 0.0) 
      latitude: (-89.875, 89.875) 
      longitude: (-179.875, 179.875) 
@@ -2260,8 +2260,8 @@ Caused by warning:
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">lengthMenu =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="fu">nrow</span>(d_nms_yr))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-25f3398322e7b9538c67" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-25f3398322e7b9538c67">{"x":{"filter":"none","vertical":false,"caption":"<caption>Sanctuaries with existing CSVs missing available ERDDAP times.<\/caption>","data":[["GRNMS","MNMS"],[16,16],[2010,2010],[2025,2025]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>year_min<\/th>\n      <th>year_max<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"lengthMenu":[5,50,256],"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"name":"nms","targets":0},{"name":"n_years","targets":1},{"name":"year_min","targets":2},{"name":"year_max","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-35ec4ce206b2ba15a109" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-35ec4ce206b2ba15a109">{"x":{"filter":"none","vertical":false,"caption":"<caption>Sanctuaries with existing CSVs missing available ERDDAP times.<\/caption>","data":[["CBNMS","CINMS","CPNMS","FGBNMS","FKNMS","GFNMS","GRNMS","HIHWNMS","MBNMS","MBNMS-david","MBNMS-main","MNMS","NMSAS","OCNMS","SBNMS","TBNMS"],[1,1,1,1,1,1,16,1,1,1,1,16,1,1,1,1],[2025,2025,2025,2025,2025,2025,2010,2025,2025,2025,2025,2010,2025,2025,2025,2025],[2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>year_min<\/th>\n      <th>year_max<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"lengthMenu":[5,50,256],"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"name":"nms","targets":0},{"name":"n_years","targets":1},{"name":"year_min","targets":2},{"name":"year_max","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -2316,12 +2316,12 @@ Caused by warning:
 <span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">pmap_chr</span>(<span class="fu">list</span>(i, nms, year), fxn))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: There were 160 warnings in `mutate()`.
+<pre><code>Warning: There were 156 warnings in `mutate()`.
 The first warning was:
 ℹ In argument: `error = pmap_chr(list(i, nms, year), fxn)`.
 Caused by warning in `new_CppObject_xp()`:
 ! GDAL Message 1: 1-pixel width/height files not supported, xdim: 1 ydim: 1
-ℹ Run `dplyr::last_dplyr_warnings()` to see the 159 remaining warnings.</code></pre>
+ℹ Run `dplyr::last_dplyr_warnings()` to see the 155 remaining warnings.</code></pre>
 </div>
 </div>
 <section id="successes" class="level3" data-number="4.1">
@@ -2338,8 +2338,8 @@ Caused by warning in `new_CppObject_xp()`:
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-d4701f3482d07d7da687" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d4701f3482d07d7da687">{"x":{"filter":"none","vertical":false,"data":[["1"],[false],[32]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>success<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"success","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c8f385be0eace1ab98aa" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c8f385be0eace1ab98aa">{"x":{"filter":"none","vertical":false,"data":[["1","2"],[false,true],[32,14]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>success<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"success","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -2357,8 +2357,8 @@ Caused by warning in `new_CppObject_xp()`:
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-7e7afd3018f2dc26a5b9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7e7afd3018f2dc26a5b9">{"x":{"filter":"none","vertical":false,"data":[["1","2"],["GRNMS","MNMS"],[16,16],["terra::crs(r, proj = T) == wgs84 is not TRUE","terra::crs(r, proj = T) == wgs84 is not TRUE"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>errors<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"nms","targets":1},{"name":"n_years","targets":2},{"name":"errors","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ff58434425bcce109106" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ff58434425bcce109106">{"x":{"filter":"none","vertical":false,"data":[["1","2"],["GRNMS","MNMS"],[16,16],["terra::crs(r, proj = T) == wgs84 is not TRUE","terra::crs(r, proj = T) == wgs84 is not TRUE"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>errors<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"nms","targets":1},{"name":"n_years","targets":2},{"name":"errors","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -2397,7 +2397,7 @@ Caused by warning in `new_CppObject_xp()`:
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       Etc/UTC
- date     2025-05-08
+ date     2025-05-09
  pandoc   3.5 @ /usr/bin/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
