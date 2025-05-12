@@ -13,7 +13,7 @@ Metadata for datasets (`/meta/*.yaml`) are used by the update script
 and the log files (`/log/*.html`), eg:
 
 ```
-meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+meta/erddap_sst.yaml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 ```
 
 I'll update the README.md section to include a more detailed tree-like file structure and add a Mermaid diagram to better explain the data processing workflow. Here's my updated version:
@@ -27,25 +27,33 @@ Metadata for datasets (`/meta/*.yaml`) are used by the update script (`process/u
 ```
 project/
 ├── meta/
-│   ├── noaa_sst.yaml
-│   ├── copernicus_wind.yaml
-│   └── erddap_chla.yaml
+│   ├── copernicus_mld.yaml
+│   ├── erddap_sss.yaml
+│   └── erddap_sst.yaml
 ├── process/
-│   ├── update_data.R
 │   ├── copernicus.qmd
-│   └── erddap.qmd
+│   ├── erddap.qmd
+│   └── update_data.R
 ├── data/
-│   ├── noaa_sst/
-│   │   ├── monthly.csv
-│   │   └── annual.csv
-│   ├── copernicus_wind/
-│   │   └── wind_data.nc
-│   └── erddap_chla/
-│       └── chlorophyll.csv
+│   ├── copernicus_mld/
+│   │   ├── 2010.csv
+│   │   ├── 2010.tif
+│   │   ├── 2011.csv
+│   │   └── 2011.tif
+│   ├── erddap_sst/
+│   │   ├── 2010.csv
+│   │   ├── 2010.tif
+│   │   ├── 2011.csv
+│   │   └── 2011.tif
+│   └── erddap_sss/
+│   │   ├── 2010.csv
+│   │   ├── 2010.tif
+│   │   ├── 2011.csv
+│   │   └── 2011.tif
 └── log/
-    ├── noaa_sst.html
-    ├── copernicus_wind.html
-    └── erddap_chla.html
+    ├── copernicus_mld.html
+    ├── erddap_sss.html
+    └── erddap_sst.html
 ```
 
 ### Data Processing Workflow
@@ -53,20 +61,16 @@ project/
 The data processing workflow follows this pattern:
 
 ```
-meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+meta/erddap_sst.yaml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 ```
 
 This process is illustrated in the diagram below:
-
-```mermaid
-  info
-```
 
 
 ```mermaid
 graph LR
     subgraph Metadata
-        M1[meta/noaa_sst.yaml]
+        M1[meta/erddap_sst.yaml]
         M2[meta/copernicus_wind.yaml]
         M3[meta/erddap_chla.yaml]
     end
@@ -79,13 +83,13 @@ graph LR
     
     subgraph Outputs
         subgraph Data
-            D1[data/noaa_sst/*]
+            D1[data/erddap_sst/*]
             D2[data/copernicus_wind/*]
             D3[data/erddap_chla/*]
         end
         
         subgraph Logs
-            L1[log/noaa_sst.html]
+            L1[log/erddap_sst.html]
             L2[log/copernicus_wind.html]
             L3[log/erddap_chla.html]
         end
@@ -120,6 +124,42 @@ graph LR
     style L1 fill:#fbb,stroke:#333,stroke-width:1px
     style L2 fill:#fbb,stroke:#333,stroke-width:1px
     style L3 fill:#fbb,stroke:#333,stroke-width:1px
+```
+
+```mermaid
+graph LR
+    subgraph Metadata
+        M1[erddap_sst.yaml]
+        M2[copernicus_mld.yaml]
+        M3[erddap_sss.yaml]
+    end
+    
+    subgraph Processors
+        P1[update_data.R]
+        P2[copernicus.qmd]
+        P3[erddap.qmd]
+    end
+    
+    subgraph Outputs
+        D[Data]
+        L[Logs]
+    end
+    
+    Metadata --> P1
+    P1 --> P2
+    P1 --> P3
+    
+    P2 --> D
+    P2 --> L
+    P3 --> D
+    P3 --> L
+    
+    style Metadata fill:#f9f,stroke:#333,stroke-width:1px
+    style P1 fill:#bbf,stroke:#333,stroke-width:1px
+    style P2 fill:#ddf,stroke:#333,stroke-width:1px
+    style P3 fill:#ddf,stroke:#333,stroke-width:1px
+    style D fill:#bfb,stroke:#333,stroke-width:1px
+    style L fill:#fbb,stroke:#333,stroke-width:1px
 ```
 
 The workflow consists of these key steps:
@@ -170,7 +210,7 @@ git clone git@github.com:marinebon/extractr.git
 Run for variables of interest:
 
 ```bash
-quarto render extractr.qmd --execute-params data/metadata/noaa_dhw.yaml
+quarto render extractr.qmd --execute-params data/metadata/erddap_dhw.yaml
 ```
 
 This will take a long time and show little output. 
