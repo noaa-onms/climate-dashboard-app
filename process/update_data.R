@@ -17,6 +17,8 @@ do_git     <- TRUE
 
 github_pat <- gitcreds_get(use_cache = FALSE)$password
 stopifnot(str_sub(github_pat, 1, 3) == "ghp")
+if (do_git)
+  system("git pull")
 
 if (file_exists(log_txt))
   file_delete(log_txt)
