@@ -1,5 +1,6 @@
-INFO [2025-05-12 00:00:02] Script starting up...
-INFO [2025-05-12 00:00:02] meta/noaa_sss.yaml -[ erddap.qmd ]-> data/noaa_sss/*, log/noaa_sss.html
+Already up to date.
+INFO [2025-05-13 00:00:03] Script starting up...
+INFO [2025-05-13 00:00:03] meta/erddap_sss.yaml -[ erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap.qmd
@@ -11,84 +12,70 @@ processing file: erddap.qmd
 6/17 [d_nms_yr]          
 7/17                     
 8/17 [iterate_ed_extract]
-[31mINFO [2025-05-12 00:00:13] 001: CBNMS, 2025
-[39m[31mINFO [2025-05-12 00:01:01] 002: CINMS, 2025
-[39m[31mINFO [2025-05-12 00:01:04] 003: CPNMS, 2025
-[39m[31mINFO [2025-05-12 00:01:06] 004: FGBNMS, 2025
-[39m[31mINFO [2025-05-12 00:01:14] 005: FKNMS, 2025
-[39m[31mINFO [2025-05-12 00:01:22] 006: GFNMS, 2025
-[39m[31mINFO [2025-05-12 00:01:25] 007: GRNMS, 2010
-[39m[31mERROR [2025-05-12 00:01:27] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:27] 008: GRNMS, 2011
-[39m[31mERROR [2025-05-12 00:01:28] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:28] 009: GRNMS, 2012
-[39m[31mERROR [2025-05-12 00:01:30] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:30] 010: GRNMS, 2013
-[39m[31mERROR [2025-05-12 00:01:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:32] 011: GRNMS, 2014
-[39m[31mERROR [2025-05-12 00:01:33] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:33] 012: GRNMS, 2015
-[39m[31mERROR [2025-05-12 00:01:35] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:35] 013: GRNMS, 2016
-[39m[31mERROR [2025-05-12 00:01:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:37] 014: GRNMS, 2017
-[39m[31mERROR [2025-05-12 00:01:38] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:38] 015: GRNMS, 2018
-[39m[31mERROR [2025-05-12 00:01:40] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:40] 016: GRNMS, 2019
-[39m[31mERROR [2025-05-12 00:01:42] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:42] 017: GRNMS, 2020
-[39m[31mERROR [2025-05-12 00:01:45] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:45] 018: GRNMS, 2021
-[39m[31mERROR [2025-05-12 00:01:46] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:46] 019: GRNMS, 2022
-[39m[31mERROR [2025-05-12 00:01:48] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:48] 020: GRNMS, 2023
-[39m[31mERROR [2025-05-12 00:01:50] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:50] 021: GRNMS, 2024
-[39m[31mERROR [2025-05-12 00:01:53] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:53] 022: GRNMS, 2025
-[39m[31mERROR [2025-05-12 00:01:58] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:01:58] 023: HIHWNMS, 2025
-[39m[31mINFO [2025-05-12 00:02:00] 024: MBNMS, 2025
-[39m[31mINFO [2025-05-12 00:02:03] 025: MBNMS-david, 2025
-[39m[31mINFO [2025-05-12 00:02:07] 026: MBNMS-main, 2025
-[39m[31mINFO [2025-05-12 00:02:09] 027: MNMS, 2010
-[39m[31mERROR [2025-05-12 00:02:11] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:11] 028: MNMS, 2011
-[39m[31mERROR [2025-05-12 00:02:13] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:13] 029: MNMS, 2012
-[39m[31mERROR [2025-05-12 00:02:14] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:14] 030: MNMS, 2013
-[39m[31mERROR [2025-05-12 00:02:16] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:16] 031: MNMS, 2014
-[39m[31mERROR [2025-05-12 00:02:18] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:18] 032: MNMS, 2015
-[39m[31mERROR [2025-05-12 00:02:20] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:20] 033: MNMS, 2016
-[39m[31mERROR [2025-05-12 00:02:22] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:22] 034: MNMS, 2017
-[39m[31mERROR [2025-05-12 00:02:24] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:24] 035: MNMS, 2018
-[39m[31mERROR [2025-05-12 00:02:26] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:26] 036: MNMS, 2019
-[39m[31mERROR [2025-05-12 00:02:28] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:28] 037: MNMS, 2020
-[39m[31mERROR [2025-05-12 00:02:30] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:30] 038: MNMS, 2021
-[39m[31mERROR [2025-05-12 00:02:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:32] 039: MNMS, 2022
-[39m[31mERROR [2025-05-12 00:02:34] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:34] 040: MNMS, 2023
-[39m[31mERROR [2025-05-12 00:02:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:37] 041: MNMS, 2024
-[39m[31mERROR [2025-05-12 00:02:39] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:39] 042: MNMS, 2025
-[39m[31mERROR [2025-05-12 00:02:41] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:02:41] 043: NMSAS, 2025
-[39m[31mINFO [2025-05-12 00:02:45] 044: OCNMS, 2025
-[39m[31mINFO [2025-05-12 00:02:48] 045: SBNMS, 2025
-[39m[31mINFO [2025-05-12 00:02:50] 046: TBNMS, 2025
+[31mINFO [2025-05-13 00:00:14] 001: GRNMS, 2010
+[39m[31mERROR [2025-05-13 00:00:22] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:00:22] 002: GRNMS, 2011
+[39m[31mERROR [2025-05-13 00:00:32] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:00:32] 003: GRNMS, 2012
+[39m[31mERROR [2025-05-13 00:01:21] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:01:21] 004: GRNMS, 2013
+[39m[31mERROR [2025-05-13 00:01:41] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:01:41] 005: GRNMS, 2014
+[39m[31mERROR [2025-05-13 00:01:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:01:50] 006: GRNMS, 2015
+[39m[31mERROR [2025-05-13 00:02:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:02:07] 007: GRNMS, 2016
+[39m[31mERROR [2025-05-13 00:02:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:02:20] 008: GRNMS, 2017
+[39m[31mERROR [2025-05-13 00:02:33] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:02:33] 009: GRNMS, 2018
+[39m[31mERROR [2025-05-13 00:02:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:02:44] 010: GRNMS, 2019
+[39m[31mERROR [2025-05-13 00:02:57] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:02:57] 011: GRNMS, 2020
+[39m[31mERROR [2025-05-13 00:03:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:03:06] 012: GRNMS, 2021
+[39m[31mERROR [2025-05-13 00:03:16] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:03:16] 013: GRNMS, 2022
+[39m[31mERROR [2025-05-13 00:03:30] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:03:30] 014: GRNMS, 2023
+[39m[31mERROR [2025-05-13 00:03:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:03:42] 015: GRNMS, 2024
+[39m[31mERROR [2025-05-13 00:03:54] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:03:54] 016: GRNMS, 2025
+[39m[31mERROR [2025-05-13 00:04:00] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:00] 017: MNMS, 2010
+[39m[31mERROR [2025-05-13 00:04:03] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:03] 018: MNMS, 2011
+[39m[31mERROR [2025-05-13 00:04:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:07] 019: MNMS, 2012
+[39m[31mERROR [2025-05-13 00:04:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:12] 020: MNMS, 2013
+[39m[31mERROR [2025-05-13 00:04:16] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:16] 021: MNMS, 2014
+[39m[31mERROR [2025-05-13 00:04:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:20] 022: MNMS, 2015
+[39m[31mERROR [2025-05-13 00:04:25] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:25] 023: MNMS, 2016
+[39m[31mERROR [2025-05-13 00:04:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:29] 024: MNMS, 2017
+[39m[31mERROR [2025-05-13 00:04:33] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:33] 025: MNMS, 2018
+[39m[31mERROR [2025-05-13 00:04:38] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:38] 026: MNMS, 2019
+[39m[31mERROR [2025-05-13 00:04:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:42] 027: MNMS, 2020
+[39m[31mERROR [2025-05-13 00:04:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:46] 028: MNMS, 2021
+[39m[31mERROR [2025-05-13 00:04:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:50] 029: MNMS, 2022
+[39m[31mERROR [2025-05-13 00:04:55] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:55] 030: MNMS, 2023
+[39m[31mERROR [2025-05-13 00:04:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:04:59] 031: MNMS, 2024
+[39m[31mERROR [2025-05-13 00:05:03] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:05:03] 032: MNMS, 2025
+[39m[31mERROR [2025-05-13 00:05:06] terra::crs(r, proj = T) == wgs84 is not TRUE
 [39m9/17                     
 10/17 [success_summary]   
 11/17                     
@@ -100,7 +87,7 @@ processing file: erddap.qmd
 17/17                     
 [31moutput file: erddap.knit.md
 
-[39m[1mpandoc --output ../noaa_sss.html --embed-resources[22m
+[39m[1mpandoc --output ../erddap_sss.html --embed-resources[22m
   to: html
   standalone: true
   section-divs: true
@@ -144,10 +131,10 @@ processing file: erddap.qmd
 [WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js
 [WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/css/crosstalk.min.css
 [WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/js/crosstalk.min.js
-Output created: ../noaa_sss.html
+Output created: ../erddap_sss.html
 
-ERROR [2025-05-12 00:02:55] Error rendering noaa_sss.yaml -[ erddap.qmd ]-> noaa_sss.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/noaa_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sss.html': no such file or directory
-INFO [2025-05-12 00:02:55] meta/noaa_sst.yaml -[ erddap.qmd ]-> data/noaa_sst/*, log/noaa_sst.html
+ERROR [2025-05-13 00:05:08] Error rendering erddap_sss.yaml -[ erddap.qmd ]-> erddap_sss.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sss.html': no such file or directory
+INFO [2025-05-13 00:05:08] meta/erddap_sst.yaml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap.qmd
@@ -159,103 +146,103 @@ processing file: erddap.qmd
 6/17 [d_nms_yr]          
 7/17                     
 8/17 [iterate_ed_extract]
-[31mINFO [2025-05-12 00:03:13] 001: CBNMS, 2025
-[39m[31mINFO [2025-05-12 00:03:44] 002: CINMS, 2025
-[39m[31mINFO [2025-05-12 00:03:52] 003: CPNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:02] 004: FGBNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:10] 005: FKNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:17] 006: GFNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:25] 007: GRNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:37] 008: HIHWNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:46] 009: MBNMS, 2025
-[39m[31mINFO [2025-05-12 00:04:53] 010: MBNMS-david, 2025
-[39m[31mINFO [2025-05-12 00:05:05] 011: MBNMS-main, 2025
-[39m[31mINFO [2025-05-12 00:05:11] 012: MNMS, 1985
-[39m[31mERROR [2025-05-12 00:05:17] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:17] 013: MNMS, 1986
-[39m[31mERROR [2025-05-12 00:05:23] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:23] 014: MNMS, 1987
-[39m[31mERROR [2025-05-12 00:05:27] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:27] 015: MNMS, 1988
-[39m[31mERROR [2025-05-12 00:05:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:32] 016: MNMS, 1989
-[39m[31mERROR [2025-05-12 00:05:38] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:38] 017: MNMS, 1990
-[39m[31mERROR [2025-05-12 00:05:43] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:43] 018: MNMS, 1991
-[39m[31mERROR [2025-05-12 00:05:47] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:47] 019: MNMS, 1992
-[39m[31mERROR [2025-05-12 00:05:53] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:53] 020: MNMS, 1993
-[39m[31mERROR [2025-05-12 00:05:58] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:05:58] 021: MNMS, 1994
-[39m[31mERROR [2025-05-12 00:06:03] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:03] 022: MNMS, 1995
-[39m[31mERROR [2025-05-12 00:06:08] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:08] 023: MNMS, 1996
-[39m[31mERROR [2025-05-12 00:06:13] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:13] 024: MNMS, 1997
-[39m[31mERROR [2025-05-12 00:06:18] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:18] 025: MNMS, 1998
-[39m[31mERROR [2025-05-12 00:06:23] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:23] 026: MNMS, 1999
-[39m[31mERROR [2025-05-12 00:06:28] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:28] 027: MNMS, 2000
-[39m[31mERROR [2025-05-12 00:06:33] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:33] 028: MNMS, 2001
-[39m[31mERROR [2025-05-12 00:06:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:37] 029: MNMS, 2002
-[39m[31mERROR [2025-05-12 00:06:42] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:42] 030: MNMS, 2003
-[39m[31mERROR [2025-05-12 00:06:46] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:46] 031: MNMS, 2004
-[39m[31mERROR [2025-05-12 00:06:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:51] 032: MNMS, 2005
-[39m[31mERROR [2025-05-12 00:06:59] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:06:59] 033: MNMS, 2006
-[39m[31mERROR [2025-05-12 00:07:05] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:05] 034: MNMS, 2007
-[39m[31mERROR [2025-05-12 00:07:09] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:09] 035: MNMS, 2008
-[39m[31mERROR [2025-05-12 00:07:14] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:14] 036: MNMS, 2009
-[39m[31mERROR [2025-05-12 00:07:21] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:21] 037: MNMS, 2010
-[39m[31mERROR [2025-05-12 00:07:26] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:26] 038: MNMS, 2011
-[39m[31mERROR [2025-05-12 00:07:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:32] 039: MNMS, 2012
-[39m[31mERROR [2025-05-12 00:07:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:37] 040: MNMS, 2013
-[39m[31mERROR [2025-05-12 00:07:43] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:43] 041: MNMS, 2014
-[39m[31mERROR [2025-05-12 00:07:48] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:48] 042: MNMS, 2015
-[39m[31mERROR [2025-05-12 00:07:53] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:53] 043: MNMS, 2016
-[39m[31mERROR [2025-05-12 00:07:58] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:07:58] 044: MNMS, 2017
-[39m[31mERROR [2025-05-12 00:08:04] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:04] 045: MNMS, 2018
-[39m[31mERROR [2025-05-12 00:08:08] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:08] 046: MNMS, 2019
-[39m[31mERROR [2025-05-12 00:08:15] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:15] 047: MNMS, 2020
-[39m[31mERROR [2025-05-12 00:08:21] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:21] 048: MNMS, 2021
-[39m[31mERROR [2025-05-12 00:08:26] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:26] 049: MNMS, 2022
-[39m[31mERROR [2025-05-12 00:08:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:37] 050: MNMS, 2023
-[39m[31mERROR [2025-05-12 00:08:42] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:42] 051: MNMS, 2024
-[39m[31mERROR [2025-05-12 00:08:48] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:08:48] 052: MNMS, 2025
-[39m[31mERROR [2025-05-12 00:09:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-12 00:09:51] 053: NMSAS, 2025
-[39m[31mINFO [2025-05-12 00:10:17] 054: OCNMS, 2025
-[39m[31mINFO [2025-05-12 00:10:24] 055: SBNMS, 2025
-[39m[31mINFO [2025-05-12 00:10:32] 056: TBNMS, 2025
+[31mINFO [2025-05-13 00:05:26] 001: CBNMS, 2025
+[39m[31mINFO [2025-05-13 00:06:15] 002: CINMS, 2025
+[39m[31mINFO [2025-05-13 00:06:23] 003: CPNMS, 2025
+[39m[31mINFO [2025-05-13 00:06:35] 004: FGBNMS, 2025
+[39m[31mINFO [2025-05-13 00:06:44] 005: FKNMS, 2025
+[39m[31mINFO [2025-05-13 00:06:55] 006: GFNMS, 2025
+[39m[31mINFO [2025-05-13 00:09:45] 007: GRNMS, 2025
+[39m[31mINFO [2025-05-13 00:09:57] 008: HIHWNMS, 2025
+[39m[31mINFO [2025-05-13 00:10:04] 009: MBNMS, 2025
+[39m[31mINFO [2025-05-13 00:10:14] 010: MBNMS-david, 2025
+[39m[31mINFO [2025-05-13 00:10:23] 011: MBNMS-main, 2025
+[39m[31mINFO [2025-05-13 00:10:33] 012: MNMS, 1985
+[39m[31mERROR [2025-05-13 00:12:39] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:12:39] 013: MNMS, 1986
+[39m[31mERROR [2025-05-13 00:13:28] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:13:28] 014: MNMS, 1987
+[39m[31mERROR [2025-05-13 00:14:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:14:15] 015: MNMS, 1988
+[39m[31mERROR [2025-05-13 00:14:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:14:59] 016: MNMS, 1989
+[39m[31mERROR [2025-05-13 00:15:47] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:15:47] 017: MNMS, 1990
+[39m[31mERROR [2025-05-13 00:16:40] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:16:40] 018: MNMS, 1991
+[39m[31mERROR [2025-05-13 00:18:08] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:18:08] 019: MNMS, 1992
+[39m[31mERROR [2025-05-13 00:20:39] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:20:39] 020: MNMS, 1993
+[39m[31mERROR [2025-05-13 00:23:02] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:23:02] 021: MNMS, 1994
+[39m[31mERROR [2025-05-13 00:24:04] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:24:04] 022: MNMS, 1995
+[39m[31mERROR [2025-05-13 00:25:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:25:12] 023: MNMS, 1996
+[39m[31mERROR [2025-05-13 00:27:09] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:27:09] 024: MNMS, 1997
+[39m[31mERROR [2025-05-13 00:28:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:28:12] 025: MNMS, 1998
+[39m[31mERROR [2025-05-13 00:29:03] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:29:03] 026: MNMS, 1999
+[39m[31mERROR [2025-05-13 00:29:55] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:29:55] 027: MNMS, 2000
+[39m[31mERROR [2025-05-13 00:30:51] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:30:51] 028: MNMS, 2001
+[39m[31mERROR [2025-05-13 00:32:32] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:32:32] 029: MNMS, 2002
+[39m[31mERROR [2025-05-13 00:33:24] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:33:24] 030: MNMS, 2003
+[39m[31mERROR [2025-05-13 00:34:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:34:15] 031: MNMS, 2004
+[39m[31mERROR [2025-05-13 00:35:14] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:35:14] 032: MNMS, 2005
+[39m[31mERROR [2025-05-13 00:36:19] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:36:19] 033: MNMS, 2006
+[39m[31mERROR [2025-05-13 00:37:14] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:37:14] 034: MNMS, 2007
+[39m[31mERROR [2025-05-13 00:38:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:38:06] 035: MNMS, 2008
+[39m[31mERROR [2025-05-13 00:38:57] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:38:57] 036: MNMS, 2009
+[39m[31mERROR [2025-05-13 00:39:48] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:39:48] 037: MNMS, 2010
+[39m[31mERROR [2025-05-13 00:41:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:41:20] 038: MNMS, 2011
+[39m[31mERROR [2025-05-13 00:42:19] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:42:19] 039: MNMS, 2012
+[39m[31mERROR [2025-05-13 00:43:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:43:12] 040: MNMS, 2013
+[39m[31mERROR [2025-05-13 00:45:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:45:44] 041: MNMS, 2014
+[39m[31mERROR [2025-05-13 00:46:49] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:46:49] 042: MNMS, 2015
+[39m[31mERROR [2025-05-13 00:47:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:47:50] 043: MNMS, 2016
+[39m[31mERROR [2025-05-13 00:48:49] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:48:49] 044: MNMS, 2017
+[39m[31mERROR [2025-05-13 00:50:47] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:50:47] 045: MNMS, 2018
+[39m[31mERROR [2025-05-13 00:51:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:51:42] 046: MNMS, 2019
+[39m[31mERROR [2025-05-13 00:52:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:52:46] 047: MNMS, 2020
+[39m[31mERROR [2025-05-13 00:55:36] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:55:36] 048: MNMS, 2021
+[39m[31mERROR [2025-05-13 00:57:38] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:57:38] 049: MNMS, 2022
+[39m[31mERROR [2025-05-13 00:58:37] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:58:37] 050: MNMS, 2023
+[39m[31mERROR [2025-05-13 00:59:23] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 00:59:23] 051: MNMS, 2024
+[39m[31mERROR [2025-05-13 01:00:18] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 01:00:18] 052: MNMS, 2025
+[39m[31mERROR [2025-05-13 01:00:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-13 01:00:42] 053: NMSAS, 2025
+[39m[31mINFO [2025-05-13 01:00:50] 054: OCNMS, 2025
+[39m[31mINFO [2025-05-13 01:01:12] 055: SBNMS, 2025
+[39m[31mINFO [2025-05-13 01:01:23] 056: TBNMS, 2025
 [39m9/17                     
 10/17 [success_summary]   
 11/17                     
@@ -267,7 +254,7 @@ processing file: erddap.qmd
 17/17                     
 [31moutput file: erddap.knit.md
 
-[39m[1mpandoc --output ../noaa_sst.html --embed-resources[22m
+[39m[1mpandoc --output ../erddap_sst.html --embed-resources[22m
   to: html
   standalone: true
   section-divs: true
@@ -311,17 +298,7 @@ processing file: erddap.qmd
 [WARNING] Could not fetch resource erddap_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js
 [WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/css/crosstalk.min.css
 [WARNING] Could not fetch resource erddap_files/libs/crosstalk-1.2.1/js/crosstalk.min.js
-Output created: ../noaa_sst.html
+Output created: ../erddap_sst.html
 
-ERROR [2025-05-12 00:10:46] Error rendering noaa_sst.yaml -[ erddap.qmd ]-> noaa_sst.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/noaa_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/noaa_sst.html': no such file or directory
-INFO [2025-05-12 00:10:46] Script done rendering, next git commit & push
-[main bbb22cb] ran update_data.R
- 62 files changed, 474 insertions(+), 933 deletions(-)
-To https://github.com/noaa-onms/climate-dashboard-app.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/noaa-onms/climate-dashboard-app.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ERROR [2025-05-13 01:01:42] Error rendering erddap_sst.yaml -[ erddap.qmd ]-> erddap_sst.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sst.html': no such file or directory
+INFO [2025-05-13 01:01:42] Script done rendering, next git commit & push
