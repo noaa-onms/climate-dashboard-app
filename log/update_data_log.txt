@@ -1,6 +1,6 @@
-INFO [2025-05-13 00:00:03] Script starting up...
-INFO [2025-05-13 00:00:03] meta/erddap_sss.yaml -[ erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-ERROR [2025-05-13 00:05:08] Error rendering erddap_sss.yaml -[ erddap.qmd ]-> erddap_sss.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sss.html': no such file or directory
-INFO [2025-05-13 00:05:08] meta/erddap_sst.yaml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-ERROR [2025-05-13 01:01:42] Error rendering erddap_sst.yaml -[ erddap.qmd ]-> erddap_sst.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sst.html': no such file or directory
-INFO [2025-05-13 01:01:42] Script done rendering, next git commit & push
+INFO [2025-05-14 00:00:02] Script starting up...
+INFO [2025-05-14 00:00:02] meta/erddap_sss.yaml -[ erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+ERROR [2025-05-14 00:01:17] Error rendering erddap_sss.yaml -[ erddap.qmd ]-> erddap_sss.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sss.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sss.html': no such file or directory
+INFO [2025-05-14 00:01:17] meta/erddap_sst.yaml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+ERROR [2025-05-14 00:06:09] Error rendering erddap_sst.yaml -[ erddap.qmd ]-> erddap_sst.html: [ENOENT] Failed to move '/share/github/noaa-onms/climate-dashboard-app/process/erddap_sst.html' to '/share/github/noaa-onms/climate-dashboard-app/log/erddap_sst.html': no such file or directory
+INFO [2025-05-14 00:06:09] Script done rendering, next git commit & push
