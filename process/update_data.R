@@ -54,7 +54,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
       execute_dir    = dirname(in_qmd),
       pandoc_args    = "--embed-resources")
 
-    file_move(glue("{dirname(in_qmd)}/{tmp_html}"), out_html)
+    file_move(tmp_html, out_html)
 
   }, error = function(e) {
     log_error("Error rendering {basename(yaml)} -[ {basename(in_qmd)} ]-> {basename(out_html)}: {conditionMessage(e)}")

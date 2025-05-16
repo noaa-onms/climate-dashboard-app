@@ -73,7 +73,7 @@ d_nms_yr <- ply_sanctuaries |>
     tibble(
       year = year(min(times)):year(max(times)))) |> 
   mutate(
-    all_in_csv = map2_chr(nms, year, \(nms, year) { # nms = "GRNMS"; year = 2010
+    all_in_csv = map2_chr(nms, year, \(nms, year) { # nms = "GRNMS"; year = 2024
       times_yr <- times[year(times) == year]
       csv <- glue("{dir_out}/{nms}/{year}.csv")
       if (!file.exists(csv))
