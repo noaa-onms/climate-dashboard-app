@@ -37,6 +37,7 @@ librarian::shelf(
   dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
   terra,
   marinebon/extractr)
+options(readr.show_col_types = F)
 
 ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) # |> 
   # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
@@ -63,9 +64,9 @@ times <- ed_dim(ed, "time")
 ## Setup iteration: sanctuary years
 
 ```{r}
-#| label: d_nms_yr
+#| label: d_nms_yr_todo
 
-d_nms_yr <- ply_sanctuaries |> 
+d_nms_yr_todo <- ply_sanctuaries |> 
   st_drop_geometry() |> 
   arrange(nms) |> 
   select(nms) |> 
@@ -73,34 +74,49 @@ d_nms_yr <- ply_sanctuaries |>
     tibble(
       year = year(min(times)):year(max(times)))) |> 
   mutate(
-    all_in_csv = map2_chr(nms, year, \(nms, year) { # nms = "GRNMS"; year = 2024
+    d = map2(nms, year, \(nms, year) { # nms = "TBNMS"; year = 2025
       times_yr <- times[year(times) == year]
       csv <- glue("{dir_out}/{nms}/{year}.csv")
+      
+      # time[1] if missing csv
       if (!file.exists(csv))
-        return(F)
+        return(list(
+          n_times  = length(times_yr),
+          time_min = times_yr[1]))
+      
       times_csv <- read_csv(csv) |> 
         pull(time)
-      all(times_yr %in% times_csv) }) )
-
-d_nms_yr_todo <- d_nms_yr |>
-  filter(all_in_csv == F) |> 
+      # NA if all times done
+      if (all(times_yr %in% times_csv))
+        return(list(
+          n_times  = 0,
+          time_min = NA)) 
+      
+      # earliest time missing otherwise
+      i <- !times_yr %in% times_csv
+      list(
+          n_times  = sum(i),
+          time_min = min(times_yr[i])) }),
+    n_times  = map_int(d, pluck, "n_times"),
+    time_min = map_dbl(d, pluck, "time_min") |> 
+      as.POSIXct() ) |> 
+  filter(n_times > 0) |> 
+  select(-d) |> 
   mutate(
     i = 1:n()) |> 
   relocate(i)
 
-d_nms_yr |> 
+d_nms_yr_todo |> 
   group_by(nms) |>
-  filter(all_in_csv == F) |> 
   summarize(
-    n_years   = n(),
-    year_min  = min(year),
-    year_max = max(year)) |>
+    n_times  = sum(n_times),
+    time_min = min(time_min)) |>
   datatable(
-    caption  = "Sanctuaries with existing CSVs missing available ERDDAP times.",
+    caption  = "Sanctuaries missing available ERDDAP times.",
     rownames = F,
     options  = list(
       pageLength = 5,
-      lengthMenu = c(5, 50, nrow(d_nms_yr))))
+      lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
 ```
 
 ## Iterate over sanctuary years
@@ -110,14 +126,15 @@ d_nms_yr |>
 
 # rerddap::cache_delete_all()
 
-fxn <- function(i, nms, year, ...){
+fxn <- function(i, nms, time_min, ...){
   #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
 
  err <- tryCatch({
     
-    log_info("{sprintf('%03d', i)}: {nms}, {year}")
+    log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
 
-    times_yr <- times[year(times) == year]
+    yr       <- year(time_min)
+    time_max <- max(times[year(times) == yr])
     
     ply <- ply_sanctuaries |>
       filter(nms == !!nms)
@@ -129,14 +146,14 @@ fxn <- function(i, nms, year, ...){
       var       = v,
       sf_zones  = ply,
       mask_tif  = T,
-      rast_tif  = glue::glue("{dir_out}/{nms}/{year}.tif"),
+      rast_tif  = glue::glue("{dir_out}/{nms}/{yr}.tif"),
       zonal_fun = "mean",
-      zonal_csv = glue::glue("{dir_out}/{nms}/{year}.csv"),
-      dir_nc    = glue::glue("{dir_out}/{nms}/{year}_nc"),
+      zonal_csv = glue::glue("{dir_out}/{nms}/{yr}.csv"),
+      dir_nc    = glue::glue("{dir_out}/{nms}/{yr}_nc"),
       keep_nc   = F,
       n_max_vals_per_req = 1e+05,
-      time_min  = min(times_yr),
-      time_max  = max(times_yr))
+      time_min  = time_min,
+      time_max  = time_max)
     
     return(NA)
   }, error = function(e) {
@@ -151,7 +168,7 @@ fxn <- function(i, nms, year, ...){
 res <- d_nms_yr_todo |> 
   # slice(1:3) |>  # DEBUG
   mutate(
-    error = pmap_chr(list(i, nms, year), fxn))
+    error = pmap_chr(list(i, nms, time_min), fxn))
 ```
 
 ### Successes

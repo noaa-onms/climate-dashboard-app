@@ -23,7 +23,7 @@ if (do_git)
 if (file_exists(log_txt))
   file_delete(log_txt)
 log_appender(appender_tee(log_txt))
-log_info("Script starting up...")
+log_tictoc("Script starting up...")
 
 for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob = "*.yaml")[1]
 
@@ -42,7 +42,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
     log_error("Error reading {basename(yaml)}: {conditionMessage(e)}")
   })
 
-  log_info("meta/{basename(yaml)} -[ {basename(in_qmd)} ]-> data/{params$data_var}/*, log/{basename(out_html)}")
+  log_tictoc("meta/{basename(yaml)} -[ {basename(in_qmd)} ]-> data/{params$data_var}/*, log/{basename(out_html)}")
 
   tryCatch({
 
@@ -61,7 +61,7 @@ for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob 
   })
 
 }
-log_info("Script done rendering, next git commit & push")
+log_tictoc("Script done rendering, next git commit & push")
 
 # setup in Terminal
 # git config --global user.name "$github_username"
