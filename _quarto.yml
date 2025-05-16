@@ -1,0 +1,14 @@
+date: today
+date-format: iso
+format:
+  html:
+    code-fold: true
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    number-sections: true
+    embed-resources: true
+editor:
+  mode: source
+editor_options:
+  chunk_output_type: console

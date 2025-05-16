@@ -1,18 +1,5 @@
 ---
 title: "ERDDAP Data Extraction"
-date: today
-date-format: iso
-format:
-  html:
-    code-fold: true
-    toc: true
-    toc-depth: 3
-    toc-expand: 2
-    number-sections: true
-editor: 
-  mode: source
-editor_options: 
-  chunk_output_type: console
 params:
   data_var: erddap_sss
   erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
@@ -20,8 +7,6 @@ params:
   # data_var: erddap_sst
   # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
   # erddap_variable: analysed_sst
-execute: 
-  error: true
 ---
 
 ## Setup with `extractr`

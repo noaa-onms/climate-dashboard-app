@@ -25,7 +25,7 @@ if (file_exists(log_txt))
 log_appender(appender_tee(log_txt))
 log_tictoc("Script starting up...")
 
-for (yaml in dir_ls(dir_meta, glob = "*.yaml")){ # yaml = dir_ls(dir_meta, glob = "*.yaml")[1]
+for (yaml in dir_ls(dir_meta, regexp = ".*\\.(ya?ml)$")){ # yaml = dir_ls(dir_meta, glob = "*.yaml")[1]
 
   tryCatch({
 
