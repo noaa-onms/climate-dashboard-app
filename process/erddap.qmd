@@ -21,7 +21,7 @@ devtools::load_all(dir_extractr)
 # devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
   dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
-  terra,
+  terra, tibble,
   marinebon/extractr,
   quiet = T)
 options(readr.show_col_types = F)
@@ -96,15 +96,15 @@ d_nms_yr_todo <- ply_sanctuaries |>
       as.POSIXct() ) |> 
   filter(n_times > 0) |> 
   select(-d) |> 
-  mutate(
-    i = 1:n()) |> 
+  rowid_to_column("i") |>
   relocate(i)
 
 d_nms_yr_todo |> 
-  group_by(nms) |>
-  summarize(
-    n_times  = sum(n_times),
-    time_min = min(time_min)) |>
+  group_by(nms) %>%
+  {if (nrow(.) > 0)
+    summarize(
+      n_times  = sum(n_times),
+      time_min = min(time_min, na.rm = T)) else .} |>
   datatable(
     caption  = "Sanctuaries missing available ERDDAP times.",
     rownames = F,

@@ -1,3 +1,3 @@
-INFO [2025-05-17 10:12:14] global timer tic 0 secs -- Script starting up...
-INFO [2025-05-17 10:12:14] global timer toc 0.01 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-05-17 10:12:29] global timer toc 14.56 secs -- Script done rendering, next git commit & push
+INFO [2025-05-17 10:30:49] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-17 10:30:49] global timer toc 0.01 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-05-17 10:30:57] global timer toc 7.45 secs -- Script done rendering, next git commit & push
