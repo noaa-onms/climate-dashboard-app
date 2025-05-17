@@ -1,4 +1,10 @@
-INFO [2025-05-16 17:12:24] global timer tic 0 secs -- Script starting up...
-INFO [2025-05-16 17:12:24] global timer toc 0.01 secs -- meta/erddap_sss.yml -[ erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-INFO [2025-05-16 17:13:37] global timer toc 1.22 mins -- meta/erddap_sst.yml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-05-16 17:17:46] global timer toc 4.15 mins -- Script done rendering, next git commit & push
+INFO [2025-05-17 00:00:02] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-17 00:00:02] global timer toc 0.01 secs -- meta/erddap_sss.yml -[ erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+ERROR [2025-05-17 00:00:08] Error rendering erddap_sss.yml -[ erddap.qmd ]-> erddap_sss.html: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-05-17 00:00:08] global timer toc 5.6 secs -- meta/erddap_sst.yml -[ erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+ERROR [2025-05-17 00:00:13] Error rendering erddap_sst.yml -[ erddap.qmd ]-> erddap_sst.html: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-05-17 00:00:13] global timer toc 5.14 secs -- Script done rendering, next git commit & push

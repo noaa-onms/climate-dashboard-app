@@ -38,10 +38,9 @@ choices_nms <- sanctuaries |>
 
 d_vars <- tribble(
   ~var      ,  ~label,                          ~lbl,
-  # "erddap_DHW",  "Sea Surface Temperature (SST)", "SST (°C)",
   "erddap_sst",  "Sea Surface Temperature (SST)", "SST (°C)",
-  # "erddap_SMOS", "Sea Surface Salinity (SSS)",    "SSS (PSU)",
   "erddap_sss",  "Sea Surface Salinity (SSS)",    "SSS (PSU)")
+# TODO: add color gradient
 var_label   <- select(d_vars, var, label) |> deframe()
 var_lbl     <- select(d_vars, var, lbl)   |> deframe()
 choices_var <- select(d_vars, label, var) |> deframe()
@@ -52,7 +51,7 @@ selected_var = "erddap_sst"
 # selected_nms = "CBNMS"
 # selected_var = "erddap_sst"
 
-# read_csv("data/erddap_sst/FKNMS/2025.csv") |>
+# read_csv("data/erddap_sst/HIHWNMS/2025.csv") |>
 #   arrange(time) |>
 #   tail(1)
 # 2025-04-28 12:00:00

@@ -24,7 +24,12 @@ librarian::shelf(
   marinebon/extractr)
 options(readr.show_col_types = F)
 
-ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) # |> 
+ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
+
+# TODO: expand poly to get results
+ply_small <- ply_sanctuaries |> 
+  filter(nms %in% c("GRNMS","")) |> 
+  st_buffer()
   # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
 
 # mapView(sanctuaries)
