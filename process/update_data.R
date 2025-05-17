@@ -52,7 +52,8 @@ for (yaml in dir_ls(dir_meta, regexp = ".*\\.(ya?ml)$")){ # yaml = dir_ls(dir_me
       output_file    = tmp_html,
       execute_params = params,
       execute_dir    = dirname(in_qmd),
-      pandoc_args    = "--embed-resources")
+      pandoc_args    = "--embed-resources",
+      debug          = T)
 
     file_move(tmp_html, out_html)
 
