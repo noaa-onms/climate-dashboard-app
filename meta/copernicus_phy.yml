@@ -5,6 +5,9 @@ datasets:
   id: cmems_mod_glo_phy_my_0.083deg_P1D-m
 - name: Interim, daily
   id: cmems_mod_glo_phy_myint_0.083deg_P1D-m
+depth:
+- 0.49402499
+- 0.49402499
 variables:
 - name: Ocean mixed layer thickness
   units: m
@@ -12,7 +15,6 @@ variables:
 - name: Sea surface temperature
   units: °C
   id: thetao
-  depth: 0.49
 - name: Sea bottom temperature
   units: °C
   id: bottomT

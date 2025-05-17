@@ -2,139 +2,298 @@
 title: "Copernicus Data Extraction"
 ---
 
-## Polygons
-
 ```{r}
 #| label: setup
 
 librarian::shelf(
-  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
-  terra, tibble,
+  dplyr, DT, fs, glue, here, logger, jsonlite, listviewer, lubridate, mapview, 
+  purrr, RColorBrewer, readr, reticulate, sf, stringr, terra, tibble, tidyr, 
+  units, 
   quiet = T)
 options(readr.show_col_types = F)
+mapviewOptions(
+  basemaps       = "Esri.OceanBasemap",
+  vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
+```
 
-ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
+## Polygons
 
-# TODO: expand poly to get results
-# ply_small <- ply_sanctuaries |> 
-#   filter(nms %in% c("GRNMS","")) |> 
-  # st_buffer()
-  # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
+```{r}
+#| label: polygons
 
-# mapView(sanctuaries)
-# sanctuaries |>
-#   st_drop_geometry() |>
-#   datatable()
+sanctuaries_rds <- here("../climate-dashboard/data/sanctuaries.rds")
+buf_pct         <- 0.20 # 20% of area
 
-dir_out <- here(glue("data/{params$data_var}"))
-dir.create(dir_out, showWarnings = F, recursive = T)
+ply_sanctuaries <- readRDS(sanctuaries_rds)
+
+# buffer polygon and get bounding boxes
+ply_sanctuaries <- ply_sanctuaries |>
+  mutate(
+    area_km2  = st_area(geom) |> 
+      set_units("km^2") |> 
+      as.numeric() |> 
+      round(2),
+    buf_km    = (sqrt(area_km2) * buf_pct) |> 
+      round(2),
+    bbox_geom = map2(geom, area_km2, \(g,a) {
+      st_sfc(g, crs = 4326) |> 
+        st_buffer(buf_km * 1000) |> 
+        st_bbox() |>
+        round(2) |> 
+        st_as_sfc() }),
+    bbox_chr  = map_chr(bbox_geom, \(x) {  # xmin, ymin, xmax and ymax
+      st_bbox(x) |> 
+        as.numeric() |> 
+        paste(collapse = ",") } ) ) |> 
+  unnest(bbox_geom)
+bb_sanctuaries <- st_set_geometry(ply_sanctuaries, "bbox_geom") |> 
+  select(-geom)
+ply_sanctuaries <- select(ply_sanctuaries, -bbox_geom)
+
+# show map
+mapView(ply_sanctuaries, zcol = "nms") +
+  mapView(bb_sanctuaries, zcol = "nms", legend = F)
+  
+ply_sanctuaries |>
+  st_drop_geometry() |>
+  datatable()
 ```
 
 ## Dataset
 
 ```{r}
-#| label: ed_info
+#| label: dataset
 
-(ed <- ed_info(params$erddap_url))
-times <- ed_dim(ed, "time")
-(v <- params$erddap_variable)
+# import copernicusmarine as cmt ----
+# do once: create virtual enviroment and install copernicusmarine Python module
+# virtualenv_create(envname = "CopernicusMarine")
+# virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
+# TODO: check for CopernicusMarine env with copernicusmarine Python module
+
+# use CopernicusMarine env with copernicusmarine Python module
+use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
+cmt <- import("copernicusmarine")
+
+# login to cmt ----
+
+# register for username and password at https://data.marine.copernicus.eu/register
+user     <- "bbest1"
+pass_txt <- ifelse(
+  Sys.info()[["sysname"]] == "Linux",
+  "/share/private/data.marine.copernicus.eu_bbest1-password.txt",      # server
+  "~/My Drive/private/data.marine.copernicus.eu_bbest1-password.txt")  # laptop
+
+pass <- readLines(pass_txt)
+logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
+stopifnot(logged_in)
+
+# DEBUG
+m_yml <- here("meta/copernicus_phy.yml")
+params <- yaml::read_yaml(m_yml) 
+params$proc_prod <- path_ext_remove(basename(m_yml))
+proc <- strsplit(params$proc_prod, "_")[[1]][1]  # erddap or copernicus
+prod <- strsplit(params$proc_prod, "_")[[1]][2]  # copernicus product
+
+dir_out <- here(glue("data/{params$proc_prod}"))
+dir_create(dir_out)
+
+# show params ----
+jsonedit(params)
 ```
 
-## Polygon years
+```{r}
+# get times ----
+get_dataset_description <- function(dataset_id){
+  cmt$describe(
+    dataset_id           = dataset_id,
+    disable_progress_bar = T)$json() |> 
+    fromJSON()
+}
+
+get_dataset_times <- function(dataset_description){
+  services <- pluck(
+    dataset_description, "products", "datasets", 1, "versions", 1, "parts", 1, "services", 1)
+  service_names <- pluck(
+    services, "service_name")
+  i_timeseries <- which(service_names == "arco-time-series")
+  variables <- pluck(
+    services, "variables", i_timeseries, "short_name")
+  coordinates <- pluck(
+    services, "variables", i_timeseries, "coordinates")
+  coordinate_ids <- pluck(
+    coordinates, 1, "coordinate_id")   # assuming 1st variable
+  i_time <- which(coordinate_ids == "time")
+  time_min <- pluck(
+    coordinates, 1, "minimum_value", i_time) |> 
+    # convert from [milliseconds since 1970-01-01 00:00:00Z (no leap seconds)]
+    as.numeric() %>% {./1000} |> 
+    as.POSIXct(origin = "1970-01-01", tz = "UTC")
+  time_max <- pluck(
+    coordinates, 1, "maximum_value", i_time) |> 
+    # convert from [milliseconds since 1970-01-01 00:00:00Z (no leap seconds)]
+    as.numeric() %>% {./1000} |> 
+    as.POSIXct(origin = "1970-01-01", tz = "UTC")
+  time_step_secs <- pluck(
+    coordinates, 1, "step", i_time) |> 
+    as.numeric() %>% 
+    {./1000} 
+  seq.POSIXt(
+    from = time_min,
+    to   = time_max,
+    by   = time_step_secs)
+}
+
+d_ds <- tibble(
+  dataset_id = params |> 
+    pluck("datasets") |> 
+    map_chr("id")) |> 
+  mutate(
+    description = map(dataset_id, get_dataset_description),
+    times       = map(description, get_dataset_times),
+    time_min    = map_vec(times, min),
+    time_max    = map_vec(times, max),
+    n_times     = map_int(times, length))
+
+d_ds |> 
+  select(-description, -times) |> 
+  datatable(
+    caption  = "Copernicus dataset times.")
+```
+
+## Polygon dataset years
 
 ```{r}
-#| label: d_nms_yr_todo
+#| label: d_nms_ds_t
 
-d_nms_yr_todo <- ply_sanctuaries |> 
+d_ds_yr <- d_ds |>
+  mutate(
+    d_yrs = map(times, \(ts) {
+      yrs <- unique(year(ts))
+      tibble(
+        yr = yrs) |> 
+        mutate(
+          time_min = map_vec(yr, \(yr) min(ts[year(ts) == yr])),
+          time_max = map_vec(yr, \(yr) max(ts[year(ts) == yr])),
+          n_times  = map_int(yr, \(yr) length(ts[year(ts) == yr])) ) }) ) |> 
+  select(-description, -times, -time_min, -time_max, -n_times) |>
+  unnest(d_yrs) |> 
+  select(ds_id = dataset_id, yr, time_min, time_max, n_times)
+
+d_nms_ds_yr <- ply_sanctuaries |> 
   st_drop_geometry() |> 
   arrange(nms) |> 
   select(nms) |> 
   cross_join(
-    tibble(
-      year = year(min(times)):year(max(times)))) |> 
+    d_ds_yr) |> 
   mutate(
-    d = map2(nms, year, \(nms, year) { # nms = "TBNMS"; year = 2025
-      times_yr <- times[year(times) == year]
-      csv <- glue("{dir_out}/{nms}/{year}.csv")
-      
-      # time[1] if missing csv
-      if (!file.exists(csv))
-        return(list(
-          n_times  = length(times_yr),
-          time_min = times_yr[1]))
-      
-      times_csv <- read_csv(csv) |> 
-        pull(time)
-      # NA if all times done
-      if (all(times_yr %in% times_csv))
-        return(list(
-          n_times  = 0,
-          time_min = NA)) 
-      
-      # earliest time missing otherwise
-      i <- !times_yr %in% times_csv
-      list(
-          n_times  = sum(i),
-          time_min = min(times_yr[i])) }),
-    n_times  = map_int(d, pluck, "n_times"),
-    time_min = map_dbl(d, pluck, "time_min") |> 
-      as.POSIXct() ) |> 
-  filter(n_times > 0) |> 
-  select(-d) |> 
+    csv = glue("{dir_out}/{nms}/{yr}.csv"),  
+    tif = glue("{dir_out}/{nms}/{yr}.tif") ) |> 
+  # TODO: check existing csv
   rowid_to_column("i") |>
   relocate(i)
 
-d_nms_yr_todo |> 
-  group_by(nms) %>%
+d_nms_ds_yr |> 
+  group_by(nms, ds_id) %>%
   {if (nrow(.) > 0)
     summarize(
+      .,
       n_times  = sum(n_times),
-      time_min = min(time_min, na.rm = T)) else .} |>
+      time_min = min(time_min, na.rm = T),
+      time_max = max(time_max, na.rm = T),
+      .groups = "drop") else .} |>
   datatable(
     caption  = "Sanctuaries missing available ERDDAP times.",
     rownames = F,
     options  = list(
       pageLength = 5,
-      lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
+      lengthMenu = c(5, 50, nrow(d_nms_ds_yr))))
 ```
 
 ## Extract dataset per polygon year
 
-Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/ed_extract.html), .
+Using the [Copernicus Marine Toolbox](https://help.marine.copernicus.eu/en/collections/9080063-copernicus-marine-toolbox) in R. See:
+
+- [How to download data via the Copernicus Marine Toolbox in R? | Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/8638253-how-to-download-data-via-the-copernicus-marine-toolbox-in-r)
 
 ```{r}
-#| label: iterate_ed_extract
+#| label: iterate_subset
 
-# rerddap::cache_delete_all()
-
-fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
+fxn <- function(i, ds_id, nms, time_min, time_max, ...){
+  # i = 1; nms = "CBNMS"; ds_id = "cmems_mod_glo_phy_my_0.083deg_P1D-m"
+  # time_min = as.POSIXct("1993-01-01", tz = "UTC"); time_max = as.POSIXct("1993-12-01", tz = "UTC")
+  # time_min = as.POSIXct("1993-12-02", tz = "UTC"); time_max = as.POSIXct("1993-12-31", tz = "UTC")
+  # d_nms_ds_yr |> slice(1) |> attach()
   
   err <- tryCatch({
     
-    log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
+    log_info("{sprintf('%03d', i)}: {nms}, {ds_id}, {year(time_min)} ({time_min} to {time_max})")
     
-    yr       <- year(time_min)
-    time_max <- max(times[year(times) == yr])
-    
-    ply <- ply_sanctuaries |>
+    yr    <- year(time_min)
+    r_nc  <- glue("{dir_out}/{nms}/{yr}.nc")
+    r_tif <- path_ext_set(r_nc, "tif")
+    p_csv <- path_ext_set(r_nc, "csv")
+    bb    <- bb_sanctuaries |>
+      filter(nms == !!nms) |> 
+      st_bbox()
+    p     <- ply_sanctuaries |>
       filter(nms == !!nms)
-    # TODO: consider expanding by 10% and rounding 2 digits
-    # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
+    vars  <- map_chr(params$variables, "id")
     
-    extractr::ed_extract(
-      ed,
-      var       = v,
-      sf_zones  = ply,
-      mask_tif  = T,
-      rast_tif  = glue::glue("{dir_out}/{nms}/{yr}.tif"),
-      zonal_fun = "mean",
-      zonal_csv = glue::glue("{dir_out}/{nms}/{yr}.csv"),
-      dir_nc    = glue::glue("{dir_out}/{nms}/{yr}_nc"),
-      keep_nc   = F,
-      n_max_vals_per_req = 1e+05,
-      time_min  = time_min,
-      time_max  = time_max)
+    dir_create(dirname(r_nc))
     
+    res <- cmt$subset(                    # py_help( cmt$subset)
+      dataset_id        = ds_id,
+      service           = "timeseries",
+      variables         = vars,
+      minimum_longitude = bb$xmin,
+      maximum_longitude = bb$xmax,
+      minimum_latitude  = bb$ymin,
+      maximum_latitude  = bb$ymax,
+      start_datetime    = time_min,
+      end_datetime      = time_max,
+      minimum_depth     = params$depth[1],
+      maximum_depth     = params$depth[2],
+      output_directory  = dirname(r_nc),
+      output_filename   = basename(r_nc),
+      overwrite         = T)
+
+    # TODO: merge with existing
+    r <- rast(r_nc)
+    
+    # set dataset_id into layer name
+    names(r) <- glue("{ds_id} {str_replace_all(names(r), '_',' ')}")
+    writeRaster(r, r_tif, overwrite = T)
+    file_delete(r_nc)
+      
+    # TODO: fxn to read:
+    # r <- rast(r_tif)
+    # names(r)s
+    # time(r)
+    # TODO: handle ?terra::depth()
+    
+    # zonal tif to csv ---- 
+    r <- rast(r_tif)
+    extract_tbl <- function(r, p, stat = "mean"){
+      terra::extract(r, p, fun = stat, na.rm=T) |> 
+        pivot_longer(!ID, names_to = "lyr") |> 
+        separate_wider_regex(
+          lyr, c(
+            dataset = "^\\S+", " ", 
+            var     = "\\S+", 
+            depth   = "(?:\\sdepth=[.0-9]+)?",
+            itime   = "\\s[0-9]+$")) |> 
+        mutate(
+          depth = str_replace(depth, "depth=", "") |> as.numeric(),
+          itime = as.integer(itime),
+          stat = !!stat,
+          time = time(r)) |> 
+        select(dataset, var, depth, time, stat, value)
+    }
+    bind_rows(
+      extract_tbl(r, p, "mean"),
+      extract_tbl(r, p, "sd")) |> 
+      write_csv(p_csv, na = "")
+
     return(NA)
   }, error = function(e) {
     
@@ -145,10 +304,11 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97  
   err
 } 
 
-res <- d_nms_yr_todo |> 
+res <- d_nms_ds_yr |> 
   # slice(1:3) |>  # DEBUG
+  slice(33:nrow(d_nms_ds_yr)) |>  # DEBUG
   mutate(
-    error = pmap_chr(list(i, nms, time_min), fxn))
+    error = pmap_chr(list(i, ds_id, nms, time_min, time_max), fxn))
 ```
 
 ### Successes

@@ -143,6 +143,7 @@ m <- list(
     list(
       name = "Interim, daily",
       id   = "cmems_mod_glo_phy_myint_0.083deg_P1D-m" ) ),
+  depth = c(0, 0.5),  # get surface layer only
   variables = list(
     list(
       name  = "Ocean mixed layer thickness",  # defined by sigma theta
