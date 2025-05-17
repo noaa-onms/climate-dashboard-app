@@ -1,5 +1,5 @@
-date: today
-date-format: iso
+date: now
+date-format: "YYYY-MM-DD HH:mm z"
 format:
   html:
     code-fold: true

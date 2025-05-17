@@ -17,7 +17,7 @@ dir_log    <- here("log")
 dir_proc   <- here("process")
 dir_data   <- here("data")
 log_txt    <- glue("{dir_log}/update_data_log.txt")
-do_git     <- F # DEBUG
+do_git     <- T # DEBUG
 
 # git ----
 github_pat <- gitcreds_get(use_cache = FALSE)$password
