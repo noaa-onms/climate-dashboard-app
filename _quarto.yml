@@ -3,11 +3,12 @@ date-format: iso
 format:
   html:
     code-fold: true
+    code-tools: true
     toc: true
     toc-depth: 3
     toc-expand: 2
     number-sections: true
-    embed-resources: true
+    # embed-resources: true
 editor:
   mode: source
 editor_options:

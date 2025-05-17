@@ -1,12 +1,12 @@
 ---
 title: "ERDDAP Data Extraction"
 params:
-  data_var: erddap_sss
-  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
-  erddap_variable: sss
-  # data_var: erddap_sst
-  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
-  # erddap_variable: analysed_sst
+  # data_var: erddap_sss
+  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  # erddap_variable: sss
+  data_var: erddap_sst
+  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
+  erddap_variable: analysed_sst
 ---
 
 ## Setup with `extractr`
@@ -14,18 +14,21 @@ params:
 ```{r}
 #| label: setup
 
-# dir_extractr = "/share/github/marinebon/extractr" # dir_extractr = "~/Github/marinebon/extractr"
-# devtools::load_all(dir_extractr)
+# dir_extractr = "/share/github/marinebon/extractr"
+dir_extractr = "~/Github/marinebon/extractr"  # DEBUG
+devtools::load_all(dir_extractr)
 # devtools::install_local(dir_extractr, force = T)
 # devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
   dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
   terra,
-  marinebon/extractr)
+  marinebon/extractr,
+  quiet = T)
 options(readr.show_col_types = F)
 
 ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) |> 
-    filter(!nms %in% c("GRNMS","MNMS")) # DEBUG
+    filter(nms == "CBNMS") # DEBUG
+    # filter(!nms %in% c("GRNMS","MNMS")) # DEBUG
 
 # TODO: expand poly to get results
 # ply_small <- ply_sanctuaries |> 
@@ -119,11 +122,11 @@ d_nms_yr_todo |>
 
 fxn <- function(i, nms, time_min, ...){
   #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
-
- err <- tryCatch({
+  
+  err <- tryCatch({
     
     log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
-
+    
     yr       <- year(time_min)
     time_max <- max(times[year(times) == yr])
     
@@ -152,8 +155,8 @@ fxn <- function(i, nms, time_min, ...){
     log_error(conditionMessage(e))
     return(conditionMessage(e))
   })
- 
- err
+  
+  err
 } 
 
 res <- d_nms_yr_todo |> 

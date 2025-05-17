@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,11 @@ div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
-width: 0.8em;
-margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
 }
-
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -36,21 +37,21 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-{ counter-reset: source-line 0; }
+  { counter-reset: source-line 0; }
 pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
+  { position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
-{ }
+  {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
@@ -63,10 +64,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="erddap_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="erddap_files/libs/quarto-html/anchor.min.js"></script>
 <link href="erddap_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="erddap_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="erddap_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="erddap_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="erddap_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="erddap_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="erddap_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="erddap_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="erddap_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="erddap_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
@@ -106,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ERDDAP Data Extraction</h1>
+<div class="quarto-title-block"><div><h1 class="title">ERDDAP Data Extraction</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -134,32 +135,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dir_extractr = &quot;/share/github/marinebon/extractr&quot; # dir_extractr = &quot;~/Github/marinebon/extractr&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::load_all(dir_extractr)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_local(dir_extractr, force = T)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;marinebon/extractr&quot;, force = T)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>librarian<span class="sc">::</span><span class="fu">shelf</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  terra,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  marinebon<span class="sc">/</span>extractr)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">readr.show_col_types =</span> F)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ply_sanctuaries <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">&quot;../climate-dashboard/data/sanctuaries.rds&quot;</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>nms <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;GRNMS&quot;</span>,<span class="st">&quot;MNMS&quot;</span>)) <span class="co"># DEBUG</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: expand poly to get results</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ply_small &lt;- ply_sanctuaries |&gt; </span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(nms %in% c(&quot;GRNMS&quot;,&quot;&quot;)) |&gt; </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># st_buffer()</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(nms != &quot;HIHWNMS&quot;)  # </span><span class="al">TODO</span><span class="co">: sort dateline sanctuary later</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># mapView(sanctuaries)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># sanctuaries |&gt;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#   st_drop_geometry() |&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   datatable()</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>dir_out <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="fu">glue</span>(<span class="st">&quot;data/{params$data_var}&quot;</span>))</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(dir_out, <span class="at">showWarnings =</span> F, <span class="at">recursive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dir_extractr = "/share/github/marinebon/extractr"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dir_extractr <span class="ot">=</span> <span class="st">"~/Github/marinebon/extractr"</span>  <span class="co"># DEBUG</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(dir_extractr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Loading extractr</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_local(dir_extractr, force = T)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("marinebon/extractr", force = T)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>librarian<span class="sc">::</span><span class="fu">shelf</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  terra,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  marinebon<span class="sc">/</span>extractr,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">quiet =</span> T)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">readr.show_col_types =</span> F)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ply_sanctuaries <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"../climate-dashboard/data/sanctuaries.rds"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nms <span class="sc">==</span> <span class="st">"CBNMS"</span>) <span class="co"># DEBUG</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># filter(!nms %in% c("GRNMS","MNMS")) # DEBUG</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: expand poly to get results</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ply_small &lt;- ply_sanctuaries |&gt; </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(nms %in% c("GRNMS","")) |&gt; </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># st_buffer()</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(nms != "HIHWNMS")  # </span><span class="al">TODO</span><span class="co">: sort dateline sanctuary later</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># mapView(sanctuaries)</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># sanctuaries |&gt;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#   st_drop_geometry() |&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   datatable()</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>dir_out <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="fu">glue</span>(<span class="st">"data/{params$data_var}"</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(dir_out, <span class="at">showWarnings =</span> F, <span class="at">recursive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -168,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(ed <span class="ot">&lt;-</span> <span class="fu">ed_info</span>(params<span class="sc">$</span>erddap_url))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(ed <span class="ot">&lt;-</span> <span class="fu">ed_info</span>(params<span class="sc">$</span>erddap_url))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ERDDAP info&gt; noaacrwsstDaily 
@@ -186,11 +196,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="fu">ed_dim</span>(ed, <span class="st">&quot;time&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(v <span class="ot">&lt;-</span> params<span class="sc">$</span>erddap_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="fu">ed_dim</span>(ed, <span class="st">"time"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(v <span class="ot">&lt;-</span> params<span class="sc">$</span>erddap_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;analysed_sst&quot;</code></pre>
+<pre><code>[1] "analysed_sst"</code></pre>
 </div>
 </div>
 </section>
@@ -199,61 +209,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(nms) <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nms) <span class="sc">|&gt;</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cross_join</span>(</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> <span class="fu">year</span>(<span class="fu">min</span>(times))<span class="sc">:</span><span class="fu">year</span>(<span class="fu">max</span>(times)))) <span class="sc">|&gt;</span> </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">d =</span> <span class="fu">map2</span>(nms, year, \(nms, year) { <span class="co"># nms = &quot;TBNMS&quot;; year = 2025</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      times_yr <span class="ot">&lt;-</span> times[<span class="fu">year</span>(times) <span class="sc">==</span> year]</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      csv <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">&quot;{dir_out}/{nms}/{year}.csv&quot;</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># time[1] if missing csv</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(csv))</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">length</span>(times_yr),</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> times_yr[<span class="dv">1</span>]))</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      times_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv) <span class="sc">|&gt;</span> </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">pull</span>(time)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="co"># NA if all times done</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">all</span>(times_yr <span class="sc">%in%</span> times_csv))</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="dv">0</span>,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="cn">NA</span>)) </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># earliest time missing otherwise</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>      i <span class="ot">&lt;-</span> <span class="sc">!</span>times_yr <span class="sc">%in%</span> times_csv</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">sum</span>(i),</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="fu">min</span>(times_yr[i])) }),</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">map_int</span>(d, pluck, <span class="st">&quot;n_times&quot;</span>),</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">map_dbl</span>(d, pluck, <span class="st">&quot;time_min&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.POSIXct</span>() ) <span class="sc">|&gt;</span> </span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_times <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>d) <span class="sc">|&gt;</span> </span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(i)</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="sc">|&gt;</span> </span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">sum</span>(n_times),</span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">min</span>(time_min)) <span class="sc">|&gt;</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption  =</span> <span class="st">&quot;Sanctuaries missing available ERDDAP times.&quot;</span>,</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">rownames =</span> F,</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">options  =</span> <span class="fu">list</span>(</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">pageLength =</span> <span class="dv">5</span>,</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">lengthMenu =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="fu">nrow</span>(d_nms_yr_todo))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cross_join</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> <span class="fu">year</span>(<span class="fu">min</span>(times))<span class="sc">:</span><span class="fu">year</span>(<span class="fu">max</span>(times)))) <span class="sc">|&gt;</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">d =</span> <span class="fu">map2</span>(nms, year, \(nms, year) { <span class="co"># nms = "TBNMS"; year = 2025</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      times_yr <span class="ot">&lt;-</span> times[<span class="fu">year</span>(times) <span class="sc">==</span> year]</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      csv <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{year}.csv"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># time[1] if missing csv</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(csv))</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">length</span>(times_yr),</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> times_yr[<span class="dv">1</span>]))</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>      times_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv) <span class="sc">|&gt;</span> </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">pull</span>(time)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      <span class="co"># NA if all times done</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">all</span>(times_yr <span class="sc">%in%</span> times_csv))</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="dv">0</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="cn">NA</span>)) </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># earliest time missing otherwise</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>      i <span class="ot">&lt;-</span> <span class="sc">!</span>times_yr <span class="sc">%in%</span> times_csv</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">sum</span>(i),</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="fu">min</span>(times_yr[i])) }),</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">map_int</span>(d, pluck, <span class="st">"n_times"</span>),</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">map_dbl</span>(d, pluck, <span class="st">"time_min"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.POSIXct</span>() ) <span class="sc">|&gt;</span> </span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_times <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>d) <span class="sc">|&gt;</span> </span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(i)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="sc">|&gt;</span> </span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">sum</span>(n_times),</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">min</span>(time_min)) <span class="sc">|&gt;</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption  =</span> <span class="st">"Sanctuaries missing available ERDDAP times."</span>,</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">rownames =</span> F,</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">options  =</span> <span class="fu">list</span>(</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">pageLength =</span> <span class="dv">5</span>,</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">lengthMenu =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="fu">nrow</span>(d_nms_yr_todo))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-20bae86c5bfd4a5e94e3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-20bae86c5bfd4a5e94e3">{"x":{"filter":"none","vertical":false,"caption":"<caption>Sanctuaries missing available ERDDAP times.<\/caption>","data":[["CBNMS","CINMS","CPNMS","FGBNMS","FKNMS","GFNMS","HIHWNMS","MBNMS","MBNMS-david","MBNMS-main","NMSAS","OCNMS","SBNMS","TBNMS"],[1,1,1,1,1,1,110,1,1,1,121,1,1,1],["2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-01-01T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-01-01T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z","2025-05-15T12:00:00Z"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>nms<\/th>\n      <th>n_times<\/th>\n      <th>time_min<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"lengthMenu":[5,50,14],"columnDefs":[{"className":"dt-right","targets":1},{"name":"nms","targets":0},{"name":"n_times","targets":1},{"name":"time_min","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-0f84b03f0d6ad4e24b91" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0f84b03f0d6ad4e24b91">{"x":{"filter":"none","vertical":false,"caption":"<caption>Sanctuaries missing available ERDDAP times.<\/caption>","data":[["CBNMS"],[1],["2025-05-15T12:00:00Z"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>nms<\/th>\n      <th>n_times<\/th>\n      <th>time_min<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"lengthMenu":[5,50,1],"columnDefs":[{"className":"dt-right","targets":1},{"name":"nms","targets":0},{"name":"n_times","targets":1},{"name":"time_min","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -262,51 +272,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rerddap::cache_delete_all()</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fxn <span class="ot">&lt;-</span> <span class="cf">function</span>(i, nms, time_min, ...){</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  nms = &quot;GRNMS&quot;; year = 2010 ; i = 97    # DEBUG</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a> err <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_info</span>(<span class="st">&quot;{sprintf(&#39;%03d&#39;, i)}: {nms}, {time_min}&quot;</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    yr       <span class="ot">&lt;-</span> <span class="fu">year</span>(time_min)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    time_max <span class="ot">&lt;-</span> <span class="fu">max</span>(times[<span class="fu">year</span>(times) <span class="sc">==</span> yr])</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    ply <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(nms <span class="sc">==</span> <span class="sc">!!</span>nms)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: consider expanding by 10% and rounding 2 digits</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bb &lt;- st_bbox(ply) |&gt; stars:::bb_shrink(-0.1) |&gt; round(2)</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    extractr<span class="sc">::</span><span class="fu">ed_extract</span>(</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      ed,</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">var       =</span> v,</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">sf_zones  =</span> ply,</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">mask_tif  =</span> T,</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">rast_tif  =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{dir_out}/{nms}/{yr}.tif&quot;</span>),</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_fun =</span> <span class="st">&quot;mean&quot;</span>,</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_csv =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{dir_out}/{nms}/{yr}.csv&quot;</span>),</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">dir_nc    =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{dir_out}/{nms}/{yr}_nc&quot;</span>),</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">keep_nc   =</span> F,</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_max_vals_per_req =</span> <span class="fl">1e+05</span>,</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_min  =</span> time_min,</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_max  =</span> time_max)</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_error</span>(<span class="fu">conditionMessage</span>(e))</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">conditionMessage</span>(e))</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a> err</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> d_nms_yr_todo <span class="sc">|&gt;</span> </span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># slice(1:3) |&gt;  # DEBUG</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">pmap_chr</span>(<span class="fu">list</span>(i, nms, time_min), fxn))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rerddap::cache_delete_all()</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fxn <span class="ot">&lt;-</span> <span class="cf">function</span>(i, nms, time_min, ...){</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  err <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_info</span>(<span class="st">"{sprintf('%03d', i)}: {nms}, {time_min}"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    yr       <span class="ot">&lt;-</span> <span class="fu">year</span>(time_min)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    time_max <span class="ot">&lt;-</span> <span class="fu">max</span>(times[<span class="fu">year</span>(times) <span class="sc">==</span> yr])</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    ply <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(nms <span class="sc">==</span> <span class="sc">!!</span>nms)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: consider expanding by 10% and rounding 2 digits</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bb &lt;- st_bbox(ply) |&gt; stars:::bb_shrink(-0.1) |&gt; round(2)</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    extractr<span class="sc">::</span><span class="fu">ed_extract</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      ed,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">var       =</span> v,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">sf_zones  =</span> ply,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">mask_tif  =</span> T,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">rast_tif  =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}.tif"</span>),</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_fun =</span> <span class="st">"mean"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_csv =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}.csv"</span>),</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">dir_nc    =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}_nc"</span>),</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">keep_nc   =</span> F,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_max_vals_per_req =</span> <span class="fl">1e+05</span>,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_min  =</span> time_min,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_max  =</span> time_max)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_error</span>(<span class="fu">conditionMessage</span>(e))</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">conditionMessage</span>(e))</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  err</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> d_nms_yr_todo <span class="sc">|&gt;</span> </span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># slice(1:3) |&gt;  # DEBUG</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">pmap_chr</span>(<span class="fu">list</span>(i, nms, time_min), fxn))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="successes" class="level3" data-number="4.1">
@@ -314,17 +324,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">success =</span> <span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(success) <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">success =</span> <span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(success) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-aa11caa799376e539acf" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-aa11caa799376e539acf">{"x":{"filter":"none","vertical":false,"data":[["1"],[true],[14]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>success<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"success","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ed546fce1f92c341df0a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ed546fce1f92c341df0a">{"x":{"filter":"none","vertical":false,"data":[["1"],[true],[1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>success<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"success","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -333,17 +343,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_years =</span> <span class="fu">n</span>(),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">errors  =</span> <span class="fu">unique</span>(error) <span class="sc">|&gt;</span> <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">----</span><span class="sc">\n\n</span><span class="st">&quot;</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_years =</span> <span class="fu">n</span>(),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">errors  =</span> <span class="fu">unique</span>(error) <span class="sc">|&gt;</span> <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n\n</span><span class="st">----</span><span class="sc">\n\n</span><span class="st">"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b0c295c1cb6df6a000b4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b0c295c1cb6df6a000b4">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>errors<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"nms","targets":1},{"name":"n_years","targets":2},{"name":"errors","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ac35296dab965f680a63" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ac35296dab965f680a63">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>nms<\/th>\n      <th>n_years<\/th>\n      <th>errors<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"nms","targets":1},{"name":"n_years","targets":2},{"name":"errors","targets":3}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -352,8 +362,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="5" class="anchored" data-anchor-id="todo"><span class="header-section-number">5</span> TODO</h2>
 <p><code>ed_extract()</code>:</p>
 <ul class="task-list">
-<li><label><input type="checkbox" checked>delete *_nc dir</label></li>
-<li><label><input type="checkbox" checked>differentiate existing done vs todo for given year</label></li>
+<li><label><input type="checkbox" checked="">delete *_nc dir</label></li>
+<li><label><input type="checkbox" checked="">differentiate existing done vs todo for given year</label></li>
 <li><label><input type="checkbox">allow irregular datasets, like <code>meta/irregular/*.yaml</code>: <code>ERROR: x cell sizes are not regular</code></label></li>
 <li><label><input type="checkbox">break up into functions, not exported</label></li>
 </ul>
@@ -369,148 +379,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.4.2 (2024-10-31)
- os       Ubuntu 24.04.1 LTS
- system   x86_64, linux-gnu
+ version  R version 4.4.3 (2025-02-28)
+ os       macOS Sequoia 15.4.1
+ system   aarch64, darwin20
  ui       X11
  language (EN)
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
- tz       Etc/UTC
+ tz       Europe/Rome
  date     2025-05-17
- pandoc   3.5 @ /usr/bin/ (via rmarkdown)
+ pandoc   3.4 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/aarch64/ (via rmarkdown)
+ quarto   1.6.42 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto
 
 ─ Packages ───────────────────────────────────────────────────────────────────
- package         * version date (UTC) lib source
- base64enc         0.1-3   2015-07-28 [1] RSPM (R 4.4.0)
- bit               4.6.0   2025-03-06 [1] RSPM (R 4.4.0)
- bit64             4.6.0-1 2025-01-16 [1] RSPM (R 4.4.0)
- bslib             0.9.0   2025-01-30 [1] RSPM (R 4.4.0)
- cachem            1.1.0   2024-05-16 [1] RSPM (R 4.4.0)
- class             7.3-22  2023-05-03 [2] CRAN (R 4.4.2)
- classInt          0.4-11  2025-01-08 [1] RSPM (R 4.4.0)
- cli               3.6.5   2025-04-23 [1] RSPM (R 4.4.0)
- codetools         0.2-20  2024-03-31 [2] CRAN (R 4.4.2)
- colorspace        2.1-1   2024-07-26 [1] RSPM (R 4.4.0)
- crayon            1.5.3   2024-06-20 [1] RSPM (R 4.4.0)
- crosstalk         1.2.1   2023-11-23 [1] RSPM (R 4.4.0)
- crul              1.5.0   2024-07-19 [1] RSPM (R 4.4.0)
- curl              6.2.2   2025-03-24 [1] RSPM (R 4.4.0)
- data.table        1.17.0  2025-02-22 [1] RSPM (R 4.4.0)
- DBI               1.2.3   2024-06-02 [1] RSPM (R 4.4.0)
- deldir            2.0-4   2024-02-28 [1] RSPM (R 4.4.0)
- devtools          2.4.5   2022-10-11 [1] RSPM (R 4.4.0)
- dichromat         2.0-0.1 2022-05-02 [1] RSPM (R 4.4.0)
- digest            0.6.37  2024-08-19 [1] RSPM (R 4.4.0)
- dplyr           * 1.1.4   2023-11-17 [1] RSPM (R 4.4.0)
- DT              * 0.33    2024-04-04 [1] RSPM (R 4.4.0)
- dygraphs          1.1.1.6 2018-07-11 [1] RSPM (R 4.4.0)
- e1071             1.7-16  2024-09-16 [1] RSPM (R 4.4.0)
- ellipsis          0.3.2   2021-04-29 [1] RSPM (R 4.4.0)
- evaluate          1.0.3   2025-01-10 [1] RSPM (R 4.4.0)
- extractr        * 0.1.5   2025-05-06 [1] Github (marinebon/extractr@b01398a)
- farver            2.1.2   2024-05-13 [1] RSPM (R 4.4.0)
- fastmap           1.2.0   2024-05-15 [1] RSPM (R 4.4.0)
- fs                1.6.6   2025-04-12 [1] RSPM (R 4.4.0)
- generics          0.1.3   2022-07-05 [1] RSPM (R 4.4.0)
- glue            * 1.8.0   2024-09-30 [1] RSPM (R 4.4.0)
- here            * 1.0.1   2020-12-13 [1] RSPM (R 4.4.0)
- hms               1.1.3   2023-03-21 [1] RSPM (R 4.4.0)
- hoardr            0.5.5   2025-01-18 [1] RSPM (R 4.4.0)
- htmltools         0.5.8.1 2024-04-04 [1] RSPM (R 4.4.0)
- htmlwidgets       1.6.4   2023-12-06 [1] RSPM (R 4.4.0)
- httpcode          0.3.0   2020-04-10 [1] RSPM (R 4.4.0)
- httpuv            1.6.16  2025-04-16 [1] RSPM (R 4.4.0)
- jquerylib         0.1.4   2021-04-26 [1] RSPM (R 4.4.0)
- jsonlite          2.0.0   2025-03-27 [1] RSPM (R 4.4.0)
- KernSmooth        2.23-24 2024-05-17 [2] CRAN (R 4.4.2)
- knitr             1.50    2025-03-16 [1] RSPM (R 4.4.0)
- later             1.4.2   2025-04-08 [1] RSPM (R 4.4.0)
- lattice           0.22-6  2024-03-20 [2] CRAN (R 4.4.2)
- leafem            0.2.4   2025-05-01 [1] RSPM (R 4.4.0)
- leaflet           2.2.2   2024-03-26 [1] RSPM (R 4.4.0)
- librarian         1.8.1   2021-07-12 [1] RSPM (R 4.4.0)
- lifecycle         1.0.4   2023-11-07 [1] RSPM (R 4.4.0)
- logger          * 0.4.0   2024-10-22 [1] RSPM (R 4.4.0)
- lubridate       * 1.9.4   2024-12-08 [1] RSPM (R 4.4.0)
- magrittr          2.0.3   2022-03-30 [1] RSPM (R 4.4.0)
- mapview         * 2.11.2  2023-10-13 [1] RSPM (R 4.4.0)
- Matrix            1.7-1   2024-10-18 [2] CRAN (R 4.4.2)
- memoise           2.0.1   2021-11-26 [1] RSPM (R 4.4.0)
- mime              0.13    2025-03-17 [1] RSPM (R 4.4.0)
- miniUI            0.1.1.1 2018-05-18 [1] RSPM (R 4.4.0)
- ncdf4             1.24    2025-03-25 [1] RSPM (R 4.4.0)
- pillar            1.10.2  2025-04-05 [1] RSPM (R 4.4.0)
- pkgbuild          1.4.5   2024-10-28 [1] RSPM (R 4.4.0)
- pkgconfig         2.0.3   2019-09-22 [1] RSPM (R 4.4.0)
- pkgload           1.4.0   2024-06-28 [1] RSPM (R 4.4.0)
- png               0.1-8   2022-11-29 [1] RSPM (R 4.4.0)
- polyclip          1.10-7  2024-07-23 [1] RSPM (R 4.4.0)
- profvis           0.4.0   2024-09-20 [1] RSPM (R 4.4.0)
- promises          1.3.2   2024-11-28 [1] RSPM (R 4.4.0)
- proxy             0.4-27  2022-06-09 [1] RSPM (R 4.4.0)
- purrr           * 1.0.4   2025-02-05 [1] RSPM (R 4.4.0)
- R.methodsS3       1.8.2   2022-06-13 [1] RSPM (R 4.4.0)
- R.oo              1.27.1  2025-05-02 [1] RSPM (R 4.4.0)
- R.utils           2.13.0  2025-02-24 [1] RSPM (R 4.4.0)
- R6                2.6.1   2025-02-15 [1] RSPM (R 4.4.0)
- rappdirs          0.3.3   2021-01-31 [1] RSPM (R 4.4.0)
- raster            3.6-32  2025-03-28 [1] RSPM (R 4.4.0)
- RColorBrewer      1.1-3   2022-04-03 [1] RSPM (R 4.4.0)
- Rcpp              1.0.14  2025-01-12 [1] RSPM (R 4.4.0)
- readr           * 2.1.5   2024-01-10 [1] RSPM (R 4.4.0)
- remotes           2.5.0   2024-03-17 [1] RSPM (R 4.4.0)
- rerddap           1.2.1   2025-03-19 [1] RSPM (R 4.4.0)
- rlang             1.1.6   2025-04-11 [1] RSPM (R 4.4.0)
- rmarkdown         2.29    2024-11-04 [1] RSPM (R 4.4.0)
- rprojroot         2.0.4   2023-11-05 [1] RSPM (R 4.4.0)
- rstudioapi        0.17.1  2024-10-22 [1] RSPM (R 4.4.0)
- sass              0.4.10  2025-04-11 [1] RSPM (R 4.4.0)
- satellite         1.0.5   2024-02-10 [1] RSPM (R 4.4.0)
- scales            1.4.0   2025-04-24 [1] RSPM (R 4.4.0)
- sessioninfo       1.2.2   2021-12-06 [1] RSPM (R 4.4.0)
- sf              * 1.0-20  2025-03-24 [1] RSPM (R 4.4.0)
- shiny             1.9.1   2024-08-01 [1] RSPM (R 4.4.0)
- sp                2.2-0   2025-02-01 [1] RSPM (R 4.4.0)
- spatstat.data     3.1-6   2025-03-17 [1] RSPM (R 4.4.0)
- spatstat.geom     3.3-6   2025-03-18 [1] RSPM (R 4.4.0)
- spatstat.univar   3.1-2   2025-03-05 [1] RSPM (R 4.4.0)
- spatstat.utils    3.1-3   2025-03-15 [1] RSPM (R 4.4.0)
- stringi           1.8.7   2025-03-27 [1] RSPM (R 4.4.0)
- stringr         * 1.5.1   2023-11-14 [1] RSPM (R 4.4.0)
- tabularaster      0.7.2   2023-11-01 [1] RSPM (R 4.4.0)
- terra           * 1.8-42  2025-04-02 [1] RSPM (R 4.4.0)
- tibble            3.2.1   2023-03-20 [1] RSPM (R 4.4.0)
- tidyr             1.3.1   2024-01-24 [1] RSPM (R 4.4.0)
- tidyselect        1.2.1   2024-03-11 [1] RSPM (R 4.4.0)
- timechange        0.3.0   2024-01-18 [1] RSPM (R 4.4.0)
- triebeard         0.4.1   2023-03-04 [1] RSPM (R 4.4.0)
- tzdb              0.5.0   2025-03-15 [1] RSPM (R 4.4.0)
- units             0.8-7   2025-03-11 [1] RSPM (R 4.4.0)
- urlchecker        1.0.1   2021-11-30 [1] RSPM (R 4.4.0)
- urltools          1.7.3   2019-04-14 [1] RSPM (R 4.4.0)
- usethis           3.1.0   2024-11-26 [1] RSPM (R 4.4.0)
- vctrs             0.6.5   2023-12-01 [1] RSPM (R 4.4.0)
- vroom             1.6.5   2023-12-05 [1] RSPM (R 4.4.0)
- withr             3.0.2   2024-10-28 [1] RSPM (R 4.4.0)
- xfun              0.52    2025-04-02 [1] RSPM (R 4.4.0)
- xml2              1.3.8   2025-03-14 [1] RSPM (R 4.4.0)
- xtable            1.8-4   2019-04-21 [1] RSPM (R 4.4.0)
- xts               0.14.1  2024-10-15 [1] RSPM (R 4.4.0)
- yaml              2.3.10  2024-07-26 [1] RSPM (R 4.4.0)
- zoo               1.8-14  2025-04-10 [1] RSPM (R 4.4.0)
+ ! package         * version date (UTC) lib source
+   base64enc         0.1-3   2015-07-28 [1] CRAN (R 4.4.1)
+   bit               4.6.0   2025-03-06 [1] CRAN (R 4.4.1)
+   bit64             4.6.0-1 2025-01-16 [1] CRAN (R 4.4.1)
+   bslib             0.9.0   2025-01-30 [1] CRAN (R 4.4.1)
+   cachem            1.1.0   2024-05-16 [1] CRAN (R 4.4.1)
+   class             7.3-23  2025-01-01 [1] CRAN (R 4.4.3)
+   classInt          0.4-11  2025-01-08 [1] CRAN (R 4.4.1)
+   cli               3.6.5   2025-04-23 [1] CRAN (R 4.4.1)
+   codetools         0.2-20  2024-03-31 [1] CRAN (R 4.4.3)
+   colorspace        2.1-1   2024-07-26 [1] CRAN (R 4.4.1)
+   crayon            1.5.3   2024-06-20 [1] CRAN (R 4.4.1)
+   crosstalk         1.2.1   2023-11-23 [1] CRAN (R 4.4.0)
+   crul              1.5.0   2024-07-19 [1] CRAN (R 4.4.0)
+   curl              6.2.2   2025-03-24 [1] CRAN (R 4.4.1)
+   data.table        1.17.2  2025-05-12 [1] CRAN (R 4.4.1)
+   DBI               1.2.3   2024-06-02 [1] CRAN (R 4.4.1)
+   deldir            2.0-4   2024-02-28 [1] CRAN (R 4.4.1)
+   desc              1.4.3   2023-12-10 [1] CRAN (R 4.4.1)
+   devtools          2.4.5   2022-10-11 [1] CRAN (R 4.4.0)
+   digest            0.6.37  2024-08-19 [1] CRAN (R 4.4.1)
+   dplyr           * 1.1.4   2023-11-17 [1] CRAN (R 4.4.0)
+   DT              * 0.33    2024-04-04 [1] CRAN (R 4.4.0)
+   dygraphs          1.1.1.6 2018-07-11 [1] CRAN (R 4.4.0)
+   e1071             1.7-16  2024-09-16 [1] CRAN (R 4.4.1)
+   ellipsis          0.3.2   2021-04-29 [1] CRAN (R 4.4.1)
+   evaluate          1.0.3   2025-01-10 [1] CRAN (R 4.4.1)
+ P extractr        * 0.1.5   2025-05-17 [?] local (/Users/bbest/Github/marinebon/extractr)
+   farver            2.1.2   2024-05-13 [1] CRAN (R 4.4.1)
+   fastmap           1.2.0   2024-05-15 [1] CRAN (R 4.4.1)
+   fs                1.6.6   2025-04-12 [1] CRAN (R 4.4.1)
+   generics          0.1.4   2025-05-09 [1] CRAN (R 4.4.1)
+   glue            * 1.8.0   2024-09-30 [1] CRAN (R 4.4.1)
+   here            * 1.0.1   2020-12-13 [1] CRAN (R 4.4.1)
+   hms               1.1.3   2023-03-21 [1] CRAN (R 4.4.0)
+   hoardr            0.5.5   2025-01-18 [1] CRAN (R 4.4.1)
+   htmltools         0.5.8.1 2024-04-04 [1] CRAN (R 4.4.1)
+   htmlwidgets       1.6.4   2023-12-06 [1] CRAN (R 4.4.0)
+   httpcode          0.3.0   2020-04-10 [1] CRAN (R 4.4.1)
+   httpuv            1.6.16  2025-04-16 [1] CRAN (R 4.4.1)
+   jquerylib         0.1.4   2021-04-26 [1] CRAN (R 4.4.0)
+   jsonlite          2.0.0   2025-03-27 [1] CRAN (R 4.4.1)
+   KernSmooth        2.23-26 2025-01-01 [1] CRAN (R 4.4.3)
+   knitr             1.50    2025-03-16 [1] CRAN (R 4.4.1)
+   later             1.4.2   2025-04-08 [1] CRAN (R 4.4.1)
+   lattice           0.22-7  2025-04-02 [1] CRAN (R 4.4.1)
+   leafem            0.2.4   2025-05-01 [1] CRAN (R 4.4.1)
+   leaflet           2.2.2   2024-03-26 [1] CRAN (R 4.4.0)
+   librarian         1.8.1   2021-07-12 [1] CRAN (R 4.4.0)
+   lifecycle         1.0.4   2023-11-07 [1] CRAN (R 4.4.1)
+   logger          * 0.4.0   2024-10-22 [1] CRAN (R 4.4.1)
+   lubridate       * 1.9.4   2024-12-08 [1] CRAN (R 4.4.1)
+   magrittr          2.0.3   2022-03-30 [1] CRAN (R 4.4.1)
+   mapview         * 2.11.2  2023-10-13 [1] CRAN (R 4.4.0)
+   Matrix            1.7-3   2025-03-11 [1] CRAN (R 4.4.1)
+   memoise           2.0.1   2021-11-26 [1] CRAN (R 4.4.0)
+   mime              0.13    2025-03-17 [1] CRAN (R 4.4.1)
+   miniUI            0.1.2   2025-04-17 [1] CRAN (R 4.4.1)
+   ncdf4             1.24    2025-03-25 [1] CRAN (R 4.4.1)
+   pillar            1.10.2  2025-04-05 [1] CRAN (R 4.4.1)
+   pkgbuild          1.4.7   2025-03-24 [1] CRAN (R 4.4.1)
+   pkgconfig         2.0.3   2019-09-22 [1] CRAN (R 4.4.1)
+   pkgload           1.4.0   2024-06-28 [1] CRAN (R 4.4.0)
+   png               0.1-8   2022-11-29 [1] CRAN (R 4.4.1)
+   polyclip          1.10-7  2024-07-23 [1] CRAN (R 4.4.1)
+   profvis           0.4.0   2024-09-20 [1] CRAN (R 4.4.1)
+   promises          1.3.2   2024-11-28 [1] CRAN (R 4.4.1)
+   proxy             0.4-27  2022-06-09 [1] CRAN (R 4.4.1)
+   purrr           * 1.0.4   2025-02-05 [1] CRAN (R 4.4.1)
+   R.methodsS3       1.8.2   2022-06-13 [1] CRAN (R 4.4.1)
+   R.oo              1.27.1  2025-05-02 [1] CRAN (R 4.4.1)
+   R.utils           2.13.0  2025-02-24 [1] CRAN (R 4.4.1)
+   R6                2.6.1   2025-02-15 [1] CRAN (R 4.4.1)
+   rappdirs          0.3.3   2021-01-31 [1] CRAN (R 4.4.1)
+   raster            3.6-32  2025-03-28 [1] CRAN (R 4.4.1)
+   RColorBrewer      1.1-3   2022-04-03 [1] CRAN (R 4.4.1)
+   Rcpp              1.0.14  2025-01-12 [1] CRAN (R 4.4.1)
+   readr           * 2.1.5   2024-01-10 [1] CRAN (R 4.4.0)
+   remotes           2.5.0   2024-03-17 [1] CRAN (R 4.4.1)
+   rerddap           1.2.1   2025-03-19 [1] CRAN (R 4.4.1)
+   rlang             1.1.6   2025-04-11 [1] CRAN (R 4.4.1)
+   rmarkdown         2.29    2024-11-04 [1] CRAN (R 4.4.1)
+   rprojroot         2.0.4   2023-11-05 [1] CRAN (R 4.4.1)
+   rstudioapi        0.17.1  2024-10-22 [1] CRAN (R 4.4.1)
+   sass              0.4.10  2025-04-11 [1] CRAN (R 4.4.1)
+   satellite         1.0.5   2024-02-10 [1] CRAN (R 4.4.0)
+   scales            1.4.0   2025-04-24 [1] CRAN (R 4.4.1)
+   sessioninfo       1.2.3   2025-02-05 [1] CRAN (R 4.4.1)
+   sf              * 1.0-21  2025-05-15 [1] CRAN (R 4.4.1)
+   shiny             1.10.0  2024-12-14 [1] CRAN (R 4.4.1)
+   sp                2.2-0   2025-02-01 [1] CRAN (R 4.4.1)
+   spatstat.data     3.1-6   2025-03-17 [1] CRAN (R 4.4.1)
+   spatstat.geom     3.3-6   2025-03-18 [1] CRAN (R 4.4.1)
+   spatstat.univar   3.1-3   2025-05-08 [1] CRAN (R 4.4.1)
+   spatstat.utils    3.1-4   2025-05-15 [1] CRAN (R 4.4.1)
+   stringi           1.8.7   2025-03-27 [1] CRAN (R 4.4.1)
+   stringr         * 1.5.1   2023-11-14 [1] CRAN (R 4.4.0)
+   tabularaster      0.7.2   2023-11-01 [1] CRAN (R 4.4.0)
+   terra           * 1.8-50  2025-05-09 [1] CRAN (R 4.4.1)
+   tibble            3.2.1   2023-03-20 [1] CRAN (R 4.4.0)
+   tidyr             1.3.1   2024-01-24 [1] CRAN (R 4.4.1)
+   tidyselect        1.2.1   2024-03-11 [1] CRAN (R 4.4.0)
+   timechange        0.3.0   2024-01-18 [1] CRAN (R 4.4.1)
+   triebeard         0.4.1   2023-03-04 [1] CRAN (R 4.4.1)
+   tzdb              0.5.0   2025-03-15 [1] CRAN (R 4.4.1)
+   units             0.8-7   2025-03-11 [1] CRAN (R 4.4.1)
+   urlchecker        1.0.1   2021-11-30 [1] CRAN (R 4.4.1)
+   urltools          1.7.3   2019-04-14 [1] CRAN (R 4.4.0)
+   usethis           3.1.0   2024-11-26 [1] CRAN (R 4.4.1)
+   vctrs             0.6.5   2023-12-01 [1] CRAN (R 4.4.0)
+   vroom             1.6.5   2023-12-05 [1] CRAN (R 4.4.0)
+   withr             3.0.2   2024-10-28 [1] CRAN (R 4.4.1)
+   xfun              0.52    2025-04-02 [1] CRAN (R 4.4.1)
+   xml2              1.3.8   2025-03-14 [1] CRAN (R 4.4.1)
+   xtable            1.8-4   2019-04-21 [1] CRAN (R 4.4.1)
+   xts               0.14.1  2024-10-15 [1] CRAN (R 4.4.1)
+   yaml              2.3.10  2024-07-26 [1] CRAN (R 4.4.1)
+   zoo               1.8-14  2025-04-10 [1] CRAN (R 4.4.1)
 
- [1] /usr/local/lib/R/site-library
- [2] /usr/local/lib/R/library
+ [1] /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library
+
+ * ── Packages attached to the search path.
+ P ── Loaded and on-disk path mismatch.
 
 ──────────────────────────────────────────────────────────────────────────────</code></pre>
 </div>
 </div>
+<!-- -->
+
 </section>
 
 </main>
@@ -597,13 +612,62 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -612,7 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -709,7 +773,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -934,7 +997,250 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "ERDDAP Data Extraction"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">params:</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">  # data_var: erddap_sss</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">  # erddap_variable: sss</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">  data_var: erddap_sst</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">  erddap_variable: analysed_sst</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup with `extractr`</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># dir_extractr = "/share/github/marinebon/extractr"</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>dir_extractr <span class="ot">=</span> <span class="st">"~/Github/marinebon/extractr"</span>  <span class="co"># DEBUG</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(dir_extractr)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_local(dir_extractr, force = T)</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("marinebon/extractr", force = T)</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>librarian<span class="sc">::</span><span class="fu">shelf</span>(</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  terra,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  marinebon<span class="sc">/</span>extractr,</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">quiet =</span> T)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">readr.show_col_types =</span> F)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>ply_sanctuaries <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"../climate-dashboard/data/sanctuaries.rds"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nms <span class="sc">==</span> <span class="st">"CBNMS"</span>) <span class="co"># DEBUG</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># filter(!nms %in% c("GRNMS","MNMS")) # DEBUG</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: expand poly to get results</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ply_small &lt;- ply_sanctuaries |&gt; </span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(nms %in% c("GRNMS","")) |&gt; </span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># st_buffer()</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(nms != "HIHWNMS")  # </span><span class="al">TODO</span><span class="co">: sort dateline sanctuary later</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># mapView(sanctuaries)</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="co"># sanctuaries |&gt;</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co">#   st_drop_geometry() |&gt;</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="co">#   datatable()</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>dir_out <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="fu">glue</span>(<span class="st">"data/{params$data_var}"</span>))</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(dir_out, <span class="at">showWarnings =</span> F, <span class="at">recursive =</span> T)</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset info</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ed_info</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>(ed <span class="ot">&lt;-</span> <span class="fu">ed_info</span>(params<span class="sc">$</span>erddap_url))</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="fu">ed_dim</span>(ed, <span class="st">"time"</span>)</span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>(v <span class="ot">&lt;-</span> params<span class="sc">$</span>erddap_variable)</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup iteration: sanctuary years</span></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: d_nms_yr_todo</span></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span> </span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cross_join</span>(</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> <span class="fu">year</span>(<span class="fu">min</span>(times))<span class="sc">:</span><span class="fu">year</span>(<span class="fu">max</span>(times)))) <span class="sc">|&gt;</span> </span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">d =</span> <span class="fu">map2</span>(nms, year, \(nms, year) { <span class="co"># nms = "TBNMS"; year = 2025</span></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>      times_yr <span class="ot">&lt;-</span> times[<span class="fu">year</span>(times) <span class="sc">==</span> year]</span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a>      csv <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{year}.csv"</span>)</span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>      <span class="co"># time[1] if missing csv</span></span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(csv))</span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">length</span>(times_yr),</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> times_yr[<span class="dv">1</span>]))</span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>      times_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv) <span class="sc">|&gt;</span> </span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>        <span class="fu">pull</span>(time)</span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>      <span class="co"># NA if all times done</span></span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">all</span>(times_yr <span class="sc">%in%</span> times_csv))</span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="dv">0</span>,</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="cn">NA</span>)) </span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a>      <span class="co"># earliest time missing otherwise</span></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>      i <span class="ot">&lt;-</span> <span class="sc">!</span>times_yr <span class="sc">%in%</span> times_csv</span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_times  =</span> <span class="fu">sum</span>(i),</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a>          <span class="at">time_min =</span> <span class="fu">min</span>(times_yr[i])) }),</span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">map_int</span>(d, pluck, <span class="st">"n_times"</span>),</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">map_dbl</span>(d, pluck, <span class="st">"time_min"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.POSIXct</span>() ) <span class="sc">|&gt;</span> </span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_times <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>d) <span class="sc">|&gt;</span> </span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(i)</span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a>d_nms_yr_todo <span class="sc">|&gt;</span> </span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span></span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_times  =</span> <span class="fu">sum</span>(n_times),</span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">time_min =</span> <span class="fu">min</span>(time_min)) <span class="sc">|&gt;</span></span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(</span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption  =</span> <span class="st">"Sanctuaries missing available ERDDAP times."</span>,</span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">rownames =</span> F,</span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">options  =</span> <span class="fu">list</span>(</span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a>      <span class="at">pageLength =</span> <span class="dv">5</span>,</span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a>      <span class="at">lengthMenu =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="fu">nrow</span>(d_nms_yr_todo))))</span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Iterate over sanctuary years</span></span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: iterate_ed_extract</span></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a><span class="co"># rerddap::cache_delete_all()</span></span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>fxn <span class="ot">&lt;-</span> <span class="cf">function</span>(i, nms, time_min, ...){</span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG</span></span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>  err <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_info</span>(<span class="st">"{sprintf('%03d', i)}: {nms}, {time_min}"</span>)</span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>    yr       <span class="ot">&lt;-</span> <span class="fu">year</span>(time_min)</span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a>    time_max <span class="ot">&lt;-</span> <span class="fu">max</span>(times[<span class="fu">year</span>(times) <span class="sc">==</span> yr])</span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a>    ply <span class="ot">&lt;-</span> ply_sanctuaries <span class="sc">|&gt;</span></span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(nms <span class="sc">==</span> <span class="sc">!!</span>nms)</span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: consider expanding by 10% and rounding 2 digits</span></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bb &lt;- st_bbox(ply) |&gt; stars:::bb_shrink(-0.1) |&gt; round(2)</span></span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>    extractr<span class="sc">::</span><span class="fu">ed_extract</span>(</span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a>      ed,</span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">var       =</span> v,</span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">sf_zones  =</span> ply,</span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>      <span class="at">mask_tif  =</span> T,</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>      <span class="at">rast_tif  =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}.tif"</span>),</span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_fun =</span> <span class="st">"mean"</span>,</span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>      <span class="at">zonal_csv =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}.csv"</span>),</span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a>      <span class="at">dir_nc    =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dir_out}/{nms}/{yr}_nc"</span>),</span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>      <span class="at">keep_nc   =</span> F,</span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_max_vals_per_req =</span> <span class="fl">1e+05</span>,</span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_min  =</span> time_min,</span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a>      <span class="at">time_max  =</span> time_max)</span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
+<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log_error</span>(<span class="fu">conditionMessage</span>(e))</span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">conditionMessage</span>(e))</span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a>  err</span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> d_nms_yr_todo <span class="sc">|&gt;</span> </span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a>  <span class="co"># slice(1:3) |&gt;  # DEBUG</span></span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">pmap_chr</span>(<span class="fu">list</span>(i, nms, time_min), fxn))</span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### Successes</span></span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: success_summary</span></span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">success =</span> <span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(success) <span class="sc">|&gt;</span> </span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### Errors (if any)</span></span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: error_summary</span></span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a>res <span class="sc">|&gt;</span> </span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(error)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(nms) <span class="sc">|&gt;</span> </span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_years =</span> <span class="fu">n</span>(),</span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a>    <span class="at">errors  =</span> <span class="fu">unique</span>(error) <span class="sc">|&gt;</span> <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n\n</span><span class="st">----</span><span class="sc">\n\n</span><span class="st">"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## TODO</span></span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a><span class="in">`ed_extract()`</span>:</span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> delete *_nc dir</span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> differentiate existing done vs todo for given year</span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> allow irregular datasets, like <span class="in">`meta/irregular/*.yaml`</span>: <span class="in">`ERROR: x cell sizes are not regular`</span></span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> break up into functions, not exported</span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a><span class="in">`erddap.qmd`</span>:</span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> make <span class="in">`ed_extract()`</span> to single MBNMS with features for main vs david; add "ALL" option to <span class="in">`ed_extract()`</span></span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> add buffer to all (and redo)</span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> wrap retry with <span class="in">`ed_dim()`</span> too</span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rm_empty_nc_dirs</span></span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a><span class="co"># find empty directories ending in _nc and delete them</span></span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a>d_dirs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="fu">list.dirs</span>(<span class="fu">here</span>(<span class="st">"data"</span>), <span class="at">full.names =</span> T, <span class="at">recursive =</span> T)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(dir, <span class="st">"_nc$"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_files =</span> <span class="fu">map_int</span>(dir, \(x) {<span class="fu">length</span>(<span class="fu">list.files</span>(x))}))</span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a><span class="co"># show non-empty directories</span></span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>d_dirs <span class="sc">|&gt;</span> </span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_files <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a><span class="co"># delete empty directories</span></span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a>d_dirs <span class="sc">|&gt;</span> </span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_files <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(dir) <span class="sc">|&gt;</span></span>
+<span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a>  <span class="fu">walk</span>(\(x) {</span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">glue</span>(<span class="st">"Deleting {x}"</span>))</span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlink</span>(x, <span class="at">recursive =</span> T) })</span>
+<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a><span class="fu">## R package versions</span></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
