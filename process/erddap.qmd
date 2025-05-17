@@ -9,7 +9,7 @@ params:
   erddap_variable: analysed_sst
 ---
 
-## Setup with `extractr`
+## Polygons
 
 ```{r}
 #| label: setup
@@ -45,7 +45,7 @@ dir_out <- here(glue("data/{params$data_var}"))
 dir.create(dir_out, showWarnings = F, recursive = T)
 ```
 
-## Dataset info
+## Dataset
 
 ```{r}
 #| label: ed_info
@@ -55,7 +55,7 @@ times <- ed_dim(ed, "time")
 (v <- params$erddap_variable)
 ```
 
-## Setup iteration: sanctuary years
+## Polygon years
 
 ```{r}
 #| label: d_nms_yr_todo
@@ -113,7 +113,9 @@ d_nms_yr_todo |>
       lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
 ```
 
-## Iterate over sanctuary years
+## Extract dataset per polygon year
+
+Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/ed_extract.html), .
 
 ```{r}
 #| label: iterate_ed_extract

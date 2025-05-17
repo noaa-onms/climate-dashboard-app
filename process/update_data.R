@@ -43,7 +43,8 @@ for (yml in ymls){  # yml = ymls[2]
     params$data_var <- path_ext_remove(basename(yml))
 
     # qmd
-    proc_qmd <- glue("{dir_proc}/erddap.qmd")  # TODO: switch to copernicus based on params
+    proc     <- strsplit(params$data_var, "_")[[1]][1]  # erddap or copernicus
+    proc_qmd <- glue("{dir_proc}/{proc}.qmd")
     log_qmd  <- glue("{dir_log}/{params$data_var}.qmd")
     file_copy(proc_qmd, log_qmd, overwrite = T)
 

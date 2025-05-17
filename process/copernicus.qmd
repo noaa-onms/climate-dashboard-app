@@ -1,323 +1,235 @@
 ---
-title: "Copernicus"
-format:
-  html:
-    embed-resources: true
-editor_options: 
-  chunk_output_type: console
+title: "Copernicus Data Extraction"
 ---
 
-## R `reticulate` to Py `copernicusmarine`
-
--   [How to sign up for Copernicus Marine Service? | Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/4220332-how-to-sign-up-for-copernicus-marine-service)
--   [How to download data via the Copernicus Marine Toolbox in R? \| Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/8638253-how-to-download-data-via-the-copernicus-marine-toolbox-in-r#h_c480a903fd)
-
-Unfortunately, downloading subsets is not operational in R due to some
-[technical issues](https://github.com/pepijn-devries/CopernicusMarine/issues/42).
-It seems that it might take some time to get this fixed. In the meantime,
-you could have a look at this
-[work-around](https://github.com/pepijn-devries/CopernicusMarine/issues/42#issuecomment-2079745370)
-
-- [https://github.com/pepijn-devries/CopernicusMarine/issues/42#issuecomment-2079745370
-
-### Fetch bottom temperature (`tob`)
-
-- [Global Ocean Physics Analysis and Forecast | Copernicus Marine Service](https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/download?dataset=cmems_mod_glo_phy_anfc_0.083deg_P1M-m_202406)
-
-- Product identifier: `GLOBAL_ANALYSISFORECAST_PHY_001_024`
-- Product name: "Global Ocean Physics Analysis and Forecast"
-  - [manual](https://catalogue.marine.copernicus.eu/documents/PUM/CMEMS-GLO-PUM-001-024.pdf)
-    - **cmems_mod_glo_phy_anfc_0.083deg_P1M-m** which contains the 2D monthly mean fields: sea surface level, bottom pressure, bottom salinity, bottom potential temperature, mixed layer thickness, sea ice albedo, sea ice age, sea ice surface temperature, sea ice
-speed, snow thickness, sea ice thickness, sea ice fraction and sea ice velocities information.
-    - Sea water **_potential_ temperature** at sea floor **`tob`** [°C]
+## Polygons
 
 ```{r}
-#| label: stars_mdim
-#| eval: false
+#| label: setup
 
-librarian::shelf(stars)
-
-# [Implement support for ZARR file subsetting and downloading · Issue #34 · pepijn-devries/CopernicusMarine](https://github.com/pepijn-devries/CopernicusMarine/issues/34)
-# just note that extra full quoting is required for ZARR via GDAL,i.e.
-# gdalinfo "ZARR:\"/vsicurl/https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEALEVEL_GLO_PHY_L4_NRT_008_046/cmems_obs-sl_glo_phy-ssh_nrt_allsat-l4-duacs-0.25deg_P1D_202311/timeChunked.zarr\""
-# so, in R these work
-adt <- "ZARR:\"/vsicurl/https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEALEVEL_GLO_PHY_L4_NRT_008_046/cmems_obs-sl_glo_phy-ssh_nrt_allsat-l4-duacs-0.25deg_P1D_202311/timeChunked.zarr\":/adt"
-sf::gdal_utils(util = "mdiminfo", adt)
-(r <- terra::rast(adt))
-names(r)
-varnames(r)
-longnames(r)
-time(r)
-(st <- stars::read_mdim(adt, proxy = TRUE))
-names(st)
-
-compareVersion(sf::sf_extSoftVersion()["GDAL"], "3.4.0") > -1
-
-# [problem with zarr files · Issue #564 · r-spatial/stars](https://github.com/r-spatial/stars/issues/564)
-dsn = 'ZARR:"/vsicurl/https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr"'
-bounds = c(longitude = "lon_bounds", latitude = "lat_bounds")
-r = read_mdim(dsn, bounds = bounds)
-# [Read or write data using GDAL's multidimensional array API — mdim • stars](https://r-spatial.github.io/stars/reference/mdim.html#ref-examples)
-```
-
-
-```{r}
-# libraries
 librarian::shelf(
-  dplyr, DT, glue, here, jsonlite, listviewer, purrr, reticulate, stringr, terra,
+  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
+  terra, tibble,
   quiet = T)
-redo_cat = F
+options(readr.show_col_types = F)
 
-# do once: create virtual enviroment and install copernicusmarine Python module
-# virtualenv_create(envname = "CopernicusMarine")
-# virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
+ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 
-# TODO: check for CopernicusMarine env with copernicusmarine Python module
+# TODO: expand poly to get results
+# ply_small <- ply_sanctuaries |> 
+#   filter(nms %in% c("GRNMS","")) |> 
+  # st_buffer()
+  # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
 
-# use virtualenv and reticulate::import copernicusmarine Python module
-use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
-cmt <- import("copernicusmarine")
+# mapView(sanctuaries)
+# sanctuaries |>
+#   st_drop_geometry() |>
+#   datatable()
 
-# login ----
-
-# register for username and password at https://data.marine.copernicus.eu/register
-user     <- "bbest1"
-pass_txt <- "~/My Drive/private/data.marine.copernicus.eu_bbest1-password.txt"
-
-pass <- readLines(pass_txt)
-logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
-# writes to ~/.copernicusmarine/.copernicusmarine-credentials
+dir_out <- here(glue("data/{params$data_var}"))
+dir.create(dir_out, showWarnings = F, recursive = T)
 ```
 
-## Show CopernicusMarine catalog of products
+## Dataset
 
 ```{r}
-# by default, we only get information about the products
-cat_json <- here("data/copernicus_catalogue.json")
-if (!file.exists(cat_json) | redo_cat) {
-  catalogue <- cmt$describe()  # py_help(cmt$describe)
-  catalogue$json() |>          # py_help(cmt$CopernicusMarineCatalogue$json)
-    write(cat_json)
-}
-cat_mtime <- file.info(cat_json)$mtime
-cat <- jsonlite::fromJSON(cat_json)
-# names(cat$products)
-# [1] "title"                     "product_id"               
-# [3] "thumbnail_url"             "description"              
-# [5] "digital_object_identifier" "sources"                  
-# [7] "processing_level"          "production_center"        
-# [9] "keywords"                  "datasets"
-cat$products |> 
-  select(product_id, title, thumbnail_url) |> 
+#| label: ed_info
+
+(ed <- ed_info(params$erddap_url))
+times <- ed_dim(ed, "time")
+(v <- params$erddap_variable)
+```
+
+## Polygon years
+
+```{r}
+#| label: d_nms_yr_todo
+
+d_nms_yr_todo <- ply_sanctuaries |> 
+  st_drop_geometry() |> 
+  arrange(nms) |> 
+  select(nms) |> 
+  cross_join(
+    tibble(
+      year = year(min(times)):year(max(times)))) |> 
   mutate(
-    product   = 
-      glue("<a href='https://data.marine.copernicus.eu/product/{product_id}/description' target='_blank'>{product_id}</a>"),
-    thumbnail = glue("<img src='{thumbnail_url}' height='50'></img>")) |> 
-  select(product, title, thumbnail) |>
+    d = map2(nms, year, \(nms, year) { # nms = "TBNMS"; year = 2025
+      times_yr <- times[year(times) == year]
+      csv <- glue("{dir_out}/{nms}/{year}.csv")
+      
+      # time[1] if missing csv
+      if (!file.exists(csv))
+        return(list(
+          n_times  = length(times_yr),
+          time_min = times_yr[1]))
+      
+      times_csv <- read_csv(csv) |> 
+        pull(time)
+      # NA if all times done
+      if (all(times_yr %in% times_csv))
+        return(list(
+          n_times  = 0,
+          time_min = NA)) 
+      
+      # earliest time missing otherwise
+      i <- !times_yr %in% times_csv
+      list(
+          n_times  = sum(i),
+          time_min = min(times_yr[i])) }),
+    n_times  = map_int(d, pluck, "n_times"),
+    time_min = map_dbl(d, pluck, "time_min") |> 
+      as.POSIXct() ) |> 
+  filter(n_times > 0) |> 
+  select(-d) |> 
+  rowid_to_column("i") |>
+  relocate(i)
+
+d_nms_yr_todo |> 
+  group_by(nms) %>%
+  {if (nrow(.) > 0)
+    summarize(
+      n_times  = sum(n_times),
+      time_min = min(time_min, na.rm = T)) else .} |>
   datatable(
-    options = list(
+    caption  = "Sanctuaries missing available ERDDAP times.",
+    rownames = F,
+    options  = list(
       pageLength = 5,
-      lengthMenu = c(5, 50, 100, nrow(cat$products))),
-    escape = F,
-    caption = glue("CopernicusMarine Products (last fetched: {as.Date(cat_mtime)})"))
+      lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
 ```
 
-## Show all datasets for a product
+## Extract dataset per polygon year
+
+Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/ed_extract.html), .
 
 ```{r}
-product_id <- "GLOBAL_ANALYSISFORECAST_PHY_001_024"
+#| label: iterate_ed_extract
 
-d_ds$dataset_name[[1]]
+# rerddap::cache_delete_all()
 
-d_ds <- cat$products |> 
-  filter(product_id == !!product_id) |> 
-  pull(datasets) |> 
-  pluck(1) |> 
-  tibble()
+fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
+  
+  err <- tryCatch({
+    
+    log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
+    
+    yr       <- year(time_min)
+    time_max <- max(times[year(times) == yr])
+    
+    ply <- ply_sanctuaries |>
+      filter(nms == !!nms)
+    # TODO: consider expanding by 10% and rounding 2 digits
+    # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
+    
+    extractr::ed_extract(
+      ed,
+      var       = v,
+      sf_zones  = ply,
+      mask_tif  = T,
+      rast_tif  = glue::glue("{dir_out}/{nms}/{yr}.tif"),
+      zonal_fun = "mean",
+      zonal_csv = glue::glue("{dir_out}/{nms}/{yr}.csv"),
+      dir_nc    = glue::glue("{dir_out}/{nms}/{yr}_nc"),
+      keep_nc   = F,
+      n_max_vals_per_req = 1e+05,
+      time_min  = time_min,
+      time_max  = time_max)
+    
+    return(NA)
+  }, error = function(e) {
+    
+    log_error(conditionMessage(e))
+    return(conditionMessage(e))
+  })
+  
+  err
+} 
 
-# cmems_mod_glo_phy_anfc_0.083deg_P1M-m        # Monthly
-# cmems_mod_glo_phy-so_anfc_0.083deg_P1M-m     # Salinity, monthly
-# cmems_mod_glo_phy-thetao_anfc_0.083deg_P1M-m # Temperature, monthly
-# cmems_mod_glo_phy_anfc_0.083deg_static       # Statics (bathymetry)
-
-
-# versions (n=1)
-d_ds$versions[[1]] |> 
-  tibble()
-# parts (n=1)
-d_ds$versions[[1]] |> 
-  pull(parts) |> 
-  pluck(1) |> 
-  tibble()
-# services (n=4)
-d_ds$versions[[1]] |> 
-  pull(parts) |> 
-  pluck(1) |> 
-  pull(services) |> 
-  pluck(1) |> 
-  tibble()
-# - [Differences between NetCDF and ARCO formats](https://help.marine.copernicus.eu/en/articles/8656000-differences-between-netcdf-and-arco-formats)
-#   - want ARCO
-# - [Services](https://help.marine.copernicus.eu/en/articles/7969584-copernicus-marine-toolbox-services)
-#   - want **timeseries**: analyzing the whole time series over a relatively small domain
-d_ds$versions[[1]] |> 
-  pull(parts) |> 
-  pluck(1) |> 
-  pull(services) |> 
-  pluck(1) |> 
-  tibble() |> 
-  filter(service_short_name == "timeseries") |> 
-  pull(variables) |>
-  pluck(1) |> 
-  tibble()
-
-d_ds$versions |> 
-  filter(service_short_name == "timeseries")
-  [[4]] |> 
-  pull(parts) |> 
-  pluck(1) |> 
-  pull(services) |> 
-  pluck(1) |> 
-  select(variables) |> 
-  tibble()
-d_ds$versions[[2]] |> 
-  tibble()
-|> 
+res <- d_nms_yr_todo |> 
+  # slice(1:3) |>  # DEBUG
   mutate(
-    versions = map(datasets, ~ .x$versions),
-  )
-  # pluck(datasets) |> 
-  View()
-
+    error = pmap_chr(list(i, nms, time_min), fxn))
 ```
 
+### Successes
 
 ```{r}
-# describe dataset
-dataset_id <- "cmems_mod_glo_phy_anfc_0.083deg_P1M-m"
-d          <- cmt$describe(
-  dataset_id = dataset_id,
-  # contains=list(dataset_id), 
-  show_all_versions = T)  # py_help(cmt$describe)
-jsonedit(d$json())
-cat <- cmt$CopernicusMarineCatalogue()  # py_help(cmt$CopernicusMarineCatalogue)
+#| label: success_summary
 
-# subset dataset
-dir_data   <- here("data/copernicus")
-s <- cmt$subset(   # py_help(cmt$subset)
-  # unused arguments (force_download = T, overwrite_output_data = T)
-  dataset_id            = dataset_id,
-  # dataset_version     = "202309",
-  variables             = list("tob"),
-  minimum_longitude     = -6.93,
-  maximum_longitude     = 2.3,
-  minimum_latitude      = 47.49,
-  maximum_latitude      = 51.65,
-  start_datetime        = "2024-01-01T00:00:00",
-  end_datetime          = "2024-03-01T00:00:00",
-  output_directory      = dir_data,
-  # force_download        = T,
-  # overwrite_output_data = T
-  # coordinates_selection_method : str, optional
-  #       If ``inside``, the selection retrieved will be inside the requested range. If ``strict-inside``, the selection retrieved will be inside the requested range, and an error will be raised if the values don't exist. If ``nearest``, the extremes closest to the requested values will be returned. If ``outside``, the extremes will be taken to contain all the requested interval. The methods ``inside``, ``nearest`` and ``outside`` will display a warning if the request is out of bounds.
-  # output_filename : str, optional
-  #       Save the downloaded data with the given file name (under the output directory).
-  # minimum_depth   = 0.4940253794193268,
-  # maximum_depth   = 11.4
-  )
-# cmems_mod_glo_phy_anfc_0.083deg_P1M-m_tob_6.92W-2.25E_47.50N-51.58N_2024-01-01-2024-03-01.nc
-# INFO - 2025-03-21T17:26:50Z - Selected dataset version: "202406"
-# INFO - 2025-03-21T17:26:50Z - Selected dataset part: "default"
-
-# show output_filename with parameters embedded
-# cat(glue("output_filename (basename): {basename(as.character(s))}"))
-s
-# ResponseSubset(file_path=PosixPath('/Users/bbest/Github/noaa-onms/climate-dashboard-app/data/copernicus/cmems_mod_glo_phy_anfc_0.083deg_P1M-m_tob_6.92W-2.25E_47.50N-51.58N_2024-01-01-2024-03-01.nc'), output_directory=PosixPath('/Users/bbest/Github/noaa-onms/climate-dashboard-app/data/copernicus'), filename='cmems_mod_glo_phy_anfc_0.083deg_P1M-m_tob_6.92W-2.25E_47.50N-51.58N_2024-01-01-2024-03-01.nc', file_size=0.07654961832061069, data_transfer_size=0.5276335877862596, variables=['tob'], coordinates_extent=[GeographicalExtent(minimum=-6.916656494140625, maximum=2.25, unit='degrees_east', coordinate_id='longitude'), GeographicalExtent(minimum=47.5, maximum=51.583343505859375, unit='degrees_north', coordinate_id='latitude'), TimeExtent(minimum='2024-01-01T00:00:00+00:00', maximum='2024-03-01T00:00:00+00:00', unit='iso8601', coordinate_id='time')], status='000', message='The request was successful.', file_status='DOWNLOADED')
-
-s <- '/Users/bbest/Github/noaa-onms/climate-dashboard-app/data/copernicus/cmems_mod_glo_phy_anfc_0.083deg_P1M-m_tob_6.92W-2.25E_47.50N-51.58N_2024-01-01-2024-03-01.nc'
-
-# show terra::rast object
-r <- rast(s)
-print(r)
-
-i      <- 1
-cat(glue("index: {i}; layer_index: {names(r)[i]};  time_index: {time(r)[i]}"))
-
-# plot interactive map
-plet(
-  r[[i]], 
-  main  = glue("Bottom\nTemp. (°C)\n{time(r)[i]}"), 
-  tiles = "Esri.OceanBasemap")
+res |> 
+  mutate(
+    success = is.na(error)) |> 
+  group_by(success) |> 
+  summarize(
+    n = n()) |> 
+  datatable()
 ```
+
+### Errors (if any)
 
 ```{r}
-librarian::shelf(gdalcubes, stars)
+#| label: error_summary
 
-
-gc <- gdalcubes::ncdf_cube(s)
-# [ERROR] Failed to find crs variable in netCDF file '/Users/bbest/Github/noaa-onms/climate-dashboard-app/data/copernicus/cmems_mod_glo_phy_anfc_0.083deg_P1M-m_tob_6.92W-2.25E_47.50N-51.58N_2024-01-01-2024-03-01.nc'
-
-
+res |> 
+  filter(!is.na(error)) |> 
+  group_by(nms) |> 
+  summarize(
+    n_years = n(),
+    errors  = unique(error) |> paste(collapse = "\n\n----\n\n")) |> 
+  datatable()
 ```
 
+::: {.content-hidden}
+
+## TODO
+
+`ed_extract()`:
+
+- [x] delete *_nc dir
+- [x] differentiate existing done vs todo for given year
+- [ ] allow irregular datasets, like `meta/irregular/*.yaml`: `ERROR: x cell sizes are not regular`
+- [ ] break up into functions, not exported
+
+`erddap.qmd`:
+
+- [ ] make `ed_extract()` to single MBNMS with features for main vs david; add "ALL" option to `ed_extract()`
+- [ ] add buffer to all (and redo)
+- [ ] wrap retry with `ed_dim()` too
+
+::: 
 
 ```{r}
-librarian::shelf(
-  pepijn-devries/CopernicusMarine, leaflet)
+#| label: rm_empty_nc_dirs
+#| eval: false
+#| echo: false
 
-leaflet() |>
-  setView(lng = 3, lat = 54, zoom = 4) |>
-  addProviderTiles("Esri.WorldImagery") |>
-  addCmsWMTSTiles(
-    product     = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-    layer       = "cmems_mod_glo_phy-thetao_anfc_0.083deg_P1D-m",
-    variable    = "thetao")
+# find empty directories ending in _nc and delete them
+d_dirs <- tibble(
+  dir = list.dirs(here("data"), full.names = T, recursive = T)) |> 
+  filter(str_detect(dir, "_nc$")) |> 
+  mutate(
+    n_files = map_int(dir, \(x) {length(list.files(x))}))
+
+# show non-empty directories
+d_dirs |> 
+  filter(n_files > 0) |> 
+  datatable()
+
+# delete empty directories
+d_dirs |> 
+  filter(n_files == 0) |> 
+  pull(dir) |>
+  walk(\(x) {
+    message(glue("Deleting {x}"))
+    unlink(x, recursive = T) })
 ```
 
+::: {.callout-caution collapse="true"}
+
+## R package versions
 
 ```{r}
-if (FALSE) { # \dontrun{
-## List some STAC properties for a specific product and layer
-cms_stac_properties(
-  product       = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-  layer         = "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m"
-) |> 
-    dplyr::glimpse()
-
-## Get the available files for a specific product and layer:
-file_tibble <-
-  cms_list_stac_files("GLOBAL_ANALYSISFORECAST_PHY_001_024",
-                      "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m")
-file_tibble |> View()
-file_tibble$home[1]
-
-i = 1
-paste("https:/", file_tibble$home[[i]], 
-                file_tibble$native[[i]], file_tibble$current_path[[i]], 
-                sep = "/")
-
-url_nc = "https://s3.waw3-1.cloudferro.com/mdl-native-14/native/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m_202406/2022/06/glo12_rg_1d-m_20220601-20220601_3D-uovo_hcst_R20220615.nc"
-file_nc <- glue("data/copernicus/{basename(url_nc)}")
-getOption("timeout")
-options(timeout = max(300, getOption("timeout")))
-download.file(url_nc, destfile = file_nc)
-library(ncdf4)
-nc <- nc_open(file_nc)
-
-librarian::shelf(ncmeta)
-
-ncmeta::nc_vars(file_nc)
-st <- stars::read_ncdf(file_nc) # works!
-
-gc <- gdalcubes::ncdf_cube(file_nc)
-# Error: Failed to find crs variable in netCDF file 'data/copernicus/glo12_rg_1d-m_20220601-20220601_3D-uovo_hcst_R20220615.nc'
-gdalcubes ncdf_cube Error "Failed to find crs variable in netCDF file"
-
-dest <- tempdir()
-
-## download the first file from the file_tibble to 'dest'
-cms_download_stac(file_tibble[1,, drop = FALSE], dest)
-} # }
-
+devtools::session_info()
 ```
 
+::: 

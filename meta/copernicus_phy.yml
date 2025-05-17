@@ -1,0 +1,22 @@
+product_name: Global Ocean Physics Reanalysis
+product_id: GLOBAL_MULTIYEAR_PHY_001_030
+datasets:
+- name: Daily
+  id: cmems_mod_glo_phy_my_0.083deg_P1D-m
+- name: Interim, daily
+  id: cmems_mod_glo_phy_myint_0.083deg_P1D-m
+variables:
+- name: Ocean mixed layer thickness
+  units: m
+  id: mlotst
+- name: Sea surface temperature
+  units: °C
+  id: thetao
+  depth: 0.49
+- name: Sea bottom temperature
+  units: °C
+  id: bottomT
+- name: Sea water salinity
+  units: / 10^3
+  id: so
+
