@@ -1,8 +1,8 @@
 ---
 params:
   yml: "meta/copernicus_phy.yml"
-title: "Copernicus Data Extraction"
-subtitle: "metadata parameters: *`r params$yml`*"
+title: "Copernicus Marine Extraction"
+subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
 ```{r}
