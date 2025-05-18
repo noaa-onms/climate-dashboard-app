@@ -11,7 +11,7 @@ subtitle: "metadata: *`r basename(params$yml)`*"
 librarian::shelf(
   dplyr, DT, fs, glue, here, logger, jsonlite, listviewer, lubridate, mapview, 
   purrr, RColorBrewer, readr, reticulate, sf, stringr, terra, tibble, tidyr, 
-  units, 
+  units, yaml, 
   quiet = T)
 options(readr.show_col_types = F)
 mapviewOptions(
@@ -64,6 +64,10 @@ ply_sanctuaries |>
 
 ## Dataset
 
+
+- [Python interface - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/python-interface.html#copernicusmarine.subset)
+- [Command subset - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/usage/subset-usage.html#option-coordinates-selection-method)
+
 ```{r}
 #| label: dataset
 
@@ -71,9 +75,6 @@ ply_sanctuaries |>
 # do once: create virtual enviroment and install copernicusmarine Python module
 # virtualenv_create(envname = "CopernicusMarine")
 # virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
-# TODO: check for CopernicusMarine env with copernicusmarine Python module
-# - [Python interface - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/python-interface.html#copernicusmarine.subset)
-# - [Command subset - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/usage/subset-usage.html#option-coordinates-selection-method)
 
 # use CopernicusMarine env with copernicusmarine Python module
 use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
@@ -94,13 +95,11 @@ logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
 stopifnot(logged_in)
 
 # DEBUG
-m_yml <- here("meta/copernicus_phy.yml")
-params <- yaml::read_yaml(m_yml) 
-params$proc_prod <- path_ext_remove(basename(m_yml))
-proc <- strsplit(params$proc_prod, "_")[[1]][1]  # erddap or copernicus
-prod <- strsplit(params$proc_prod, "_")[[1]][2]  # copernicus product
+# params <- list(yml = here("meta/copernicus_phy.yml")
+params <- read_yaml(params$yml) 
+copernicus_prod <- path_ext_remove(basename(params$yml))
 
-dir_out <- here(glue("data/{params$proc_prod}"))
+dir_out <- here(glue("data/{copernicus_prod}"))
 dir_create(dir_out)
 
 # show params ----
@@ -118,8 +117,6 @@ get_dataset_description <- function(dataset_id){
 # dataset_description <- get_dataset_description("cmems_mod_glo_phy_my_0.083deg_P1D-m")
 
 get_dataset_times <- function(dataset_description){
-  dataset_version <- pluck(
-    dataset_description, "products", "datasets", 1, "versions", 1, "label")
   services <- pluck(
     dataset_description, "products", "datasets", 1, "versions", 1, "parts", 1, "services", 1)
   service_names <- pluck(
@@ -139,7 +136,6 @@ get_dataset_times <- function(dataset_description){
     as.POSIXct(origin = "1970-01-01", tz = "UTC")
   time_max <- pluck(
     coordinates, 1, "maximum_value", i_time) |> 
-    # convert from [milliseconds since 1970-01-01 00:00:00Z (no leap seconds)]
     as.numeric() %>% {./1000} |> 
     as.POSIXct(origin = "1970-01-01", tz = "UTC")
   time_step_secs <- pluck(
