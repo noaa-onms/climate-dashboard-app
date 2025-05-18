@@ -40,6 +40,7 @@ for (yml in ymls){  # yml = ymls[2]
 
     # parameters
     params          <- read_yaml(yml)
+    params$yml      <- basename(yml)
     params$data_var <- path_ext_remove(basename(yml))
 
     # qmd

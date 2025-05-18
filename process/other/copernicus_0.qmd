@@ -143,26 +143,28 @@ m <- list(
     list(
       name = "Interim, daily",
       id   = "cmems_mod_glo_phy_myint_0.083deg_P1D-m" ) ),
-  depth = c(0, 0.5),  # get surface layer only
+  depth = list(
+    min = "0.49402499198913574",              # get surface layer only
+    max = "0.49402499198913574"),             # precision drops
   variables = list(
     list(
       name  = "Ocean mixed layer thickness",  # defined by sigma theta
       units = "m",
       id    = "mlotst"),
     list(
-      name  = "Sea surface temperature",  # potential
+      name  = "Sea surface temperature",      # potential
       units = "°C",
-      id    = "thetao",
-      depth = 0.49),
+      id    = "thetao"),
     list(
-      name  = "Sea bottom temperature",  # potential
+      name  = "Sea bottom temperature",       # potential
       units = "°C",
       id    = "bottomT"),
     list(
       name  = "Sea water salinity",
-      units = "/ 10^3",
+      units = "g/kg",
       id    = "so") ) )
-m |> as.yaml() |> writeLines(here("meta/copernicus_phy.yml"))
+nchar("0.49402499198913574")
+m |> yaml::as.yaml(precision = 17) |> writeLines(here("meta/copernicus_phy.yml"))
 ```
 
 ```{r}

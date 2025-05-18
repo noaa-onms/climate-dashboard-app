@@ -6,8 +6,8 @@ datasets:
 - name: Interim, daily
   id: cmems_mod_glo_phy_myint_0.083deg_P1D-m
 depth:
-- 0.49402499
-- 0.49402499
+  min: 0.49402499198913574
+  max: 0.49402499198913574
 variables:
 - name: Ocean mixed layer thickness
   units: m
@@ -19,6 +19,6 @@ variables:
   units: °C
   id: bottomT
 - name: Sea water salinity
-  units: / 10^3
+  units: g/kg
   id: so
 

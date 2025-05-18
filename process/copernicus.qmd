@@ -1,5 +1,8 @@
 ---
+params:
+  yml: "meta/copernicus_phy.yml"
 title: "Copernicus Data Extraction"
+subtitle: "metadata parameters: *`r params$yml`*"
 ---
 
 ```{r}
@@ -69,9 +72,12 @@ ply_sanctuaries |>
 # virtualenv_create(envname = "CopernicusMarine")
 # virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
 # TODO: check for CopernicusMarine env with copernicusmarine Python module
+# - [Python interface - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/python-interface.html#copernicusmarine.subset)
+# - [Command subset - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/usage/subset-usage.html#option-coordinates-selection-method)
 
 # use CopernicusMarine env with copernicusmarine Python module
 use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
+py_require("copernicusmarine>2.1")
 cmt <- import("copernicusmarine")
 
 # login to cmt ----
@@ -109,8 +115,11 @@ get_dataset_description <- function(dataset_id){
     disable_progress_bar = T)$json() |> 
     fromJSON()
 }
+# dataset_description <- get_dataset_description("cmems_mod_glo_phy_my_0.083deg_P1D-m")
 
 get_dataset_times <- function(dataset_description){
+  dataset_version <- pluck(
+    dataset_description, "products", "datasets", 1, "versions", 1, "label")
   services <- pluck(
     dataset_description, "products", "datasets", 1, "versions", 1, "parts", 1, "services", 1)
   service_names <- pluck(
@@ -148,16 +157,18 @@ d_ds <- tibble(
     pluck("datasets") |> 
     map_chr("id")) |> 
   mutate(
-    description = map(dataset_id, get_dataset_description),
+    description     = map(dataset_id, get_dataset_description),
+    dataset_version = map_chr(
+      dataset_description, pluck, "datasets", 1, "versions", 1, "label"),
     times       = map(description, get_dataset_times),
     time_min    = map_vec(times, min),
     time_max    = map_vec(times, max),
     n_times     = map_int(times, length))
 
 d_ds |> 
-  select(-description, -times) |> 
+  select(dataset_id, dataset_version, time_min, time_max, n_times) |> 
   datatable(
-    caption  = "Copernicus dataset times.")
+    caption  = "Copernicus datasets: version and times.")
 ```
 
 ## Polygon dataset years
@@ -242,20 +253,23 @@ fxn <- function(i, ds_id, nms, time_min, time_max, ...){
     dir_create(dirname(r_nc))
     
     res <- cmt$subset(                    # py_help( cmt$subset)
-      dataset_id        = ds_id,
-      service           = "timeseries",
-      variables         = vars,
-      minimum_longitude = bb$xmin,
-      maximum_longitude = bb$xmax,
-      minimum_latitude  = bb$ymin,
-      maximum_latitude  = bb$ymax,
-      start_datetime    = time_min,
-      end_datetime      = time_max,
-      minimum_depth     = params$depth[1],
-      maximum_depth     = params$depth[2],
-      output_directory  = dirname(r_nc),
-      output_filename   = basename(r_nc),
-      overwrite         = T)
+      dataset_id                   = ds_id,
+      service                      = "timeseries",
+      variables                    = vars,
+      minimum_longitude            = bb$xmin,
+      maximum_longitude            = bb$xmax,
+      minimum_latitude             = bb$ymin,
+      maximum_latitude             = bb$ymax,
+      start_datetime               = time_min,
+      end_datetime                 = time_max,
+      minimum_depth                = params$depth[1],
+      maximum_depth                = params$depth[2],
+      output_directory             = dirname(r_nc),
+      output_filename              = basename(r_nc),
+      overwrite                    = TRUE,
+      coordinates_selection_method = "inside",
+      netcdf_compression_level     = 1,
+      disable_progress_bar         = TRUE)
 
     # TODO: merge with existing
     r <- rast(r_nc)
