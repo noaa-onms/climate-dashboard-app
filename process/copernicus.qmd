@@ -125,8 +125,7 @@ pass <- readLines(pass_txt)
 logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
 stopifnot(logged_in)
 
-# DEBUG
-# params <- list(yml = here("meta/copernicus_phy.yml")
+# params <- list(yml = here("meta/copernicus_phy.yml") # DEBUG
 meta <- read_yaml(params$yml) 
 copernicus_prod <- path_ext_remove(basename(params$yml))
 

@@ -47,10 +47,11 @@ choices_var <- select(d_vars, label, var) |> deframe()
 
 selected_nms = "FKNMS"
 selected_var = "erddap_sst"
+
 # DEBUG
 # selected_nms = "CBNMS"
 # selected_var = "erddap_sst"
-
+#
 # read_csv("data/erddap_sst/HIHWNMS/2025.csv") |>
 #   arrange(time) |>
 #   tail(1)

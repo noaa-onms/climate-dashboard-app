@@ -53,12 +53,12 @@ for (yml in ymls){  # yml = ymls[2]
   log_tictoc("meta/{basename(yml)} -[ process/{basename(proc_qmd)} ]-> data/{proc_var}/*, log/{proc_var}.html")
   tryCatch({
 
-    log_info("quarto_render(input = {basename(log_qmd)}, execute_params = list(yml = {basename(yml)}))")
+    # log_info("quarto_render(input = {basename(log_qmd)}, execute_params = list(yml = {basename(yml)}))")
 
-    # quarto_render(
-    #   input          = log_qmd,
-    #   execute_params = list(
-    #     yml = yml))
+    quarto_render(
+      input          = log_qmd,
+      execute_params = list(
+        yml = yml))
 
     file_delete(log_qmd)
 

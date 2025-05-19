@@ -139,7 +139,7 @@ Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/
 
 # rerddap::cache_delete_all()
 
-fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
+fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
   
   err <- tryCatch({
     
@@ -178,7 +178,6 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97  
 } 
 
 res <- d_nms_yr_todo |> 
-  # slice(1:3) |>  # DEBUG
   mutate(
     error = pmap_chr(list(i, nms, time_min), fxn))
 ```
