@@ -33,7 +33,7 @@ log_tictoc("Script starting up...")
 
 # iterate over dataset ymls ----
 ymls <- dir_ls(dir_meta, regexp = ".*\\.(ya?ml)$")
-for (yml in ymls[3]){  # yml = ymls[2] # DEBUG
+for (yml in ymls){  # yml = ymls[2]
 
   # * setup qmd ----
   tryCatch({

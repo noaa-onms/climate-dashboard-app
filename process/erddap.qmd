@@ -1,8 +1,10 @@
 ---
 title: "ERDDAP Extraction"
-params:
-  yml: "`r here::here('meta/erddap_sst.yml')`"
+# params:
+#   yml: "`r here::here('meta/erddap_sst.yml')`"
 subtitle: "metadata: *`r basename(params$yml)`*"
+execute: 
+  cache: false
 ---
 
 ```{r}
@@ -22,6 +24,9 @@ options(readr.show_col_types = F)
 mapviewOptions(
   basemaps       = "Esri.OceanBasemap",
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
+
+if (!exists("params"))
+  params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
 ```
 
 ## Polygons
@@ -50,8 +55,6 @@ Contents of `r basename(params$yml)`:
 ```{r}
 #| label: yml
 #| results: asis
-
-params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
 
 cat(
   "```yaml",
@@ -153,8 +156,9 @@ d_nms_yr_todo |>
   {if (nrow(.) > 0)
     summarize(
       .,
-      n_times  = sum(n_times),
-      time_min = min(time_min, na.rm = T)) else .} |>
+      time_min = min(time_min, na.rm = T),
+      time_max = min(time_max, na.rm = T),
+      n_times  = sum(n_times)) else .} |>
   datatable(
     caption  = "Sanctuaries missing available ERDDAP times.",
     rownames = F,
@@ -172,21 +176,25 @@ Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/
 
 # rerddap::cache_delete_all()
 
-fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
+fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
   
   err <- tryCatch({
     
-    log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
+    log_info("{sprintf('%03d', i)}: {nms}, {time_min} to {time_max}")
     
-    yr       <- year(time_min)
-    time_max <- max(times[year(times) == yr])
-    
+    yr <- year(time_min)
+
     ply <- ply_sanctuaries |>
       filter(nms == !!nms)
     # TODO: consider expanding by 10% and rounding 2 digits
     # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
     
-    extractr::ed_extract(
+    # rast(glue("{dir_out}/{nms}/{yr}.tif")) |> names()
+    # browser()
+    # devtools::reload(dir_extractr) # DEBUG
+    
+    extractr::ed_extract( # DEBUG
+    # ed_extract(
       ed,
       var       = v,
       sf_zones  = ply,
@@ -198,7 +206,8 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
       keep_nc   = F,
       n_max_vals_per_req = 1e+05,
       time_min  = time_min,
-      time_max  = time_max)
+      time_max  = time_max,
+      verbose   = T)
     
     return(NA)
   }, error = function(e) {
@@ -213,7 +222,7 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
 res <- d_nms_yr_todo |> 
   # slice(1) |> # DEBUG
   mutate(
-    error = pmap_chr(list(i, nms, time_min), fxn))
+    error = pmap_chr(list(i, nms, time_min, time_max), fxn))
 ```
 
 ### Successes
@@ -234,6 +243,8 @@ res |>
 
 ```{r}
 #| label: error_summary
+
+# rast(glue("{dir_out}/{nms}/{yr}.tif")) |> names()
 
 res |> 
   filter(!is.na(error)) |> 

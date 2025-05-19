@@ -1,5 +1,7 @@
 ---
 title: "Copernicus Marine Extraction"
+params:
+  yml: "`r here::here('meta/copernicus_phy.yml')`"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -15,9 +17,6 @@ options(readr.show_col_types = F)
 mapviewOptions(
   basemaps       = "Esri.OceanBasemap",
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
-
-if (!exists("params"))
-  params <- list(yml = here("meta/copernicus_phy.yml")) # DEBUG
 
 cm_r_dflyrs <- function(r){
   # CopernicusMarine raster to dataframe of layers
@@ -126,6 +125,7 @@ pass <- readLines(pass_txt)
 logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
 stopifnot(logged_in)
 
+# params <- list(yml = here("meta/copernicus_phy.yml")) # DEBUG
 meta <- read_yaml(params$yml) 
 copernicus_prod <- path_ext_remove(basename(params$yml))
 
@@ -209,7 +209,7 @@ system.time({
 lyrs <- d_tif$lyrs[[1]]
 
 rast(d_tif$tif[1]) |> 
-  cm_r_dflyrs()
+  r_to_dflyrs()
 
 d_lyrs <- d_tif |>
   # slice(c(1:3,(nrow(d_tif) - 2):nrow(d_tif))) |> 
@@ -274,12 +274,15 @@ d_nms_ds_yr_todo <- ply_sanctuaries |>
     yr == 2021) |> 
   mutate(
     d_csv = pmap(
-      list(tif, yr, dataset_id, time_min, time_max),
-      \(tif, yr, dataset_id, time_min, time_max, ...) { # nms = "TBNMS"; year = 2025
+      list(csv, yr, dataset_id, time_min, time_max),
+      \(csv, yr, dataset_id, time_min, time_max, ...) { # nms = "TBNMS"; year = 2025
         
+        d <- read_csv(csv)
         times_yr <- seq.POSIXt(time_min, time_max, "day") 
         # TODO: generalize for month, 6-hr, etc from new meta/*.yml entry
-
+        
+        tif <- glue("{dir_out}/{nms}/{year}.tif")
+        
         # if missing tif, return all times
         if (!file.exists(tif))
           return(list(
@@ -440,7 +443,6 @@ fxn <- function(i, dataset_id, nms, time_min, time_max, ...){
 } 
 
 res <- d_nms_ds_yr_todo |> 
-  # slice(1) |>  # DEBUG
   mutate(
     error = pmap_chr(list(i, dataset_id, nms, time_min, time_max), fxn))
 ```
