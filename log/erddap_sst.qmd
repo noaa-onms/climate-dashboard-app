@@ -1,0 +1,251 @@
+---
+title: "ERDDAP Data Extraction"
+params:
+  # data_var: erddap_sss
+  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
+  # erddap_variable: sss
+  data_var: erddap_sst
+  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
+  erddap_variable: analysed_sst
+---
+
+## Polygons
+
+```{r}
+#| label: setup
+
+# dir_extractr = "/share/github/marinebon/extractr"
+# dir_extractr = "~/Github/marinebon/extractr"
+# devtools::load_all(dir_extractr)
+# devtools::install_local(dir_extractr, force = T)
+# devtools::install_github("marinebon/extractr", force = T)
+librarian::shelf(
+  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
+  terra, tibble,
+  marinebon/extractr,
+  quiet = T)
+options(readr.show_col_types = F)
+
+ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) # |> 
+    # filter(nms == "CBNMS") # DEBUG
+    # filter(!nms %in% c("GRNMS","MNMS")) # DEBUG
+
+# TODO: expand poly to get results
+# ply_small <- ply_sanctuaries |> 
+#   filter(nms %in% c("GRNMS","")) |> 
+  # st_buffer()
+  # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
+
+# mapView(sanctuaries)
+# sanctuaries |>
+#   st_drop_geometry() |>
+#   datatable()
+
+dir_out <- here(glue("data/{params$data_var}"))
+dir.create(dir_out, showWarnings = F, recursive = T)
+```
+
+## Dataset
+
+```{r}
+#| label: ed_info
+
+(ed <- ed_info(params$erddap_url))
+times <- ed_dim(ed, "time")
+(v <- params$erddap_variable)
+```
+
+## Polygon years
+
+```{r}
+#| label: d_nms_yr_todo
+
+d_nms_yr_todo <- ply_sanctuaries |> 
+  st_drop_geometry() |> 
+  arrange(nms) |> 
+  select(nms) |> 
+  cross_join(
+    tibble(
+      year = year(min(times)):year(max(times)))) |> 
+  mutate(
+    d = map2(nms, year, \(nms, year) { # nms = "TBNMS"; year = 2025
+      times_yr <- times[year(times) == year]
+      csv <- glue("{dir_out}/{nms}/{year}.csv")
+      
+      # time[1] if missing csv
+      if (!file.exists(csv))
+        return(list(
+          n_times  = length(times_yr),
+          time_min = times_yr[1]))
+      
+      times_csv <- read_csv(csv) |> 
+        pull(time)
+      # NA if all times done
+      if (all(times_yr %in% times_csv))
+        return(list(
+          n_times  = 0,
+          time_min = NA)) 
+      
+      # earliest time missing otherwise
+      i <- !times_yr %in% times_csv
+      list(
+          n_times  = sum(i),
+          time_min = min(times_yr[i])) }),
+    n_times  = map_int(d, pluck, "n_times"),
+    time_min = map_dbl(d, pluck, "time_min") |> 
+      as.POSIXct() ) |> 
+  filter(n_times > 0) |> 
+  select(-d) |> 
+  rowid_to_column("i") |>
+  relocate(i)
+
+d_nms_yr_todo |> 
+  group_by(nms) %>%
+  {if (nrow(.) > 0)
+    summarize(
+      .,
+      n_times  = sum(n_times),
+      time_min = min(time_min, na.rm = T)) else .} |>
+  datatable(
+    caption  = "Sanctuaries missing available ERDDAP times.",
+    rownames = F,
+    options  = list(
+      pageLength = 5,
+      lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
+```
+
+## Extract dataset per polygon year
+
+Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/ed_extract.html), .
+
+```{r}
+#| label: iterate_ed_extract
+
+# rerddap::cache_delete_all()
+
+fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97    # DEBUG
+  
+  err <- tryCatch({
+    
+    log_info("{sprintf('%03d', i)}: {nms}, {time_min}")
+    
+    yr       <- year(time_min)
+    time_max <- max(times[year(times) == yr])
+    
+    ply <- ply_sanctuaries |>
+      filter(nms == !!nms)
+    # TODO: consider expanding by 10% and rounding 2 digits
+    # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
+    
+    extractr::ed_extract(
+      ed,
+      var       = v,
+      sf_zones  = ply,
+      mask_tif  = T,
+      rast_tif  = glue::glue("{dir_out}/{nms}/{yr}.tif"),
+      zonal_fun = "mean",
+      zonal_csv = glue::glue("{dir_out}/{nms}/{yr}.csv"),
+      dir_nc    = glue::glue("{dir_out}/{nms}/{yr}_nc"),
+      keep_nc   = F,
+      n_max_vals_per_req = 1e+05,
+      time_min  = time_min,
+      time_max  = time_max)
+    
+    return(NA)
+  }, error = function(e) {
+    
+    log_error(conditionMessage(e))
+    return(conditionMessage(e))
+  })
+  
+  err
+} 
+
+res <- d_nms_yr_todo |> 
+  # slice(1:3) |>  # DEBUG
+  mutate(
+    error = pmap_chr(list(i, nms, time_min), fxn))
+```
+
+### Successes
+
+```{r}
+#| label: success_summary
+
+res |> 
+  mutate(
+    success = is.na(error)) |> 
+  group_by(success) |> 
+  summarize(
+    n = n()) |> 
+  datatable()
+```
+
+### Errors (if any)
+
+```{r}
+#| label: error_summary
+
+res |> 
+  filter(!is.na(error)) |> 
+  group_by(nms) |> 
+  summarize(
+    n_years = n(),
+    errors  = unique(error) |> paste(collapse = "\n\n----\n\n")) |> 
+  datatable()
+```
+
+::: {.content-hidden}
+
+## TODO
+
+`ed_extract()`:
+
+- [x] delete *_nc dir
+- [x] differentiate existing done vs todo for given year
+- [ ] allow irregular datasets, like `meta/irregular/*.yaml`: `ERROR: x cell sizes are not regular`
+- [ ] break up into functions, not exported
+
+`erddap.qmd`:
+
+- [ ] make `ed_extract()` to single MBNMS with features for main vs david; add "ALL" option to `ed_extract()`
+- [ ] add buffer to all (and redo)
+- [ ] wrap retry with `ed_dim()` too
+
+::: 
+
+```{r}
+#| label: rm_empty_nc_dirs
+#| eval: false
+#| echo: false
+
+# find empty directories ending in _nc and delete them
+d_dirs <- tibble(
+  dir = list.dirs(here("data"), full.names = T, recursive = T)) |> 
+  filter(str_detect(dir, "_nc$")) |> 
+  mutate(
+    n_files = map_int(dir, \(x) {length(list.files(x))}))
+
+# show non-empty directories
+d_dirs |> 
+  filter(n_files > 0) |> 
+  datatable()
+
+# delete empty directories
+d_dirs |> 
+  filter(n_files == 0) |> 
+  pull(dir) |>
+  walk(\(x) {
+    message(glue("Deleting {x}"))
+    unlink(x, recursive = T) })
+```
+
+::: {.callout-caution collapse="true"}
+
+## R package versions
+
+```{r}
+devtools::session_info()
+```
+
+::: 
