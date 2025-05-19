@@ -56,8 +56,8 @@ graph LR
     P1 --> |Copernicus data| P2
     P1 --> |ERDDAP data| P3
     
-    P3 --> D1
-    P3 --> L1
+    P1 --> D1
+    P1 --> L1
     P2 --> D2
     P2 --> L2
     P3 --> D3
