@@ -8,7 +8,7 @@ librarian::shelf(
 # sudo systemctl enable cron
 # crontab -e
 # minute hour day_of_month month day_of_week command_to_run
-# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron_sst.txt 2>&1
+# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron.txt 2>&1
 # sudo service cron restart
 
 # paths ----
@@ -63,7 +63,7 @@ for (yml in ymls){  # yml = ymls[2]
     file_delete(log_qmd)
 
   }, error = function(e) {
-    log_error("Error rendering {basename(yml)} -[ log/{basename(log_qmd)} ]-> log/{params$data_var}.html}: {conditionMessage(e)}")
+    log_error("Error rendering {basename(yml)} -[ log/{basename(log_qmd)} ]-> log/{proc_var}.html}: {conditionMessage(e)}")
   })
 
 }

@@ -1,5 +1,7 @@
 ---
 title: "Copernicus Marine Extraction"
+params:
+  yml: "meta/erddap_sst.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 

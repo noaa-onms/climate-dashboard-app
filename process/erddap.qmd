@@ -1,7 +1,7 @@
 ---
 title: "ERDDAP Extraction"
-# params:
-#   yml: "`r here::here('meta/erddap_sst.yml')`"
+params:
+  yml: "meta/erddap_sst.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 execute: 
   cache: false

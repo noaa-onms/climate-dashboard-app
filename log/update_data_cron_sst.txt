@@ -1,65 +1,0 @@
-INFO [2025-05-19 14:42:07] global timer tic 0 secs -- Script starting up...
-INFO [2025-05-19 14:42:07] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-[31m
-
-processing file: copernicus_phy.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-05-19T14:42:25Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
-[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]        [31m
-
-[39m[31mError in `mutate()`:
-ℹ In argument: `d_csv = pmap(...)`.
-Caused by error in `pmap()`:
-ℹ In index: 1.
-Caused by error:
-! glue cannot interpolate functions into strings.
-* object 'year' is a function.
-Backtrace:
-     ▆
-  1. ├─dplyr::relocate(...)
-  2. ├─tibble::rowid_to_column(...)
-  3. ├─dplyr::filter(...)
-  4. ├─dplyr::select(...)
-  5. ├─dplyr::mutate(...)
-  6. ├─dplyr::select(...)
-  7. ├─dplyr::mutate(...)
-  8. ├─dplyr:::mutate.data.frame(...)
-  9. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
- 10. │   ├─base::withCallingHandlers(...)
- 11. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
- 12. │     └─mask$eval_all_mutate(quo)
- 13. │       └─dplyr (local) eval()
- 14. ├─purrr::pmap(...)
- 15. │ └─purrr:::pmap_("list", .l, .f, ..., .progress = .progress)
- 16. │   ├─purrr:::with_indexed_errors(...)
- 17. │   │ └─base::withCallingHandlers(...)
- 18. │   ├─purrr:::call_with_cleanup(...)
- 19. │   └─.f(...)
- 20. │     └─glue::glue("{dir_out}/{nms}/{year}.tif")
- 21. │       └─glue::glue_data(...)
- 22. ├─glue (local) `<fn>`("year")
- 23. │ └─base::tryCatch(...)
- 24. │   └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 25. │     └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 26. │       └─value[[3L]](cond)
- 27. │         └─base::stop(message, call. = FALSE)
- 28. └─base::.handleSimpleError(...)
- 29.   └─purrr (local) h(simpleError(msg, call))
- 30.     └─cli::cli_abort(...)
- 31.       └─rlang::abort(...)
-[39m[31m
-Quitting from copernicus_phy.qmd:260-354 [d_nms_ds_t]
-[39m                                                                                                               
-[31mExecution halted
-[39mError in (function (e)  : `glue` failed in `formatter_glue` on:
-
- chr "Error rendering {basename(yml)} -[ log/{basename(log_qmd)} ]-> log/{params$data_var}.html}: {conditionMessage(e)}"
-
-Raw error message:
-
-Failed to evaluate glue component {params$data_var}
-Caused by error:
-! object 'params' not found
-
-Please consider using another `log_formatter` or `skip_formatter` on strings with curly braces.
-Calls: tryCatch ... <Anonymous> -> signal_abort -> signalCondition -> <Anonymous>
-Execution halted
