@@ -1,10 +1,7 @@
-product_name: Global Ocean Physics Reanalysis
-product_id: GLOBAL_MULTIYEAR_PHY_001_030
+# product: Global Ocean Physics Reanalysis (GLOBAL_MULTIYEAR_PHY_001_030)
 datasets:
-- name: Daily
-  id: cmems_mod_glo_phy_my_0.083deg_P1D-m
-- name: Interim, daily
-  id: cmems_mod_glo_phy_myint_0.083deg_P1D-m
+- id: cmems_mod_glo_phy_my_0.083deg_P1D-m     # Daily
+- id: cmems_mod_glo_phy_myint_0.083deg_P1D-m  # Interim, daily
 depth:
   min: 0.49402499198913574
   max: 0.49402499198913574

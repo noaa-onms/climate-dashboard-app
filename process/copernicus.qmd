@@ -1,7 +1,7 @@
 ---
+title: "Copernicus Marine Extraction"
 params:
   yml: "meta/copernicus_phy.yml"
-title: "Copernicus Marine Extraction"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -17,6 +17,25 @@ options(readr.show_col_types = F)
 mapviewOptions(
   basemaps       = "Esri.OceanBasemap",
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
+
+cm_r_dflyrs <- function(r){
+  # CopernicusMarine raster to dataframe of layers
+  
+  d_lyrs <- tibble(
+    lyr = names(r)) |> 
+    separate_wider_regex(
+      lyr, c(
+        dataset = "^\\S+", " ", 
+        var     = "\\S+", 
+        depth   = "(?:\\sdepth=[.0-9]+)?",
+        itime   = "\\s[0-9]+$")) |> 
+    mutate(
+      depth = str_replace(depth, "depth=", "") |> as.numeric(),
+      itime = as.integer(itime),
+      time  = time(r))
+  d_lyrs
+}
+
 ```
 
 ## Polygons
@@ -64,6 +83,20 @@ ply_sanctuaries |>
 
 ## Dataset
 
+### Metadata
+
+Contents of `r basename(params$yml)`:
+
+```{r}
+#| label: yml
+#| results: asis
+
+cat(
+  "```yaml",
+  readLines(params$yml),
+  "```",
+  sep = "\n")
+```
 
 - [Python interface - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/python-interface.html#copernicusmarine.subset)
 - [Command subset - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/usage/subset-usage.html#option-coordinates-selection-method)
@@ -82,7 +115,6 @@ py_require("copernicusmarine>2.1")
 cmt <- import("copernicusmarine")
 
 # login to cmt ----
-
 # register for username and password at https://data.marine.copernicus.eu/register
 user     <- "bbest1"
 pass_txt <- ifelse(
@@ -96,14 +128,11 @@ stopifnot(logged_in)
 
 # DEBUG
 # params <- list(yml = here("meta/copernicus_phy.yml")
-params <- read_yaml(params$yml) 
+meta <- read_yaml(params$yml) 
 copernicus_prod <- path_ext_remove(basename(params$yml))
 
 dir_out <- here(glue("data/{copernicus_prod}"))
 dir_create(dir_out)
-
-# show params ----
-jsonedit(params)
 ```
 
 ```{r}
@@ -114,7 +143,6 @@ get_dataset_description <- function(dataset_id){
     disable_progress_bar = T)$json() |> 
     fromJSON()
 }
-# dataset_description <- get_dataset_description("cmems_mod_glo_phy_my_0.083deg_P1D-m")
 
 get_dataset_times <- function(dataset_description){
   services <- pluck(
@@ -149,22 +177,68 @@ get_dataset_times <- function(dataset_description){
 }
 
 d_ds <- tibble(
-  dataset_id = params |> 
+  dataset_id = meta |> 
     pluck("datasets") |> 
     map_chr("id")) |> 
   mutate(
-    description     = map(dataset_id, get_dataset_description),
-    dataset_version = map_chr(
-      dataset_description, pluck, "datasets", 1, "versions", 1, "label"),
+    description = map(dataset_id, get_dataset_description),
+    version     = map_chr(
+      description, pluck, "products", "datasets", 1, "versions", 1, "label"),
     times       = map(description, get_dataset_times),
     time_min    = map_vec(times, min),
     time_max    = map_vec(times, max),
     n_times     = map_int(times, length))
 
 d_ds |> 
-  select(dataset_id, dataset_version, time_min, time_max, n_times) |> 
+  select(dataset_id, version, time_min, time_max, n_times) |> 
   datatable(
-    caption  = "Copernicus datasets: version and times.")
+    caption  = "Copernicus datasets: version and times. Notice transition from Daily (dataset_id = *phy_my*) to Interim, daily (dataset_id = *phy_myint*) at 2021-07-01.")
+```
+
+```{r}
+#| label: existing_lyr_dates
+#| eval: false
+#| echo: false
+
+system.time({
+  d_tif <- tibble(
+    tif = dir_ls(dir_out, glob = "*.tif", recurse = T)) |> 
+    mutate(
+      lyrs = map(tif, \(x) names(rast(x))) ) # 18.387
+  
+})
+
+lyrs <- d_tif$lyrs[[1]]
+
+rast(d_tif$tif[1]) |> 
+  r_to_dflyrs()
+
+d_lyrs <- d_tif |>
+  # slice(c(1:3,(nrow(d_tif) - 2):nrow(d_tif))) |> 
+  mutate(
+    d = map(tif, \(x) {
+      r <- rast(x)
+      cm_r_dflyrs(r) }) ) |> 
+  unnest(d) |> 
+  mutate(
+    nms = dirname(tif) |> basename(),
+    yr  = year(time))
+  
+d_lyrs_sum <- d_lyrs |> 
+  group_by(nms, yr) |> 
+  summarize(
+    dataset = unique(dataset) |> paste(collapse = ','),
+    .groups = "drop")
+  # select(-tif)
+table(d_lyrs$dataset)
+
+# View(d_tif)
+system.time({
+  d_csv <- tibble(
+    csv = dir_ls(dir_out, glob = "*.csv", recurse = T)) |> 
+    mutate(
+      d = map(csv, read_csv) ) # 7.652 
+})
 ```
 
 ## Polygon dataset years
@@ -184,9 +258,12 @@ d_ds_yr <- d_ds |>
           n_times  = map_int(yr, \(yr) length(ts[year(ts) == yr])) ) }) ) |> 
   select(-description, -times, -time_min, -time_max, -n_times) |>
   unnest(d_yrs) |> 
-  select(ds_id = dataset_id, yr, time_min, time_max, n_times)
+  select(dataset_id, yr, time_min, time_max, n_times)
 
-d_nms_ds_yr <- ply_sanctuaries |> 
+# d_ds_yr |> 
+#   filter(yr == 2021)
+
+d_nms_ds_yr_todo <- ply_sanctuaries |> 
   st_drop_geometry() |> 
   arrange(nms) |> 
   select(nms) |> 
@@ -195,12 +272,56 @@ d_nms_ds_yr <- ply_sanctuaries |>
   mutate(
     csv = glue("{dir_out}/{nms}/{yr}.csv"),  
     tif = glue("{dir_out}/{nms}/{yr}.tif") ) |> 
+  filter(
+    yr == 2021) |> 
+  mutate(
+    d_csv = pmap(
+      list(csv, yr, dataset_id, time_min, time_max),
+      \(csv, yr, dataset_id, time_min, time_max, ...) { # nms = "TBNMS"; year = 2025
+        
+        d <- read_csv(csv)
+        times_yr <- seq.POSIXt(time_min, time_max, "day") 
+        # TODO: generalize for month, 6-hr, etc from new meta/*.yml entry
+        
+        if (!file.exists(csv))
+          return(list(
+            n_times  = length(times_yr),
+            time_min = min(times_yr),
+            time_max = max(times_yr)))
+        
+        times_csv <- read_csv(csv) |> 
+          distinct(time) |>
+          arrange(time) |> 
+          pull(time)
+        
+        # NA if all times done
+        if (all(times_yr %in% times_csv))
+          return(list(
+            n_times  = 0,
+            time_min = NA,
+            time_max = NA)) 
+        
+        # earliest time missing otherwise
+        i <- !times_yr %in% times_csv
+        list(
+          n_times  = sum(i),
+          time_min = min(times_yr[i]),
+          time_max = max(times_yr[i])) })) |> 
+  select(-time_min, -time_max, -n_times) |> 
+  mutate(
+    # time_min = map_dbl(d, pluck, "time_min") |> 
+    #   as.POSIXct() 
+    time_min = map_vec(d_csv, pluck, "time_min"),
+    time_max = map_vec(d_csv, pluck, "time_max"),
+    n_times  = map_int(d_csv, pluck, "n_times")) |> 
+  select(-d_csv) |> 
+  filter(!is.na(time_min)) |> 
   # TODO: check existing csv
   rowid_to_column("i") |>
   relocate(i)
 
-d_nms_ds_yr |> 
-  group_by(nms, ds_id) %>%
+d_nms_ds_yr_todo |> 
+  group_by(nms, dataset_id) %>%
   {if (nrow(.) > 0)
     summarize(
       .,
@@ -209,11 +330,14 @@ d_nms_ds_yr |>
       time_max = max(time_max, na.rm = T),
       .groups = "drop") else .} |>
   datatable(
-    caption  = "Sanctuaries missing available ERDDAP times.",
+    caption  = "Sanctuaries missing available Copernicus Marine times.",
     rownames = F,
     options  = list(
       pageLength = 5,
-      lengthMenu = c(5, 50, nrow(d_nms_ds_yr))))
+      lengthMenu = if( nrow(d_nms_ds_yr_todo) > 5){
+        ceiling(seq.int(5, nrow(d_nms_ds_yr_todo), length.out = 3))
+      } else {
+        c(5) } ) )
 ```
 
 ## Extract dataset per polygon year
@@ -225,15 +349,15 @@ Using the [Copernicus Marine Toolbox](https://help.marine.copernicus.eu/en/colle
 ```{r}
 #| label: iterate_subset
 
-fxn <- function(i, ds_id, nms, time_min, time_max, ...){
-  # i = 1; nms = "CBNMS"; ds_id = "cmems_mod_glo_phy_my_0.083deg_P1D-m"
+fxn <- function(i, dataset_id, nms, time_min, time_max, ...){
+  # i = 1; nms = "CBNMS"; dataset_id = "cmems_mod_glo_phy_my_0.083deg_P1D-m"
   # time_min = as.POSIXct("1993-01-01", tz = "UTC"); time_max = as.POSIXct("1993-12-01", tz = "UTC")
   # time_min = as.POSIXct("1993-12-02", tz = "UTC"); time_max = as.POSIXct("1993-12-31", tz = "UTC")
   # d_nms_ds_yr |> slice(1) |> attach()
   
   err <- tryCatch({
     
-    log_info("{sprintf('%03d', i)}: {nms}, {ds_id}, {year(time_min)} ({time_min} to {time_max})")
+    log_info("{sprintf('%03d', i)}: {nms}, {dataset_id}, {year(time_min)} ({time_min} to {time_max})")
     
     yr    <- year(time_min)
     r_nc  <- glue("{dir_out}/{nms}/{yr}.nc")
@@ -244,12 +368,12 @@ fxn <- function(i, ds_id, nms, time_min, time_max, ...){
       st_bbox()
     p     <- ply_sanctuaries |>
       filter(nms == !!nms)
-    vars  <- map_chr(params$variables, "id")
+    vars  <- map_chr(meta$variables, "id")
     
     dir_create(dirname(r_nc))
     
-    res <- cmt$subset(                    # py_help( cmt$subset)
-      dataset_id                   = ds_id,
+    res <- cmt$subset(  # py_help( cmt$subset)
+      dataset_id                   = dataset_id,
       service                      = "timeseries",
       variables                    = vars,
       minimum_longitude            = bb$xmin,
@@ -258,8 +382,8 @@ fxn <- function(i, ds_id, nms, time_min, time_max, ...){
       maximum_latitude             = bb$ymax,
       start_datetime               = time_min,
       end_datetime                 = time_max,
-      minimum_depth                = params$depth[1],
-      maximum_depth                = params$depth[2],
+      minimum_depth                = meta$depth$min,
+      maximum_depth                = meta$depth$max,
       output_directory             = dirname(r_nc),
       output_filename              = basename(r_nc),
       overwrite                    = TRUE,
@@ -271,16 +395,22 @@ fxn <- function(i, ds_id, nms, time_min, time_max, ...){
     r <- rast(r_nc)
     
     # set dataset_id into layer name
-    names(r) <- glue("{ds_id} {str_replace_all(names(r), '_',' ')}")
-    writeRaster(r, r_tif, overwrite = T)
+    names(r) <- glue("{dataset_id} {str_replace_all(names(r), '_',' ')}")
+    # TODO:
+    # - write dataset_version into layer name
+    # - handle ?terra::depth()
+    if (file_exists(r_tif)){
+      r_tmp_tif <- tempfile(fileext = ".tif")
+      c(rast(r_tif), r) |> 
+        writeRaster(r_tmp_tif)
+      rm(r); rm(r_tmp)
+      file_delete(r_tif)
+      file_move(r_tmp_tif, r_tif)
+    } else {
+      writeRaster(r, r_tif, overwrite = T)  
+    }
     file_delete(r_nc)
       
-    # TODO: fxn to read:
-    # r <- rast(r_tif)
-    # names(r)s
-    # time(r)
-    # TODO: handle ?terra::depth()
-    
     # zonal tif to csv ---- 
     r <- rast(r_tif)
     extract_tbl <- function(r, p, stat = "mean"){
@@ -314,11 +444,9 @@ fxn <- function(i, ds_id, nms, time_min, time_max, ...){
   err
 } 
 
-res <- d_nms_ds_yr |> 
-  # slice(1:3) |>  # DEBUG
-  slice(33:nrow(d_nms_ds_yr)) |>  # DEBUG
+res <- d_nms_ds_yr_todo |> 
   mutate(
-    error = pmap_chr(list(i, ds_id, nms, time_min, time_max), fxn))
+    error = pmap_chr(list(i, dataset_id, nms, time_min, time_max), fxn))
 ```
 
 ### Successes
