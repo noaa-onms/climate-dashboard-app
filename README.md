@@ -24,9 +24,9 @@ This process is illustrated in the diagram below:
 ```mermaid
 graph LR
     subgraph Metadata
-        M1[meta/erddap_sst.yaml]
-        M2[meta/copernicus_wind.yaml]
-        M3[meta/erddap_chla.yaml]
+        M1[meta/copernicus_phy.yaml]
+        M2[meta/erddap_chla.yaml]
+        M3[meta/erddap_sst.yaml]
     end
     
     subgraph Processors
@@ -37,15 +37,15 @@ graph LR
     
     subgraph Outputs
         subgraph Data
-            D1[data/erddap_sst/*]
-            D2[data/copernicus_wind/*]
-            D3[data/erddap_chla/*]
+            D1[data/copernicus_phy/*]
+            D2[data/erddap_chla/*]
+            D3[data/erddap_sst/*]
         end
         
         subgraph Logs
-            L1[log/erddap_sst.html]
-            L2[log/copernicus_wind.html]
-            L3[log/erddap_chla.html]
+            L1[log/copernicus_phy.html]
+            L2[log/erddap_chla.html]
+            L3[log/erddap_sst.html]
         end
     end
     
@@ -53,8 +53,8 @@ graph LR
     M2 --> P1
     M3 --> P1
     
-    P1 --> |ERDDAP data| P3
     P1 --> |Copernicus data| P2
+    P1 --> |ERDDAP data| P3
     
     P3 --> D1
     P3 --> L1
@@ -78,44 +78,6 @@ graph LR
     style L1 fill:#fbb,stroke:#333,stroke-width:1px
     style L2 fill:#fbb,stroke:#333,stroke-width:1px
     style L3 fill:#fbb,stroke:#333,stroke-width:1px
-```
-
-Or more simply...
-
-```mermaid
-graph LR
-    subgraph Metadata
-        M1[erddap_sst.yaml]
-        M2[copernicus_mld.yaml]
-        M3[erddap_sss.yaml]
-    end
-    
-    subgraph Processors
-        P1[update_data.R]
-        P2[copernicus.qmd]
-        P3[erddap.qmd]
-    end
-    
-    subgraph Outputs
-        D[Data]
-        L[Logs]
-    end
-    
-    Metadata --> P1
-    P1 --> P2
-    P1 --> P3
-    
-    P2 --> D
-    P2 --> L
-    P3 --> D
-    P3 --> L
-    
-    style Metadata fill:#f9f,stroke:#333,stroke-width:1px
-    style P1 fill:#bbf,stroke:#333,stroke-width:1px
-    style P2 fill:#ddf,stroke:#333,stroke-width:1px
-    style P3 fill:#ddf,stroke:#333,stroke-width:1px
-    style D fill:#bfb,stroke:#333,stroke-width:1px
-    style L fill:#fbb,stroke:#333,stroke-width:1px
 ```
 
 The workflow consists of these key steps:
