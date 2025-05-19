@@ -129,13 +129,13 @@ The
 function is used to fetch ERDDAP data and save it to this location.
 Add a metada file to `meta/*.yml` to add more variables from an ERDDAP server.
 
-Run for variables of interest:
+Run for dataset variables of interest, given a metadata file in `meta/erddap_sst.yaml`:
 
 ```bash
-quarto render process/extractr.qmd --execute-params meta/erddap_sst.yaml
+quarto render process/erddap.qmd -P yml:meta/erddap_sst.yaml
 ```
 
-Alternatively: edit the `params` header in the `extractr.qmd` file itself & run from RStudio.
+Alternatively: edit the `params` header in the `erddap.qmd` file itself & run from RStudio.
 
 ## TODO
 
