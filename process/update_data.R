@@ -17,7 +17,7 @@ dir_log    <- here("log")
 dir_proc   <- here("process")
 dir_data   <- here("data")
 log_txt    <- glue("{dir_log}/update_data_log.txt")
-do_git     <- T # DEBUG
+do_git     <- F # DEBUG
 
 # git ----
 github_pat <- gitcreds_get(use_cache = FALSE)$password
@@ -38,28 +38,27 @@ for (yml in ymls){  # yml = ymls[2]
   # * setup qmd ----
   tryCatch({
 
-    # parameters
-    params          <- read_yaml(yml)
-    params$yml      <- basename(yml)
-    params$data_var <- path_ext_remove(basename(yml))
-
     # qmd
-    proc     <- strsplit(params$data_var, "_")[[1]][1]  # erddap or copernicus
+    proc_var <- path_ext_remove(basename(yml))
+    proc     <- str_split(proc_var, "_")[[1]][1]  # erddap or copernicus
     proc_qmd <- glue("{dir_proc}/{proc}.qmd")
-    log_qmd  <- glue("{dir_log}/{params$data_var}.qmd")
+    log_qmd  <- glue("{dir_log}/{proc_var}.qmd")
     file_copy(proc_qmd, log_qmd, overwrite = T)
 
   }, error = function(e) {
-    log_error("Error reading {basename(yml)}: {conditionMessage(e)}")
+    log_error("Error setting up metadata file {basename(yml)} for Quarto process document: {conditionMessage(e)}")
   })
 
   # * render qmd ----
-  log_tictoc("meta/{basename(yml)} -[ process/{basename(proc_qmd)} ]-> data/{params$data_var}/*, log/{params$data_var}.html")
+  log_tictoc("meta/{basename(yml)} -[ process/{basename(proc_qmd)} ]-> data/{proc_var}/*, log/{proc_var}.html")
   tryCatch({
 
-    quarto_render(
-      input          = log_qmd,
-      execute_params = params)
+    log_info("quarto_render(input = {basename(log_qmd)}, execute_params = list(yml = {basename(yml)}))")
+
+    # quarto_render(
+    #   input          = log_qmd,
+    #   execute_params = list(
+    #     yml = yml))
 
     file_delete(log_qmd)
 

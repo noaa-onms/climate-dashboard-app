@@ -18,4 +18,3 @@ variables:
 - name: Sea water salinity
   units: g/kg
   id: so
-

@@ -1,7 +1,7 @@
 ---
 title: "Copernicus Marine Extraction"
 params:
-  yml: "meta/copernicus_phy.yml"
+  yml: "`r here::here('meta/copernicus_phy.yml')"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -35,7 +35,6 @@ cm_r_dflyrs <- function(r){
       time  = time(r))
   d_lyrs
 }
-
 ```
 
 ## Polygons
@@ -340,7 +339,7 @@ d_nms_ds_yr_todo |>
         c(5) } ) )
 ```
 
-## Extract dataset per polygon year
+## Extract missing times in datasets per polygon year
 
 Using the [Copernicus Marine Toolbox](https://help.marine.copernicus.eu/en/collections/9080063-copernicus-marine-toolbox) in R. See:
 

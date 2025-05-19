@@ -1,15 +1,9 @@
 ---
-title: "ERDDAP Data Extraction"
+title: "ERDDAP Extraction"
 params:
-  # data_var: erddap_sss
-  # erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.html
-  # erddap_variable: sss
-  data_var: erddap_sst
-  erddap_url: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.html
-  erddap_variable: analysed_sst
+  yml: "`r here::here('meta/erddap_sst.yml')"
+subtitle: "metadata: *`r basename(params$yml)`*"
 ---
-
-## Polygons
 
 ```{r}
 #| label: setup
@@ -21,38 +15,60 @@ params:
 # devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
   dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
-  terra, tibble,
+  terra, tibble, yaml,
   marinebon/extractr,
   quiet = T)
 options(readr.show_col_types = F)
-
-ply_sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds")) # |> 
-    # filter(nms == "CBNMS") # DEBUG
-    # filter(!nms %in% c("GRNMS","MNMS")) # DEBUG
-
-# TODO: expand poly to get results
-# ply_small <- ply_sanctuaries |> 
-#   filter(nms %in% c("GRNMS","")) |> 
-  # st_buffer()
-  # filter(nms != "HIHWNMS")  # TODO: sort dateline sanctuary later
-
-# mapView(sanctuaries)
-# sanctuaries |>
-#   st_drop_geometry() |>
-#   datatable()
+mapviewOptions(
+  basemaps       = "Esri.OceanBasemap",
+  vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
 
 dir_out <- here(glue("data/{params$data_var}"))
 dir.create(dir_out, showWarnings = F, recursive = T)
 ```
 
+## Polygons
+
+```{r}
+#| label: polygons
+
+sanctuaries_rds <- here("../climate-dashboard/data/sanctuaries.rds")
+
+ply_sanctuaries <- readRDS(sanctuaries_rds)
+
+# show map
+mapView(ply_sanctuaries, zcol = "nms")
+
+ply_sanctuaries |>
+  st_drop_geometry() |>
+  datatable()
+```
+
 ## Dataset
+
+### Metadata
+
+Contents of `r basename(params$yml)`:
+
+```{r}
+#| label: yml
+#| results: asis
+
+cat(
+  "```yaml",
+  readLines(params$yml),
+  "```",
+  sep = "\n")
+```
 
 ```{r}
 #| label: ed_info
 
-(ed <- ed_info(params$erddap_url))
+meta <- read_yaml(params$yml) 
+
+(ed <- ed_info(meta$erddap_url))
 times <- ed_dim(ed, "time")
-(v <- params$erddap_variable)
+(v <- meta$erddap_variable)
 ```
 
 ## Polygon years
