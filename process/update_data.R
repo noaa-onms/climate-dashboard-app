@@ -8,7 +8,7 @@ librarian::shelf(
 # sudo systemctl enable cron
 # crontab -e
 # minute hour day_of_month month day_of_week command_to_run
-# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron.txt 2>&1
+# 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron_sst.txt 2>&1
 # sudo service cron restart
 
 # paths ----
@@ -33,7 +33,7 @@ log_tictoc("Script starting up...")
 
 # iterate over dataset ymls ----
 ymls <- dir_ls(dir_meta, regexp = ".*\\.(ya?ml)$")
-for (yml in ymls){  # yml = ymls[2]
+for (yml in ymls[3]){  # yml = ymls[2] # DEBUG
 
   # * setup qmd ----
   tryCatch({

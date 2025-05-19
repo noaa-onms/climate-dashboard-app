@@ -1,7 +1,7 @@
 ---
 title: "ERDDAP Extraction"
 params:
-  yml: "`r here::here('meta/erddap_sst.yml')"
+  yml: "`r here::here('meta/erddap_sst.yml')`"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -9,22 +9,19 @@ subtitle: "metadata: *`r basename(params$yml)`*"
 #| label: setup
 
 # dir_extractr = "/share/github/marinebon/extractr"
-# dir_extractr = "~/Github/marinebon/extractr"
+# dir_extractr = "~/Github/marinebon/extractr" # DEBUG
 # devtools::load_all(dir_extractr)
 # devtools::install_local(dir_extractr, force = T)
 # devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
-  dplyr, DT, glue, here, logger, lubridate, mapview, purrr, readr, sf, stringr,
-  terra, tibble, yaml,
+  dplyr, DT, fs, glue, here, logger, lubridate, mapview, purrr, RColorBrewer, readr, 
+  sf, stringr, terra, tibble, yaml,
   marinebon/extractr,
   quiet = T)
 options(readr.show_col_types = F)
 mapviewOptions(
   basemaps       = "Esri.OceanBasemap",
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
-
-dir_out <- here(glue("data/{params$data_var}"))
-dir.create(dir_out, showWarnings = F, recursive = T)
 ```
 
 ## Polygons
@@ -54,6 +51,8 @@ Contents of `r basename(params$yml)`:
 #| label: yml
 #| results: asis
 
+params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
+
 cat(
   "```yaml",
   readLines(params$yml),
@@ -61,14 +60,20 @@ cat(
   sep = "\n")
 ```
 
+### Information
+
 ```{r}
 #| label: ed_info
 
 meta <- read_yaml(params$yml) 
+proc_prod <- path_ext_remove(basename(params$yml))
 
-(ed <- ed_info(meta$erddap_url))
+dir_out <- here(glue("data/{proc_prod}"))
+dir_create(dir_out)
+
+v     <- meta$erddap_variable
+(ed   <- ed_info(meta$erddap_url))
 times <- ed_dim(ed, "time")
-(v <- meta$erddap_variable)
 ```
 
 ## Polygon years
@@ -84,34 +89,62 @@ d_nms_yr_todo <- ply_sanctuaries |>
     tibble(
       year = year(min(times)):year(max(times)))) |> 
   mutate(
-    d = map2(nms, year, \(nms, year) { # nms = "TBNMS"; year = 2025
+    d = map2(nms, year, \(nms, year) { # nms = "CBNMS"; year = 2025
+      
       times_yr <- times[year(times) == year]
-      csv <- glue("{dir_out}/{nms}/{year}.csv")
+      # csv <- glue("{dir_out}/{nms}/{year}.csv")
+      # 
+      # # time[1] if missing csv
+      # if (!file.exists(csv))
+      #   return(list(
+      #     n_times  = length(times_yr),
+      #     time_min = times_yr[1]))
+      # 
+      # times_csv <- read_csv(csv) |> 
+      #   pull(time)
+      # # NA if all times done
+      # if (all(times_yr %in% times_csv))
+      #   return(list(
+      #     n_times  = 0,
+      #     time_min = NA)) 
+      # 
+      # # earliest time missing otherwise
+      # i <- !times_yr %in% times_csv
+      # list(
+      #     n_times  = sum(i),
+      #     time_min = min(times_yr[i])) 
+      tif <- glue("{dir_out}/{nms}/{year}.tif")
       
-      # time[1] if missing csv
-      if (!file.exists(csv))
+      # if missing tif,return all times
+      if (!file.exists(tif))
         return(list(
-          n_times  = length(times_yr),
-          time_min = times_yr[1]))
+          time_min = min(times_yr),
+          time_max = max(times_yr),
+          n_times  = length(times_yr)))
       
-      times_csv <- read_csv(csv) |> 
-        pull(time)
-      # NA if all times done
-      if (all(times_yr %in% times_csv))
+      # get times from tif
+      r <- rast(tif)
+      times_tif <- time(r)
+      
+      # if all times done, return NAs
+      if (all(times_yr %in% times_tif))
         return(list(
           n_times  = 0,
-          time_min = NA)) 
+          time_min = NA,
+          time_max= NA)) 
       
-      # earliest time missing otherwise
-      i <- !times_yr %in% times_csv
+      # otherwise, return time range missing
+      i <- !times_yr %in% times_tif
       list(
           n_times  = sum(i),
-          time_min = min(times_yr[i])) }),
-    n_times  = map_int(d, pluck, "n_times"),
-    time_min = map_dbl(d, pluck, "time_min") |> 
-      as.POSIXct() ) |> 
-  filter(n_times > 0) |> 
+          time_min = min(times_yr[i]),
+          time_max = max(times_yr[i])) 
+      }),
+    time_min = map_vec(d, pluck, "time_min"),
+    time_max = map_vec(d, pluck, "time_max"),
+    n_times  = map_int(d, pluck, "n_times") ) |> 
   select(-d) |> 
+  filter(n_times > 0) |> 
   rowid_to_column("i") |>
   relocate(i)
 
@@ -158,10 +191,10 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
       var       = v,
       sf_zones  = ply,
       mask_tif  = T,
-      rast_tif  = glue::glue("{dir_out}/{nms}/{yr}.tif"),
+      rast_tif  = glue("{dir_out}/{nms}/{yr}.tif"),
       zonal_fun = "mean",
-      zonal_csv = glue::glue("{dir_out}/{nms}/{yr}.csv"),
-      dir_nc    = glue::glue("{dir_out}/{nms}/{yr}_nc"),
+      zonal_csv = glue("{dir_out}/{nms}/{yr}.csv"),
+      dir_nc    = glue("{dir_out}/{nms}/{yr}_nc"),
       keep_nc   = F,
       n_max_vals_per_req = 1e+05,
       time_min  = time_min,
@@ -178,6 +211,7 @@ fxn <- function(i, nms, time_min, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
 } 
 
 res <- d_nms_yr_todo |> 
+  # slice(1) |> # DEBUG
   mutate(
     error = pmap_chr(list(i, nms, time_min), fxn))
 ```

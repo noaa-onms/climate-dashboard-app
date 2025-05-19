@@ -1,8 +1,2 @@
-INFO [2025-05-19 11:22:25] global timer toc 8.19 mins -- Script starting up...
-INFO [2025-05-19 11:22:25] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-INFO [2025-05-19 11:22:25] quarto_render(input = copernicus_phy.qmd, execute_params = list(yml = copernicus_phy.yml))
-INFO [2025-05-19 11:22:25] global timer tic 0 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-INFO [2025-05-19 11:22:25] quarto_render(input = erddap_sss.qmd, execute_params = list(yml = erddap_sss.yml))
-INFO [2025-05-19 11:22:25] global timer tic 0 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-05-19 11:22:25] quarto_render(input = erddap_sst.qmd, execute_params = list(yml = erddap_sst.yml))
-INFO [2025-05-19 11:22:25] global timer tic 0 secs -- Script done rendering, next git commit & push
+INFO [2025-05-19 15:49:06] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-19 15:49:06] global timer toc 0.01 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html

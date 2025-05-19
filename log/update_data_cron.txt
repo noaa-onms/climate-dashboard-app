@@ -1,27 +1,189 @@
-Already up to date.
-INFO [2025-05-19 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-05-19 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-[31mError in knit_params_get(input_lines, params) : 
-  render params not declared in YAML: product_name, product_id, datasets, depth, variables, data_var
-Calls: .main -> execute -> <Anonymous> -> knit_params_get
-[39m[31mExecution halted
-[39mERROR [2025-05-19 00:00:04] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+
+  The 'cran_repo' argument in shelf() was not set, so it will use
+  cran_repo = 'https://cran.r-project.org' by default.
+
+  To avoid this message, set the 'cran_repo' argument to a CRAN
+  mirror URL (see https://cran.r-project.org/mirrors.html) or set
+  'quiet = TRUE'.
+INFO [2025-05-19 11:48:04] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-19 11:48:04] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+[31m
+
+processing file: copernicus_phy.qmd
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-05-19T09:48:18Z - Credentials file stored in /Users/bbest/.copernicusmarine/.copernicusmarine-credentials.
+[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]          |                                                         |.............................                    |  60%                       |                                                         |...............................                  |  64% [iterate_subset]      |                                                         |.................................                |  68%                       |                                                         |...................................              |  72% [success_summary]     |                                                         |.....................................            |  76%                       |                                                         |.......................................          |  80% [error_summary]       |                                                         |.........................................        |  84%                       |                                                         |...........................................      |  88% [rm_empty_nc_dirs]    |                                                         |.............................................    |  92%                       |                                                         |...............................................  |  96% [unnamed-chunk-2]     |                                                         |.................................................| 100%                                                                                                                                    
+[31moutput file: copernicus_phy.knit.md
+
+[39m[31m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_phy.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: YYYY-MM-DD HH:mm z
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_phy.html
+
+INFO [2025-05-19 11:48:27] global timer toc 22.24 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+[31m
+
+processing file: erddap_sss.qmd
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-05-19 11:48:42] 001: GRNMS, 2010-06-03 14:00:00
+[39m[31mERROR [2025-05-19 11:48:51] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:48:51] 002: GRNMS, 2011-01-13 13:00:00
+[39m[31mERROR [2025-05-19 11:49:02] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:02] 003: GRNMS, 2012-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:49:13] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:13] 004: GRNMS, 2013-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:49:24] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:24] 005: GRNMS, 2014-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:49:36] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:36] 006: GRNMS, 2015-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:49:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:46] 007: GRNMS, 2016-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:49:57] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:49:57] 008: GRNMS, 2017-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:50:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:50:07] 009: GRNMS, 2018-02-27 13:00:00
+[39m[31mERROR [2025-05-19 11:50:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:50:17] 010: GRNMS, 2019-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:50:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:50:31] 011: GRNMS, 2020-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:50:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:50:46] 012: GRNMS, 2021-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:51:00] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:51:00] 013: GRNMS, 2022-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:51:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:51:12] 014: GRNMS, 2023-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:51:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:51:29] 015: GRNMS, 2024-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:51:57] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:51:57] 016: GRNMS, 2025-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:06] 017: MNMS, 2010-06-03 14:00:00
+[39m[31mERROR [2025-05-19 11:52:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:11] 018: MNMS, 2011-01-13 13:00:00
+[39m[31mERROR [2025-05-19 11:52:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:17] 019: MNMS, 2012-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:24] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:24] 020: MNMS, 2013-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:31] 021: MNMS, 2014-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:39] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:39] 022: MNMS, 2015-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:44] 023: MNMS, 2016-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:50] 024: MNMS, 2017-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:52:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:52:56] 025: MNMS, 2018-02-27 13:00:00
+[39m[31mERROR [2025-05-19 11:53:01] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:01] 026: MNMS, 2019-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:07] 027: MNMS, 2020-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:12] 028: MNMS, 2021-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:17] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:17] 029: MNMS, 2022-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:23] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:23] 030: MNMS, 2023-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:29] 031: MNMS, 2024-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:41] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 11:53:41] 032: MNMS, 2025-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:53:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
+[31moutput file: erddap_sss.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sss.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: YYYY-MM-DD HH:mm z
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sss.html
+
+INFO [2025-05-19 11:53:51] global timer toc 5.4 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-05-19 11:54:00] 001: CBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:06] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:06] 002: CINMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:10] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:10] 003: CPNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:14] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:14] 004: FGBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:18] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:18] 005: FKNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:23] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:23] 006: GFNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:27] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:27] 007: GRNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:31] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:31] 008: HIHWNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:37] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:37] 009: MBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:41] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:41] 010: MBNMS-david, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:46] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:46] 011: MBNMS-main, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 11:54:50] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 11:54:50] 012: MNMS, 1985-01-01 13:00:00
+[39m[31mERROR [2025-05-19 11:57:58] 
+[39m[31mINFO [2025-05-19 11:57:58] 013: MNMS, 1986-01-01 13:00:00
+[39m[31mERROR [2025-05-19 12:00:00] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-19 12:00:00] 014: MNMS, 1987-01-01 13:00:00
+[39mError in (function (e)  : `glue` failed in `formatter_glue` on:
+
+ chr "Error rendering {basename(yml)} -[ log/{basename(log_qmd)} ]-> log/{params$data_var}.html}: {conditionMessage(e)}"
+
+Raw error message:
+
+Failed to evaluate glue component {params$data_var}
 Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-19 00:00:04] global timer toc 1.22 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-[31mError in knit_params_get(input_lines, params) : 
-  render params not declared in YAML: yml
-Calls: .main -> execute -> <Anonymous> -> knit_params_get
-[39m[31mExecution halted
-[39mERROR [2025-05-19 00:00:05] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-19 00:00:05] global timer toc 1.01 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-[31mError in knit_params_get(input_lines, params) : 
-  render params not declared in YAML: yml
-Calls: .main -> execute -> <Anonymous> -> knit_params_get
-[39m[31mExecution halted
-[39mERROR [2025-05-19 00:00:06] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-05-19 00:00:06] global timer toc 1.01 secs -- Script done rendering, next git commit & push
+! object 'params' not found
+
+Please consider using another `log_formatter` or `skip_formatter` on strings with curly braces.
+Calls: tryCatch ... <Anonymous> -> signal_abort -> signalCondition -> <Anonymous>
+Execution halted

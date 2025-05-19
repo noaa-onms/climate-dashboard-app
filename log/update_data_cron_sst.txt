@@ -1,0 +1,37 @@
+
+  The 'cran_repo' argument in shelf() was not set, so it will use
+  cran_repo = 'https://cran.r-project.org' by default.
+
+  To avoid this message, set the 'cran_repo' argument to a CRAN
+  mirror URL (see https://cran.r-project.org/mirrors.html) or set
+  'quiet = TRUE'.
+INFO [2025-05-19 15:49:06] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-19 15:49:06] global timer toc 0.01 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-05-19 15:49:16] 001: CBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:22] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:22] 002: CINMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:26] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:26] 003: CPNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:30] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:30] 004: FGBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:34] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:34] 005: FKNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:38] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:38] 006: GFNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:42] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:42] 007: GRNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:46] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:46] 008: HIHWNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:50] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:50] 009: MBNMS, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:54] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:54] 010: MBNMS-david, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:49:58] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:49:58] 011: MBNMS-main, 2025-05-17 14:00:00
+[39m[31mERROR [2025-05-19 15:50:02] unable to find an inherited method for function 'format_ISO8601' for signature 'x = "numeric"'
+[39m[31mINFO [2025-05-19 15:50:02] 012: MNMS, 1985-01-01 13:00:00
+[39m
+Execution halted

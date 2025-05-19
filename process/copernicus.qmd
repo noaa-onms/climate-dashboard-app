@@ -1,7 +1,7 @@
 ---
 title: "Copernicus Marine Extraction"
 params:
-  yml: "`r here::here('meta/copernicus_phy.yml')"
+  yml: "`r here::here('meta/copernicus_phy.yml')`"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -125,7 +125,7 @@ pass <- readLines(pass_txt)
 logged_in <- cmt$login(user, pass, force_overwrite = T)  # py_help(cmt$login)
 stopifnot(logged_in)
 
-# params <- list(yml = here("meta/copernicus_phy.yml") # DEBUG
+# params <- list(yml = here("meta/copernicus_phy.yml")) # DEBUG
 meta <- read_yaml(params$yml) 
 copernicus_prod <- path_ext_remove(basename(params$yml))
 
@@ -281,40 +281,39 @@ d_nms_ds_yr_todo <- ply_sanctuaries |>
         times_yr <- seq.POSIXt(time_min, time_max, "day") 
         # TODO: generalize for month, 6-hr, etc from new meta/*.yml entry
         
-        if (!file.exists(csv))
+        tif <- glue("{dir_out}/{nms}/{year}.tif")
+        
+        # if missing tif, return all times
+        if (!file.exists(tif))
           return(list(
-            n_times  = length(times_yr),
             time_min = min(times_yr),
-            time_max = max(times_yr)))
+            time_max = max(times_yr),
+            n_times  = length(times_yr)))
         
-        times_csv <- read_csv(csv) |> 
-          distinct(time) |>
-          arrange(time) |> 
-          pull(time)
+        # get times from tif
+        r <- rast(tif)
+        times_tif <- unique(time(r))
         
-        # NA if all times done
-        if (all(times_yr %in% times_csv))
+        # if all times done, return NAs
+        if (all(times_yr %in% times_tif))
           return(list(
-            n_times  = 0,
             time_min = NA,
-            time_max = NA)) 
+            time_max = NA,
+            n_times  = 0)) 
         
-        # earliest time missing otherwise
-        i <- !times_yr %in% times_csv
+        # otherwise, return time range missing
+        i <- !times_yr %in% times_tif
         list(
-          n_times  = sum(i),
           time_min = min(times_yr[i]),
-          time_max = max(times_yr[i])) })) |> 
+          time_max = max(times_yr[i]),
+          n_times  = sum(i) ) })) |> 
   select(-time_min, -time_max, -n_times) |> 
   mutate(
-    # time_min = map_dbl(d, pluck, "time_min") |> 
-    #   as.POSIXct() 
     time_min = map_vec(d_csv, pluck, "time_min"),
     time_max = map_vec(d_csv, pluck, "time_max"),
     n_times  = map_int(d_csv, pluck, "n_times")) |> 
   select(-d_csv) |> 
   filter(!is.na(time_min)) |> 
-  # TODO: check existing csv
   rowid_to_column("i") |>
   relocate(i)
 
@@ -399,11 +398,12 @@ fxn <- function(i, dataset_id, nms, time_min, time_max, ...){
     # - handle ?terra::depth()
     if (file_exists(r_tif)){
       r_tmp_tif <- tempfile(fileext = ".tif")
-      c(rast(r_tif), r) |> 
-        writeRaster(r_tmp_tif)
-      rm(r); rm(r_tmp)
+      r_tmp <- c(rast(r_tif), r)
+      r_tmp <- subset(r_tmp, which(!duplicated(names(r_tmp)))) # rm duplicates
+      writeRaster(r_tmp, r_tmp_tif)
       file_delete(r_tif)
       file_move(r_tmp_tif, r_tif)
+      rm(r); rm(r_tmp)
     } else {
       writeRaster(r, r_tif, overwrite = T)  
     }
