@@ -79,6 +79,7 @@ log_tictoc("Script done rendering, next git commit & push")
 # git config --global credential.helper store
 
 if (do_git){
+  system("git pull")
   system("git add --all")
   system("git commit -m 'ran update_data.R'")
   system("git push")
