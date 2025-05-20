@@ -25,7 +25,7 @@ This process is illustrated in the diagram below:
 graph LR
     subgraph Metadata
         M1[meta/copernicus_phy.yaml]
-        M2[meta/erddap_chla.yaml]
+        M2[meta/erddap_sss.yaml]
         M3[meta/erddap_sst.yaml]
     end
     
@@ -38,13 +38,13 @@ graph LR
     subgraph Outputs
         subgraph Data
             D1[data/copernicus_phy/*]
-            D2[data/erddap_chla/*]
+            D2[data/erddap_sss/*]
             D3[data/erddap_sst/*]
         end
         
         subgraph Logs
             L1[log/copernicus_phy.html]
-            L2[log/erddap_chla.html]
+            L2[log/erddap_sss.html]
             L3[log/erddap_sst.html]
         end
     end
@@ -56,10 +56,10 @@ graph LR
     P1 --> |Copernicus data| P2
     P1 --> |ERDDAP data| P3
     
-    P3 --> D1
-    P3 --> L1
-    P2 --> D2
-    P2 --> L2
+    P2 --> D1
+    P2 --> L1
+    P3 --> D2
+    P3 --> L2
     P3 --> D3
     P3 --> L3
     
@@ -92,7 +92,7 @@ The workflow consists of these key steps:
 ```
 project/
 ├── meta/
-│   ├── copernicus_mld.yaml
+│   ├── copernicus_phy.yaml
 │   ├── erddap_sss.yaml
 │   └── erddap_sst.yaml
 ├── process/
@@ -100,7 +100,7 @@ project/
 │   ├── erddap.qmd
 │   └── update_data.R
 ├── data/
-│   ├── copernicus_mld/
+│   ├── copernicus_phy/
 │   │   ├── 2010.csv
 │   │   ├── 2010.tif
 │   │   ├── 2011.csv
@@ -116,7 +116,7 @@ project/
 │   │   ├── 2011.csv
 │   │   └── 2011.tif
 └── log/
-    ├── copernicus_mld.html
+    ├── copernicus_phy.html
     ├── erddap_sss.html
     └── erddap_sst.html
 ```
@@ -129,13 +129,13 @@ The
 function is used to fetch ERDDAP data and save it to this location.
 Add a metada file to `meta/*.yml` to add more variables from an ERDDAP server.
 
-Run for variables of interest:
+Run for dataset variables of interest, given a metadata file in `meta/erddap_sst.yaml`:
 
 ```bash
-quarto render process/extractr.qmd --execute-params meta/erddap_sst.yaml
+quarto render process/erddap.qmd -P yml:meta/erddap_sst.yaml
 ```
 
-Alternatively: edit the `params` header in the `extractr.qmd` file itself & run from RStudio.
+Alternatively: edit the `params` header in the `erddap.qmd` file itself & run from RStudio.
 
 ## TODO
 
