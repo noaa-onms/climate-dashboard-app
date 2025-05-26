@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-05-25 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-05-25 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-05-26 00:00:02] global timer tic 0 secs -- Script starting up...
+INFO [2025-05-26 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-05-25T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-05-26T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -60,7 +60,7 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-05-25 00:00:34] global timer toc 31.1 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-05-26 00:00:33] global timer toc 31.1 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -76,70 +76,70 @@ processing file: erddap_sss.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-05-25 00:00:47] 001: GRNMS, 2010-06-03 12:00:00 to 2010-12-24 12:00:00
-[39m[31mERROR [2025-05-25 00:00:50] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:50] 002: GRNMS, 2011-01-13 12:00:00 to 2011-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:00:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:51] 003: GRNMS, 2012-01-01 12:00:00 to 2012-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:00:53] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:53] 004: GRNMS, 2013-01-01 12:00:00 to 2013-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:00:55] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:55] 005: GRNMS, 2014-01-01 12:00:00 to 2014-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:00:57] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:57] 006: GRNMS, 2015-01-01 12:00:00 to 2015-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:00:59] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:00:59] 007: GRNMS, 2016-01-01 12:00:00 to 2016-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:01] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:01] 008: GRNMS, 2017-01-01 12:00:00 to 2017-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:03] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:03] 009: GRNMS, 2018-02-27 12:00:00 to 2018-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:05] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:05] 010: GRNMS, 2019-01-01 12:00:00 to 2019-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:07] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:07] 011: GRNMS, 2020-01-01 12:00:00 to 2020-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:08] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:08] 012: GRNMS, 2021-01-01 12:00:00 to 2021-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:10] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:10] 013: GRNMS, 2022-01-01 12:00:00 to 2022-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:11] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:11] 014: GRNMS, 2023-01-01 12:00:00 to 2023-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:13] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:13] 015: GRNMS, 2024-01-01 12:00:00 to 2024-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:15] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:15] 016: GRNMS, 2025-01-01 12:00:00 to 2025-05-16 12:00:00
-[39m[31mERROR [2025-05-25 00:01:17] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:17] 017: MNMS, 2010-06-03 12:00:00 to 2010-12-24 12:00:00
-[39m[31mERROR [2025-05-25 00:01:19] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:19] 018: MNMS, 2011-01-13 12:00:00 to 2011-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:20] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:20] 019: MNMS, 2012-01-01 12:00:00 to 2012-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:22] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:22] 020: MNMS, 2013-01-01 12:00:00 to 2013-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:23] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:23] 021: MNMS, 2014-01-01 12:00:00 to 2014-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:25] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:25] 022: MNMS, 2015-01-01 12:00:00 to 2015-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:27] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:27] 023: MNMS, 2016-01-01 12:00:00 to 2016-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:28] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:28] 024: MNMS, 2017-01-01 12:00:00 to 2017-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:30] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:30] 025: MNMS, 2018-02-27 12:00:00 to 2018-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:32] 026: MNMS, 2019-01-01 12:00:00 to 2019-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:33] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:33] 027: MNMS, 2020-01-01 12:00:00 to 2020-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:35] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:35] 028: MNMS, 2021-01-01 12:00:00 to 2021-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:37] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:37] 029: MNMS, 2022-01-01 12:00:00 to 2022-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:39] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:39] 030: MNMS, 2023-01-01 12:00:00 to 2023-12-30 12:00:00
-[39m[31mERROR [2025-05-25 00:01:40] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:40] 031: MNMS, 2024-01-01 12:00:00 to 2024-12-29 12:00:00
-[39m[31mERROR [2025-05-25 00:01:42] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:01:42] 032: MNMS, 2025-01-01 12:00:00 to 2025-05-16 12:00:00
-[39m[31mERROR [2025-05-25 00:01:44] terra::crs(r, proj = T) == wgs84 is not TRUE
+[31mINFO [2025-05-26 00:00:44] 001: GRNMS, 2010-06-03 12:00:00 to 2010-12-24 12:00:00
+[39m[31mERROR [2025-05-26 00:00:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:46] 002: GRNMS, 2011-01-13 12:00:00 to 2011-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:00:48] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:48] 003: GRNMS, 2012-01-01 12:00:00 to 2012-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:00:50] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:50] 004: GRNMS, 2013-01-01 12:00:00 to 2013-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:00:52] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:52] 005: GRNMS, 2014-01-01 12:00:00 to 2014-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:00:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:56] 006: GRNMS, 2015-01-01 12:00:00 to 2015-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:00:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:00:59] 007: GRNMS, 2016-01-01 12:00:00 to 2016-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:01] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:01] 008: GRNMS, 2017-01-01 12:00:00 to 2017-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:03] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:03] 009: GRNMS, 2018-02-27 12:00:00 to 2018-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:05] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:05] 010: GRNMS, 2019-01-01 12:00:00 to 2019-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:07] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:07] 011: GRNMS, 2020-01-01 12:00:00 to 2020-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:08] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:08] 012: GRNMS, 2021-01-01 12:00:00 to 2021-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:10] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:10] 013: GRNMS, 2022-01-01 12:00:00 to 2022-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:11] 014: GRNMS, 2023-01-01 12:00:00 to 2023-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:13] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:13] 015: GRNMS, 2024-01-01 12:00:00 to 2024-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:21] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:21] 016: GRNMS, 2025-01-01 12:00:00 to 2025-05-16 12:00:00
+[39m[31mERROR [2025-05-26 00:01:23] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:23] 017: MNMS, 2010-06-03 12:00:00 to 2010-12-24 12:00:00
+[39m[31mERROR [2025-05-26 00:01:24] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:24] 018: MNMS, 2011-01-13 12:00:00 to 2011-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:26] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:26] 019: MNMS, 2012-01-01 12:00:00 to 2012-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:27] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:27] 020: MNMS, 2013-01-01 12:00:00 to 2013-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:29] 021: MNMS, 2014-01-01 12:00:00 to 2014-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:31] 022: MNMS, 2015-01-01 12:00:00 to 2015-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:32] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:32] 023: MNMS, 2016-01-01 12:00:00 to 2016-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:36] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:36] 024: MNMS, 2017-01-01 12:00:00 to 2017-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:38] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:38] 025: MNMS, 2018-02-27 12:00:00 to 2018-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:40] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:40] 026: MNMS, 2019-01-01 12:00:00 to 2019-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:41] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:41] 027: MNMS, 2020-01-01 12:00:00 to 2020-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:43] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:43] 028: MNMS, 2021-01-01 12:00:00 to 2021-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:45] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:45] 029: MNMS, 2022-01-01 12:00:00 to 2022-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:52] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:52] 030: MNMS, 2023-01-01 12:00:00 to 2023-12-30 12:00:00
+[39m[31mERROR [2025-05-26 00:01:54] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:54] 031: MNMS, 2024-01-01 12:00:00 to 2024-12-29 12:00:00
+[39m[31mERROR [2025-05-26 00:01:55] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:01:55] 032: MNMS, 2025-01-01 12:00:00 to 2025-05-16 12:00:00
+[39m[31mERROR [2025-05-26 00:01:57] terra::crs(r, proj = T) == wgs84 is not TRUE
 [39m13/21                     
 14/21 [success_summary]   
 15/21                     
@@ -179,7 +179,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-05-25 00:01:50] global timer toc 1.27 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-05-26 00:02:03] global timer toc 1.5 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -195,103 +195,88 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-05-25 00:02:05] 001: CBNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:02:25] 002: CINMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:02:31] 003: CPNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:02:39] 004: FGBNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:02:49] 005: FKNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:03] 006: GFNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:09] 007: GRNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:15] 008: HIHWNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:20] 009: MBNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:26] 010: MBNMS-david, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:31] 011: MBNMS-main, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:03:36] 012: MNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:03:41] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:03:41] 013: MNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:03:46] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:03:46] 014: MNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:03:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:03:51] 015: MNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:03:56] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:03:56] 016: MNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:01] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:01] 017: MNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:06] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:06] 018: MNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:11] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:11] 019: MNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:16] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:16] 020: MNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:21] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:21] 021: MNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:26] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:26] 022: MNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:31] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:31] 023: MNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:36] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:36] 024: MNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:41] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:41] 025: MNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:47] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:47] 026: MNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:52] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:52] 027: MNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:04:57] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:04:57] 028: MNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:03] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:03] 029: MNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:07] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:07] 030: MNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:12] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:12] 031: MNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:17] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:17] 032: MNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:22] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:22] 033: MNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:28] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:28] 034: MNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:33] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:33] 035: MNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:38] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:38] 036: MNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:42] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:42] 037: MNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:05:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:05:51] 038: MNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:03] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:03] 039: MNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:09] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:09] 040: MNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:14] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:14] 041: MNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:19] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:19] 042: MNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:32] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:32] 043: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:36] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:36] 044: MNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:41] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:41] 045: MNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:46] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:46] 046: MNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:51] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:51] 047: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:06:57] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:06:57] 048: MNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:07:02] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:07:02] 049: MNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:07:06] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:07:06] 050: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:07:11] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:07:11] 051: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-05-25 00:07:17] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:07:17] 052: MNMS, 2025-01-01 12:00:00 to 2025-05-23 12:00:00
-[39m[31mERROR [2025-05-25 00:07:59] terra::crs(r, proj = T) == wgs84 is not TRUE
-[39m[31mINFO [2025-05-25 00:07:59] 053: NMSAS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:08:05] 054: OCNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:08:10] 055: SBNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
-[39m[31mINFO [2025-05-25 00:08:15] 056: TBNMS, 2025-05-23 12:00:00 to 2025-05-23 12:00:00
+[31mINFO [2025-05-26 00:02:18] 001: MNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:29] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:29] 002: MNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:35] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:35] 003: MNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:41] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:41] 004: MNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:46] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:46] 005: MNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:51] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:51] 006: MNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:02:56] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:02:56] 007: MNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:00] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:00] 008: MNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:05] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:05] 009: MNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:11] 010: MNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:15] 011: MNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:20] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:20] 012: MNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:27] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:27] 013: MNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:32] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:32] 014: MNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:37] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:37] 015: MNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:43] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:43] 016: MNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:47] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:47] 017: MNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:53] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:53] 018: MNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:03:58] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:03:58] 019: MNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:06] 020: MNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:11] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:11] 021: MNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:15] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:15] 022: MNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:21] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:21] 023: MNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:26] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:26] 024: MNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:38] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:38] 025: MNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:43] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:43] 026: MNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:49] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:49] 027: MNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:54] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:54] 028: MNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:04:59] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:04:59] 029: MNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:06] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:06] 030: MNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:12] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:12] 031: MNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:18] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:18] 032: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:26] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:26] 033: MNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:31] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:31] 034: MNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:36] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:36] 035: MNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:42] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:42] 036: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:47] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:47] 037: MNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:05:58] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:05:58] 038: MNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:06:04] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:06:04] 039: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:06:08] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:06:08] 040: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
+[39m[31mERROR [2025-05-26 00:06:14] terra::crs(r, proj = T) == wgs84 is not TRUE
+[39m[31mINFO [2025-05-26 00:06:14] 041: MNMS, 2025-01-01 12:00:00 to 2025-05-23 12:00:00
+[39m[31mERROR [2025-05-26 00:06:19] terra::crs(r, proj = T) == wgs84 is not TRUE
 [39m13/21                     
 14/21 [success_summary]   
 15/21                     
@@ -331,5 +316,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-05-25 00:08:30] global timer toc 6.68 mins -- Script done rendering, next git commit & push
+INFO [2025-05-26 00:06:25] global timer toc 4.36 mins -- Script done rendering, next git commit & push
 Already up to date.
