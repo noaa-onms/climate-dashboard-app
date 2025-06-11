@@ -35,11 +35,37 @@ if (!exists("params"))
 #| label: polygons
 
 sanctuaries_rds <- here("../climate-dashboard/data/sanctuaries.rds")
+buf_pct         <- 0.20 # 20% of area
 
 ply_sanctuaries <- readRDS(sanctuaries_rds)
 
+# buffer polygon and get bounding boxes
+ply_sanctuaries <- ply_sanctuaries |>
+  mutate(
+    area_km2  = st_area(geom) |> 
+      set_units("km^2") |> 
+      as.numeric() |> 
+      round(2),
+    buf_km    = (sqrt(area_km2) * buf_pct) |> 
+      round(2),
+    bbox_geom = map2(geom, area_km2, \(g,a) {
+      st_sfc(g, crs = 4326) |> 
+        st_buffer(buf_km * 1000) |> 
+        st_bbox() |>
+        round(2) |> 
+        st_as_sfc() }),
+    bbox_chr  = map_chr(bbox_geom, \(x) {  # xmin, ymin, xmax and ymax
+      st_bbox(x) |> 
+        as.numeric() |> 
+        paste(collapse = ",") } ) ) |> 
+  unnest(bbox_geom)
+bb_sanctuaries <- st_set_geometry(ply_sanctuaries, "bbox_geom") |> 
+  select(-geom)
+ply_sanctuaries <- select(ply_sanctuaries, -bbox_geom)
+
 # show map
-mapView(ply_sanctuaries, zcol = "nms")
+mapView(ply_sanctuaries, zcol = "nms") +
+  mapView(bb_sanctuaries, zcol = "nms", legend = F)
 
 ply_sanctuaries |>
   st_drop_geometry() |>
@@ -71,7 +97,7 @@ cat(
 meta <- read_yaml(params$yml) 
 proc_prod <- path_ext_remove(basename(params$yml))
 
-dir_out <- here(glue("data/{proc_prod}"))
+dir_out <- glue("/share/data/noaa-onms/climate-dashboard-app/{proc_prod}")
 dir_create(dir_out)
 
 v     <- meta$erddap_variable
@@ -95,28 +121,7 @@ d_nms_yr_todo <- ply_sanctuaries |>
     d = map2(nms, year, \(nms, year) { # nms = "CBNMS"; year = 2025
       
       times_yr <- times[year(times) == year]
-      # csv <- glue("{dir_out}/{nms}/{year}.csv")
-      # 
-      # # time[1] if missing csv
-      # if (!file.exists(csv))
-      #   return(list(
-      #     n_times  = length(times_yr),
-      #     time_min = times_yr[1]))
-      # 
-      # times_csv <- read_csv(csv) |> 
-      #   pull(time)
-      # # NA if all times done
-      # if (all(times_yr %in% times_csv))
-      #   return(list(
-      #     n_times  = 0,
-      #     time_min = NA)) 
-      # 
-      # # earliest time missing otherwise
-      # i <- !times_yr %in% times_csv
-      # list(
-      #     n_times  = sum(i),
-      #     time_min = min(times_yr[i])) 
-      tif <- glue("{dir_out}/{nms}/{year}.tif")
+      tif      <- glue("{dir_out}/{nms}/{year}.tif")
       
       # if missing tif,return all times
       if (!file.exists(tif))
@@ -157,7 +162,7 @@ d_nms_yr_todo |>
     summarize(
       .,
       time_min = min(time_min, na.rm = T),
-      time_max = min(time_max, na.rm = T),
+      time_max = max(time_max, na.rm = T),
       n_times  = sum(n_times)) else .} |>
   datatable(
     caption  = "Sanctuaries missing available ERDDAP times.",
@@ -176,7 +181,7 @@ Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/
 
 # rerddap::cache_delete_all()
 
-fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "GRNMS"; year = 2010 ; i = 97
+fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "MNMS"; year = 2010 ; i = 97
   
   err <- tryCatch({
     
@@ -186,19 +191,16 @@ fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "GRNMS"; year = 2010 
 
     ply <- ply_sanctuaries |>
       filter(nms == !!nms)
-    # TODO: consider expanding by 10% and rounding 2 digits
-    # bb <- st_bbox(ply) |> stars:::bb_shrink(-0.1) |> round(2)
+    bb <- bb_sanctuaries |>
+      filter(nms == !!nms) |> 
+      st_bbox()
     
-    # rast(glue("{dir_out}/{nms}/{yr}.tif")) |> names()
-    # browser()
-    # devtools::reload(dir_extractr) # DEBUG
-    
-    extractr::ed_extract( # DEBUG
-    # ed_extract(
+    extractr::ed_extract(
       ed,
       var       = v,
       sf_zones  = ply,
-      mask_tif  = T,
+      bbox      = bb,
+      mask_tif  = F,
       rast_tif  = glue("{dir_out}/{nms}/{yr}.tif"),
       zonal_fun = "mean",
       zonal_csv = glue("{dir_out}/{nms}/{yr}.csv"),
@@ -220,7 +222,6 @@ fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "GRNMS"; year = 2010 
 } 
 
 res <- d_nms_yr_todo |> 
-  # slice(1) |> # DEBUG
   mutate(
     error = pmap_chr(list(i, nms, time_min, time_max), fxn))
 ```

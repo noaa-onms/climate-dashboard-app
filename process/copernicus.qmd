@@ -131,7 +131,7 @@ stopifnot(logged_in)
 meta <- read_yaml(params$yml) 
 copernicus_prod <- path_ext_remove(basename(params$yml))
 
-dir_out <- here(glue("data/{copernicus_prod}"))
+dir_out <- glue("/share/data/noaa-onms/climate-dashboard-app/{copernicus_prod}")
 dir_create(dir_out)
 ```
 
