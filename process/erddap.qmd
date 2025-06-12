@@ -17,9 +17,10 @@ execute:
 # devtools::install_github("marinebon/extractr", force = T)
 librarian::shelf(
   dplyr, DT, fs, glue, here, logger, lubridate, mapview, purrr, RColorBrewer, readr, 
-  sf, stringr, terra, tibble, yaml,
+  sf, stringr, terra, tibble, tidyr, yaml,
   marinebon/extractr,
   quiet = T)
+
 options(readr.show_col_types = F)
 mapviewOptions(
   basemaps       = "Esri.OceanBasemap",
