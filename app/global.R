@@ -34,7 +34,7 @@ sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 is_server <- Sys.info()[["sysname"]] == "Linux"
 dir_data <- ifelse(
   is_server,
-  "/share/data/noaa-onms/climate-dashboard",
+  "/share/data/noaa-onms/climate-dashboard-app",
   "~/My Drive/projects/mbon/noaa-onms/climate-dashboard-app")
 
 choices_nms <- sanctuaries |>
