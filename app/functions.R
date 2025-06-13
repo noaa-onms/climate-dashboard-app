@@ -17,13 +17,14 @@ get_r <- function(r, d, dates){  # dates = dates_then
     project(leaflet:::epsg3857)
 }
 
-get_d <- function(var, nms){
-  dir <- here(glue("data/{var}/{nms}"))
-  if (!dir.exists(dir))
+get_d <- function(var, nms, dir_data){
+  dir_var_nms <- glue("{dir_data}/{var}/{nms}")
+
+  if (!dir.exists(dir_var_nms))
     return(NULL)
 
   tibble(
-    csv = list.files(dir, ".csv$", full.names = T)) |>
+    csv = list.files(dir_var_nms, ".csv$", full.names = T)) |>
     mutate(
       data = map(csv, \(x) read_csv(x))) |>
     unnest(data) |>

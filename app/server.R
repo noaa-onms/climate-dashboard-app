@@ -4,7 +4,7 @@ function(input, output, session) {
   observe(session$setCurrentTheme(
     if (isTRUE(input$dark_mode)) dark else light ))
 
-  # Reactive values for slider ranges
+  # Reactive values for slider ranges ----
   rx <- reactiveValues(
     nms      = NULL,
     var      = NULL,
@@ -18,7 +18,7 @@ function(input, output, session) {
   get_d_var <- reactive({
     req(rx$nms, rx$var)
 
-    get_d(rx$var, rx$nms)
+    get_d(rx$var, rx$nms, dir_data)
   })
 
   # get_r_var() ----
@@ -27,7 +27,7 @@ function(input, output, session) {
     var  <- rx$var
     nms  <- rx$nms
 
-    dir_var_nms <- glue(here("data/{var}/{nms}"))
+    dir_var_nms <- glue("{dir_data}/{var}/{nms}")
     list.files(dir_var_nms, ".tif$", full.names = T) |>
       map(rast) |>
       rast() |>
@@ -42,7 +42,7 @@ function(input, output, session) {
 
     # update nms choices, especially when var changes and potentially missing
     if (!is.null(rx$var) && var != rx$var){
-      nms_with_var     <- dir(here(glue("data/{var}")))
+      nms_with_var     <- dir(glue("{data}/{var}"))
       choices_nms_var  <- choices_nms[choices_nms %in% nms_with_var]
       nms <- ifelse(
         nms %in% choices_nms_var,
@@ -57,7 +57,7 @@ function(input, output, session) {
     }
     # TODO: update var choices, esp. when var unavailable for selected nms
 
-    d_var    <- get_d(var, nms)
+    d_var    <- get_d(var, nms, dir_data)
     if (is.null(d_var))
       return() # allow input$sel_nms to catch up
 

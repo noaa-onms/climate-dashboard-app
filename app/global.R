@@ -31,6 +31,12 @@ dark  <- bs_theme(
 
 sanctuaries <- readRDS(here("../climate-dashboard/data/sanctuaries.rds"))
 
+is_server <- Sys.info()[["sysname"]] == "Linux"
+dir_data <- ifelse(
+  is_server,
+  "/share/data/noaa-onms/climate-dashboard",
+  "~/My Drive/projects/mbon/noaa-onms/climate-dashboard-app")
+
 choices_nms <- sanctuaries |>
   st_drop_geometry() |>
   arrange(sanctuary) |>
