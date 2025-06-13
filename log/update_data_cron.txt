@@ -1,41 +1,18 @@
 Already up to date.
-INFO [2025-06-12 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-06-12 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-06-13 07:51:15] global timer tic 0 secs -- Script starting up...
+INFO [2025-06-13 07:51:15] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
-[39m1/25                     
-2/25 [setup]             
-3/25                     
-4/25 [polygons]          
-5/25                     
-6/25 [yml]               
-7/25                     
-8/25 [dataset]           
-[31mINFO - 2025-06-12T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
-[39m9/25                     
-10/25 [unnamed-chunk-1]   
-11/25                     
-12/25 [existing_lyr_dates]
-13/25                     
-14/25 [d_nms_ds_t]        
-15/25                     
-16/25 [iterate_subset]    
-17/25                     
-18/25 [success_summary]   
-19/25                     
-20/25 [error_summary]     
-21/25                     
-22/25 [rm_empty_nc_dirs]  
-23/25                     
-24/25 [unnamed-chunk-2]   
-25/25                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-06-13T07:51:34Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]          |                                                         |.............................                    |  60%                       |                                                         |...............................                  |  64% [iterate_subset]      |                                                         |.................................                |  68%                       |                                                         |...................................              |  72% [success_summary]     |                                                         |.....................................            |  76%                       |                                                         |.......................................          |  80% [error_summary]       |                                                         |.........................................        |  84%                       |                                                         |...........................................      |  88% [rm_empty_nc_dirs]    |                                                         |.............................................    |  92%                       |                                                         |...............................................  |  96% [unnamed-chunk-2]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: copernicus_phy.knit.md
 
 [39m[1mpandoc [22m
   to: html
   output-file: copernicus_phy.html
   standalone: true
+  embed-resources: false
   section-divs: true
   html-math-method: mathjax
   wrap: none
@@ -60,37 +37,83 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-06-12 00:00:33] global timer toc 31.08 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-06-13 07:51:46] global timer toc 31.57 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-[31mError in `unnest()`:
-! could not find function "unnest"
-[39m[31m
-Quitting from erddap_sss.qmd:38-77 [polygons]
-[39m[31mExecution halted
-[39mERROR [2025-06-12 00:00:39] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-06-12 00:00:39] global timer toc 5.42 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract]  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
+[31moutput file: erddap_sss.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sss.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sss.html
+
+INFO [2025-06-13 07:52:11] global timer toc 24.55 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-[31mError in `unnest()`:
-! could not find function "unnest"
-[39m[31m
-Quitting from erddap_sst.qmd:38-77 [polygons]
-[39m[31mExecution halted
-[39mERROR [2025-06-12 00:00:44] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-06-12 00:00:44] global timer toc 5.23 secs -- Script done rendering, next git commit & push
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-06-13 07:52:34] 001: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:54:24] 002: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:56:26] 003: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:58:23] 004: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
+[39m[31mINFO [2025-06-13 08:00:24] 005: SBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
+[39m[31mINFO [2025-06-13 08:02:44] 006: SBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
+[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
+[31moutput file: erddap_sst.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sst.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sst.html
+
+INFO [2025-06-13 08:03:21] global timer toc 11.17 mins -- Script done rendering, next git commit & push
 Already up to date.
