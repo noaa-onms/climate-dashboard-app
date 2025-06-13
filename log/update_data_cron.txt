@@ -1,35 +1,11 @@
 Already up to date.
-INFO [2025-06-13 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-06-13 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-06-13 07:51:15] global timer tic 0 secs -- Script starting up...
+INFO [2025-06-13 07:51:15] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
-[39m1/25                     
-2/25 [setup]             
-3/25                     
-4/25 [polygons]          
-5/25                     
-6/25 [yml]               
-7/25                     
-8/25 [dataset]           
-[31mINFO - 2025-06-13T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
-[39m9/25                     
-10/25 [unnamed-chunk-1]   
-11/25                     
-12/25 [existing_lyr_dates]
-13/25                     
-14/25 [d_nms_ds_t]        
-15/25                     
-16/25 [iterate_subset]    
-17/25                     
-18/25 [success_summary]   
-19/25                     
-20/25 [error_summary]     
-21/25                     
-22/25 [rm_empty_nc_dirs]  
-23/25                     
-24/25 [unnamed-chunk-2]   
-25/25                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-06-13T07:51:34Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]          |                                                         |.............................                    |  60%                       |                                                         |...............................                  |  64% [iterate_subset]      |                                                         |.................................                |  68%                       |                                                         |...................................              |  72% [success_summary]     |                                                         |.....................................            |  76%                       |                                                         |.......................................          |  80% [error_summary]       |                                                         |.........................................        |  84%                       |                                                         |...........................................      |  88% [rm_empty_nc_dirs]    |                                                         |.............................................    |  92%                       |                                                         |...............................................  |  96% [unnamed-chunk-2]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: copernicus_phy.knit.md
 
 [39m[1mpandoc [22m
@@ -61,31 +37,11 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-06-13 00:00:33] global timer toc 30.54 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-06-13 07:51:46] global timer toc 31.57 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-9/21                     
-10/21 [d_nms_yr_todo]     
-11/21                     
-12/21 [iterate_ed_extract]
-13/21                     
-14/21 [success_summary]   
-15/21                     
-16/21 [error_summary]     
-17/21                     
-18/21 [rm_empty_nc_dirs]  
-19/21                     
-20/21 [unnamed-chunk-1]   
-21/21                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract]  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: erddap_sss.knit.md
 
 [39m[1mpandoc [22m
@@ -117,710 +73,17 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-06-13 00:00:58] global timer toc 24.98 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-06-13 07:52:11] global timer toc 24.55 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-9/21                     
-10/21 [d_nms_yr_todo]     
-11/21                     
-12/21 [iterate_ed_extract]
-[31mINFO [2025-06-13 00:01:18] 001: MBNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:01:35] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/1997_nc/1825f458e2cdda9704edc532bd20bb42.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/1997_nc/1825f458e2cdda9704edc532bd20bb42.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:01:35] 002: MBNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:02:25] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/1998_nc/606d6813ee845cf9c151ab9d81acf37a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/1998_nc/606d6813ee845cf9c151ab9d81acf37a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:02:25] 003: MBNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:03:35] 004: MBNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:04:10] 005: MBNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:04:25] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2001_nc/74a56780620f1d22fb056e5df595010b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2001_nc/74a56780620f1d22fb056e5df595010b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:04:25] 006: MBNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:05:41] 007: MBNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:06:21] 008: MBNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:07:02] 009: MBNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:07:45] 010: MBNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:07:56] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2006_nc/237b538474ca5cd2286e29459c38461d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2006_nc/237b538474ca5cd2286e29459c38461d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:07:56] 011: MBNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:09:00] 012: MBNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:09:11] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2008_nc/7719c79de5c850256e4a6623d17b1eb4.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2008_nc/7719c79de5c850256e4a6623d17b1eb4.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:09:11] 013: MBNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:09:53] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2009_nc/e690cb10fd73a50c417f7d64ee479542.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2009_nc/e690cb10fd73a50c417f7d64ee479542.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:09:53] 014: MBNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:10:25] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2010_nc/679099131e1bc1f191be0434ac1160aa.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2010_nc/679099131e1bc1f191be0434ac1160aa.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:10:25] 015: MBNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:11:26] 016: MBNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:12:28] 017: MBNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:12:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2013_nc/acb4d7ae1b6146127f878447c1684cc3.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2013_nc/acb4d7ae1b6146127f878447c1684cc3.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:12:42] 018: MBNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:14:00] 019: MBNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:14:12] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2015_nc/18d9d9111c0d760d1b62dcd7f47b3d4a.nc': no such file or directory
-[39m[31mINFO [2025-06-13 00:14:12] 020: MBNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:15:56] 021: MBNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:16:11] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2017_nc/2b160c921af00e274ed32cc03dee6ecc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2017_nc/2b160c921af00e274ed32cc03dee6ecc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:16:11] 022: MBNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:16:31] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2018_nc/b746990593f9086c44e95a992a225637.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2018_nc/b746990593f9086c44e95a992a225637.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:16:31] 023: MBNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:18:41] 024: MBNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:18:56] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2020_nc/f2bb858c22ff7cd28e9e909b804606a9.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2020_nc/f2bb858c22ff7cd28e9e909b804606a9.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:18:56] 025: MBNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:20:22] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2021_nc/f5d7b0ace555da874c3cf4d976f21227.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2021_nc/f5d7b0ace555da874c3cf4d976f21227.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:20:22] 026: MBNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:21:53] 027: MBNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:22:14] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2023_nc/9d81b75641b7e992170ccf5e8d41a380.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2023_nc/9d81b75641b7e992170ccf5e8d41a380.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:22:14] 028: MBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:22:34] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2024_nc/b905eebe7cfc6e09d2b48b6f6039510b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS/2024_nc/b905eebe7cfc6e09d2b48b6f6039510b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:22:34] 029: MBNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mINFO [2025-06-13 00:23:24] 030: MBNMS-david, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:24:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1985_nc/88be3b050e6866829298c1e40a9eedd0.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1985_nc/88be3b050e6866829298c1e40a9eedd0.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:24:30] 031: MBNMS-david, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:25:37] 032: MBNMS-david, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:27:10] 033: MBNMS-david, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:28:29] 034: MBNMS-david, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:28:59] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1989_nc/0249e02c61821ea762fa79208f7b8139.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1989_nc/0249e02c61821ea762fa79208f7b8139.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:28:59] 035: MBNMS-david, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:30:03] 036: MBNMS-david, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:31:33] 037: MBNMS-david, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:32:04] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1992_nc/306675c465edb0afef9e59139867c5e0.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1992_nc/306675c465edb0afef9e59139867c5e0.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:32:04] 038: MBNMS-david, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:32:39] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1993_nc/028ecf932473802b2e291cf6065b5f00.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1993_nc/028ecf932473802b2e291cf6065b5f00.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:32:39] 039: MBNMS-david, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:34:00] 040: MBNMS-david, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:34:28] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1995_nc/34e262a3e80e01b77c42cab9f028ae98.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1995_nc/34e262a3e80e01b77c42cab9f028ae98.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:34:28] 041: MBNMS-david, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:35:38] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/1996_nc/2f9a856b189dca935096f2901003a73c.nc': no such file or directory
-[39m[31mINFO [2025-06-13 00:35:38] 042: MBNMS-david, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:36:27] 043: MBNMS-david, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:37:32] 044: MBNMS-david, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:38:15] 045: MBNMS-david, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:39:00] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2000_nc/9cb2d2bfe4ea02f1c218b6c7aa82d3dc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2000_nc/9cb2d2bfe4ea02f1c218b6c7aa82d3dc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:39:00] 046: MBNMS-david, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:40:00] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2001_nc/f34cc99709cf60999ac28275f4c4cb36.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2001_nc/f34cc99709cf60999ac28275f4c4cb36.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:40:00] 047: MBNMS-david, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:40:56] 048: MBNMS-david, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:41:23] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2003_nc/6a30cfc611b6483c1f26933aa1cdb523.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2003_nc/6a30cfc611b6483c1f26933aa1cdb523.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:41:23] 049: MBNMS-david, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:41:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2004_nc/76ce50e848e3963e078e62d62b5415e7.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2004_nc/76ce50e848e3963e078e62d62b5415e7.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:41:55] 050: MBNMS-david, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:42:51] 051: MBNMS-david, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:43:43] 052: MBNMS-david, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:44:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2007_nc/00090225f2d0b4850568cf489ffb92f8.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2007_nc/00090225f2d0b4850568cf489ffb92f8.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:44:13] 053: MBNMS-david, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:45:06] 054: MBNMS-david, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:46:13] 055: MBNMS-david, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:46:38] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2010_nc/96e37135590eaecc98ed25ea33e5c7ca.nc': no such file or directory
-[39m[31mINFO [2025-06-13 00:46:38] 056: MBNMS-david, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:46:46] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2011_nc/eb8d37dac6a247c0cdfc207cf19565ce.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2011_nc/eb8d37dac6a247c0cdfc207cf19565ce.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:46:46] 057: MBNMS-david, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:48:02] 058: MBNMS-david, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:48:11] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2013_nc/69ef533dc270ad9dfe697b947d428e40.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2013_nc/69ef533dc270ad9dfe697b947d428e40.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:48:11] 059: MBNMS-david, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:49:14] 060: MBNMS-david, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:50:54] 061: MBNMS-david, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:53:25] 062: MBNMS-david, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:54:07] 063: MBNMS-david, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:54:36] 064: MBNMS-david, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:55:45] 065: MBNMS-david, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:56:17] 066: MBNMS-david, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-06-13 00:56:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2021_nc/e396df8269922d75a6a58ab9b3f84a97.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-david/2021_nc/e396df8269922d75a6a58ab9b3f84a97.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 00:56:42] 067: MBNMS-david, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:57:49] 068: MBNMS-david, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:58:49] 069: MBNMS-david, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 00:59:30] 070: MBNMS-david, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mINFO [2025-06-13 01:00:00] 071: MBNMS-main, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:01:29] 072: MBNMS-main, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:01:40] 073: MBNMS-main, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:02:52] 074: MBNMS-main, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:03:36] 075: MBNMS-main, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:04:13] 076: MBNMS-main, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:05:05] 077: MBNMS-main, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:05:43] 078: MBNMS-main, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:05:53] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1992_nc/263442f6aa5a81161511102b3ff6ec1e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1992_nc/263442f6aa5a81161511102b3ff6ec1e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:05:53] 079: MBNMS-main, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:06:52] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1993_nc/2c8f576495cac8cdf45ce3fe9133bfbe.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1993_nc/2c8f576495cac8cdf45ce3fe9133bfbe.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:06:52] 080: MBNMS-main, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:07:08] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1994_nc/2c330313b750537e0417e5d261f925cc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1994_nc/2c330313b750537e0417e5d261f925cc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:07:08] 081: MBNMS-main, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:08:21] 082: MBNMS-main, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:09:24] 083: MBNMS-main, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:10:14] 084: MBNMS-main, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:10:39] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1998_nc/4f0880c9bc99dd5eb42946346183c3fc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/1998_nc/4f0880c9bc99dd5eb42946346183c3fc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:10:39] 085: MBNMS-main, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:12:55] 086: MBNMS-main, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:13:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2000_nc/864de473c300240eff57c8c83ab251e0.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2000_nc/864de473c300240eff57c8c83ab251e0.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:13:07] 087: MBNMS-main, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:13:38] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2001_nc/7710dea9a87b6db2fa016b4de09abfeb.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2001_nc/7710dea9a87b6db2fa016b4de09abfeb.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:13:38] 088: MBNMS-main, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:14:57] 089: MBNMS-main, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:15:59] 090: MBNMS-main, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:16:27] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2004_nc/6d8588e0e1d7207b1fe1a57038a9ec9c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2004_nc/6d8588e0e1d7207b1fe1a57038a9ec9c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:16:27] 091: MBNMS-main, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:17:44] 092: MBNMS-main, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:18:15] 093: MBNMS-main, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:18:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2007_nc/30f9d101c87396825ca95b7a13894fae.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2007_nc/30f9d101c87396825ca95b7a13894fae.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:18:30] 094: MBNMS-main, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:19:36] 095: MBNMS-main, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:19:48] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2009_nc/04499a3636fc7a01f5f9c01e0d764173.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2009_nc/04499a3636fc7a01f5f9c01e0d764173.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:19:48] 096: MBNMS-main, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:22:06] 097: MBNMS-main, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:22:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2011_nc/02d086bada6cbde82407ad4af5e10ae8.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2011_nc/02d086bada6cbde82407ad4af5e10ae8.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:22:15] 098: MBNMS-main, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:23:50] 099: MBNMS-main, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:24:01] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2013_nc/6e7e47b7f9786e37f1b1420f12d104b6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2013_nc/6e7e47b7f9786e37f1b1420f12d104b6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:24:01] 100: MBNMS-main, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:25:03] 101: MBNMS-main, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:25:26] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2015_nc/5a3b429f66c3811291da0295f741cc5c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2015_nc/5a3b429f66c3811291da0295f741cc5c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:25:26] 102: MBNMS-main, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:28:10] 103: MBNMS-main, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:28:22] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2017_nc/357a685ebf79358073204a45275d8fd6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2017_nc/357a685ebf79358073204a45275d8fd6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:28:22] 104: MBNMS-main, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:29:32] 105: MBNMS-main, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:29:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2019_nc/7f2408c4cda5094245929058fac7f0ec.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2019_nc/7f2408c4cda5094245929058fac7f0ec.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:29:42] 106: MBNMS-main, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:30:56] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2020_nc/9eeb693bf4b7932b2083cbd58172896c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2020_nc/9eeb693bf4b7932b2083cbd58172896c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:30:56] 107: MBNMS-main, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:32:36] 108: MBNMS-main, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:32:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2022_nc/00c53a33fa8128b4475bb09fa4ed3021.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2022_nc/00c53a33fa8128b4475bb09fa4ed3021.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:32:54] 109: MBNMS-main, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:33:12] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2023_nc/4e34ee77375b5e13a67d9760fd19abf7.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2023_nc/4e34ee77375b5e13a67d9760fd19abf7.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:33:12] 110: MBNMS-main, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:34:34] 111: MBNMS-main, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mERROR [2025-06-13 01:34:49] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2025_nc/fda5efc632298addc536778dc8ce4628.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MBNMS-main/2025_nc/fda5efc632298addc536778dc8ce4628.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:34:49] 112: MNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:35:45] 113: MNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:36:42] 114: MNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:37:48] 115: MNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:38:29] 116: MNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:39:37] 117: MNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:40:32] 118: MNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:41:36] 119: MNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:43:21] 120: MNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:44:33] 121: MNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:45:20] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/1994_nc/c024e3bf3f111e18519640b64adf5de3.nc': no such file or directory
-[39m[31mINFO [2025-06-13 01:45:20] 122: MNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:47:13] 123: MNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:47:54] 124: MNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:48:40] 125: MNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:49:28] 126: MNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:50:19] 127: MNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:50:28] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2000_nc/2e47852f6568359ce757bf7fa53aa468.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2000_nc/2e47852f6568359ce757bf7fa53aa468.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:50:28] 128: MNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:52:39] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2001_nc/2fdec9118b4499089a862c8edf1b0880.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2001_nc/2fdec9118b4499089a862c8edf1b0880.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:52:39] 129: MNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:53:50] 130: MNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:54:48] [rast] cannot open this file as a SpatRaster: /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2003.tif
-[39m[31mINFO [2025-06-13 01:54:48] 131: MNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:55:46] [rast] cannot open this file as a SpatRaster: /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2004.tif
-[39m[31mINFO [2025-06-13 01:55:46] 132: MNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:55:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2005_nc/317ba98c605c706b15813f47a8002be3.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2005_nc/317ba98c605c706b15813f47a8002be3.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:55:55] 133: MNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:56:45] 134: MNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:57:48] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2007_nc/7582c27542772077b797037a0f4ccc6e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2007_nc/7582c27542772077b797037a0f4ccc6e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:57:48] 135: MNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 01:58:44] 136: MNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 01:58:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2009_nc/b6ee5a6523c9b2e4e0f90808c102cccf.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2009_nc/b6ee5a6523c9b2e4e0f90808c102cccf.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 01:58:54] 137: MNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:00:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2010_nc/e149bc8ac60136ed71ec31aed8356d77.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2010_nc/e149bc8ac60136ed71ec31aed8356d77.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:00:13] 138: MNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:02:31] 139: MNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:04:15] 140: MNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:06:47] 141: MNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:07:45] 142: MNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:08:23] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2015_nc/aa647384e35d675e329e7aadc22503ce.nc': no such file or directory
-[39m[31mINFO [2025-06-13 02:08:23] 143: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:11:39] 
-[39m[31mINFO [2025-06-13 02:11:39] 144: MNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:12:50] 145: MNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:13:31] 146: MNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:14:32] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/MNMS/2019_nc/6419d21bf73b6234df4140bcc0309356.nc': no such file or directory
-[39m[31mINFO [2025-06-13 02:14:32] 147: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:17:46] 
-[39m[31mINFO [2025-06-13 02:17:46] 148: MNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:18:32] 149: MNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:19:31] 150: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:22:38] 
-[39m[31mINFO [2025-06-13 02:22:38] 151: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:26:00] 
-[39m[31mINFO [2025-06-13 02:26:00] 152: MNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mINFO [2025-06-13 02:26:24] 153: NMSAS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:28:15] 154: NMSAS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:28:27] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1986_nc/4d0da5fda299ddc11c1aad24bea9633f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1986_nc/4d0da5fda299ddc11c1aad24bea9633f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:28:27] 155: NMSAS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:29:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1987_nc/cc062a6fff0731adc072fe3def24d60c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1987_nc/cc062a6fff0731adc072fe3def24d60c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:29:42] 156: NMSAS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:30:58] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1988_nc/578e165857b346fefbf44b50394f9c96.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1988_nc/578e165857b346fefbf44b50394f9c96.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:30:58] 157: NMSAS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:33:02] 158: NMSAS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:34:16] 159: NMSAS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:35:29] 160: NMSAS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:37:14] 161: NMSAS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:37:29] 162: NMSAS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:38:49] 163: NMSAS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:39:49] 164: NMSAS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:41:14] 165: NMSAS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:41:47] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1997_nc/088a0b6406b3c15a8433f29974ddad2b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1997_nc/088a0b6406b3c15a8433f29974ddad2b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:41:47] 166: NMSAS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:43:20] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1998_nc/815ff443434682a38ec0205d9fcf1d05.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/1998_nc/815ff443434682a38ec0205d9fcf1d05.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:43:20] 167: NMSAS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:45:24] 168: NMSAS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:45:59] 169: NMSAS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:48:11] 170: NMSAS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:49:04] 171: NMSAS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:49:29] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2003_nc/a63c9958ded16f022003eb1ec51f8b09.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2003_nc/a63c9958ded16f022003eb1ec51f8b09.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:49:29] 172: NMSAS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:51:52] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2004_nc/79e784e09d2314b54efa55a554d4289c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2004_nc/79e784e09d2314b54efa55a554d4289c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:51:52] 173: NMSAS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:53:49] 174: NMSAS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:55:10] 175: NMSAS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:57:35] 176: NMSAS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 02:58:05] 177: NMSAS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 02:58:21] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2009_nc/17f9705ca4ef56f4ebf8525399afbc86.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2009_nc/17f9705ca4ef56f4ebf8525399afbc86.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 02:58:21] 178: NMSAS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:00:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2010_nc/896440be59f87dde921aa02223164159.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2010_nc/896440be59f87dde921aa02223164159.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:00:13] 179: NMSAS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:02:39] 180: NMSAS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:03:16] 181: NMSAS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:03:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2013_nc/82d638268c7a9dc7626554ebdfee6281.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2013_nc/82d638268c7a9dc7626554ebdfee6281.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:03:30] 182: NMSAS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:05:41] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2014_nc/8fadda1ce22808af6c9033d6f9d32a1a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2014_nc/8fadda1ce22808af6c9033d6f9d32a1a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:05:41] 183: NMSAS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:08:36] 184: NMSAS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:09:54] 185: NMSAS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:10:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2017_nc/d30ff5eed563efad9271ac61f106f068.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2017_nc/d30ff5eed563efad9271ac61f106f068.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:10:07] 186: NMSAS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:11:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2018_nc/5fe426e9421e90876055801d107323ed.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2018_nc/5fe426e9421e90876055801d107323ed.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:11:55] 187: NMSAS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:13:26] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2019_nc/475f3b6ce44e6ef12ee02954aa4f680a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2019_nc/475f3b6ce44e6ef12ee02954aa4f680a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:13:26] 188: NMSAS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:15:32] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2020_nc/d9699d3c88b421152e02f74e631d8737.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2020_nc/d9699d3c88b421152e02f74e631d8737.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:15:32] 189: NMSAS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:18:40] 190: NMSAS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:19:31] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2022_nc/0180ecc1b6632c2b401fc71f616380b6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2022_nc/0180ecc1b6632c2b401fc71f616380b6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:19:31] 191: NMSAS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:23:07] 192: NMSAS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:23:46] 193: NMSAS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mERROR [2025-06-13 03:24:00] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2025_nc/40bd86efe438aa47312baaf5ff2f44ea.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/NMSAS/2025_nc/40bd86efe438aa47312baaf5ff2f44ea.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:24:00] 194: OCNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:26:35] 195: OCNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:27:22] 196: OCNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:28:55] 197: OCNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:30:17] 198: OCNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:30:35] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1989_nc/1d14943bad47e912d3d36460c055a6d6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1989_nc/1d14943bad47e912d3d36460c055a6d6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:30:35] 199: OCNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:32:30] 200: OCNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:32:58] 201: OCNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:33:10] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1992_nc/0bbeacef43c94407dc463056b10c8ea8.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1992_nc/0bbeacef43c94407dc463056b10c8ea8.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:33:10] 202: OCNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:35:00] 203: OCNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:35:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1994_nc/38a605b098cbf32ca0c775112a6e9ee9.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1994_nc/38a605b098cbf32ca0c775112a6e9ee9.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:35:30] 204: OCNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:38:10] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1995_nc/030e30fa6e7d8ce29c64c6ce350f615f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1995_nc/030e30fa6e7d8ce29c64c6ce350f615f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:38:10] 205: OCNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:39:47] 206: OCNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:40:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1997_nc/60aac85a433263a5573a250ed593da5d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1997_nc/60aac85a433263a5573a250ed593da5d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:40:07] 207: OCNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:42:01] 208: OCNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:42:44] 209: OCNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:42:52] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2000_nc/98406f46626e3a3f7db89a9ab371ade3.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2000_nc/98406f46626e3a3f7db89a9ab371ade3.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:42:52] 210: OCNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:45:45] 211: OCNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:47:00] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2002_nc/d743ecfbc78ed0acb06c9a919e6d05bb.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2002_nc/d743ecfbc78ed0acb06c9a919e6d05bb.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:47:00] 212: OCNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:47:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2003_nc/f1f78d34056b43dee8415639f70f59b5.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2003_nc/f1f78d34056b43dee8415639f70f59b5.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:47:54] 213: OCNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:50:36] 214: OCNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:50:53] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2005_nc/b63cfc4589463c855d367803653bdbeb.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2005_nc/b63cfc4589463c855d367803653bdbeb.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:50:53] 215: OCNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:52:56] 216: OCNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:54:30] 217: OCNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:55:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2008_nc/e1977655f3e045e3492d72ae6cc183b8.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2008_nc/e1977655f3e045e3492d72ae6cc183b8.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:55:15] 218: OCNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:56:36] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2009_nc/2b9a3df34e12bb78aa3d7f98978274ba.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2009_nc/2b9a3df34e12bb78aa3d7f98978274ba.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:56:36] 219: OCNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:57:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2010_nc/7cd657772771237446d9670c27049129.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2010_nc/7cd657772771237446d9670c27049129.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:57:55] 220: OCNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:58:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2011_nc/68d6c182715731312aa3fac8a9f4a8d2.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2011_nc/68d6c182715731312aa3fac8a9f4a8d2.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:58:54] 221: OCNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:00:00] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2012_nc/de933b1513cce6f20ab7a699164e33e8.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2012_nc/de933b1513cce6f20ab7a699164e33e8.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:00:00] 222: OCNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:01:29] 223: OCNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:02:17] 224: OCNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:02:38] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2015_nc/ae0ae79c7bc16d8057a1df2cb902feb5.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2015_nc/ae0ae79c7bc16d8057a1df2cb902feb5.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:02:38] 225: OCNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:05:17] 226: OCNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:06:48] 227: OCNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:07:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2018_nc/e1c34850c3a3af588c09d5ff37ed0cbb.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2018_nc/e1c34850c3a3af588c09d5ff37ed0cbb.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:07:07] 228: OCNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:07:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2019_nc/fb185dc0f0925f78c72c91e4f3dba0fa.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2019_nc/fb185dc0f0925f78c72c91e4f3dba0fa.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:07:55] 229: OCNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:10:39] 230: OCNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:10:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2021_nc/811d0b39bc57f6bccb9edb7a1e1353ff.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2021_nc/811d0b39bc57f6bccb9edb7a1e1353ff.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:10:55] 231: OCNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:13:33] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2022_nc/f170ead2a017768fa0ba4c7bdc5507e2.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2022_nc/f170ead2a017768fa0ba4c7bdc5507e2.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:13:33] 232: OCNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:14:01] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2023_nc/4fbddf8cc9ebff108a8bfe15554cd528.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2023_nc/4fbddf8cc9ebff108a8bfe15554cd528.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:14:01] 233: OCNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:16:21] [rast] cannot open this file as a SpatRaster: /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2024.tif
-[39m[31mINFO [2025-06-13 04:16:21] 234: OCNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mERROR [2025-06-13 04:16:29] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2025_nc/6a5a1442d58a6f78df8ae93abcb80559.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2025_nc/6a5a1442d58a6f78df8ae93abcb80559.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:16:29] 235: SBNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:18:32] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1985_nc/57e54a3a73e6f77d056e81c25911d58b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1985_nc/57e54a3a73e6f77d056e81c25911d58b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:18:32] 236: SBNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:23:23] 237: SBNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:27:03] 238: SBNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:28:55] 239: SBNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:29:24] 240: SBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:33:33] 
-[39m[31mINFO [2025-06-13 04:33:33] 241: SBNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:34:34] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1991_nc/5d94039ee8dcf1337947fe5ab326ab3d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1991_nc/5d94039ee8dcf1337947fe5ab326ab3d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:34:34] 242: SBNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:35:43] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1992_nc/ca86ef46b73d55064aa9b1c04bbd5fe0.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1992_nc/ca86ef46b73d55064aa9b1c04bbd5fe0.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:35:43] 243: SBNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:37:44] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1993_nc/0cbf5ee67006f007f42a7b86fa954969.nc': no such file or directory
-[39m[31mINFO [2025-06-13 04:37:44] 244: SBNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:38:45] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1994_nc/a3b38d9b04462dbb6f4f4af54ac92c5b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1994_nc/a3b38d9b04462dbb6f4f4af54ac92c5b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:38:45] 245: SBNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:40:01] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1995_nc/efd1890a4b75f048375c76897ee379b2.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1995_nc/efd1890a4b75f048375c76897ee379b2.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:40:01] 246: SBNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:41:52] 247: SBNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:43:28] 248: SBNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:44:35] 249: SBNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:45:36] 250: SBNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:46:09] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2000_nc/17898289ff6d91e9f559b4482c1d51f7.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2000_nc/17898289ff6d91e9f559b4482c1d51f7.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:46:09] 251: SBNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:46:49] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2001_nc/46c43bb09cf1d36870e9459e41a6a44a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2001_nc/46c43bb09cf1d36870e9459e41a6a44a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:46:49] 252: SBNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:49:01] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2002_nc/7fb1466430aa8967bce680563ac7e678.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2002_nc/7fb1466430aa8967bce680563ac7e678.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:49:01] 253: SBNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:50:42] 254: SBNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:52:13] 255: SBNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:52:34] 256: SBNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:53:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2006_nc/f1e2432cc0595afcc194e7e0ace44057.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2006_nc/f1e2432cc0595afcc194e7e0ace44057.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:53:07] 257: SBNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:54:28] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2007_nc/9aea97d1ee1c1c23aca38ebdd3051133.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2007_nc/9aea97d1ee1c1c23aca38ebdd3051133.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:54:28] 258: SBNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:56:19] 259: SBNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:57:58] 260: SBNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:58:28] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2010_nc/36f7f295d96c99b34c4fef7cd25bea0d.nc': no such file or directory
-[39m[31mINFO [2025-06-13 04:58:28] 261: SBNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:59:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2011_nc/efd47a29f4086e19cd930e35772c43df.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2011_nc/efd47a29f4086e19cd930e35772c43df.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:59:15] 262: SBNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:00:35] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2012_nc/4f684125875b10aaa40870b496fbf21f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2012_nc/4f684125875b10aaa40870b496fbf21f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:00:35] 263: SBNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:02:36] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2013_nc/92e780e1ef604ee4e0d8b78424eb1227.nc': no such file or directory
-[39m[31mINFO [2025-06-13 05:02:36] 264: SBNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:04:44] 265: SBNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:05:49] 266: SBNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:06:27] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2016_nc/23ab149a37008f7ffecef1d97a0a24ac.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2016_nc/23ab149a37008f7ffecef1d97a0a24ac.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:06:27] 267: SBNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:07:58] 268: SBNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:09:42] 269: SBNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:10:08] 270: SBNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:11:56] 271: SBNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:12:29] 272: SBNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:14:23] 273: SBNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:16:52] 274: SBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:20:00] 
-[39m[31mINFO [2025-06-13 05:20:00] 275: SBNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mINFO [2025-06-13 05:22:16] 276: TBNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:23:06] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1985_nc/ba662904ec39de1d9a6fa9566c9903a4.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1985_nc/ba662904ec39de1d9a6fa9566c9903a4.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:23:06] 277: TBNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:25:50] 278: TBNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:27:52] 279: TBNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:28:45] 280: TBNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:30:26] 281: TBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:31:31] 282: TBNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:31:47] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1991_nc/ccf0a0331559004c93f4e0921d55b62e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1991_nc/ccf0a0331559004c93f4e0921d55b62e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:31:47] 283: TBNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:33:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1992_nc/52b197a54d92b6f55f518a4ab863a67e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1992_nc/52b197a54d92b6f55f518a4ab863a67e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:33:13] 284: TBNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:35:08] 285: TBNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:36:33] 286: TBNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:36:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1995_nc/fa408fc4464ec08eefda931b782e28f1.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1995_nc/fa408fc4464ec08eefda931b782e28f1.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:36:54] 287: TBNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:38:47] 288: TBNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:39:23] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1997_nc/abca131a59ed635d76dc6d966e1f1b85.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1997_nc/abca131a59ed635d76dc6d966e1f1b85.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:39:23] 289: TBNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:41:44] 290: TBNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:42:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1999_nc/9f1760c086a9e3aa03ab3a5ab2e9535e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1999_nc/9f1760c086a9e3aa03ab3a5ab2e9535e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:42:07] 291: TBNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:44:32] 292: TBNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:45:47] 293: TBNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:47:41] 294: TBNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:48:03] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2003_nc/90c95e537ea900d5a97eea27ec3c6860.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2003_nc/90c95e537ea900d5a97eea27ec3c6860.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:48:03] 295: TBNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:49:02] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2004_nc/743d5411bd65b96bb271df6636f2af18.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2004_nc/743d5411bd65b96bb271df6636f2af18.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:49:02] 296: TBNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:50:59] 297: TBNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:52:40] 298: TBNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:53:45] 299: TBNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:55:16] 300: TBNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:55:53] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2009_nc/70afe1812a1a937acfb0d6a1acdcde0d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2009_nc/70afe1812a1a937acfb0d6a1acdcde0d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:55:53] 301: TBNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:58:19] 302: TBNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:58:50] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2011_nc/48474b60590c4e7bd7c8ec1128b62e34.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2011_nc/48474b60590c4e7bd7c8ec1128b62e34.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:58:50] 303: TBNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:00:51] 304: TBNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:02:01] 305: TBNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:03:02] 306: TBNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:04:16] 307: TBNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:06:10] 308: TBNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:06:38] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2017_nc/db9e3467de3cf1191b36d8610d40dde1.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2017_nc/db9e3467de3cf1191b36d8610d40dde1.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:06:38] 309: TBNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:07:37] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2018_nc/7368bb463105b4d2bcbf0df0a5796a55.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2018_nc/7368bb463105b4d2bcbf0df0a5796a55.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:07:37] 310: TBNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:10:00] 311: TBNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:12:07] 312: TBNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:12:54] 313: TBNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:14:24] 314: TBNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:15:05] 315: TBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:15:39] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2024_nc/259848b0a9d545877021fe67b1e2494a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2024_nc/259848b0a9d545877021fe67b1e2494a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:15:39] 316: TBNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m13/21                     
-14/21 [success_summary]   
-15/21                     
-16/21 [error_summary]     
-17/21                     
-18/21 [rm_empty_nc_dirs]  
-19/21                     
-20/21 [unnamed-chunk-1]   
-21/21                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-06-13 07:52:34] 001: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:54:24] 002: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:56:26] 003: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
+[39m[31mINFO [2025-06-13 07:58:23] 004: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
+[39m[31mINFO [2025-06-13 08:00:24] 005: SBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
+[39m[31mINFO [2025-06-13 08:02:44] 006: SBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
+[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: erddap_sst.knit.md
 
 [39m[1mpandoc [22m
@@ -852,329 +115,5 @@ Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app
   
 Output created: erddap_sst.html
 
-INFO [2025-06-13 06:17:01] global timer toc 6.27 hours -- Script done rendering, next git commit & push
-Already up to date.
-[main b15cf36] ran update_data.R
- 8 files changed, 15524 insertions(+), 4321 deletions(-)
- delete mode 100644 log/erddap_sst.qmd
- create mode 100644 log/erddap_sst_files/libs/bb_sanctuaries - nms-CSS-0.0.1/bb_sanctuaries - nms_home-button.css
-To https://github.com/noaa-onms/climate-dashboard-app.git
-   c41d53e..b15cf36  main -> main
- calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1987_nc/8f69cde1349852ea2b356db887586a22.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:27:52] 392: OCNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:29:04] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1988_nc/f3e813810d05ccf594b82ae90d93d151.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1988_nc/f3e813810d05ccf594b82ae90d93d151.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:29:04] 393: OCNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:30:56] 394: OCNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:31:17] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1990_nc/a26d3974142788e1565e126a8eab8b32.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1990_nc/a26d3974142788e1565e126a8eab8b32.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:31:17] 395: OCNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:32:51] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1991_nc/fc50daa0786235b7e48a31b9f49424b6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1991_nc/fc50daa0786235b7e48a31b9f49424b6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:32:51] 396: OCNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:34:29] 397: OCNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:34:50] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1993_nc/3f3273fbc98d411869c5cfcacbbb9816.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1993_nc/3f3273fbc98d411869c5cfcacbbb9816.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:34:50] 398: OCNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:37:58] 399: OCNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:38:15] 400: OCNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:38:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1996_nc/4f842446b2d6ba945b96e8afa4dbebfa.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1996_nc/4f842446b2d6ba945b96e8afa4dbebfa.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:38:30] 401: OCNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:40:13] 402: OCNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:40:30] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1998_nc/68b9d5c5b0eb4327a86e4e1235e7cb4f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1998_nc/68b9d5c5b0eb4327a86e4e1235e7cb4f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:40:30] 403: OCNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:42:44] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/1999_nc/1986f45f50d4c3dcb12853a32b61c5d7.nc': no such file or directory
-[39m[31mINFO [2025-06-13 03:42:44] 404: OCNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:45:41] 405: OCNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:46:51] 406: OCNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:47:46] 407: OCNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:49:29] 408: OCNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:49:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2004_nc/e1eef42fb2022e78d1fd8bbc947ee2e3.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2004_nc/e1eef42fb2022e78d1fd8bbc947ee2e3.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:49:42] 409: OCNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:51:32] 410: OCNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:51:50] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2006_nc/1a4e96b2ae2e884e09f81eacc1a64c0e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2006_nc/1a4e96b2ae2e884e09f81eacc1a64c0e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:51:50] 411: OCNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 03:53:06] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2007_nc/06d75152b20f46a8afa89cf46a59188f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2007_nc/06d75152b20f46a8afa89cf46a59188f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 03:53:06] 412: OCNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:56:15] 413: OCNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:57:39] 414: OCNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:58:17] 415: OCNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 03:59:38] 416: OCNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:00:19] 417: OCNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:00:44] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2013_nc/0f3ef389f18ae4758ad641c74449f8b0.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2013_nc/0f3ef389f18ae4758ad641c74449f8b0.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:00:44] 418: OCNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:01:42] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2014_nc/62b84b06316420df1a5596c0158122ae.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2014_nc/62b84b06316420df1a5596c0158122ae.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:01:42] 419: OCNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:03:38] 420: OCNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:04:04] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2016_nc/be6887c4b676ffc6e88190d4c4dab525.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2016_nc/be6887c4b676ffc6e88190d4c4dab525.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:04:04] 421: OCNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:05:27] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2017_nc/12273b4c8b9f1ff9e8187784a005d13a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2017_nc/12273b4c8b9f1ff9e8187784a005d13a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:05:27] 422: OCNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:07:45] 423: OCNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:10:07] 424: OCNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:10:33] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2020_nc/d8918df60314f603297fcc3a943b0e60.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/OCNMS/2020_nc/d8918df60314f603297fcc3a943b0e60.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:10:33] 425: OCNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:13:10] 426: OCNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:13:49] 427: OCNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:16:09] 428: OCNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:16:21] 429: OCNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mINFO [2025-06-13 04:17:55] 430: SBNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:19:30] 431: SBNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:21:06] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1986_nc/8d3f378c5db2565d200b5a832b291d22.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1986_nc/8d3f378c5db2565d200b5a832b291d22.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:21:06] 432: SBNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:24:46] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1987_nc/904af252956287bf8dc2c3ea2e2fefdc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1987_nc/904af252956287bf8dc2c3ea2e2fefdc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:24:46] 433: SBNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:27:21] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1988_nc/dfe35351400be80417fef14d2a2be3be.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1988_nc/dfe35351400be80417fef14d2a2be3be.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:27:21] 434: SBNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:29:24] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1989_nc/1821384cc25ce90d8fc0074979bad170.nc': no such file or directory
-[39m[31mINFO [2025-06-13 04:29:24] 435: SBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:29:33] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1990_nc/b5174814fc0b44841768db1f5862f595.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1990_nc/b5174814fc0b44841768db1f5862f595.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:29:33] 436: SBNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:35:28] 437: SBNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:37:15] 438: SBNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:37:44] 439: SBNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:39:49] 440: SBNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:40:44] 441: SBNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:41:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1996_nc/080ae6eb9022ab3e8f828ba79d7786db.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1996_nc/080ae6eb9022ab3e8f828ba79d7786db.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:41:13] 442: SBNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:42:04] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1997_nc/2079b3f253b6c6d6a325a8f14ca6eb58.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1997_nc/2079b3f253b6c6d6a325a8f14ca6eb58.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:42:04] 443: SBNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:43:25] 444: SBNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:44:51] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1999_nc/da481e124f3cfd8e7983c48f3a7df4bd.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/1999_nc/da481e124f3cfd8e7983c48f3a7df4bd.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:44:51] 445: SBNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:46:38] 446: SBNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:48:49] 447: SBNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:49:49] 448: SBNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:50:19] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2003_nc/22a9ce5a1ebf5b62e7e744c27518db27.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2003_nc/22a9ce5a1ebf5b62e7e744c27518db27.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:50:19] 449: SBNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:50:58] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2004_nc/67b346be642b221cc9201323650a3c1d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2004_nc/67b346be642b221cc9201323650a3c1d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:50:58] 450: SBNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:52:34] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2005_nc/38f4b87926aca3dcc7830a8313c3d885.nc': no such file or directory
-[39m[31mINFO [2025-06-13 04:52:34] 451: SBNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:54:14] 452: SBNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:55:19] 453: SBNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:55:48] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2008_nc/62a8f01694833b881e292c90879e0453.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2008_nc/62a8f01694833b881e292c90879e0453.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:55:48] 454: SBNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mERROR [2025-06-13 04:56:32] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2009_nc/babc7be8e9df4718c83f7deefd9de258.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2009_nc/babc7be8e9df4718c83f7deefd9de258.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 04:56:32] 455: SBNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mINFO [2025-06-13 04:58:28] 456: SBNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:00:26] 457: SBNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:01:28] 458: SBNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:02:36] 459: SBNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:03:17] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2014_nc/d9a7854b6183729d5485f724c7a9b198.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2014_nc/d9a7854b6183729d5485f724c7a9b198.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:03:17] 460: SBNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:04:56] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2015_nc/f32611510b9b8dc3cbddf5d3acf013cc.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2015_nc/f32611510b9b8dc3cbddf5d3acf013cc.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:04:56] 461: SBNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:06:54] 462: SBNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:07:34] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2017_nc/37cb189e8d628e8277650d65518a4b9a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2017_nc/37cb189e8d628e8277650d65518a4b9a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:07:34] 463: SBNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:08:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2018_nc/5e2ef9da1e128c6fc14a7af9fc8931a5.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2018_nc/5e2ef9da1e128c6fc14a7af9fc8931a5.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:08:15] 464: SBNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:10:08] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2019_nc/216a3b146c86a93eff60c7515eea9463.nc': no such file or directory
-[39m[31mINFO [2025-06-13 05:10:08] 465: SBNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:10:51] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2020_nc/c700d2e8ac32fbb5d7363fade65b61f1.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2020_nc/c700d2e8ac32fbb5d7363fade65b61f1.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:10:51] 466: SBNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:12:29] [ENOENT] Failed to remove '/share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2021_nc/34ce2919ca5a0b7de780bcdcd0fd94ca.nc': no such file or directory
-[39m[31mINFO [2025-06-13 05:12:29] 467: SBNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:13:37] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2022_nc/f3caff35e954b441ea28d1c49260e26e.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2022_nc/f3caff35e954b441ea28d1c49260e26e.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:13:37] 468: SBNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:14:31] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2023_nc/f6815bf7bc53b8f60f335cc7bc306787.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/SBNMS/2023_nc/f6815bf7bc53b8f60f335cc7bc306787.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:14:31] 469: SBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:18:27] 
-[39m[31mINFO [2025-06-13 05:18:27] 470: SBNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m[31mERROR [2025-06-13 05:19:28] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-06-13 05:19:28] 471: TBNMS, 1985-01-01 12:00:00 to 1985-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:24:34] 472: TBNMS, 1986-01-01 12:00:00 to 1986-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:25:16] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1986_nc/2d2c713e49f0610b6e30075e23629ef3.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1986_nc/2d2c713e49f0610b6e30075e23629ef3.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:25:16] 473: TBNMS, 1987-01-01 12:00:00 to 1987-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:26:12] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1987_nc/802141423abe9e85c28ad94be7099385.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1987_nc/802141423abe9e85c28ad94be7099385.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:26:12] 474: TBNMS, 1988-01-01 12:00:00 to 1988-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:28:16] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1988_nc/dd003c2f04ee1e05dcae2009d3a71e5d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1988_nc/dd003c2f04ee1e05dcae2009d3a71e5d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:28:16] 475: TBNMS, 1989-01-01 12:00:00 to 1989-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:29:14] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1989_nc/54e9c5fe33f367c690d9004734906103.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1989_nc/54e9c5fe33f367c690d9004734906103.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:29:14] 476: TBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:30:40] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1990_nc/3c13a1dfb00b759128d08c631e80697b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1990_nc/3c13a1dfb00b759128d08c631e80697b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:30:40] 477: TBNMS, 1991-01-01 12:00:00 to 1991-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:33:05] 478: TBNMS, 1992-01-01 12:00:00 to 1992-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:34:04] 479: TBNMS, 1993-01-01 12:00:00 to 1993-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:34:23] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1993_nc/761ccbed1f66a4dfb9aadaf0ea7c40c6.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1993_nc/761ccbed1f66a4dfb9aadaf0ea7c40c6.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:34:23] 480: TBNMS, 1994-01-01 12:00:00 to 1994-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:35:20] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1994_nc/39bb6e7052b7bb5c633bac7e76883c4c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1994_nc/39bb6e7052b7bb5c633bac7e76883c4c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:35:20] 481: TBNMS, 1995-01-01 12:00:00 to 1995-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:37:28] 482: TBNMS, 1996-01-01 12:00:00 to 1996-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:38:03] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1996_nc/e32556595b265c4783d8e6440e2d31fa.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1996_nc/e32556595b265c4783d8e6440e2d31fa.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:38:03] 483: TBNMS, 1997-01-01 12:00:00 to 1997-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:40:10] 484: TBNMS, 1998-01-01 12:00:00 to 1998-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:40:41] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1998_nc/61e8e1a5eb3fa14c4247c7d9f2591064.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/1998_nc/61e8e1a5eb3fa14c4247c7d9f2591064.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:40:41] 485: TBNMS, 1999-01-01 12:00:00 to 1999-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:42:42] 486: TBNMS, 2000-01-01 12:00:00 to 2000-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:43:08] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2000_nc/cd99cd3be12fd6f68fbeff568f20d64a.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2000_nc/cd99cd3be12fd6f68fbeff568f20d64a.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:43:08] 487: TBNMS, 2001-01-01 12:00:00 to 2001-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:44:55] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2001_nc/7aecfd8bb359d77a79ab4888163ebace.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2001_nc/7aecfd8bb359d77a79ab4888163ebace.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:44:55] 488: TBNMS, 2002-01-01 12:00:00 to 2002-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:46:06] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2002_nc/a159da5216a74f6add7be27ac9504729.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2002_nc/a159da5216a74f6add7be27ac9504729.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:46:06] 489: TBNMS, 2003-01-01 12:00:00 to 2003-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:48:46] 490: TBNMS, 2004-01-01 12:00:00 to 2004-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:50:09] 491: TBNMS, 2005-01-01 12:00:00 to 2005-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:50:32] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2005_nc/7a5e22940210bb151ad15a358c196980.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2005_nc/7a5e22940210bb151ad15a358c196980.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:50:32] 492: TBNMS, 2006-01-01 12:00:00 to 2006-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:51:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2006_nc/9ff85c1235cad31c2fa2ef7342664a4c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2006_nc/9ff85c1235cad31c2fa2ef7342664a4c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:51:13] 493: TBNMS, 2007-01-01 12:00:00 to 2007-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:52:48] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2007_nc/3bfd259d7153f2aa5e2fcfc294ce578c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2007_nc/3bfd259d7153f2aa5e2fcfc294ce578c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:52:48] 494: TBNMS, 2008-01-01 12:00:00 to 2008-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:54:07] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2008_nc/e6341bbd98743a826585960cc7f89a8c.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2008_nc/e6341bbd98743a826585960cc7f89a8c.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:54:07] 495: TBNMS, 2009-01-01 12:00:00 to 2009-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:56:48] 496: TBNMS, 2010-01-01 12:00:00 to 2010-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:57:09] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2010_nc/76d89dfb7f46c6fab625206f10e4666b.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2010_nc/76d89dfb7f46c6fab625206f10e4666b.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:57:09] 497: TBNMS, 2011-01-01 12:00:00 to 2011-12-31 12:00:00
-[39m[31mINFO [2025-06-13 05:59:33] 498: TBNMS, 2012-01-01 12:00:00 to 2012-12-31 12:00:00
-[39m[31mERROR [2025-06-13 05:59:54] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2012_nc/756ac857bbe2639ec1ff562ca4784b5f.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2012_nc/756ac857bbe2639ec1ff562ca4784b5f.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 05:59:54] 499: TBNMS, 2013-01-01 12:00:00 to 2013-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:01:10] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2013_nc/f8412d76ed0cba24b92b737c7e9120da.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2013_nc/f8412d76ed0cba24b92b737c7e9120da.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:01:10] 500: TBNMS, 2014-01-01 12:00:00 to 2014-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:02:13] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2014_nc/70aad42c1399360032867d23de050ac2.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2014_nc/70aad42c1399360032867d23de050ac2.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:02:13] 501: TBNMS, 2015-01-01 12:00:00 to 2015-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:03:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2015_nc/e60f9c32ad21f267c161f73f25c684ab.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2015_nc/e60f9c32ad21f267c161f73f25c684ab.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:03:15] 502: TBNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:04:27] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2016_nc/ec1bace7c94cf042f19c612d809ee51d.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2016_nc/ec1bace7c94cf042f19c612d809ee51d.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:04:27] 503: TBNMS, 2017-01-01 12:00:00 to 2017-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:07:23] 504: TBNMS, 2018-01-01 12:00:00 to 2018-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:09:09] 505: TBNMS, 2019-01-01 12:00:00 to 2019-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:09:25] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2019_nc/042f1435256ff3989a3e12dfb23c9d56.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2019_nc/042f1435256ff3989a3e12dfb23c9d56.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:09:25] 506: TBNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:10:15] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2020_nc/69e2c874314557e1dfc18b1c245f2100.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2020_nc/69e2c874314557e1dfc18b1c245f2100.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:10:15] 507: TBNMS, 2021-01-01 12:00:00 to 2021-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:12:19] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2021_nc/25f6446bcec5b89d4de0560992a25c51.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2021_nc/25f6446bcec5b89d4de0560992a25c51.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:12:19] 508: TBNMS, 2022-01-01 12:00:00 to 2022-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:13:02] ERROR in calling ncdf4::nc_open:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2022_nc/06ed9ced5564bf2009bb198b5f43e775.nc (return_on_error= FALSE )ERROR in calling file:
-Error in nc_open trying to open file /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2022_nc/06ed9ced5564bf2009bb198b5f43e775.nc (return_on_error= FALSE )
-[39m[31mINFO [2025-06-13 06:13:02] 509: TBNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mERROR [2025-06-13 06:15:01] [rast] cannot open this file as a SpatRaster: /share/data/noaa-onms/climate-dashboard-app/erddap_sst/TBNMS/2023.tif
-[39m[31mINFO [2025-06-13 06:15:01] 510: TBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 06:17:18] 511: TBNMS, 2025-01-01 12:00:00 to 2025-06-11 12:00:00
-[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
-[31moutput file: erddap_sst.knit.md
-
-[39m[31mError in readLines(con, warn = FALSE) : cannot open the connection
-Calls: .main ... partition_yaml_front_matter -> grep -> is.factor -> read_utf8 -> readLines
-In addition: Warning message:
-In readLines(con, warn = FALSE) :
-  cannot open file 'erddap_sst.qmd': No such file or directory
-Execution halted
-[39mERROR [2025-06-13 06:18:03] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-06-13 06:18:03] global timer toc 9.94 hours -- Script done rendering, next git commit & push
+INFO [2025-06-13 08:03:21] global timer toc 11.17 mins -- Script done rendering, next git commit & push
 Already up to date.
