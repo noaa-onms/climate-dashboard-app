@@ -1,11 +1,35 @@
 Already up to date.
-INFO [2025-06-13 07:51:15] global timer tic 0 secs -- Script starting up...
-INFO [2025-06-13 07:51:15] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-06-14 00:00:02] global timer tic 0 secs -- Script starting up...
+INFO [2025-06-14 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-06-13T07:51:34Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
-[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]          |                                                         |.............................                    |  60%                       |                                                         |...............................                  |  64% [iterate_subset]      |                                                         |.................................                |  68%                       |                                                         |...................................              |  72% [success_summary]     |                                                         |.....................................            |  76%                       |                                                         |.......................................          |  80% [error_summary]       |                                                         |.........................................        |  84%                       |                                                         |...........................................      |  88% [rm_empty_nc_dirs]    |                                                         |.............................................    |  92%                       |                                                         |...............................................  |  96% [unnamed-chunk-2]     |                                                         |.................................................| 100%                                                                                                                                    
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2025-06-14T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
 [31moutput file: copernicus_phy.knit.md
 
 [39m[1mpandoc [22m
@@ -37,11 +61,49 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-06-13 07:51:46] global timer toc 31.57 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-06-14 00:00:33] global timer toc 30.94 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract]  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+[31mINFO [2025-06-14 00:00:51] 001: CBNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:00:54] 002: CINMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mERROR [2025-06-14 00:00:56] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-06-14 00:00:56] 003: CPNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mERROR [2025-06-14 00:00:58] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-06-14 00:00:58] 004: FGBNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:01] 005: FKNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:03] 006: GFNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:05] 007: GRNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:08] 008: HIHWNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:11] 009: MBNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:13] 010: MBNMS-david, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:15] 011: MBNMS-main, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:17] 012: MNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:20] 013: NMSAS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:22] 014: OCNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:24] 015: SBNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m[31mINFO [2025-06-14 00:01:26] 016: TBNMS, 2025-06-09 12:00:00 to 2025-06-09 12:00:00
+[39m13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
 [31moutput file: erddap_sss.knit.md
 
 [39m[1mpandoc [22m
@@ -73,17 +135,31 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-06-13 07:52:11] global timer toc 24.55 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-06-14 00:01:35] global timer toc 1.03 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
-[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-06-13 07:52:34] 001: MNMS, 2016-01-01 12:00:00 to 2016-12-31 12:00:00
-[39m[31mINFO [2025-06-13 07:54:24] 002: MNMS, 2020-01-01 12:00:00 to 2020-12-31 12:00:00
-[39m[31mINFO [2025-06-13 07:56:26] 003: MNMS, 2023-01-01 12:00:00 to 2023-12-31 12:00:00
-[39m[31mINFO [2025-06-13 07:58:23] 004: MNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m[31mINFO [2025-06-13 08:00:24] 005: SBNMS, 1990-01-01 12:00:00 to 1990-12-31 12:00:00
-[39m[31mINFO [2025-06-13 08:02:44] 006: SBNMS, 2024-01-01 12:00:00 to 2024-12-31 12:00:00
-[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
 [31moutput file: erddap_sst.knit.md
 
 [39m[1mpandoc [22m
@@ -115,5 +191,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-06-13 08:03:21] global timer toc 11.17 mins -- Script done rendering, next git commit & push
+INFO [2025-06-14 00:02:04] global timer toc 29.39 secs -- Script done rendering, next git commit & push
 Already up to date.
