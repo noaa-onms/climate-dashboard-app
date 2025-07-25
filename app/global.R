@@ -3,8 +3,7 @@
 
 librarian::shelf(
   bsicons, bslib, dplyr, glue, here, htmltools, leaflet, leaflet.extras2,
-  lubridate, markdown, plotly, purrr,
-  readr, scales, sf, shiny, slider,
+  lubridate, markdown, plotly, purrr, readr, scales, sf, shiny, slider, stringr,
   terra, thematic, tibble, tidyr)
 source(here("app/functions.R"))
 options(readr.show_col_types = F)
@@ -43,23 +42,27 @@ choices_nms <- sanctuaries |>
   deframe()
 
 d_vars <- tribble(
-  ~var      ,  ~label,                          ~lbl,
-  "erddap_sst",  "Sea Surface Temperature (SST)", "SST (°C)",
-  "erddap_sss",  "Sea Surface Salinity (SSS)",    "SSS (PSU)")
+  ~var                    , ~provider    , ~label                         , ~lbl,
+  "erddap_sst"            ,  "NOAA"      , "Sea surface temperature (SST)", "SST (°C)",
+  "erddap_sss"            ,  "NOAA"      , "Sea surface salinity (SSS)"   , "SSS (g/kg)",
+  "copernicus_phy.mlotst" ,  "Copernicus", "Mixed layer thickness (MLT)"  , "MLT (m)",
+  "copernicus_phy.thetao" ,  "Copernicus", "Sea surface temperature (SST)", "SST (°C)",
+  "copernicus_phy.bottomT",  "Copernicus", "Sea bottom temperature (SST)" , "SBT (°C)",
+  "copernicus_phy.so"     ,  "Copernicus", "Sea surface salinity (SSS)"   , "SSS (g/kg)")
+# NOTE: var for copernicus needs to differentiate dataset.varid where dir_exists(glue("{dir_data}/{dataset}/{nms}"))
+
 # TODO: add color gradient
-var_label   <- select(d_vars, var, label) |> deframe()
-var_lbl     <- select(d_vars, var, lbl)   |> deframe()
-choices_var <- select(d_vars, label, var) |> deframe()
+var_label <- select(d_vars, var, label) |> deframe()
+var_lbl   <- select(d_vars, var, lbl)   |> deframe()
+# choices_var <- select(d_vars, label, var) |> deframe()
+choices_var <- d_vars |>
+  select(provider, label, var) |>
+  nest(.by = provider) |>
+  mutate(
+    data = map(data, deframe)) |>
+  deframe()
 
 selected_nms = "FKNMS"
 selected_var = "erddap_sst"
-
-# DEBUG
-# selected_nms = "CBNMS"
-# selected_var = "erddap_sst"
-#
-# read_csv("data/erddap_sst/HIHWNMS/2025.csv") |>
-#   arrange(time) |>
-#   tail(1)
-# 2025-04-28 12:00:00
+# selected_var = "copernicus_phy.bottomT"
 
