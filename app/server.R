@@ -193,7 +193,8 @@ function(input, output, session) {
       dark_mode = isTRUE(input$dark_mode),
       bbox = b,
       lyrs_ctrl = F,
-      attr_ctrl = F)
+      attr_ctrl = F,
+      nms       = nms)
   })
 
   # plot_doy ----

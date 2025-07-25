@@ -71,7 +71,8 @@ map_then_now <- function(
     bbox        = NULL,
     dark_mode   = T,
     lyrs_ctrl   = T,
-    attr_ctrl   = T){
+    attr_ctrl   = T,
+    nms         = NULL){
 
   tiles = ifelse(
     dark_mode,
@@ -143,6 +144,26 @@ map_then_now <- function(
         lat1 = bbox[2],
         lng2 = bbox[3],
         lat2 = bbox[4])
+
+  if (!is.null(nms)){
+
+    ply_nms <- sanctuaries |>
+      filter(nms == !!nms)
+    m <- m |>
+      addPolygons(
+        data         = ply_nms,
+        color        = "black",
+        weight       = 2,
+        fillOpacity  = 0,
+        options      = pathOptions(pane = "left")) |>
+      addPolygons(
+        data         = ply_nms,
+        color        = "black",
+        weight       = 2,
+        fillOpacity  = 0,
+        options      = pathOptions(pane = "right"))
+  }
+
   m
 }
 
