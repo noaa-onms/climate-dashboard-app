@@ -47,7 +47,7 @@ d_vars <- tribble(
   "erddap_sss"            ,  "NOAA"      , "Sea surface salinity (SSS)"   , "SSS (g/kg)",
   "copernicus_phy.mlotst" ,  "Copernicus", "Mixed layer thickness (MLT)"  , "MLT (m)",
   "copernicus_phy.thetao" ,  "Copernicus", "Sea surface temperature (SST)", "SST (°C)",
-  "copernicus_phy.bottomT",  "Copernicus", "Sea bottom temperature (SST)" , "SBT (°C)",
+  "copernicus_phy.bottomT",  "Copernicus", "Sea bottom temperature (SBT)" , "SBT (°C)",
   "copernicus_phy.so"     ,  "Copernicus", "Sea surface salinity (SSS)"   , "SSS (g/kg)")
 # NOTE: var for copernicus needs to differentiate dataset.varid where dir_exists(glue("{dir_data}/{dataset}/{nms}"))
 
