@@ -1,35 +1,63 @@
 get_r <- function(r, d, dates){  # dates = dates_then
   # r = r_var; d = d_var_r; dates = dates_now
 
-  lyrs <- d |>
-    filter(
-      date %in% !!dates) |>
-    pull(lyr)
+  # browser()
+  i <- which(date(time(r)) %in% dates)
+  # lyrs <- d |>
+  #   filter(
+  #     date %in% !!dates) |>
+  #   pull(lyr)
 
-  if (length(lyrs) == 0){
-    stop("length(lyrs) == 0")
-  }
+  # if (length(lyrs) == 0)
+  #   stop("length(lyrs) == 0")
+  if (length(i) == 0)
+    stop("get_r(): length(i) == 0")
 
   r |>
-    subset(lyrs) |>
+    subset(i) |>
     mean() |>
     project(leaflet:::epsg3857)
 }
 
-get_d <- function(var, nms, dir_data){
-  dir_var_nms <- glue("{dir_data}/{var}/{nms}")
+get_d <- function(dataset_varid, nms, dir_data){
+  # dataset_varid <- var
 
-  if (!dir.exists(dir_var_nms))
+  if (str_detect(dataset_varid, fixed("."))){
+    # if copernicus
+    dataset <- str_replace(dataset_varid, "(.+)\\.(.+)", "\\1")
+    varid   <- str_replace(dataset_varid, "(.+)\\.(.+)", "\\2")
+  } else {
+    dataset <- dataset_varid
+    varid   <- NULL
+  }
+
+  dir_ds_nms <- glue("{dir_data}/{dataset}/{nms}")
+
+  if (!dir.exists(dir_ds_nms))
     return(NULL)
 
-  tibble(
-    csv = list.files(dir_var_nms, ".csv$", full.names = T)) |>
+  # dir_var_nms <- "~/My Drive/projects/mbon/noaa-onms/climate-dashboard-app/erddap_sst/FKNMS"
+  d <- tibble(
+    csv = list.files(dir_ds_nms, ".csv$", full.names = T)) |>
     mutate(
       data = map(csv, \(x) read_csv(x))) |>
     unnest(data) |>
     mutate(
       date = as.Date(time)) |>
     arrange(time)
+  # erddap_sst/FKNMS/*.csv     : csv | lyr | mean | time | date
+  # copernicus_phy/FKNMS/*.csv : csv | dataset | var | depth | time | stat | value | date
+
+  if (!is.null(varid)){
+    # if copernicus
+    d <- d |>
+      filter(
+        var  == !!varid,
+        stat == "mean") |>
+      select(lyr = var, mean = value, time, date)
+  }
+
+  d
 }
 
 map_then_now <- function(

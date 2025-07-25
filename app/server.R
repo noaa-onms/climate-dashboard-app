@@ -24,13 +24,33 @@ function(input, output, session) {
   # get_r_var() ----
   get_r_var <- reactive({
 
-    var  <- rx$var
-    nms  <- rx$nms
+    dataset_varid <- rx$var
+    # dataset_varid <- "copernicus_phy.bottomT"
+    # dataset_varid <- "erddap_sst"
+    nms           <- rx$nms
 
-    dir_var_nms <- glue("{dir_data}/{var}/{nms}")
-    list.files(dir_var_nms, ".tif$", full.names = T) |>
+    if (str_detect(dataset_varid, fixed("."))) {
+      # if copernicus
+      dataset <- str_replace(dataset_varid, "(.+)\\.(.+)", "\\1")
+      varid   <- str_replace(dataset_varid, "(.+)\\.(.+)", "\\2")
+    } else {
+      dataset <- dataset_varid
+      varid   <- NULL
+    }
+
+    dir_ds_nms <- glue("{dir_data}/{dataset}/{nms}")
+    # dir_var_nms <- "~/My Drive/projects/mbon/noaa-onms/climate-dashboard-app/erddap_sst/FKNMS"
+    r <- list.files(dir_ds_nms, ".tif$", full.names = T) |>
       map(rast) |>
-      rast() |>
+      rast()
+
+    if (!is.null(varid)){
+      # if copernicus
+      # names(r) # "cmems_mod_glo_phy_my_0.083deg_P1D-m bottomT 270" | "analysed_sst|1987-09-26 12:00:00"
+      # time(r)  # "1993-09-23 UTC" | "1987-09-18 12:00:00 UTC"
+      r <- r[[names(r) |> str_split_i(" ", 2) == varid]]
+    }
+    r |>
       project(leaflet:::epsg3857)
   })
 
@@ -40,24 +60,25 @@ function(input, output, session) {
     var <- input$sel_var
     nms <- input$sel_nms
 
+    # SKIP: since expanded bbox to capture all sanctuaries
     # update nms choices, especially when var changes and potentially missing
-    if (!is.null(rx$var) && var != rx$var){
-      nms_with_var     <- dir(glue("{data}/{var}"))
-      choices_nms_var  <- choices_nms[choices_nms %in% nms_with_var]
-      nms <- ifelse(
-        nms %in% choices_nms_var,
-        nms,
-        choices_nms_var[1])
-
-      updateSelectInput(
-        session,
-        "sel_nms",
-        choices  = choices_nms_var,
-        selected = nms)
-    }
+    # if (!is.null(rx$var) && var != rx$var){
+    #   nms_with_var     <- dir(glue("{data}/{var}"))
+    #   choices_nms_var  <- choices_nms[choices_nms %in% nms_with_var]
+    #   nms <- ifelse(
+    #     nms %in% choices_nms_var,
+    #     nms,
+    #     choices_nms_var[1])
+    #
+    #   updateSelectInput(
+    #     session,
+    #     "sel_nms",
+    #     choices  = choices_nms_var,
+    #     selected = nms)
+    # }
     # TODO: update var choices, esp. when var unavailable for selected nms
 
-    d_var    <- get_d(var, nms, dir_data)
+    d_var <- get_d(var, nms, dir_data)
     if (is.null(d_var))
       return() # allow input$sel_nms to catch up
 
@@ -168,7 +189,7 @@ function(input, output, session) {
       r_now,
       lgnd_then,
       lgnd_now,
-      rx$label,
+      rx$lbl,
       dark_mode = isTRUE(input$dark_mode),
       bbox = b,
       lyrs_ctrl = F,
