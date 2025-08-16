@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-08-15 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-08-15 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-08-16 00:00:02] global timer tic 0 secs -- Script starting up...
+INFO [2025-08-16 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-08-15T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-08-16T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -61,33 +61,10 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-08-15 00:00:33] global timer toc 30.84 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-08-16 00:00:33] global timer toc 31.14 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-[31mError in `ed_dim()`:
-! Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
-Backtrace:
-    ▆
- 1. └─extractr::ed_dim(ed, "time")
-[39m[31m
-Quitting from erddap_sss.qmd:107-119 [ed_info]
-[39m[31mExecution halted
-[39mERROR [2025-08-15 00:00:52] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-08-15 00:00:52] global timer toc 18.81 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-[31m
-
-processing file: erddap_sst.qmd
 [39m1/21                     
 2/21 [setup]             
 3/21                     
@@ -100,28 +77,34 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-08-15 00:01:14] 001: CBNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:01:26] 002: CINMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:01:33] 003: CPNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:35] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:35] 004: FGBNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:36] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:36] 005: FKNMS, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:01:45] 006: GFNMS, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:01:52] 007: GRNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:54] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:54] 008: HIHWNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:55] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:55] 009: MBNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:57] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:57] 010: MBNMS-david, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mERROR [2025-08-15 00:01:58] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-15 00:01:58] 011: MBNMS-main, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:02:05] 012: MNMS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:02:11] 013: NMSAS, 2025-08-11 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:02:17] 014: OCNMS, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:02:23] 015: SBNMS, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
-[39m[31mINFO [2025-08-15 00:02:31] 016: TBNMS, 2025-08-09 12:00:00 to 2025-08-13 12:00:00
+[31mINFO [2025-08-16 00:00:52] 001: CBNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:00:54] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-08-16 00:00:54] 002: CINMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:03] 003: CPNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:05] Problem fetching dimension latitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?latitude
+[39m[31mINFO [2025-08-16 00:01:05] 004: FGBNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:07] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-16 00:01:07] 005: FKNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:10] 006: GFNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:12] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-08-16 00:01:12] 007: GRNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:14] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-16 00:01:14] 008: HIHWNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:23] ERROR in calling path_to_connection:
+'Error Service Unavailable: There was a (temporary?) problem.  Wait a minute, then try again.  (In a browser, click the Reload button.) ' does not exist in current working directory ('/share/github/noaa-onms/climate-dashboard-app/log').ERROR in calling x:
+'Error Service Unavailable: There was a (temporary?) problem.  Wait a minute, then try again.  (In a browser, click the Reload button.) ' does not exist in current working directory ('/share/github/noaa-onms/climate-dashboard-app/log').
+[39m[31mINFO [2025-08-16 00:01:23] 009: MBNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:29] 010: MBNMS-david, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:34] 011: MBNMS-main, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:40] 012: MNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:43] Problem fetching dimension latitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?latitude
+[39m[31mINFO [2025-08-16 00:01:43] 013: NMSAS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:45] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-16 00:01:45] 014: OCNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:46] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-16 00:01:46] 015: SBNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mINFO [2025-08-16 00:01:50] 016: TBNMS, 2025-08-08 12:00:00 to 2025-08-08 12:00:00
+[39m[31mERROR [2025-08-16 00:01:52] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
 [39m13/21                     
 14/21 [success_summary]   
 15/21                     
@@ -131,11 +114,11 @@ processing file: erddap_sst.qmd
 19/21                     
 20/21 [unnamed-chunk-1]   
 21/21                     
-[31moutput file: erddap_sst.knit.md
+[31moutput file: erddap_sss.knit.md
 
 [39m[1mpandoc [22m
   to: html
-  output-file: erddap_sst.html
+  output-file: erddap_sss.html
   standalone: true
   embed-resources: false
   section-divs: true
@@ -160,7 +143,30 @@ processing file: erddap_sst.qmd
   title: ERDDAP Extraction
   subtitle: 'metadata: *`r basename(params$yml)`*'
   
-Output created: erddap_sst.html
+Output created: erddap_sss.html
 
-INFO [2025-08-15 00:02:50] global timer toc 1.96 mins -- Script done rendering, next git commit & push
+INFO [2025-08-16 00:01:58] global timer toc 1.41 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+[31mError in `ed_info()`:
+! ERDDAP server is offline or unreachable: Server is online with status code: 503
+Backtrace:
+    ▆
+ 1. └─extractr::ed_info(meta$erddap_url)
+[39m[31m
+Quitting from erddap_sst.qmd:107-119 [ed_info]
+Execution halted
+[39mERROR [2025-08-16 00:02:15] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-08-16 00:02:15] global timer toc 17.59 secs -- Script done rendering, next git commit & push
 Already up to date.
