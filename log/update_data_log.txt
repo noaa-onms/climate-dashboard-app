@@ -1,8 +1,8 @@
-INFO [2025-08-17 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-08-17 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-INFO [2025-08-17 00:00:33] global timer toc 30.4 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-ERROR [2025-08-17 00:00:51] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
+INFO [2025-08-18 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-08-18 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-08-18 00:00:35] global timer toc 31.96 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-08-18 00:01:46] global timer toc 1.2 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+ERROR [2025-08-18 00:02:05] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-08-17 00:00:51] global timer toc 17.99 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-08-17 00:03:06] global timer toc 2.26 mins -- Script done rendering, next git commit & push
+INFO [2025-08-18 00:02:05] global timer toc 18.39 secs -- Script done rendering, next git commit & push

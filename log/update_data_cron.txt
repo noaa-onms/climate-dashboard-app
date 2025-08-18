@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-08-17 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-08-17 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-08-18 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-08-18 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-08-17T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-08-18T00:00:22Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -61,51 +61,10 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-08-17 00:00:33] global timer toc 30.4 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-08-18 00:00:35] global timer toc 31.96 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-[31mError in `path_to_connection()`:
-! 'Error { code=503; message="Service Unavailable: There was a
-  (temporary?) problem.  Wait a minute, then try again.  (In a browser, click
-  the Reload button.)"; } ' does not exist in current working directory
-  ('/share/github/noaa-onms/climate-dashboard-app/log').
-Backtrace:
-     ▆
-  1. └─extractr::ed_info(meta$erddap_url)
-  2.   └─rerddap::info(dataset, url = ed_url)
-  3.     └─rerddap:::erdddap_GET(...)
-  4.       └─rerddap:::err_handle2(tt)
-  5.         ├─xml2::xml_text(xml_find_all(read_html(tt), "//h1"))
-  6.         ├─xml2::xml_find_all(read_html(tt), "//h1")
-  7.         ├─xml2::read_html(tt)
-  8.         └─xml2:::read_html.default(tt)
-  9.           ├─base::suppressWarnings(...)
- 10.           │ └─base::withCallingHandlers(...)
- 11.           ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
- 12.           └─xml2:::read_xml.character(...)
- 13.             └─xml2:::path_to_connection(x)
- 14.               └─xml2:::check_path(path)
- 15.                 └─cli::cli_abort(msg, call = call)
- 16.                   └─rlang::abort(...)
-[39m[31m
-Quitting from erddap_sss.qmd:107-119 [ed_info]
-Execution halted
-[39mERROR [2025-08-17 00:00:51] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-08-17 00:00:51] global timer toc 17.99 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-[31m
-
-processing file: erddap_sst.qmd
 [39m1/21                     
 2/21 [setup]             
 3/21                     
@@ -118,27 +77,29 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-08-17 00:01:14] 001: CBNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:01:26] 002: CINMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mERROR [2025-08-17 00:01:28] Problem fetching dimension latitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?latitude
-[39m[31mINFO [2025-08-17 00:01:28] 003: CPNMS, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mERROR [2025-08-17 00:01:30] Problem fetching dimension latitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?latitude
-[39m[31mINFO [2025-08-17 00:01:30] 004: FGBNMS, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:01:37] 005: FKNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:01:44] 006: GFNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:01:51] 007: GRNMS, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:01:56] 008: HIHWNMS, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:05] 009: MBNMS, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:19] 010: MBNMS-david, 2025-08-11 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:25] 011: MBNMS-main, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mERROR [2025-08-17 00:02:38] 
-[39m[31mINFO [2025-08-17 00:02:38] 012: MNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mERROR [2025-08-17 00:02:39] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
-[39m[31mINFO [2025-08-17 00:02:39] 013: NMSAS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:46] 014: OCNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:51] 015: SBNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mINFO [2025-08-17 00:02:58] 016: TBNMS, 2025-08-14 12:00:00 to 2025-08-14 12:00:00
-[39m[31mERROR [2025-08-17 00:03:00] Problem fetching dimension longitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?longitude
+[31mINFO [2025-08-18 00:00:54] 001: CBNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:00:56] 002: CINMS, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:01] 003: CPNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:04] 004: FGBNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:06] 005: FKNMS, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:09] 006: GFNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:11] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-08-18 00:01:11] 007: GRNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:13] 008: HIHWNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:15] 009: MBNMS, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:18] 010: MBNMS-david, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:22] Problem fetching dimension longitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?longitude
+[39m[31mINFO [2025-08-18 00:01:22] 011: MBNMS-main, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:24] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-08-18 00:01:24] 012: MNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:26] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-18 00:01:26] 013: NMSAS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:27] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-18 00:01:27] 014: OCNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:29] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?time
+[39m[31mINFO [2025-08-18 00:01:29] 015: SBNMS, 2025-08-11 12:00:00 to 2025-08-11 12:00:00
+[39m[31mINFO [2025-08-18 00:01:31] 016: TBNMS, 2025-08-08 12:00:00 to 2025-08-11 12:00:00
+[39m[31mERROR [2025-08-18 00:01:40] 
 [39m13/21                     
 14/21 [success_summary]   
 15/21                     
@@ -148,11 +109,11 @@ processing file: erddap_sst.qmd
 19/21                     
 20/21 [unnamed-chunk-1]   
 21/21                     
-[31moutput file: erddap_sst.knit.md
+[31moutput file: erddap_sss.knit.md
 
 [39m[1mpandoc [22m
   to: html
-  output-file: erddap_sst.html
+  output-file: erddap_sss.html
   standalone: true
   embed-resources: false
   section-divs: true
@@ -177,7 +138,51 @@ processing file: erddap_sst.qmd
   title: ERDDAP Extraction
   subtitle: 'metadata: *`r basename(params$yml)`*'
   
-Output created: erddap_sst.html
+Output created: erddap_sss.html
 
-INFO [2025-08-17 00:03:06] global timer toc 2.26 mins -- Script done rendering, next git commit & push
+INFO [2025-08-18 00:01:46] global timer toc 1.2 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+[31mError in `path_to_connection()`:
+! 'Error { code=503; message="Service Unavailable: There was a
+  (temporary?) problem.  Wait a minute, then try again.  (In a browser, click
+  the Reload button.)"; } ' does not exist in current working directory
+  ('/share/github/noaa-onms/climate-dashboard-app/log').
+Backtrace:
+     ▆
+  1. └─extractr::ed_info(meta$erddap_url)
+  2.   └─rerddap::info(dataset, url = ed_url)
+  3.     ├─base::structure(...)
+  4.     └─rerddap:::table_or_grid(datasetid, url)
+  5.       └─rerddap:::toghelper(table_url)
+  6.         └─rerddap:::erdddap_GET(url, list(page = 1, itemsPerPage = 10000L))
+  7.           └─rerddap:::err_handle2(tt)
+  8.             ├─xml2::xml_text(xml_find_all(read_html(tt), "//h1"))
+  9.             ├─xml2::xml_find_all(read_html(tt), "//h1")
+ 10.             ├─xml2::read_html(tt)
+ 11.             └─xml2:::read_html.default(tt)
+ 12.               ├─base::suppressWarnings(...)
+ 13.               │ └─base::withCallingHandlers(...)
+ 14.               ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
+ 15.               └─xml2:::read_xml.character(...)
+ 16.                 └─xml2:::path_to_connection(x)
+ 17.                   └─xml2:::check_path(path)
+ 18.                     └─cli::cli_abort(msg, call = call)
+ 19.                       └─rlang::abort(...)
+[39m[31m
+Quitting from erddap_sst.qmd:107-119 [ed_info]
+Execution halted
+[39mERROR [2025-08-18 00:02:05] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-08-18 00:02:05] global timer toc 18.39 secs -- Script done rendering, next git commit & push
 Already up to date.
