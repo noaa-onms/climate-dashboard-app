@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-08-23 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-08-23 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-08-24 00:00:02] global timer tic 0 secs -- Script starting up...
+INFO [2025-08-24 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-08-23T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-08-24T00:00:21Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -61,33 +61,10 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-08-23 00:00:33] global timer toc 30.48 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-08-24 00:00:33] global timer toc 30.83 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-[31mError in `ed_info()`:
-! ERDDAP server is offline or unreachable: Server is offline or unreachable: Timeout was reached [coastwatch.noaa.gov]: Operation timed out after 5000 milliseconds with 0 bytes received
-Backtrace:
-    ▆
- 1. └─extractr::ed_info(meta$erddap_url)
-[39m[31m
-Quitting from erddap_sss.qmd:107-119 [ed_info]
-Execution halted
-[39mERROR [2025-08-23 00:00:54] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-08-23 00:00:54] global timer toc 21.24 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-[31m
-
-processing file: erddap_sst.qmd
 [39m1/21                     
 2/21 [setup]             
 3/21                     
@@ -102,10 +79,33 @@ Backtrace:
     ▆
  1. └─extractr::ed_info(meta$erddap_url)
 [39m[31m
-Quitting from erddap_sst.qmd:107-119 [ed_info]
+Quitting from erddap_sss.qmd:107-119 [ed_info]
 Execution halted
-[39mERROR [2025-08-23 00:01:16] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
+[39mERROR [2025-08-24 00:00:54] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-08-23 00:01:16] global timer toc 21.29 secs -- Script done rendering, next git commit & push
+INFO [2025-08-24 00:00:54] global timer toc 21.11 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+[31mError in `ed_info()`:
+! ERDDAP server is offline or unreachable: Server is offline or unreachable: Timeout was reached [coastwatch.noaa.gov]: Operation timed out after 5000 milliseconds with 0 bytes received
+Backtrace:
+    ▆
+ 1. └─extractr::ed_info(meta$erddap_url)
+[39m[31m
+Quitting from erddap_sst.qmd:107-119 [ed_info]
+Execution halted
+[39mERROR [2025-08-24 00:01:15] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-08-24 00:01:15] global timer toc 20.83 secs -- Script done rendering, next git commit & push
 Already up to date.
