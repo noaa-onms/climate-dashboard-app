@@ -1,0 +1,170 @@
+---
+title: "UCAR"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+librarian::shelf(
+  dplyr, fs, glue, here, mapview, sf, stars, tibble, viridisLite,
+  quiet = T)
+
+# data directory ----
+dir_nc <- "~/Library/CloudStorage/GoogleDrive-ben@ecoquants.com/.shortcut-targets-by-id/12xRQdl-kc1qvbs7HG7AIlV4pGYz-VjKj/raster_data4sanctuaries"
+
+# list available netcdf files ----
+ncs <- list.files(dir_nc, ".nc$", full.names = T)
+names(ncs) <- basename(ncs) |> 
+  stringr::str_extract("(?<=annualmean_)[^.]+")
+
+print(names(ncs))
+```
+
+```{r}
+# function to read and plot netcdf data ----
+plot_nc_variable <- function(
+    nc_path, 
+    var_name = NULL,
+    time_index = 1,
+    year = NULL,
+    downsample_factor = 4,
+    color_palette = "viridis",
+    ocean_bg = TRUE) {
+  
+  # read netcdf with curvilinear grid coordinates
+  r_stars <- stars::read_ncdf(
+    nc_path, 
+    var = var_name,
+    curvilinear = c("TLONG", "TLAT"),
+    ignore_bounds = TRUE)
+  
+  # get variable name if not specified
+  if (is.null(var_name)) {
+    var_name <- names(r_stars)[1]
+  }
+  
+  # get time info
+  time_dim <- st_get_dimension_values(r_stars, "time")
+  
+  # select time slice by year if provided
+  if (!is.null(year)) {
+    time_index <- which(time_dim == year)
+    if (length(time_index) == 0) {
+      stop(glue("Year {year} not found in data"))
+    }
+  }
+  
+  # extract specific time slice
+  r_slice <- slice(r_stars, "time", time_index)
+  
+  # warp to regular grid and downsample for memory efficiency
+  r_regular <- st_warp(
+    r_slice,
+    crs = 4326,
+    cellsize = c(360/320, 180/384) * downsample_factor,
+    method = "bilinear")
+  
+  # get data range for better color scaling
+  data_vals <- as.vector(r_regular[[1]])
+  data_vals <- data_vals[!is.na(data_vals)]
+  
+  # create color palette
+  if (color_palette == "ocean") {
+    cols <- colorRampPalette(c("#000033", "#000055", "#0000BB", 
+                               "#0E4E9C", "#2E8B9C", "#5ECEAE", 
+                               "#ADFF2F", "#FFFF00", "#FF8C00", "#FF0000"))(100)
+  } else if (color_palette == "temperature") {
+    cols <- colorRampPalette(c("#2166AC", "#4393C3", "#92C5DE", "#D1E5F0", 
+                               "#F7F7F7", "#FDDBC7", "#F4A582", "#D6604D", "#B2182B"))(100)
+  } else {
+    cols <- viridisLite::viridis(100)
+  }
+  
+  # get unit from stars object
+  unit <- attr(r_regular[[1]], "units")
+  if (is.null(unit)) unit <- ""
+  
+  # create mapview plot
+  year_label <- ifelse(!is.null(year), year, time_dim[time_index])
+  
+  mv <- mapview(
+    r_regular,
+    layer.name = glue("{var_name} ({unit})<br>Year: {year_label}"),
+    col.regions = cols,
+    at = seq(min(data_vals), max(data_vals), length.out = 100),
+    alpha.regions = 0.9,
+    legend = TRUE,
+    verbose = FALSE)
+  
+  # add ocean background if requested
+  if (ocean_bg) {
+    mv@map <- mv@map |>
+      leaflet::addProviderTiles(
+        "Esri.OceanBasemap",
+        group = "Ocean Basemap",
+        options = leaflet::providerTileOptions(opacity = 0.8))
+  }
+  
+  return(mv)
+}
+```
+
+```{r}
+# example: plot chlorophyll for year 1990 ----
+mv_chl <- plot_nc_variable(
+  nc_path = ncs["Chl"],
+  var_name = "Chl",
+  year = 1990,
+  downsample_factor = 4,
+  color_palette = "viridis",
+  ocean_bg = TRUE)
+
+mv_chl
+```
+
+```{r}
+# example: plot sea surface temperature for year 2050 ----
+mv_sst <- plot_nc_variable(
+  nc_path = ncs["SST"],
+  var_name = "SST", 
+  year = 2050,
+  downsample_factor = 4,
+  color_palette = "temperature",
+  ocean_bg = TRUE)
+
+mv_sst
+```
+
+```{r}
+# example: plot pH for year 2100 ----
+mv_ph <- plot_nc_variable(
+  nc_path = ncs["PH"],
+  var_name = "PH",
+  year = 2100,
+  downsample_factor = 4,
+  color_palette = "ocean",
+  ocean_bg = TRUE)
+
+mv_ph
+```
+
+```{r}
+# create comparison of multiple variables for same year ----
+library(leafsync)
+
+year_compare <- 2050
+
+mv_multi <- list(
+  Chlorophyll = plot_nc_variable(ncs["Chl"], "Chl", year = year_compare, 
+                                 downsample_factor = 6),
+  Temperature = plot_nc_variable(ncs["SST"], "SST", year = year_compare, 
+                                 downsample_factor = 6, color_palette = "temperature"),
+  pH = plot_nc_variable(ncs["PH"], "PH", year = year_compare, 
+                       downsample_factor = 6, color_palette = "ocean"),
+  NPP = plot_nc_variable(ncs["NPP"], "NPP", year = year_compare, 
+                        downsample_factor = 6))
+
+# synchronized maps
+sync(mv_multi, ncol = 2)
+```
+
