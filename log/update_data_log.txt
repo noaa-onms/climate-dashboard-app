@@ -1,5 +1,5 @@
-INFO [2025-09-12 00:00:06] global timer tic 0 secs -- Script starting up...
-INFO [2025-09-12 00:00:06] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-INFO [2025-09-12 00:00:37] global timer toc 31.3 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-INFO [2025-09-12 00:01:34] global timer toc 57.19 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-09-12 00:03:45] global timer toc 2.18 mins -- Script done rendering, next git commit & push
+INFO [2025-09-13 00:00:05] global timer tic 0 secs -- Script starting up...
+INFO [2025-09-13 00:00:05] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-09-13 00:00:36] global timer toc 31.03 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-09-13 00:01:00] global timer toc 24.31 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-09-13 00:03:14] global timer toc 2.23 mins -- Script done rendering, next git commit & push
