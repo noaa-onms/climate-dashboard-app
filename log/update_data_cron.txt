@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-09-17 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-09-17 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-09-18 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-09-18 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-09-17T00:00:22Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-09-18T00:00:22Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -61,7 +61,7 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-09-17 00:00:34] global timer toc 31.58 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-09-18 00:00:35] global timer toc 32.23 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -77,7 +77,24 @@ processing file: erddap_sss.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-13/21                     
+[31mINFO [2025-09-18 00:00:54] 001: CBNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:00:58] 002: CINMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:00] 003: CPNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:03] 004: FGBNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:06] 005: FKNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:08] 006: GFNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:10] 007: GRNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:13] 008: HIHWNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:16] 009: MBNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:18] 010: MBNMS-david, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:20] 011: MBNMS-main, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:23] 012: MNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:25] 013: NMSAS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mERROR [2025-09-18 00:01:27] Problem fetching dimension altitude from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacwSMOSsss3day.csvp?altitude
+[39m[31mINFO [2025-09-18 00:01:27] 014: OCNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:33] 015: SBNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m[31mINFO [2025-09-18 00:01:36] 016: TBNMS, 2025-09-10 12:00:00 to 2025-09-10 12:00:00
+[39m13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -117,7 +134,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-09-17 00:00:59] global timer toc 24.98 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-09-18 00:01:45] global timer toc 1.16 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -133,7 +150,24 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-13/21                     
+[31mINFO [2025-09-18 00:02:08] 001: CBNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:20] 002: CINMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:26] 003: CPNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mERROR [2025-09-18 00:02:28] Problem fetching dimension time from ERDDAP: https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csvp?time
+[39m[31mINFO [2025-09-18 00:02:28] 004: FGBNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:37] 005: FKNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:45] 006: GFNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:53] 007: GRNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:02:58] 008: HIHWNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:05] 009: MBNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:15] 010: MBNMS-david, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:21] 011: MBNMS-main, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:28] 012: MNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:34] 013: NMSAS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:41] 014: OCNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:46] 015: SBNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m[31mINFO [2025-09-18 00:03:51] 016: TBNMS, 2025-09-15 12:00:00 to 2025-09-15 12:00:00
+[39m13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -173,5 +207,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-09-17 00:01:28] global timer toc 29.11 secs -- Script done rendering, next git commit & push
+INFO [2025-09-18 00:04:06] global timer toc 2.36 mins -- Script done rendering, next git commit & push
 Already up to date.
