@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-10-17 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-10-17 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-10-18 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-10-18 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-10-17T00:00:24Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-10-18T00:00:23Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -61,7 +61,7 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-10-17 00:00:36] global timer toc 33.6 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-10-18 00:00:36] global timer toc 33.32 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -77,7 +77,23 @@ processing file: erddap_sss.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-13/21                     
+[31mINFO [2025-10-18 00:00:55] 001: CBNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:00:58] 002: CINMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:00] 003: CPNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:03] 004: FGBNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:11] 005: FKNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:13] 006: GFNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:16] 007: GRNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:18] 008: HIHWNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:21] 009: MBNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:22] 010: MBNMS-david, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:25] 011: MBNMS-main, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:26] 012: MNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:28] 013: NMSAS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:31] 014: OCNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:33] 015: SBNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m[31mINFO [2025-10-18 00:01:35] 016: TBNMS, 2025-10-10 12:00:00 to 2025-10-10 12:00:00
+[39m13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -117,7 +133,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-10-17 00:01:02] global timer toc 25.86 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-10-18 00:01:44] global timer toc 1.12 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -133,22 +149,22 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-10-17 00:01:26] 001: CBNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:01:39] 002: CINMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:01:45] 003: CPNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:01:54] 004: FGBNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:00] 005: FKNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:07] 006: GFNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:14] 007: GRNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:20] 008: HIHWNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:26] 009: MBNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:32] 010: MBNMS-david, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:39] 011: MBNMS-main, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:45] 012: MNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:51] 013: NMSAS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:02:58] 014: OCNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:03:03] 015: SBNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
-[39m[31mINFO [2025-10-17 00:03:11] 016: TBNMS, 2025-10-13 12:00:00 to 2025-10-14 12:00:00
+[31mINFO [2025-10-18 00:02:08] 001: CBNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:20] 002: CINMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:27] 003: CPNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:35] 004: FGBNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:41] 005: FKNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:48] 006: GFNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:02:55] 007: GRNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:01] 008: HIHWNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:07] 009: MBNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:13] 010: MBNMS-david, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:19] 011: MBNMS-main, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:25] 012: MNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:31] 013: NMSAS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:37] 014: OCNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:43] 015: SBNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
+[39m[31mINFO [2025-10-18 00:03:49] 016: TBNMS, 2025-10-15 12:00:00 to 2025-10-15 12:00:00
 [39m13/21                     
 14/21 [success_summary]   
 15/21                     
@@ -189,5 +205,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-10-17 00:03:27] global timer toc 2.42 mins -- Script done rendering, next git commit & push
+INFO [2025-10-18 00:04:04] global timer toc 2.35 mins -- Script done rendering, next git commit & push
 Already up to date.
