@@ -1,35 +1,221 @@
 Already up to date.
-INFO [2025-11-14 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-11-14 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-11-14 21:37:05] global timer tic 0 secs -- Script starting up...
+INFO [2025-11-14 21:37:05] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
-[39m1/25                     
-2/25 [setup]             
-3/25                     
-4/25 [polygons]          
-5/25                     
-6/25 [yml]               
-7/25                     
-8/25 [dataset]           
-[31mINFO - 2025-11-14T00:00:25Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
-[39m9/25                     
-10/25 [unnamed-chunk-1]   
-11/25                     
-12/25 [existing_lyr_dates]
-13/25                     
-14/25 [d_nms_ds_t]        
-15/25                     
-16/25 [iterate_subset]    
-17/25                     
-18/25 [success_summary]   
-19/25                     
-20/25 [error_summary]     
-21/25                     
-22/25 [rm_empty_nc_dirs]  
-23/25                     
-24/25 [unnamed-chunk-2]   
-25/25                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% [setup]               |                                                         |......                                           |  12%                       |                                                         |........                                         |  16% [polygons]            |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% [yml]                 |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% [dataset]           [31mINFO - 2025-11-14T21:37:25Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[39m  |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% [unnamed-chunk-1]     |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% [existing_lyr_dates]  |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% [d_nms_ds_t]          |                                                         |.............................                    |  60%                       |                                                         |...............................                  |  64% [iterate_subset]    [31mINFO [2025-11-14 21:37:44] 001: CBNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:37:46Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:37:46Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:37:49Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:37:49Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:37:54Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:37:54] 002: CBNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:37:57Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:37:57Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:37:57Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:38:00Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:38:00Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:38:04Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:38:04] 003: CINMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:38:07Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:38:07Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:38:09Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:38:09Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:38:22Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CINMS/2025.nc
+[39m[31mINFO [2025-11-14 21:38:22] 004: CINMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:38:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:38:25Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:38:25Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:38:27Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:38:27Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:38:31Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CINMS/2025.nc
+[39m[31mINFO [2025-11-14 21:38:31] 005: CPNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:38:34Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:38:34Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:38:36Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:38:36Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:38:50Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CPNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:38:50] 006: CPNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:38:53Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:38:53Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:38:53Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:38:56Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:38:56Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:39:07Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/CPNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:39:08] 007: FGBNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:39:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:39:10Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:39:13Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:39:13Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:39:20Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/FGBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:39:20] 008: FGBNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:39:23Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:39:23Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:39:23Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:39:26Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:39:26Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:39:30Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/FGBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:39:30] 009: FKNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:39:33Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:39:33Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:39:35Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:39:35Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:39:48Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/FKNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:39:49] 010: FKNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:39:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:39:51Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:39:51Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:39:54Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:39:54Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:39:58Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/FKNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:39:58] 011: GFNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:40:01Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:40:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:40:03Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:40:03Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:40:19Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/GFNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:40:19] 012: GFNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:40:22Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:40:22Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:40:22Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:40:25Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:40:25Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:40:30Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/GFNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:40:31] 013: GRNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:40:34Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:40:34Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:40:37Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:40:37Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:40:39Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/GRNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:40:39] 014: GRNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:40:42Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:40:42Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:40:42Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:40:44Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:40:44Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:40:48Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/GRNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:40:48] 015: HIHWNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:40:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:40:51Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:40:53Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:40:53Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:41:29Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/HIHWNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:41:30] 016: HIHWNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:41:33Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:41:33Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:41:33Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:41:35Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:41:35Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:41:52Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/HIHWNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:41:53] 017: MBNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:41:55Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:41:55Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:41:58Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:41:58Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:42:20Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:42:21] 018: MBNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:42:24Z - Selected dataset version: "202311"
+INFO - 2025-11-14T21:42:24Z - Selected dataset part: "default"
+[39m[31mWARNING - 2025-11-14T21:42:24Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:42:26Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:42:26Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:42:41Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:42:42] 019: MBNMS-david, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:42:45Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:42:45Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:42:47Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:42:47Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:42:54Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS-david/2025.nc
+[39m[31mINFO [2025-11-14 21:42:54] 020: MBNMS-david, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:42:57Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:42:57Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:42:57Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:42:59Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:42:59Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:43:03Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS-david/2025.nc
+[39m[31mINFO [2025-11-14 21:43:03] 021: MBNMS-main, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:43:06Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:43:06Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:43:08Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:43:08Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:43:31Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS-main/2025.nc
+[39m[31mINFO [2025-11-14 21:43:31] 022: MBNMS-main, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:43:34Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:43:34Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:43:34Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:43:37Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:43:37Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:43:51Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MBNMS-main/2025.nc
+[39m[31mINFO [2025-11-14 21:43:51] 023: MNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:43:54Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:43:54Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:43:57Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:43:57Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:43:58Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:43:59] 024: MNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:44:01Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:44:01Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:44:01Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:44:04Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:44:04Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:44:08Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/MNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:44:08] 025: NMSAS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:44:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:44:10Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:44:13Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:44:13Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:45:10Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/NMSAS/2025.nc
+[39m[31mINFO [2025-11-14 21:45:11] 026: NMSAS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:45:13Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:45:13Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:45:13Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:45:16Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:45:16Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:45:37Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/NMSAS/2025.nc
+[39m[31mINFO [2025-11-14 21:45:38] 027: OCNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:45:41Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:45:41Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:45:44Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:45:44Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:45:56Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
+[39m[31mERROR [2025-11-14 21:45:56] [rast] extents do not match
+[39m[31mINFO [2025-11-14 21:45:56] 028: OCNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:45:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:45:58Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:45:58Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:46:01Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:46:01Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:46:07Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
+[39m[31mERROR [2025-11-14 21:46:07] [rast] extents do not match
+[39m[31mINFO [2025-11-14 21:46:07] 029: SBNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:46:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:46:10Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:46:12Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:46:12Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:46:21Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/SBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:46:22] 030: SBNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:46:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:46:25Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:46:25Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:46:27Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:46:27Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:46:33Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/SBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:46:33] 031: TBNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:46:36Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:46:36Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-14T21:46:39Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:46:39Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:46:49Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/TBNMS/2025.nc
+[39m[31mINFO [2025-11-14 21:46:49] 032: TBNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-14T21:46:52Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-14T21:46:52Z - Selected dataset part: "default"
+WARNING - 2025-11-14T21:46:52Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-14T21:46:55Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-14T21:46:55Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-14T21:47:03Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/TBNMS/2025.nc
+[39m  |                                                         |.................................                |  68%                       |                                                         |...................................              |  72% [success_summary]     |                                                         |.....................................            |  76%                       |                                                         |.......................................          |  80% [error_summary]       |                                                         |.........................................        |  84%                       |                                                         |...........................................      |  88% [rm_empty_nc_dirs]    |                                                         |.............................................    |  92%                       |                                                         |...............................................  |  96% [unnamed-chunk-2]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: copernicus_phy.knit.md
 
 [39m[1mpandoc [22m
@@ -61,31 +247,27 @@ processing file: copernicus_phy.qmd
   
 Output created: copernicus_phy.html
 
-INFO [2025-11-14 00:00:39] global timer toc 36.49 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-11-14 21:47:10] global timer toc 10.09 mins -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-9/21                     
-10/21 [d_nms_yr_todo]     
-11/21                     
-12/21 [iterate_ed_extract]
-13/21                     
-14/21 [success_summary]   
-15/21                     
-16/21 [error_summary]     
-17/21                     
-18/21 [rm_empty_nc_dirs]  
-19/21                     
-20/21 [unnamed-chunk-1]   
-21/21                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-11-14 21:47:30] 001: CBNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:33] 002: CINMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:35] 003: CPNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:38] 004: FGBNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:39] 005: FKNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:42] 006: GFNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:44] 007: GRNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:46] 008: HIHWNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:49] 009: MBNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:51] 010: MBNMS-david, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:53] 011: MBNMS-main, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:55] 012: MNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:47:57] 013: NMSAS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:48:01] 014: OCNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:48:03] 015: SBNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m[31mINFO [2025-11-14 21:48:05] 016: TBNMS, 2025-11-09 12:00:00 to 2025-11-09 12:00:00
+[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: erddap_sss.knit.md
 
 [39m[1mpandoc [22m
@@ -117,31 +299,27 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-11-14 00:01:09] global timer toc 29.34 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-11-14 21:48:14] global timer toc 1.06 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
-[39m1/21                     
-2/21 [setup]             
-3/21                     
-4/21 [polygons]          
-5/21                     
-6/21 [yml]               
-7/21                     
-8/21 [ed_info]           
-9/21                     
-10/21 [d_nms_yr_todo]     
-11/21                     
-12/21 [iterate_ed_extract]
-13/21                     
-14/21 [success_summary]   
-15/21                     
-16/21 [error_summary]     
-17/21                     
-18/21 [rm_empty_nc_dirs]  
-19/21                     
-20/21 [unnamed-chunk-1]   
-21/21                     
+[39m  |                                                         |                                                 |   0%  |                                                         |..                                               |   5%                       |                                                         |.....                                            |  10% [setup]               |                                                         |.......                                          |  14%                       |                                                         |.........                                        |  19% [polygons]            |                                                         |............                                     |  24%                       |                                                         |..............                                   |  29% [yml]                 |                                                         |................                                 |  33%                       |                                                         |...................                              |  38% [ed_info]             |                                                         |.....................                            |  43%                       |                                                         |.......................                          |  48% [d_nms_yr_todo]       |                                                         |..........................                       |  52%                       |                                                         |............................                     |  57% [iterate_ed_extract][31mINFO [2025-11-14 21:48:40] 001: CBNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:48:52] 002: CINMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:48:59] 003: CPNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:07] 004: FGBNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:13] 005: FKNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:19] 006: GFNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:27] 007: GRNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:33] 008: HIHWNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:39] 009: MBNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:46] 010: MBNMS-david, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:51] 011: MBNMS-main, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:49:57] 012: MNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:50:02] 013: NMSAS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:50:10] 014: OCNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:50:16] 015: SBNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m[31mINFO [2025-11-14 21:50:22] 016: TBNMS, 2025-11-12 12:00:00 to 2025-11-12 12:00:00
+[39m  |                                                         |..............................                   |  62%                       |                                                         |.................................                |  67% [success_summary]     |                                                         |...................................              |  71%                       |                                                         |.....................................            |  76% [error_summary]       |                                                         |........................................         |  81%                       |                                                         |..........................................       |  86% [rm_empty_nc_dirs]    |                                                         |............................................     |  90%                       |                                                         |...............................................  |  95% [unnamed-chunk-1]     |                                                         |.................................................| 100%                                                                                                                                    
 [31moutput file: erddap_sst.knit.md
 
 [39m[1mpandoc [22m
@@ -173,9 +351,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-11-14 00:01:41] global timer toc 32.87 secs -- Script done rendering, next git commit & push
+INFO [2025-11-14 21:50:38] global timer toc 2.41 mins -- Script done rendering, next git commit & push
 Already up to date.
-[main daf7b43] ran update_data.R
- 5 files changed, 380 insertions(+), 492 deletions(-)
-To https://github.com/noaa-onms/climate-dashboard-app.git
-   f268ed2..daf7b43  main -> main
