@@ -1,7 +1,7 @@
 ---
 title: "Copernicus Marine Extraction"
 params:
-  yml: "meta/erddap_sst.yml"
+  yml: "meta/copernicus_phy.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -272,8 +272,8 @@ d_nms_ds_yr_todo <- ply_sanctuaries |>
   mutate(
     csv = glue("{dir_out}/{nms}/{yr}.csv"),  
     tif = glue("{dir_out}/{nms}/{yr}.tif") ) |> 
-  filter(
-    yr == 2021) |> 
+  # filter(
+  #   yr == 2021) |> 
   mutate(
     d_csv = pmap(
       list(tif, yr, dataset_id, time_min, time_max),
