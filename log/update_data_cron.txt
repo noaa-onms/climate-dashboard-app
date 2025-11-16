@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-11-15 00:00:03] global timer tic 0 secs -- Script starting up...
-INFO [2025-11-15 00:00:03] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-11-16 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-11-16 00:00:03] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-11-15T00:00:27Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-11-16T00:00:28Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 11/25                     
@@ -21,21 +21,21 @@ processing file: copernicus_phy.qmd
 14/25 [d_nms_ds_t]        
 15/25                     
 16/25 [iterate_subset]    
-[31mINFO [2025-11-15 00:00:48] 001: OCNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
-[39m[31mINFO - 2025-11-15T00:00:52Z - Selected dataset version: "202311"
-[39m[31mINFO - 2025-11-15T00:00:52Z - Selected dataset part: "default"
-[39m[31mINFO - 2025-11-15T00:00:55Z - Starting download. Please wait...
-[39m[31mINFO - 2025-11-15T00:00:55Z - NetCDF compression enabled with level 1.0
-[39m[31mINFO - 2025-11-15T00:01:07Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
-[39m[31mERROR [2025-11-15 00:01:07] [rast] extents do not match
-[39m[31mINFO [2025-11-15 00:01:07] 002: OCNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
-[39m[31mINFO - 2025-11-15T00:01:10Z - Selected dataset version: "202311"
-[39m[31mINFO - 2025-11-15T00:01:10Z - Selected dataset part: "default"
-WARNING - 2025-11-15T00:01:10Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
-[39m[31mINFO - 2025-11-15T00:01:13Z - Starting download. Please wait...
-[39m[31mINFO - 2025-11-15T00:01:13Z - NetCDF compression enabled with level 1.0
-[39m[31mINFO - 2025-11-15T00:01:19Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
-[39m[31mERROR [2025-11-15 00:01:19] [rast] extents do not match
+[31mINFO [2025-11-16 00:00:47] 001: OCNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-16T00:00:53Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-16T00:00:53Z - Selected dataset part: "default"
+[39m[31mINFO - 2025-11-16T00:00:56Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-16T00:00:56Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-16T00:01:08Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
+[39m[31mERROR [2025-11-16 00:01:09] [rast] extents do not match
+[39m[31mINFO [2025-11-16 00:01:09] 002: OCNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
+[39m[31mINFO - 2025-11-16T00:01:12Z - Selected dataset version: "202311"
+[39m[31mINFO - 2025-11-16T00:01:12Z - Selected dataset part: "default"
+WARNING - 2025-11-16T00:01:12Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
+[39m[31mINFO - 2025-11-16T00:01:15Z - Starting download. Please wait...
+[39m[31mINFO - 2025-11-16T00:01:15Z - NetCDF compression enabled with level 1.0
+[39m[31mINFO - 2025-11-16T00:01:21Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
+[39m[31mERROR [2025-11-16 00:01:21] [rast] extents do not match
 [39m17/25                     
 18/25 [success_summary]   
 19/25                     
@@ -76,7 +76,7 @@ WARNING - 2025-11-15T00:01:10Z - You are using the dataset cmems_mod_glo_phy_myi
   
 Output created: copernicus_phy.html
 
-INFO [2025-11-15 00:01:26] global timer toc 1.39 mins -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-11-16 00:01:28] global timer toc 1.42 mins -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -132,7 +132,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-11-15 00:01:53] global timer toc 26.65 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-11-16 00:01:54] global timer toc 26.14 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -148,7 +148,23 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-13/21                     
+[31mINFO [2025-11-16 00:02:19] 001: CBNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:02:31] 002: CINMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:02:41] 003: CPNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:02:49] 004: FGBNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:02:55] 005: FKNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:02] 006: GFNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:09] 007: GRNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:15] 008: HIHWNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:22] 009: MBNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:28] 010: MBNMS-david, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:34] 011: MBNMS-main, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:40] 012: MNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:47] 013: NMSAS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:53] 014: OCNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:03:59] 015: SBNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m[31mINFO [2025-11-16 00:04:06] 016: TBNMS, 2025-11-13 12:00:00 to 2025-11-14 12:00:00
+[39m13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -188,5 +204,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-11-15 00:02:25] global timer toc 32.2 secs -- Script done rendering, next git commit & push
+INFO [2025-11-16 00:04:22] global timer toc 2.47 mins -- Script done rendering, next git commit & push
 Already up to date.
