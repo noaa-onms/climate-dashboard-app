@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-11-25 00:00:04] global timer tic 0 secs -- Script starting up...
-INFO [2025-11-25 00:00:04] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-11-26 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-11-26 00:00:03] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,71 +12,40 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-11-25T00:00:30Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-11-26T00:00:33Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
-11/25                     
-12/25 [existing_lyr_dates]
-13/25                     
-14/25 [d_nms_ds_t]        
-15/25                     
-16/25 [iterate_subset]    
-[31mINFO [2025-11-25 00:00:52] 001: OCNMS, cmems_mod_glo_phy_my_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
-[39m[31mINFO - 2025-11-25T00:00:56Z - Selected dataset version: "202311"
-[39m[31mINFO - 2025-11-25T00:00:56Z - Selected dataset part: "default"
-[39m[31mINFO - 2025-11-25T00:00:59Z - Starting download. Please wait...
-[39m[31mINFO - 2025-11-25T00:00:59Z - NetCDF compression enabled with level 1.0
-[39m[31mINFO - 2025-11-25T00:01:11Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
-[39m[31mERROR [2025-11-25 00:01:12] [rast] extents do not match
-[39m[31mINFO [2025-11-25 00:01:12] 002: OCNMS, cmems_mod_glo_phy_myint_0.083deg_P1D-m, 2025 (2025-04-23 to 2025-09-16)
-[39m[31mINFO - 2025-11-25T00:01:16Z - Selected dataset version: "202311"
-[39m[31mINFO - 2025-11-25T00:01:16Z - Selected dataset part: "default"
-WARNING - 2025-11-25T00:01:16Z - You are using the dataset cmems_mod_glo_phy_myint_0.083deg_P1D-m, version '202311', part 'default'. This exact version and part of the dataset will be retired on the 2025-11-25T13:00:00.000Z. For more information you can check: https://marine.copernicus.eu/user-corner/product-roadmap/transition-information
-[39m[31mINFO - 2025-11-25T00:01:19Z - Starting download. Please wait...
-[39m[31mINFO - 2025-11-25T00:01:19Z - NetCDF compression enabled with level 1.0
-[39m[31mINFO - 2025-11-25T00:01:24Z - Successfully downloaded to /share/data/noaa-onms/climate-dashboard-app/copernicus_phy/OCNMS/2025.nc
-[39m[31mERROR [2025-11-25 00:01:24] [rast] extents do not match
-[39m17/25                     
-18/25 [success_summary]   
-19/25                     
-20/25 [error_summary]     
-21/25                     
-22/25 [rm_empty_nc_dirs]  
-23/25                     
-24/25 [unnamed-chunk-2]   
-25/25                     
-[31moutput file: copernicus_phy.knit.md
-
-[39m[1mpandoc [22m
-  to: html
-  output-file: copernicus_phy.html
-  standalone: true
-  embed-resources: false
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  toc: true
-  toc-depth: 3
-  number-sections: true
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  lang: en
-  date: now
-  date-format: 'YYYY-MM-DD HH:mm z'
-  editor:
-    mode: source
-  editor_options:
-    chunk_output_type: console
-  toc-expand: 2
-  title: Copernicus Marine Extraction
-  subtitle: 'metadata: *`r basename(params$yml)`*'
-  
-Output created: copernicus_phy.html
-
-INFO [2025-11-25 00:01:32] global timer toc 1.47 mins -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+[31mError in `mutate()`:
+ℹ In argument: `version = map_chr(...)`.
+Caused by error in `map_chr()`:
+ℹ In index: 2.
+Caused by error:
+! Result must be length 1, not 0.
+Backtrace:
+     ▆
+  1. ├─dplyr::mutate(...)
+  2. ├─dplyr:::mutate.data.frame(...)
+  3. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
+  4. │   ├─base::withCallingHandlers(...)
+  5. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
+  6. │     └─mask$eval_all_mutate(quo)
+  7. │       └─dplyr (local) eval()
+  8. ├─purrr::map_chr(...)
+  9. │ └─purrr:::map_("character", .x, .f, ..., .progress = .progress)
+ 10. │   ├─purrr:::with_indexed_errors(...)
+ 11. │   │ └─base::withCallingHandlers(...)
+ 12. │   └─purrr:::call_with_cleanup(...)
+ 13. └─base::.handleSimpleError(...)
+ 14.   └─purrr (local) h(simpleError(msg, call))
+ 15.     └─cli::cli_abort(...)
+ 16.       └─rlang::abort(...)
+[39m[31m
+Quitting from copernicus_phy.qmd:150-208 [unnamed-chunk-1]
+[39m[31mExecution halted
+[39mERROR [2025-11-26 00:00:38] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2025-11-26 00:00:38] global timer toc 34.8 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -132,7 +101,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-11-25 00:02:00] global timer toc 27.61 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-11-26 00:01:11] global timer toc 32.52 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -148,23 +117,7 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-11-25 00:02:27] 001: CBNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:02:40] 002: CINMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:02:47] 003: CPNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:02:57] 004: FGBNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:03] 005: FKNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:10] 006: GFNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:17] 007: GRNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:24] 008: HIHWNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:30] 009: MBNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:37] 010: MBNMS-david, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:43] 011: MBNMS-main, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:49] 012: MNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:03:55] 013: NMSAS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:04:02] 014: OCNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:04:08] 015: SBNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m[31mINFO [2025-11-25 00:04:15] 016: TBNMS, 2025-11-22 12:00:00 to 2025-11-23 12:00:00
-[39m13/21                     
+13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -204,5 +157,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-11-25 00:04:31] global timer toc 2.53 mins -- Script done rendering, next git commit & push
+INFO [2025-11-26 00:01:47] global timer toc 36.77 secs -- Script done rendering, next git commit & push
 Already up to date.
