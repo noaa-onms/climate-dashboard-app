@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-12-05 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-12-05 00:00:02] global timer toc 0.01 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-12-06 00:00:03] global timer tic 0 secs -- Script starting up...
+INFO [2025-12-06 00:00:03] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-12-05T00:00:28Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-12-06T00:00:28Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 [31mError in `mutate()`:
@@ -42,10 +42,10 @@ Backtrace:
 [39m[31m
 Quitting from copernicus_phy.qmd:150-208 [unnamed-chunk-1]
 [39m[31mExecution halted
-[39mERROR [2025-12-05 00:00:33] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+[39mERROR [2025-12-06 00:00:34] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-12-05 00:00:33] global timer toc 31.14 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-12-06 00:00:34] global timer toc 30.59 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -57,18 +57,67 @@ processing file: erddap_sss.qmd
 6/21 [yml]               
 7/21                     
 8/21 [ed_info]           
-[31mError in `ed_info()`:
-! ERDDAP server is offline or unreachable: Server is offline or unreachable: Timeout was reached [coastwatch.noaa.gov]: Operation timed out after 5001 milliseconds with 0 bytes received
-Backtrace:
-    ▆
- 1. └─extractr::ed_info(meta$erddap_url)
-[39m[31m
-Quitting from erddap_sss.qmd:107-119 [ed_info]
-Execution halted
-[39mERROR [2025-12-05 00:00:58] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-12-05 00:00:58] global timer toc 24.6 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+[31mINFO [2025-12-06 00:00:56] 001: CBNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:00] 002: CINMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:03] 003: CPNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:06] 004: FGBNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:08] 005: FKNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:10] 006: GFNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:13] 007: GRNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:16] 008: HIHWNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:19] 009: MBNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:21] 010: MBNMS-david, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:23] 011: MBNMS-main, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:25] 012: MNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:27] 013: NMSAS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:29] 014: OCNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:32] 015: SBNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m[31mINFO [2025-12-06 00:01:33] 016: TBNMS, 2025-11-30 12:00:00 to 2025-11-30 12:00:00
+[39m13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
+[31moutput file: erddap_sss.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sss.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sss.html
+
+INFO [2025-12-06 00:01:44] global timer toc 1.17 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -80,16 +129,65 @@ processing file: erddap_sst.qmd
 6/21 [yml]               
 7/21                     
 8/21 [ed_info]           
-[31mError in `ed_info()`:
-! ERDDAP server is offline or unreachable: Server is offline or unreachable: Timeout was reached [coastwatch.noaa.gov]: Operation timed out after 5002 milliseconds with 0 bytes received
-Backtrace:
-    ▆
- 1. └─extractr::ed_info(meta$erddap_url)
-[39m[31m
-Quitting from erddap_sst.qmd:107-119 [ed_info]
-[39m[31mExecution halted
-[39mERROR [2025-12-05 00:01:24] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-12-05 00:01:24] global timer toc 25.47 secs -- Script done rendering, next git commit & push
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+[31mINFO [2025-12-06 00:02:12] 001: CBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:02:25] 002: CINMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:02:32] 003: CPNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:02:42] 004: FGBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:02:48] 005: FKNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:02:55] 006: GFNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:03] 007: GRNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:09] 008: HIHWNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:16] 009: MBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:23] 010: MBNMS-david, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:29] 011: MBNMS-main, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:36] 012: MNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:43] 013: NMSAS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:50] 014: OCNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:03:55] 015: SBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m[31mINFO [2025-12-06 00:04:02] 016: TBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
+[39m13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
+[31moutput file: erddap_sst.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sst.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sst.html
+
+INFO [2025-12-06 00:04:19] global timer toc 2.58 mins -- Script done rendering, next git commit & push
 Already up to date.
