@@ -1,6 +1,6 @@
 Already up to date.
-INFO [2025-12-09 00:00:04] global timer tic 0 secs -- Script starting up...
-INFO [2025-12-09 00:00:04] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+INFO [2025-12-10 00:00:04] global timer tic 0 secs -- Script starting up...
+INFO [2025-12-10 00:00:04] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
 [31m
 
 processing file: copernicus_phy.qmd
@@ -12,7 +12,7 @@ processing file: copernicus_phy.qmd
 6/25 [yml]               
 7/25                     
 8/25 [dataset]           
-[31mINFO - 2025-12-09T00:00:30Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
+[31mINFO - 2025-12-10T00:00:34Z - Credentials file stored in /home/admin/.copernicusmarine/.copernicusmarine-credentials.
 [39m9/25                     
 10/25 [unnamed-chunk-1]   
 [31mError in `mutate()`:
@@ -42,10 +42,10 @@ Backtrace:
 [39m[31m
 Quitting from copernicus_phy.qmd:150-208 [unnamed-chunk-1]
 [39m[31mExecution halted
-[39mERROR [2025-12-09 00:00:35] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+[39mERROR [2025-12-10 00:00:42] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2025-12-09 00:00:35] global timer toc 31.74 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2025-12-10 00:00:42] global timer toc 37.89 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
 [31m
 
 processing file: erddap_sss.qmd
@@ -61,23 +61,7 @@ processing file: erddap_sss.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-12-09 00:00:59] 001: CBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:03] 002: CINMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:05] 003: CPNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:08] 004: FGBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:10] 005: FKNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:17] 006: GFNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:19] 007: GRNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:22] 008: HIHWNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:24] 009: MBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:26] 010: MBNMS-david, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:29] 011: MBNMS-main, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:31] 012: MNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:34] 013: NMSAS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:36] 014: OCNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:38] 015: SBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m[31mINFO [2025-12-09 00:01:41] 016: TBNMS, 2025-12-03 12:00:00 to 2025-12-03 12:00:00
-[39m13/21                     
+13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -117,7 +101,7 @@ processing file: erddap_sss.qmd
   
 Output created: erddap_sss.html
 
-INFO [2025-12-09 00:01:51] global timer toc 1.26 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2025-12-10 00:01:18] global timer toc 36.24 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
 [31m
 
 processing file: erddap_sst.qmd
@@ -133,23 +117,7 @@ processing file: erddap_sst.qmd
 10/21 [d_nms_yr_todo]     
 11/21                     
 12/21 [iterate_ed_extract]
-[31mINFO [2025-12-09 00:02:19] 001: CBNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:02:32] 002: CINMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:02:39] 003: CPNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:02:47] 004: FGBNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:02:54] 005: FKNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:01] 006: GFNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:08] 007: GRNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:14] 008: HIHWNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:21] 009: MBNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:28] 010: MBNMS-david, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:34] 011: MBNMS-main, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:40] 012: MNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:46] 013: NMSAS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:53] 014: OCNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:03:58] 015: SBNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m[31mINFO [2025-12-09 00:04:06] 016: TBNMS, 2025-12-07 12:00:00 to 2025-12-07 12:00:00
-[39m13/21                     
+13/21                     
 14/21 [success_summary]   
 15/21                     
 16/21 [error_summary]     
@@ -189,5 +157,5 @@ processing file: erddap_sst.qmd
   
 Output created: erddap_sst.html
 
-INFO [2025-12-09 00:04:24] global timer toc 2.55 mins -- Script done rendering, next git commit & push
+INFO [2025-12-10 00:02:02] global timer toc 43.79 secs -- Script done rendering, next git commit & push
 Already up to date.
