@@ -1,7 +1,8 @@
 ---
 title: "Copernicus Marine Extraction"
 params:
-  yml: "meta/copernicus_phy.yml"
+  #yml: "meta/copernicus_phy.yml"
+  yml: "meta/copernicus_bgc-car.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 ---
 
@@ -19,7 +20,9 @@ mapviewOptions(
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
 
 if (!exists("params"))
-  params <- list(yml = here("meta/copernicus_phy.yml")) # DEBUG
+  # params <- list(yml = here("meta/copernicus_phy.yml")) # DEBUG
+  params <- list(yml = here("meta/copernicus_bgc-car.yml")) # DEBUG
+
 
 cm_r_dflyrs <- function(r){
   # CopernicusMarine raster to dataframe of layers
