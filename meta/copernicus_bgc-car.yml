@@ -1,0 +1,13 @@
+# product: Global Ocean Biogeochemistry Analysis and Forecast (GLOBAL_ANALYSISFORECAST_BGC_001_028)
+datasets:
+- id: cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m # Carbon, daily
+depth:
+  min: 0.49
+  max: 0.50
+variables:
+- name: Dissolved inorganic carbon # Mole concentration of dissolved inorganic carbon in sea water
+  units: mol/m3
+  id: dissic
+- name: Alkalinity # Sea water ph reported on total scale
+  units: pH
+  id: ph

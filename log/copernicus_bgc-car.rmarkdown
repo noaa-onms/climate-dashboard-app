@@ -43,7 +43,11 @@ cm_r_dflyrs <- function(r){
 }
 ```
 
+
+
 ## Polygons
+
+
 
 ```{r}
 #| label: polygons
@@ -86,11 +90,15 @@ ply_sanctuaries |>
   datatable()
 ```
 
+
+
 ## Dataset
 
 ### Metadata
 
 Contents of `r basename(params$yml)`:
+
+
 
 ```{r}
 #| label: yml
@@ -103,8 +111,12 @@ cat(
   sep = "\n")
 ```
 
+
+
 - [Python interface - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/python-interface.html#copernicusmarine.subset)
 - [Command subset - Copernicus Marine Toolbox documentation](https://toolbox-docs.marine.copernicus.eu/en/v2.0.1/usage/subset-usage.html#option-coordinates-selection-method)
+
+
 
 ```{r}
 #| label: dataset
@@ -244,7 +256,11 @@ system.time({
 })
 ```
 
+
+
 ## Polygon dataset years
+
+
 
 ```{r}
 #| label: d_nms_ds_t
@@ -339,11 +355,15 @@ d_nms_ds_yr_todo |>
         c(5) } ) )
 ```
 
+
+
 ## Extract missing times in datasets per polygon year
 
 Using the [Copernicus Marine Toolbox](https://help.marine.copernicus.eu/en/collections/9080063-copernicus-marine-toolbox) in R. See:
 
 - [How to download data via the Copernicus Marine Toolbox in R? | Copernicus Marine Help Center](https://help.marine.copernicus.eu/en/articles/8638253-how-to-download-data-via-the-copernicus-marine-toolbox-in-r)
+
+
 
 ```{r}
 #| label: iterate_subset
@@ -450,7 +470,11 @@ res <- d_nms_ds_yr_todo |>
     error = pmap_chr(list(i, dataset_id, nms, time_min, time_max), fxn))
 ```
 
+
+
 ### Successes
+
+
 
 ```{r}
 #| label: success_summary
@@ -464,7 +488,11 @@ res |>
   datatable()
 ```
 
+
+
 ### Errors (if any)
+
+
 
 ```{r}
 #| label: error_summary
@@ -477,6 +505,8 @@ res |>
     errors  = unique(error) |> paste(collapse = "\n\n----\n\n")) |> 
   datatable()
 ```
+
+
 
 ::: {.content-hidden}
 
@@ -496,6 +526,8 @@ res |>
 - [ ] wrap retry with `ed_dim()` too
 
 ::: 
+
+
 
 ```{r}
 #| label: rm_empty_nc_dirs
@@ -523,12 +555,19 @@ d_dirs |>
     unlink(x, recursive = T) })
 ```
 
+
+
 ::: {.callout-caution collapse="true"}
 
 ## R package versions
+
+
 
 ```{r}
 devtools::session_info()
 ```
 
+
+
 ::: 
+

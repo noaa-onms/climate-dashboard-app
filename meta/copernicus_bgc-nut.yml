@@ -1,0 +1,20 @@
+# product: Global Ocean Biogeochemistry Analysis and Forecast (GLOBAL_ANALYSISFORECAST_BGC_001_028)
+datasets:
+- id: cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m # Nutrients, daily
+depth:
+  min: 0.49
+  max: 0.50
+variables:
+- name: Iron # Mole concentration of dissolved iron in sea water: fe [mmol/m3]
+  units: mmol/m3
+  id: fe
+- name: Nitrate # Mole concentration of nitrate in sea water: no3 [mmol/m3]
+  units: mmol/m3
+  id: no3
+- name: Phosphate # Mole concentration of phosphate in sea water: po4 [mmol/m3]
+  units: mmol/m3
+  id: po4
+- name: Silicate # Mole concentration of silicate in sea water: si [mmol/m3]
+  units: mmol/m3
+  id: si
+

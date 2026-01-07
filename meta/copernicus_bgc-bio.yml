@@ -1,0 +1,15 @@
+# product: Global Ocean Biogeochemistry Analysis and Forecast (GLOBAL_ANALYSISFORECAST_BGC_001_028)
+datasets:
+- id: cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m # Primary production and O2, daily
+depth:
+  min: 0.49
+  max: 0.50
+variables:
+- name: Oxygen # Mole concentration of dissolved molecular oxygen in sea water: o2 [mmol/m3]
+  units: mmol/m3
+  id: o2
+- name: Net primary production # Net primary production of biomass expressed as carbon per unit volume in sea water: nppv [mg/m3/day]
+  units: mg/m3/day
+  id: nppv
+
+

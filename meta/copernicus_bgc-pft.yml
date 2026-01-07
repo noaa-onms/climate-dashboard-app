@@ -1,0 +1,14 @@
+# product: Global Ocean Biogeochemistry Analysis and Forecast (GLOBAL_ANALYSISFORECAST_BGC_001_028)
+datasets:
+- id: cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m # Primary production and O2, daily
+depth:
+  min: 0.49
+  max: 0.50
+variables:
+- name: Chlorophyll # Mass concentration of chlorophyll a in sea water: chl [mg/m3]
+  units: mg/m3
+  id: chl
+- name: Phytoplankton # Mole concentration of phytoplankton expressed as carbon in sea water: phyc [mmol/m3]
+  units: mmol/m3
+  id: phyc
+

@@ -1,0 +1,5 @@
+erddap_url: https://erddap.marine.usf.edu/erddap/griddap/IMERG_monthly_global_precip.html
+erddap_variable: precipitation
+# [iterate_ed_extract]
+# 001: CBNMS, 1998-01-01 to 1998-12-01
+# ERROR: [raster,matrix(xyz)] x cell sizes are not regular

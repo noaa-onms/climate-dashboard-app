@@ -1,8 +1,2 @@
-INFO [2025-12-11 00:00:02] global timer tic 0 secs -- Script starting up...
-INFO [2025-12-11 00:00:02] global timer toc 0.02 secs -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-ERROR [2025-12-11 00:00:35] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2025-12-11 00:00:35] global timer toc 33.19 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-INFO [2025-12-11 00:01:09] global timer toc 33.74 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-INFO [2025-12-11 00:04:56] global timer toc 3.78 mins -- Script done rendering, next git commit & push
+INFO [2026-01-07 00:13:32] global timer tic 0 secs -- Script starting up...
+INFO [2026-01-07 00:13:32] global timer toc 0.04 secs -- meta/copernicus_bgc-bio.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-bio/*, log/copernicus_bgc-bio.html

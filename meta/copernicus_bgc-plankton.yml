@@ -1,0 +1,10 @@
+# product: Global Ocean Biogeochemistry Analysis and Forecast (GLOBAL_ANALYSISFORECAST_BGC_001_028)
+datasets:
+- id: cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m # Zooplankton carbon biomass, daily
+depth:
+  min: 0.49
+  max: 0.50
+variables:
+- name: Zooplankton # Mole concentration of zooplankton expressed as carbon in sea water: zooc [mmol/m3]
+  units: mmol/m3
+  id: zooc

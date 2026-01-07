@@ -1,8 +1,7 @@
 ---
 title: "ERDDAP Extraction"
 params:
-  # yml: "meta/erddap_sst.yml"
-  yml: "meta/erddap_precip.yml"
+  yml: "meta/erddap_sst.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 execute: 
   cache: false
@@ -28,11 +27,14 @@ mapviewOptions(
   vector.palette = colorRampPalette(brewer.pal(n=5, name="Spectral")))
 
 if (!exists("params"))
-  # params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
-  params <- list(yml = here("meta/erddap_precip.yml")) # DEBUG
+  params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
 ```
 
+
+
 ## Polygons
+
+
 
 ```{r}
 #| label: polygons
@@ -75,11 +77,15 @@ ply_sanctuaries |>
   datatable()
 ```
 
+
+
 ## Dataset
 
 ### Metadata
 
 Contents of `r basename(params$yml)`:
+
+
 
 ```{r}
 #| label: yml
@@ -92,7 +98,11 @@ cat(
   sep = "\n")
 ```
 
+
+
 ### Information
+
+
 
 ```{r}
 #| label: ed_info
@@ -108,7 +118,11 @@ v     <- meta$erddap_variable
 times <- ed_dim(ed, "time")
 ```
 
+
+
 ## Polygon years
+
+
 
 ```{r}
 #| label: d_nms_yr_todo
@@ -175,9 +189,13 @@ d_nms_yr_todo |>
       lengthMenu = c(5, 50, nrow(d_nms_yr_todo))))
 ```
 
+
+
 ## Extract dataset per polygon year
 
 Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/ed_extract.html), .
+
+
 
 ```{r}
 #| label: iterate_ed_extract
@@ -229,7 +247,11 @@ res <- d_nms_yr_todo |>
     error = pmap_chr(list(i, nms, time_min, time_max), fxn))
 ```
 
+
+
 ### Successes
+
+
 
 ```{r}
 #| label: success_summary
@@ -243,7 +265,11 @@ res |>
   datatable()
 ```
 
+
+
 ### Errors (if any)
+
+
 
 ```{r}
 #| label: error_summary
@@ -258,6 +284,8 @@ res |>
     errors  = unique(error) |> paste(collapse = "\n\n----\n\n")) |> 
   datatable()
 ```
+
+
 
 ::: {.content-hidden}
 
@@ -277,6 +305,8 @@ res |>
 - [ ] wrap retry with `ed_dim()` too
 
 ::: 
+
+
 
 ```{r}
 #| label: rm_empty_nc_dirs
@@ -304,12 +334,19 @@ d_dirs |>
     unlink(x, recursive = T) })
 ```
 
+
+
 ::: {.callout-caution collapse="true"}
 
 ## R package versions
+
+
 
 ```{r}
 devtools::session_info()
 ```
 
+
+
 ::: 
+
