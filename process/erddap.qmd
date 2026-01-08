@@ -184,7 +184,8 @@ Using [`extractr::ed_extract()`](https://marinebon.github.io/extractr/reference/
 
 # rerddap::cache_delete_all()
 
-fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "MNMS"; year = 2010 ; i = 97
+fxn <- function(i, nms, time_min, time_max, ...){ 
+  #  i = 1; nms = "CBNMS"; time_min = as.POSIXct("1998-01-01 UTC");  time_max = as.POSIXct("1998-12-01 UTC")
   
   err <- tryCatch({
     
@@ -197,6 +198,8 @@ fxn <- function(i, nms, time_min, time_max, ...){ #  nms = "MNMS"; year = 2010 ;
     bb <- bb_sanctuaries |>
       filter(nms == !!nms) |> 
       st_bbox()
+    
+    # browser()
     
     extractr::ed_extract(
       ed,
