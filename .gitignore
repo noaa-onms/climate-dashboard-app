@@ -5,3 +5,4 @@
 .DS_Store
 app_cache
 /.quarto/
+data_local/

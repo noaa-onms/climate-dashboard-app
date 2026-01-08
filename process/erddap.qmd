@@ -100,7 +100,11 @@ cat(
 meta <- read_yaml(params$yml) 
 proc_prod <- path_ext_remove(basename(params$yml))
 
-dir_out <- glue("/share/data/noaa-onms/climate-dashboard-app/{proc_prod}")
+is_server <- Sys.info()["sysname"] == "Linux"
+dir_out <- ifelse(
+  is_server,
+  glue("/share/data/noaa-onms/climate-dashboard-app/{proc_prod}"),
+  here(glue("data_local/{proc_prod}")))
 dir_create(dir_out)
 
 v     <- meta$erddap_variable
@@ -200,6 +204,7 @@ fxn <- function(i, nms, time_min, time_max, ...){
       st_bbox()
     
     # browser()
+    # devtools::load_all("~/Github/marinebon/extractr")
     
     extractr::ed_extract(
       ed,
