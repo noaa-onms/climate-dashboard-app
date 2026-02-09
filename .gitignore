@@ -6,3 +6,5 @@
 app_cache
 /.quarto/
 data_local/
+
+**/*.quarto_ipynb

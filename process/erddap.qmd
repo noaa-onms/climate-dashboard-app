@@ -1,11 +1,13 @@
 ---
 title: "ERDDAP Extraction"
 params:
-  # yml: "meta/erddap_sst.yml"
-  yml: "meta/erddap_precip.yml"
+  # yml: "../meta/erddap_sst.yml"
+  yml: "../meta/erddap_precip.yml"
 subtitle: "metadata: *`r basename(params$yml)`*"
 execute: 
   cache: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -30,6 +32,9 @@ mapviewOptions(
 if (!exists("params"))
   # params <- list(yml = here("meta/erddap_sst.yml")) # DEBUG
   params <- list(yml = here("meta/erddap_precip.yml")) # DEBUG
+
+if (!file.exists(params$yml))
+  stop(glue("Metadata file {params$yml} does not exist. `getwd()`: {getwd()}"))
 ```
 
 ## Polygons
