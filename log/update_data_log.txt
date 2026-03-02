@@ -1,3 +1,3 @@
-INFO [2026-01-08 19:30:11] global timer toc 41.58 secs -- Script starting up...
-INFO [2026-01-08 19:30:11] global timer toc 0.07 secs -- meta/erddap_precip.yml -[ process/erddap.qmd ]-> data/erddap_precip/*, log/erddap_precip.html
-INFO [2026-01-08 19:47:58] global timer toc 17.79 mins -- Script done rendering, next git commit & push
+INFO [2026-03-02 17:11:29] global timer tic 0 secs -- Script starting up...
+INFO [2026-03-02 17:11:32] global timer toc 3.04 secs -- meta/erddap_precip.yml -[ process/erddap.qmd ]-> data/erddap_precip/*, log/erddap_precip.html
+INFO [2026-03-02 17:13:15] global timer toc 1.72 mins -- Script done rendering, next git commit & push
