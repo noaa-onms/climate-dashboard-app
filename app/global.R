@@ -48,7 +48,18 @@ d_vars <- tribble(
   "copernicus_phy.mlotst" ,  "Copernicus", "Mixed layer thickness (MLT)"  , "MLT (m)",
   "copernicus_phy.thetao" ,  "Copernicus", "Sea surface temperature (SST)", "SST (°C)",
   "copernicus_phy.bottomT",  "Copernicus", "Sea bottom temperature (SBT)" , "SBT (°C)",
-  "copernicus_phy.so"     ,  "Copernicus", "Sea surface salinity (SSS)"   , "SSS (g/kg)")
+  "copernicus_phy.so"     ,  "Copernicus", "Sea surface salinity (SSS)"   , "SSS (g/kg)",
+  "copernicus_bgc-bio.o2"   ,  "Copernicus", "Oxygen"                       , "O2 (mmol/m3)",
+  "copernicus_bgc-bio.nppv" ,  "Copernicus", "Net primary production"       , "NPP (mg/m3/day)",
+  "copernicus_bgc-car.dissic" ,  "Copernicus", "Dissolved inorganic carbon"       , "DIC (mol/m3)",
+  "copernicus_bgc-car.ph" ,  "Copernicus", "Alkalinity"       , "pH",
+  "copernicus_bgc-co2.spco2" ,  "Copernicus", "Carbon dioxide"       , "CO2 (Pa)",
+  "copernicus_bgc-nut.fe" ,  "Copernicus", "Iron"       , "Fe (mmol/m3)",
+  "copernicus_bgc-nut.no3" ,  "Copernicus", "Nitrate"       , "NO3 (mmol/m3)",
+  "copernicus_bgc-nut.po4" ,  "Copernicus", "Phosphate"       , "PO4 (mmol/m3)",
+  "copernicus_bgc-nut.si" ,  "Copernicus", "Silicate"       , "Si (mmol/m3)",
+  "copernicus_bgc-pft.chl" ,  "Copernicus", "Chlorophyll"       , "Chl (mmol/m3)",
+  )
 # NOTE: var for copernicus needs to differentiate dataset.varid where dir_exists(glue("{dir_data}/{dataset}/{nms}"))
 
 # TODO: add color gradient

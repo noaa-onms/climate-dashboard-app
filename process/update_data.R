@@ -33,6 +33,7 @@ log_tictoc("Script starting up...")
 
 # iterate over dataset ymls ----
 ymls <- dir_ls(dir_meta, regexp = ".*\\.(ya?ml)$")
+# ymls <- "/share/github/noaa-onms/climate-dashboard-app/meta/erddap_precip.yml" # DEBUG
 for (yml in ymls){  # yml = ymls[1]
 
   # * setup qmd ----
