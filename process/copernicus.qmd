@@ -367,7 +367,7 @@ fxn <- function(i, dataset_id, nms, time_min, time_max, ...){
       st_bbox()
     p     <- ply_sanctuaries |>
       filter(nms == !!nms)
-    vars  <- map_chr(meta$variables, "id")
+    vars  <- as.list(map_chr(meta$variables, "id"))
     
     dir_create(dirname(r_nc))
     
