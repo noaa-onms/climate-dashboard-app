@@ -20,8 +20,9 @@ log_txt    <- glue("{dir_log}/update_data_log.txt")
 do_git     <- T # DEBUG
 
 # git ----
-github_pat <- gitcreds_get(use_cache = FALSE)$password
-stopifnot(str_sub(github_pat, 1, 3) == "ghp")
+# github_pat <- gitcreds_get(use_cache = FALSE)$password
+# stopifnot(str_sub(github_pat, 1, 3) == "ghp")
+# switch to **SSH deploy key** per CLAUDE_prompts.md
 if (do_git)
   system("git pull")
 
