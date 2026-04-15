@@ -6,7 +6,7 @@ librarian::shelf(
 # sudo apt update
 # sudo apt install cron
 # sudo systemctl enable cron
-# crontab -e
+# sudo crontab -e
 # minute hour day_of_month month day_of_week command_to_run
 # 0 0 * * * cd /share/github/noaa-onms/climate-dashboard-app; Rscript process/update_data.R > log/update_data_cron.txt 2>&1
 # sudo service cron restart
