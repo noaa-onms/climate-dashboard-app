@@ -112,7 +112,7 @@ cat(
 # import copernicusmarine as cmt ----
 # do once: create virtual enviroment and install copernicusmarine Python module
 # virtualenv_create(envname = "CopernicusMarine")
-# virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine"))
+# virtualenv_install(envname = "CopernicusMarine", packages = c("copernicusmarine","h5py"))
 
 # use CopernicusMarine env with copernicusmarine Python module
 use_virtualenv(virtualenv = "CopernicusMarine", required = TRUE)
@@ -367,7 +367,7 @@ fxn <- function(i, dataset_id, nms, time_min, time_max, ...){
       st_bbox()
     p     <- ply_sanctuaries |>
       filter(nms == !!nms)
-    vars  <- map_chr(meta$variables, "id")
+    vars  <- as.list(map_chr(meta$variables, "id"))
     
     dir_create(dirname(r_nc))
     

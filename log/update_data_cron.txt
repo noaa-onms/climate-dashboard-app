@@ -1,4 +1,1992 @@
-Error in throw(new_error("gitcreds_no_credentials", url = url)) : 
-  Could not find any credentials
-Calls: gitcreds_get -> gitcreds_parse_output -> throw
-Execution halted
+Already up to date.
+INFO [2026-04-15 16:07:32] global timer tic 0 secs -- Script starting up...
+INFO [2026-04-15 16:07:32] global timer toc 0.03 secs -- meta/copernicus_bgc-bio.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-bio/*, log/copernicus_bgc-bio.html
+[31m
+
+processing file: copernicus_bgc-bio.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:08:25Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:08:31] 001: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:08:33Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:08:33Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:08:33Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:08:37Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:08:40] 002: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:08:43Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:08:43Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:08:43Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:08:46Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:08:48] 003: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:08:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:08:51Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:08:51Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:08:54Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:08:56] 004: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:08:59Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:08:59Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:08:59Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:01Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:03] 005: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:06Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:06Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:09:06Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:09Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:11] 006: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:14Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:14Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:09:14Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:17Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:19] 007: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:22Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:22Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:09:22Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:27] 008: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:30Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:30Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:09:30Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:34] 009: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:37Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:37Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:09:37Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:40Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:42] 010: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:45Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:09:45Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:09:45Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:49] 011: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:09:52Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:09:52Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:09:52Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:09:55Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:09:57] 012: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:10:00Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:10:00Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:10:00Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:10:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:10:06] 013: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:10:09Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:10:09Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:10:09Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:10:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:10:13] 014: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:10:17Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:10:17Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:10:17Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:10:20Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:10:22] 015: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:10:25Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:10:25Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:10:25Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:10:28Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:10:29] 016: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:10:32Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:10:32Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:10:32Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:10:35Z - NetCDF compression enabled with level 1
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-bio.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-bio.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-bio.html
+
+INFO [2026-04-15 16:10:55] global timer toc 3.38 mins -- meta/copernicus_bgc-car.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-car/*, log/copernicus_bgc-car.html
+[31m
+
+processing file: copernicus_bgc-car.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:11:42Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:11:47] 001: CBNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:11:50Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:11:50Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:11:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:11:53Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:11:55] 002: CINMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:11:58Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:11:58Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:11:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:01Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:03] 003: CPNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:06Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:06Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:06Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:08Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:10] 004: FGBNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:13Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:12:13Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:13Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:16Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:18] 005: FKNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:21Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:12:21Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:23Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:25] 006: GFNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:28Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:28Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:28Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:31Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:33] 007: GRNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:35Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:35Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:12:35Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:39Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:41] 008: HIHWNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:44Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:44Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:46Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:48] 009: MBNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:51Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:51Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:12:54Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:12:56] 010: MBNMS-david, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:12:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:12:58Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:12:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:01Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:03] 011: MBNMS-main, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:06Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:06Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:13:06Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:08Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:10] 012: MNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:13Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:13Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:13:13Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:17Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:19] 013: NMSAS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:21Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:21Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:13:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:24Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:26] 014: OCNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:29Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:29Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:13:29Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:34] 015: SBNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:37Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:37Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:13:37Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:39Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:13:41] 016: TBNMS, cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:13:43Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:13:43Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:13:43Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:13:46Z - NetCDF compression enabled with level 1
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-car.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-car.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-car.html
+
+INFO [2026-04-15 16:14:04] global timer toc 3.16 mins -- meta/copernicus_bgc-co2.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-co2/*, log/copernicus_bgc-co2.html
+[31m
+
+processing file: copernicus_bgc-co2.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:14:51Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:14:53] 001: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:14:56Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:14:56Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:14:59Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:01] 002: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:15:04Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:15:04Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:07Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:08] 003: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:15:11Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:15:11Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:14Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:16] 004: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:15:18Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:15:18Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:21Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:23] 005: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:15:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:15:25Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:28Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:30] 006: CBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:15:33Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:15:33Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:35Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:37] 007: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:15:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:15:39Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:43Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:44] 008: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:15:47Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:15:47Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:49Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:51] 009: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:15:54Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:15:54Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:15:56Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:15:58] 010: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:16:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:16:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:05] 011: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:16:08Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:08Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:12] 012: CINMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:16:15Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:16:15Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:19Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:20] 013: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:16:23Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:23Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:27] 014: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:16:30Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:30Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:34] 015: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:16:37Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:16:37Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:39Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:42] 016: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:16:44Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:44Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:47Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:49] 017: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:16:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:51Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:16:55Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:16:57] 018: CPNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:16:59Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:16:59Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:02Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:04] 019: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:17:07Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:17:07Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:10Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:11] 020: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:17:14Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:17:14Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:16Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:18] 021: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:17:21Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:17:21Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:23Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:25] 022: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:17:28Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:17:28Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:33] 023: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:17:36Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:17:36Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:38Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:40] 024: FGBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:17:43Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:17:43Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:45Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:46] 025: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:17:49Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:17:49Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:52Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:17:53] 026: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:17:56Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:17:56Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:17:59Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:00] 027: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:18:03Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:18:03Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:07Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:09] 028: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:18:12Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:18:12Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:15Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:16] 029: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:18:19Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:18:19Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:22Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:24] 030: FKNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:18:26Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:18:26Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:29Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:31] 031: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:18:34Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:18:34Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:36Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:38] 032: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:18:40Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:18:40Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:44Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:46] 033: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:18:49Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:18:49Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:51Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:18:53] 034: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:18:56Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:18:56Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:18:59Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:00] 035: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:19:03Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:19:03Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:06Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:07] 036: GFNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:19:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:10Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:13Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:14] 037: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:19:17Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:17Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:21Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:22] 038: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:19:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:25Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:28Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:29] 039: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:19:32Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:32Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:34Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:36] 040: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:19:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:39Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:42Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:43] 041: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:19:46Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:46Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:49Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:50] 042: GRNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:19:53Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:19:53Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:19:57Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:19:58] 043: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:20:01Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:20:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:05Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:06] 044: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:20:09Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:20:09Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:12Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:14] 045: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:20:16Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:20:16Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:19Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:21] 046: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:20:24Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:20:24Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:27Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:29] 047: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:20:32Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:20:32Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:36Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:37] 048: HIHWNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:20:40Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:20:40Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:43Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:44] 049: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:20:47Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:20:47Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:50Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:51] 050: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:20:54Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:20:54Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:20:57Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:20:58] 051: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:21:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:06] 052: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:21:09Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:09Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:13Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:15] 053: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:21:18Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:18Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:20Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:22] 054: MBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:21:25Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:25Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:27Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:29] 055: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:21:32Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:21:32Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:34Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:36] 056: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:21:38Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:38Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:41Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:42] 057: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:21:45Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:21:45Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:49Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:51] 058: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:21:54Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:21:54Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:21:57Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:21:58] 059: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:22:01Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:06] 060: MBNMS-david, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:22:09Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:09Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:13] 061: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:22:16Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:16Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:19Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:21] 062: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:22:24Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:24Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:26Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:28] 063: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:22:31Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:31Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:33Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:35] 064: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:22:38Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:22:38Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:41Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:42] 065: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:22:45Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:22:45Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:49] 066: MBNMS-main, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:22:52Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:22:52Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:22:56Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:22:58] 067: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:23:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:23:01Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:05] 068: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:23:08Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:23:08Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:12] 069: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:23:15Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:23:15Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:18Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:20] 070: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:23:22Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:23:22Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:26] 071: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:23:30Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:23:30Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:34Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:35] 072: MNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:23:38Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:23:38Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:41Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:42] 073: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:23:45Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:23:45Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:47Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:49] 074: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:23:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:23:51Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:23:54Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:23:56] 075: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:23:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:23:58Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:01Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:03] 076: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:24:06Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:24:06Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:10Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:12] 077: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:24:15Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:24:15Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:17Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:19] 078: NMSAS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:24:22Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:24:22Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:26] 079: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:24:29Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:24:29Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:31Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:33] 080: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:24:36Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:24:36Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:38Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:40] 081: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:24:43Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:24:43Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:47Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:49] 082: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:24:52Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:24:52Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:24:54Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:24:56] 083: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:24:59Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:24:59Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:02Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:04] 084: OCNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:25:07Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:25:07Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:09Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:11] 085: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:25:14Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:14Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:16Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:17] 086: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:25:20Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:20Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:24Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:26] 087: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:25:28Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:28Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:31Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:33] 088: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:25:36Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:36Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:38Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:40] 089: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:25:43Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:43Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:45Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:47] 090: SBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:25:49Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:25:49Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:25:52Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:25:53] 091: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:25:56Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:25:56Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:00Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:26:01] 092: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:26:04Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:26:04Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:07Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:26:09] 093: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:26:12Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:26:12Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:15Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:26:17] 094: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:26:20Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:26:20Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:22Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:26:25] 095: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:26:28Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:26:28Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:30Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:26:32] 096: TBNMS, cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:26:35Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:26:35Z - Selected dataset part: "default"
+[39m[31mINFO - 2026-04-15T16:26:39Z - NetCDF compression enabled with level 1
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-co2.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-co2.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-co2.html
+
+INFO [2026-04-15 16:27:00] global timer toc 12.93 mins -- meta/copernicus_bgc-nut.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-nut/*, log/copernicus_bgc-nut.html
+[31m
+
+processing file: copernicus_bgc-nut.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:27:52Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:27:59] 001: CBNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:02Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:28:02Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:02Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:05Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:09] 002: CINMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:12Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:28:12Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:28:12Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:15Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:17] 003: CPNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:20Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:28:20Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:20Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:23Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:26] 004: FGBNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:29Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:28:29Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:29Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:34] 005: FKNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:37Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:28:37Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:37Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:40Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:43] 006: GFNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:46Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:28:46Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:28:51] 007: GRNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:28:54Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:28:54Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:28:54Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:28:57Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:00] 008: HIHWNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:03Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:29:03Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:03Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:06Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:08] 009: MBNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:11Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:29:11Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:11Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:14Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:16] 010: MBNMS-david, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:19Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:29:19Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:19Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:22Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:24] 011: MBNMS-main, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:27Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:29:27Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:27Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:30Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:32] 012: MNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:35Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:29:35Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:35Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:39Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:41] 013: NMSAS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:44Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:29:44Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:29:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:47Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:50] 014: OCNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:29:52Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:29:52Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:29:52Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:29:55Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:29:58] 015: SBNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:30:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:30:01Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:30:01Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:30:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:30:06] 016: TBNMS, cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m, 2026 (2026-01-16 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:30:09Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:30:09Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:30:09Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:30:12Z - NetCDF compression enabled with level 1
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-nut.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-nut.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-nut.html
+
+INFO [2026-04-15 16:30:32] global timer toc 3.52 mins -- meta/copernicus_bgc-pft.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-pft/*, log/copernicus_bgc-pft.html
+[31m
+
+processing file: copernicus_bgc-pft.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:31:19Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:31:21] 001: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:31:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:31:25Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:31:25Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:28] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:28] 002: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:31:30Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:31:30Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:31:30Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:33] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:33] 003: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:31:36Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:31:36Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:31:36Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:39] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:39] 004: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:31:42Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:31:42Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:31:42Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:44] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:44] 005: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:31:47Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:31:47Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:31:47Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:50] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:50] 006: CBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:31:53Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:31:53Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:31:53Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:31:56] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:31:56] 007: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:31:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:31:58Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:31:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:01] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:01] 008: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:32:04Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:32:04Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:32:04Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:08] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:08] 009: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:32:11Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:32:11Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:32:11Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:14] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:14] 010: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:32:16Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:32:16Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:32:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:19] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:19] 011: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:32:22Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:32:22Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:32:22Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:25] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:25] 012: CINMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:32:29Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:32:29Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:32:29Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:31] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:31] 013: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:32:34Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:32:34Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:32:34Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:38] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:38] 014: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:32:41Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:32:41Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:32:41Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:44] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:44] 015: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:32:46Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:32:46Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:32:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:49] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:49] 016: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:32:52Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:32:52Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:32:52Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:32:55] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:32:55] 017: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:32:58Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:32:58Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:32:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:00] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:00] 018: CPNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:33:03Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:33:03Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:03Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:07] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:07] 019: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:33:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:10Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:10Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:13] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:13] 020: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:33:16Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:16Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:18] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:18] 021: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:33:21Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:33:21Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:33:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:24] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:24] 022: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:33:27Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:27Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:27Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:29] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:29] 023: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:33:33Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:33Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:33Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:37] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:37] 024: FGBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:33:40Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:33:40Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:33:40Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:42] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:42] 025: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:33:45Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:45Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:45Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:48] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:48] 026: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:33:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:51Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:33:51Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:54] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:54] 027: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:33:56Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:33:56Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:33:56Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:33:59] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:33:59] 028: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:34:02Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:02Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:02Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:07] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:07] 029: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:34:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:10Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:10Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:13] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:13] 030: FKNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:34:15Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:15Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:15Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:18] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:18] 031: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:34:21Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:21Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:24] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:24] 032: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:34:27Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:27Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:27Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:29] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:29] 033: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:34:32Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:32Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:32Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:37] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:37] 034: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:34:40Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:40Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:40Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:43] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:43] 035: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:34:46Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:46Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:48] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:48] 036: GFNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:34:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:34:51Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:34:51Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:54] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:54] 037: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:34:57Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:34:57Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:34:57Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:34:59] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:34:59] 038: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:35:02Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:35:02Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:02Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:08] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:08] 039: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:35:11Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:11Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:35:11Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:14] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:14] 040: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:35:17Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:17Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:17Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:19] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:19] 041: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:35:22Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:22Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:35:22Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:25] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:25] 042: GRNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:35:28Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:28Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:28Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:30] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:30] 043: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:35:33Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:33Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:35:33Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:37] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:37] 044: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:35:40Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:40Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:35:40Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:43] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:43] 045: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:35:46Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:46Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:48] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:48] 046: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:35:51Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:51Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:51Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:54] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:54] 047: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:35:57Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:35:57Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:35:57Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:35:59] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:35:59] 048: HIHWNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:36:02Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:36:02Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:36:02Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:07] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:07] 049: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:36:10Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:10Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:10Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinate[39m[31ms [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:12] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:12] 050: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:36:15Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:36:15Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:15Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:18] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:18] 051: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:36:21Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:36:21Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:36:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:23] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:23] 052: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:36:26Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:36:26Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:36:26Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:29] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:29] 053: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:36:32Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:32Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:32Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:36] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:36] 054: MBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:36:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:39Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:39Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:42] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:42] 055: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:36:44Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:44Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:36:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:47] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:47] 056: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:36:50Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:50Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:52] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:52] 057: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:36:55Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:36:55Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:36:55Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:36:58] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:36:58] 058: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:37:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:37:01Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:37:01Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:06] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:06] 059: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:37:09Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:09Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:09Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:12] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:12] 060: MBNMS-david, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:37:15Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:15Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:15Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:17] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:17] 061: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:37:20Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:37:20Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:20Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:23] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:23] 062: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:37:25Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:25Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:37:25Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:28] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:28] 063: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:37:31Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:37:31Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:37:31Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:36] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:36] 064: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:37:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:39Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:39Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:41] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:41] 065: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:37:44Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:37:44Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:47] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:47] 066: MBNMS-main, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:37:50Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:50Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:37:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:52] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:52] 067: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:37:55Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:37:55Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:37:55Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:37:58] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:37:58] 068: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:38:01Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:38:01Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:01Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:07] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:07] 069: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:38:09Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:09Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:38:09Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:12] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:12] 070: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:38:15Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:38:15Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:15Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:18] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:18] 071: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:38:20Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:20Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:20Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:23] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:23] 072: MNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:38:26Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:26Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:38:26Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:28] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:28] 073: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:38:31Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:38:31Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:31Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:37] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:37] 074: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:38:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:39Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:39Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:42] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:42] 075: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:38:45Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:45Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:38:45Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:48] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:48] 076: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:38:50Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:50Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:38:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:38:55] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:38:55] 077: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:38:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:38:58Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:38:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:00] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:00] 078: NMSAS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:39:08Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:08Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:08Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:10] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:10] 079: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:39:13Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:13Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:13Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:16] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:16] 080: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:39:19Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:19Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:19Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:21] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:21] 081: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:39:24Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:24Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:24Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:27] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:27] 082: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:39:29Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:29Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:39:29Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:33] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:33] 083: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:39:36Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:39:36Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:39:36Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:39] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:39] 084: OCNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:39:41Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:39:41Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:41Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:44] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:44] 085: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:39:47Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:47Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:39:47Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:49] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:49] 086: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:39:52Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:39:52Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:39:52Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:39:55] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:39:55] 087: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:39:58Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:39:58Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:39:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:02] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:02] 088: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:40:05Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:40:05Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:40:05Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:08] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:08] 089: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:40:10Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:40:10Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:40:10Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:13] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:13] 090: SBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:40:16Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:40:16Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:40:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:18] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:18] 091: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2021 (2021-11-01 to 2021-12-31)
+[39m[31mINFO - 2026-04-15T16:40:21Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:40:21Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:40:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:24] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:24] 092: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2022 (2022-01-01 to 2022-12-31)
+[39m[31mINFO - 2026-04-15T16:40:27Z - Selected dataset version: "202311"
+INFO - 2026-04-15T16:40:27Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:40:27Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:31] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:31] 093: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2023 (2023-01-01 to 2023-12-31)
+[39m[31mINFO - 2026-04-15T16:40:34Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:40:34Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:40:34Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:36] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:36] 094: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2024 (2024-01-01 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:40:39Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:40:39Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:40:39Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:42] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:42] 095: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:40:45Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:40:45Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:40:45Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:47] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m[31mINFO [2026-04-15 16:40:47] 096: TBNMS, cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:40:50Z - Selected dataset version: "202311"
+[39m[31mINFO - 2026-04-15T16:40:50Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:40:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mERROR [2026-04-15 16:40:53] copernicusmarine.core_functions.exceptions.VariableDoesNotExistInTheDataset: The variable 'chl' is neither a variable or a standard name in the dataset.
+Run `reticulate::py_last_error()` for details.
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-pft.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-pft.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-pft.html
+
+INFO [2026-04-15 16:41:08] global timer toc 10.61 mins -- meta/copernicus_bgc-plankton.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-plankton/*, log/copernicus_bgc-plankton.html
+[31m
+
+processing file: copernicus_bgc-plankton.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:41:55Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+11/25                     
+12/25 [existing_lyr_dates]
+13/25                     
+14/25 [d_nms_ds_t]        
+15/25                     
+16/25 [iterate_subset]    
+[31mINFO [2026-04-15 16:41:58] 001: CBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:42:00Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:00Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:00Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:03Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:05] 002: CBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:42:08Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:08Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:08Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:13] 003: CBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:42:16Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:16Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:19Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:20] 004: CINMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:42:23Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:23Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:23Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:27] 005: CINMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:42:30Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:30Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:30Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:33Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:35] 006: CINMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:42:38Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:42:38Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:38Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:40Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:42] 007: CPNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:42:44Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:42:44Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:51] 008: CPNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:42:53Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:42:53Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:42:53Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:42:56Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:42:58] 009: CPNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:43:01Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:43:01Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:01Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:06] 010: FGBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:43:08Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:43:08Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:08Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:13] 011: FGBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:43:15Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:43:15Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:15Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:18Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:20] 012: FGBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:43:23Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:43:23Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:43:23Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:27Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:28] 013: FKNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:43:31Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:43:31Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:43:31Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:34Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:35] 014: FKNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:43:38Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:43:39Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:39Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:41Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:43] 015: FKNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:43:46Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:43:46Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:49Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:50] 016: GFNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:43:53Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:43:53Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:43:53Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:43:56Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:43:58] 017: GFNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:44:00Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:00Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:44:00Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:04Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:07] 018: GFNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:44:09Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:09Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:09Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:12Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:14] 019: GRNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:44:16Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:16Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:19Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:21] 020: GRNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:44:23Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:23Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:23Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:26Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:28] 021: GRNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:44:31Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:31Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:31Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:33Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:35] 022: HIHWNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:44:38Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:38Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:38Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:41Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:43] 023: HIHWNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:44:46Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:44:46Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:46Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:51] 024: HIHWNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:44:53Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:44:53Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:44:53Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:44:56Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:44:57] 025: MBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:45:00Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:00Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:00Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:03Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:04] 026: MBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:45:07Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:07Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:07Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:11Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:13] 027: MBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:45:16Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:16Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:16Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:18Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:20] 028: MBNMS-david, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:45:23Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:23Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:23Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:27] 029: MBNMS-david, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:45:30Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:30Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:30Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:34] 030: MBNMS-david, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:45:37Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:37Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:37Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:40Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:41] 031: MBNMS-main, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:45:44Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:45:44Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:45:44Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:48Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:49] 032: MBNMS-main, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:45:52Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:45:52Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:45:52Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:45:55Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:45:57] 033: MBNMS-main, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:46:00Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:46:00Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:00Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:03Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:04] 034: MNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:46:07Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:07Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:07Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:09Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:11] 035: MNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:46:14Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:46:14Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:14Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:16Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:18] 036: MNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:46:21Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:46:21Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:21Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:25Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:26] 037: NMSAS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:46:29Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:29Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:29Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:32Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:33] 038: NMSAS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:46:36Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:36Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:36Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:39Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:41] 039: NMSAS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:46:43Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:43Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:43Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:46Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:47] 040: OCNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:46:50Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:50Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:50Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:46:53Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:46:55] 041: OCNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:46:58Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:46:58Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:46:58Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:01Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:03] 042: OCNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:47:06Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:47:06Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:47:06Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:09Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:10] 043: SBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:47:13Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:47:13Z - Selected dataset part: "default"
+WARNING - 2026-04-15T16:47:13Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:15Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:17] 044: SBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:47:19Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:47:19Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:47:19Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:22Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:24] 045: SBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:47:26Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:47:26Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:47:26Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:30Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:31] 046: TBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2024 (2024-04-23 to 2024-12-31)
+[39m[31mINFO - 2026-04-15T16:47:34Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:47:34Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:47:34Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:37Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:39] 047: TBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2025 (2025-01-01 to 2025-12-31)
+[39m[31mINFO - 2026-04-15T16:47:41Z - Selected dataset version: "202411"
+[39m[31mINFO - 2026-04-15T16:47:41Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:47:41Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:44Z - NetCDF compression enabled with level 1
+[39m[31mINFO [2026-04-15 16:47:46] 048: TBNMS, cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m, 2026 (2026-01-01 to 2026-04-24)
+[39m[31mINFO - 2026-04-15T16:47:49Z - Selected dataset version: "202411"
+INFO - 2026-04-15T16:47:49Z - Selected dataset part: "default"
+[39m[31mWARNING - 2026-04-15T16:47:49Z - Some of your subset selection [0.49, 0.5] for the depth dimension exceed the dataset coordinates [0.4940253794193268, 5727.91650390625]
+[39m[31mINFO - 2026-04-15T16:47:51Z - NetCDF compression enabled with level 1
+[39m17/25                     
+18/25 [success_summary]   
+19/25                     
+20/25 [error_summary]     
+21/25                     
+22/25 [rm_empty_nc_dirs]  
+23/25                     
+24/25 [unnamed-chunk-2]   
+25/25                     
+[31moutput file: copernicus_bgc-plankton.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: copernicus_bgc-plankton.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: Copernicus Marine Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: copernicus_bgc-plankton.html
+
+INFO [2026-04-15 16:48:09] global timer toc 7.01 mins -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+[31m
+
+processing file: copernicus_phy.qmd
+[39m1/25                     
+2/25 [setup]             
+3/25                     
+4/25 [polygons]          
+5/25                     
+6/25 [yml]               
+7/25                     
+8/25 [dataset]           
+[31mINFO - 2026-04-15T16:48:55Z - Credentials file stored in /root/.copernicusmarine/.copernicusmarine-credentials.
+[39m9/25                     
+10/25 [unnamed-chunk-1]   
+[31mError in `mutate()`:
+ℹ In argument: `description = map(dataset_id, get_dataset_description)`.
+Caused by error in `map()`:
+ℹ In index: 2.
+Caused by error in `py_call_impl()`:
+! copernicusmarine.catalogue_parser.models.DatasetNotFound: cmems_mod_glo_phy_myint_0.083deg_P1D-m Please check that the dataset exists and the input datasetID is correct.
+Run `reticulate::py_last_error()` for details.
+Backtrace:
+     ▆
+  1. ├─dplyr::mutate(...)
+  2. ├─dplyr:::mutate.data.frame(...)
+  3. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
+  4. │   ├─base::withCallingHandlers(...)
+  5. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
+  6. │     └─mask$eval_all_mutate(quo)
+  7. │       └─dplyr (local) eval()
+  8. └─purrr::map(dataset_id, get_dataset_description)
+  9.   └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
+ 10.     ├─purrr:::with_indexed_errors(...)
+ 11.     │ └─base::withCallingHandlers(...)
+ 12.     ├─purrr:::call_with_cleanup(...)
+ 13.     └─global .f(.x[[i]], ...)
+ 14.       ├─jsonlite::fromJSON(cmt$describe(dataset_id = dataset_id, disable_progress_bar = T)$json())
+ 15.       └─cmt$describe(dataset_id = dataset_id, disable_progress_bar = T)
+ 16.         └─reticulate:::py_call_impl(callable, call_args$unnamed, call_args$named)
+[39m[31m
+Quitting from copernicus_phy.qmd:153-211 [unnamed-chunk-1]
+[39m[31mExecution halted
+[39mERROR [2026-04-15 16:49:01] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2026-04-15 16:49:01] global timer toc 51.66 secs -- meta/erddap_precip.yml -[ process/erddap.qmd ]-> data/erddap_precip/*, log/erddap_precip.html
+[31m
+
+processing file: erddap_precip.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+[31mError in `ed_info()`:
+! ERDDAP server is offline or unreachable: Server is offline or unreachable: SSL peer certificate or SSH remote key was not OK [erddap.marine.usf.edu]:
+SSL certificate problem: certificate has expired
+Backtrace:
+    ▆
+ 1. └─extractr::ed_info(meta$erddap_url)
+[39m[31m
+Quitting from erddap_precip.qmd:114-130 [ed_info]
+[39m[31mExecution halted
+[39mERROR [2026-04-15 16:49:46] Error rendering erddap_precip.yml -[ log/erddap_precip.qmd ]-> log/erddap_precip.html}: ✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+INFO [2026-04-15 16:49:46] global timer toc 45.96 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+[31m
+
+processing file: erddap_sss.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
+[31moutput file: erddap_sss.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sss.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sss.html
+
+INFO [2026-04-15 16:50:52] global timer toc 1.08 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+[31m
+
+processing file: erddap_sst.qmd
+[39m1/21                     
+2/21 [setup]             
+3/21                     
+4/21 [polygons]          
+5/21                     
+6/21 [yml]               
+7/21                     
+8/21 [ed_info]           
+9/21                     
+10/21 [d_nms_yr_todo]     
+11/21                     
+12/21 [iterate_ed_extract]
+13/21                     
+14/21 [success_summary]   
+15/21                     
+16/21 [error_summary]     
+17/21                     
+18/21 [rm_empty_nc_dirs]  
+19/21                     
+20/21 [unnamed-chunk-1]   
+21/21                     
+[31moutput file: erddap_sst.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: erddap_sst.html
+  standalone: true
+  embed-resources: false
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 3
+  number-sections: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  lang: en
+  date: now
+  date-format: 'YYYY-MM-DD HH:mm z'
+  editor:
+    mode: source
+  editor_options:
+    chunk_output_type: console
+  toc-expand: 2
+  title: ERDDAP Extraction
+  subtitle: 'metadata: *`r basename(params$yml)`*'
+  
+Output created: erddap_sst.html
+
+INFO [2026-04-15 16:52:09] global timer toc 1.29 mins -- Script done rendering, next git commit & push
+Already up to date.
