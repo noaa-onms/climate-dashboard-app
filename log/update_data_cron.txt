@@ -1990,3 +1990,32 @@ Output created: erddap_sst.html
 
 INFO [2026-04-15 16:52:09] global timer toc 1.29 mins -- Script done rendering, next git commit & push
 Already up to date.
+[main 8f16b04] ran update_data.R
+ 36 files changed, 11778 insertions(+), 2884 deletions(-)
+ delete mode 100644 log/copernicus_bgc-pft.qmd
+ delete mode 100644 log/copernicus_bgc-pft.rmarkdown
+ create mode 100644 log/copernicus_bgc-pft_files/libs/bb_sanctuaries___nms-CSS-0.0.1/bb_sanctuaries___nms_home-button.css
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/css/crosstalk.min.css
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/js/crosstalk.js
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/js/crosstalk.js.map
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/js/crosstalk.min.js
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/js/crosstalk.min.js.map
+ create mode 100644 log/copernicus_bgc-pft_files/libs/crosstalk-1.2.2/scss/crosstalk.scss
+ create mode 100644 log/copernicus_bgc-pft_files/libs/htmltools-fill-0.5.9/fill.css
+ create mode 100644 log/copernicus_bgc-pft_files/libs/leaflet-binding-2.2.3/leaflet.js
+ create mode 100644 log/copernicus_bgc-pft_files/libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js
+ create mode 100644 log/copernicus_bgc-pft_files/libs/ply_sanctuaries___nms-CSS-0.0.1/ply_sanctuaries___nms_home-button.css
+ delete mode 100644 log/copernicus_bgc-plankton.qmd
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/bb_sanctuaries___nms-CSS-0.0.1/bb_sanctuaries___nms_home-button.css
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/css/crosstalk.min.css
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/js/crosstalk.js
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/js/crosstalk.js.map
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/js/crosstalk.min.js
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/js/crosstalk.min.js.map
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/crosstalk-1.2.2/scss/crosstalk.scss
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/htmltools-fill-0.5.9/fill.css
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/leaflet-binding-2.2.3/leaflet.js
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js
+ create mode 100644 log/copernicus_bgc-plankton_files/libs/ply_sanctuaries___nms-CSS-0.0.1/ply_sanctuaries___nms_home-button.css
+To github.com:noaa-onms/climate-dashboard-app.git
+   24a15f5..8f16b04  main -> main
