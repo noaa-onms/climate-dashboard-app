@@ -1,0 +1,45 @@
+product,variable,variable_key,label,dataset,spatial_res,time_min,time_max,units,eov
+Shiny app,erddap_sst,erddap_sst,Sea surface temperature (SST),NA,NA,NA,NA,NA,SST
+Shiny app,erddap_sss,erddap_sss,Sea surface salinity (SSS),NA,NA,NA,NA,NA,SSS
+Shiny app,erddap_precip,erddap_precip,Precipitation,NA,NA,NA,NA,NA,Precipitation
+Shiny app,copernicus_phy.mlotst,mlotst,Mixed layer thickness (MLT),cmems_mod_glo_phy_my_0.083deg_P1D-m; cmems_mod_glo_phy_myint_0.083deg_P1D-m,0.083° (~9.25 km),NA,NA,m,MLD
+Shiny app,copernicus_phy.thetao,thetao,Sea surface temperature (SST),cmems_mod_glo_phy_my_0.083deg_P1D-m; cmems_mod_glo_phy_myint_0.083deg_P1D-m,0.083° (~9.25 km),NA,NA,°C,SST
+Shiny app,copernicus_phy.bottomT,bottomT,Sea bottom temperature (SBT),cmems_mod_glo_phy_my_0.083deg_P1D-m; cmems_mod_glo_phy_myint_0.083deg_P1D-m,0.083° (~9.25 km),NA,NA,°C,Bottom-T
+Shiny app,copernicus_phy.so,so,Sea surface salinity (SSS),cmems_mod_glo_phy_my_0.083deg_P1D-m; cmems_mod_glo_phy_myint_0.083deg_P1D-m,0.083° (~9.25 km),NA,NA,g/kg,SSS
+Shiny app,copernicus_bgc-bio.o2,o2,Oxygen,cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Oxygen
+Shiny app,copernicus_bgc-bio.nppv,nppv,Net primary production,cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mg/m3/day,NPP
+Shiny app,copernicus_bgc-car.dissic,dissic,Dissolved inorganic carbon,cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mol/m3,pH / DIC
+Shiny app,copernicus_bgc-car.ph,ph,Alkalinity,cmems_mod_glo_bgc-car_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,pH,pH / DIC
+Shiny app,copernicus_bgc-co2.spco2,spco2,Carbon dioxide,cmems_mod_glo_bgc-co2_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,Pa,pH / DIC
+Shiny app,copernicus_bgc-nut.fe,fe,Iron,cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Nutrients (NO3/PO4/Si/Fe)
+Shiny app,copernicus_bgc-nut.no3,no3,Nitrate,cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Nutrients (NO3/PO4/Si/Fe)
+Shiny app,copernicus_bgc-nut.po4,po4,Phosphate,cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Nutrients (NO3/PO4/Si/Fe)
+Shiny app,copernicus_bgc-nut.si,si,Silicate,cmems_mod_glo_bgc-nut_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Nutrients (NO3/PO4/Si/Fe)
+Shiny app,copernicus_bgc-pft.chl,chl,Chlorophyll,cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mg/m3,Chl-a
+Shiny app,copernicus_bgc-pft.phyc,phyc,Phytoplankton,cmems_mod_glo_bgc-bio_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Phytoplankton (PFTs)
+Shiny app,copernicus_bgc-plankton.zooc,zooc,Zooplankton,cmems_mod_glo_bgc-plankton_anfc_0.25deg_P1D-m,0.25° (~28 km),NA,NA,mmol/m3,Zooplankton
+flexdashboard,sst,sst,Temperature (°C),jplMURSST41mday,0.01° (~1 km),NA,NA,°C,SST
+flexdashboard,chlorophyll,chlorophyll,Chlorophyll a (mg/m³),erdMH1chlamday,0.042° (~4.6 km),NA,NA,mg/m³,Chl-a
+flexdashboard,chlorophyll,chlorophyll,Chlorophyll a (mg/m³),erdMH1chlamday_R2022NRT,0.042° (~4.6 km),NA,NA,mg/m³,Chl-a
+flexdashboard,SST,SST,Sea Surface Temperature Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,°C,SST
+flexdashboard,Chl,Chl,Chlorophyll _a_ Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,mg/m³,Chl-a
+flexdashboard,PH,PH,Acidity (pH) Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,NA,pH / DIC
+flexdashboard,HMXL_DR,HMXL_DR,Mixed Layer Depth Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,m,MLD
+flexdashboard,SSS,SSS,Sea Surface Salinity Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,psu,SSS
+flexdashboard,NPP,NPP,Net Primary Production Annual Climate Projection,CESM2 LENS2,~1° (CESM2 LENS2),1990,2100,mmol/m^2*d,NPP
+eco-indicators,bottomT,bottomT,sea_water_potential_temperature_at_sea_floor,cmems_mod_glo_phy_my_0.083deg_P1M-m,0.083° (~9.25 km),1/1/93,2/1/26,degrees_C,Bottom-T
+eco-indicators,mlotst,mlotst,ocean_mixed_layer_thickness_defined_by_sigma_theta,cmems_mod_glo_phy_my_0.083deg_P1M-m,0.083° (~9.25 km),1/1/93,2/1/26,m,MLD
+eco-indicators,so,so,sea_water_salinity,cmems_mod_glo_phy_my_0.083deg_P1M-m,0.083° (~9.25 km),1/1/93,2/1/26,1.00E-03,SSS
+eco-indicators,thetao,thetao,sea_water_potential_temperature,cmems_mod_glo_phy_my_0.083deg_P1M-m,0.083° (~9.25 km),1/1/93,2/1/26,degrees_C,SST
+eco-indicators,CHL,CHL,mass_concentration_of_chlorophyll_a_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m-3,Chl-a
+eco-indicators,DIATO,DIATO,mass_concentration_of_diatoms_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,DINO,DINO,mass_concentration_of_dinophytes_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,GREEN,GREEN,mass_concentration_of_greenalgae_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,HAPTO,HAPTO,mass_concentration_of_haptophytes_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,MICRO,MICRO,mass_concentration_of_microphytoplankton_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,NANO,NANO,mass_concentration_of_nanophytoplankton_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,PICO,PICO,mass_concentration_of_picophytoplankton_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,PROCHLO,PROCHLO,mass_concentration_of_prochlorophytes_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,PROKAR,PROKAR,mass_concentration_of_prokaryotes_expressed_as_chlorophyll_in_sea_water,cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,milligram m^-3,Phytoplankton (PFTs)
+eco-indicators,PP,PP,primary_productivity_of_biomass_expressed_as_carbon,cmems_obs-oc_glo_bgc-pp_my_l4-multi-4km_P1M,4 km,9/1/97,3/1/26,mg m-2 day-1,NPP
+eco-indicators,precipitation,precipitation,Precipitation,IMERG_monthly_global_precip,0.1° (~11 km),1998-01-01,2025-09-01,mm,Precipitation

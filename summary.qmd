@@ -1,0 +1,444 @@
+---
+title: "EOV Coverage Across Three ONMS Products"
+format:
+  html:
+    toc: true
+    embed-resources: true
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  message: true
+  warning: true
+  error: true
+editor_options:
+  chunk_output_type: console
+---
+
+This summary interrogates three sister repos for the latest variable coverage
+mapped onto proposal Table 1 Essential Ocean Variables (EOVs):
+
+- **Shiny app** — this repo (`climate-dashboard-app`): `app/global.R` `d_vars` +
+  `meta/*.yml`
+- **flexdashboard** — `../climate-dashboard`: `data/datasets.csv`
+- **eco-indicators** — `../eco-indicators`: `data/copernicus_variables_trim.csv` +
+  `data/erddap.csv`
+
+> Render this on the host where `climate-dashboard-app` is deployed to capture
+> the latest from live data connections. Sibling repos (`../eco-indicators`,
+> `../climate-dashboard`) must be checked out alongside at their latest commits.
+
+```{r}
+#| label: setup
+#| warning: false
+librarian::shelf(
+  dplyr,
+  DT,
+  fs,
+  ggplot2,
+  glue,
+  here,
+  purrr,
+  readr,
+  stringr,
+  tibble,
+  tidyr,
+  yaml,
+  quiet = T
+)
+options(readr.show_col_types = F)
+
+dir_app <- here()
+dir_eco <- here("../eco-indicators")
+dir_dash <- here("../climate-dashboard")
+out_csv <- here("data/summary_eov_coverage.csv")
+dir.create(dirname(out_csv), showWarnings = F, recursive = T)
+```
+
+## Canonical EOV list
+
+```{r}
+#| label: eov_levels
+eov_desc <- tribble(
+  ~eov                        , ~description                                                                                                                                                                       ,
+  "SST"                       , "Sea surface temperature — near-surface ocean temperature (°C)."                                                                                                                   ,
+  "Chl-a"                     , "Chlorophyll-a concentration — proxy for phytoplankton biomass (mg/m³)."                                                                                                           ,
+  "SSS"                       , "Sea surface salinity — near-surface ocean salinity (g/kg or psu)."                                                                                                                ,
+  "MLD"                       , "Mixed layer depth — thickness of the well-mixed upper ocean (m)."                                                                                                                 ,
+  "Bottom-T"                  , "Bottom temperature — sea water potential temperature at the sea floor (°C)."                                                                                                      ,
+  "Oxygen"                    , "Dissolved oxygen — mole concentration of molecular O₂ in sea water (mmol/m³)."                                                                                                    ,
+  "pH / DIC"                  , "Ocean acidification indicators — pH, dissolved inorganic carbon, and surface pCO₂."                                                                                               ,
+  "NPP"                       , "Net primary production — rate of carbon fixation by phytoplankton (mg C/m²/day or mmol/m²/day)."                                                                                  ,
+  "Nutrients (NO3/PO4/Si/Fe)" , "Macro-/micro-nutrients — nitrate, phosphate, silicate, iron (mmol/m³)."                                                                                                           ,
+  "Phytoplankton (PFTs)"      , "Phytoplankton functional types — size classes (micro/nano/pico) and taxa (diatoms, dinoflagellates, haptophytes, greens, prochlorophytes, prokaryotes) as chlorophyll or carbon." ,
+  "Zooplankton"               , "Zooplankton biomass — mesozooplankton carbon concentration (mmol/m³)."                                                                                                            ,
+  "Precipitation"             , "Precipitation rate — freshwater flux from IMERG monthly product (mm)."                                                                                                            ,
+  #"SSH"                       , "Sea surface height — sea level above geoid (m)."
+)
+
+eov_levels <- eov_desc$eov
+product_levels <- c("Shiny app", "flexdashboard", "eco-indicators")
+```
+
+## Spatial-resolution helper
+
+```{r}
+#| label: parse_spatial_res
+parse_spatial_res <- function(dataset_id) {
+  case_when(
+    str_detect(dataset_id, "0\\.083deg") ~ "0.083° (~9.25 km)",
+    str_detect(dataset_id, "0\\.25deg") ~ "0.25° (~28 km)",
+    str_detect(dataset_id, "4km") ~ "4 km",
+    str_detect(dataset_id, "IMERG") ~ "0.1° (~11 km)",
+    str_detect(dataset_id, "jplMURSST") ~ "0.01° (~1 km)",
+    str_detect(dataset_id, "erdMH1chla") ~ "0.042° (~4.6 km)",
+    str_detect(dataset_id, "noaacrwsst") ~ "0.05° (~5 km)",
+    str_detect(
+      dataset_id,
+      regex("cesm2", ignore_case = T)
+    ) ~ "~1° (CESM2 LENS2)",
+    TRUE ~ NA_character_
+  )
+}
+```
+
+## EOV mapping
+
+```{r}
+#| label: eov_map
+eov_map <- tribble(
+  ~variable_key   , ~eov                        ,
+  # Copernicus Physics (shared by Shiny app & eco-indicators)
+  "thetao"        , "SST"                       ,
+  "so"            , "SSS"                       ,
+  "mlotst"        , "MLD"                       ,
+  "bottomT"       , "Bottom-T"                  ,
+  #"zos"           , "SSH"                       ,
+  # Copernicus BGC (Shiny app)
+  "o2"            , "Oxygen"                    ,
+  "nppv"          , "NPP"                       ,
+  "dissic"        , "pH / DIC"                  ,
+  "ph"            , "pH / DIC"                  ,
+  "spco2"         , "pH / DIC"                  ,
+  "no3"           , "Nutrients (NO3/PO4/Si/Fe)" ,
+  "po4"           , "Nutrients (NO3/PO4/Si/Fe)" ,
+  "si"            , "Nutrients (NO3/PO4/Si/Fe)" ,
+  "fe"            , "Nutrients (NO3/PO4/Si/Fe)" ,
+  "chl"           , "Chl-a"                     ,
+  "phyc"          , "Phytoplankton (PFTs)"      ,
+  "zooc"          , "Zooplankton"               ,
+  # Copernicus GlobColour (eco-indicators)
+  "CHL"           , "Chl-a"                     ,
+  "PP"            , "NPP"                       ,
+  "DIATO"         , "Phytoplankton (PFTs)"      ,
+  "DINO"          , "Phytoplankton (PFTs)"      ,
+  "GREEN"         , "Phytoplankton (PFTs)"      ,
+  "HAPTO"         , "Phytoplankton (PFTs)"      ,
+  "MICRO"         , "Phytoplankton (PFTs)"      ,
+  "NANO"          , "Phytoplankton (PFTs)"      ,
+  "PICO"          , "Phytoplankton (PFTs)"      ,
+  "PROCHLO"       , "Phytoplankton (PFTs)"      ,
+  "PROKAR"        , "Phytoplankton (PFTs)"      ,
+  # ERDDAP (Shiny app & flexdashboard & eco-indicators)
+  "erddap_sst"    , "SST"                       ,
+  "erddap_sss"    , "SSS"                       ,
+  "erddap_precip" , "Precipitation"             ,
+  "precipitation" , "Precipitation"             ,
+  "sst"           , "SST"                       ,
+  "chlorophyll"   , "Chl-a"                     ,
+  # flexdashboard CESM2 short names
+  "SST"           , "SST"                       ,
+  "Chl"           , "Chl-a"                     ,
+  "PH"            , "pH / DIC"                  ,
+  "HMXL_DR"       , "MLD"                       ,
+  "SSS"           , "SSS"                       ,
+  "NPP"           , "NPP"
+)
+```
+
+## Read Shiny app (`climate-dashboard-app`)
+
+Extract `d_vars` from `app/global.R` (parse the `tribble(...)` literal to avoid
+running the Shiny/bslib init) and augment with per-dataset metadata from
+`meta/*.yml`.
+
+```{r}
+#| label: read_app
+extract_d_vars <- function(global_r) {
+  lines <- readLines(global_r)
+  i_start <- grep("^d_vars\\s*<-\\s*tribble", lines)[1]
+  opens <- cumsum(str_count(lines[i_start:length(lines)], "\\("))
+  closes <- cumsum(str_count(lines[i_start:length(lines)], "\\)"))
+  i_end <- i_start + which(opens == closes & opens > 0)[1] - 1
+  txt <- paste(lines[i_start:i_end], collapse = "\n")
+  eval(parse(text = txt))
+}
+
+d_vars <- extract_d_vars(file.path(dir_app, "app/global.R"))
+
+read_meta_yml <- function(yml_path) {
+  y <- read_yaml(yml_path)
+  key <- path_ext_remove(path_file(yml_path))
+  dsid <- paste(
+    map_chr(y$datasets %||% list(list(id = NA)), "id"),
+    collapse = "; "
+  )
+  vars <- y$variables %||% list()
+  if (length(vars) == 0) {
+    return(tibble(
+      meta_key = key,
+      var_id = NA_character_,
+      var_name = NA_character_,
+      units = NA_character_,
+      dataset_id = dsid,
+      depth_min = y$depth$min %||% NA_real_,
+      depth_max = y$depth$max %||% NA_real_
+    ))
+  }
+  tibble(
+    meta_key = key,
+    var_id = map_chr(vars, \(v) v$id %||% NA_character_),
+    var_name = map_chr(vars, \(v) v$name %||% NA_character_),
+    units = map_chr(vars, \(v) v$units %||% NA_character_),
+    dataset_id = dsid,
+    depth_min = y$depth$min %||% NA_real_,
+    depth_max = y$depth$max %||% NA_real_
+  )
+}
+
+meta_yml <- dir_ls(file.path(dir_app, "meta"), glob = "*.yml") |>
+  map_dfr(read_meta_yml)
+
+# split d_vars$var into meta_key + var_id (var_id = NA for erddap_*)
+vars_app <- d_vars |>
+  mutate(
+    meta_key = if_else(
+      str_detect(var, "\\."),
+      str_extract(var, "^[^.]+"),
+      var
+    ),
+    var_id = if_else(
+      str_detect(var, "\\."),
+      str_extract(var, "(?<=\\.).+$"),
+      NA_character_
+    )
+  ) |>
+  left_join(meta_yml, by = c("meta_key", "var_id")) |>
+  mutate(
+    product = "Shiny app",
+    variable_key = coalesce(var_id, var),
+    dataset = coalesce(dataset_id, meta_key),
+    spatial_res = parse_spatial_res(dataset_id),
+    time_min = NA_character_,
+    time_max = NA_character_
+  ) |>
+  select(
+    product,
+    variable = var,
+    variable_key,
+    label,
+    dataset,
+    spatial_res,
+    time_min,
+    time_max,
+    units
+  )
+```
+
+## Read flexdashboard (`climate-dashboard`)
+
+```{r}
+#| label: read_dash
+d_dash <- read_csv(
+  file.path(dir_dash, "data/datasets.csv"),
+  col_types = cols(active = col_character(), .default = col_guess())
+) |>
+  filter(active == "T")
+
+vars_dash <- d_dash |>
+  mutate(
+    product = "flexdashboard",
+    variable = var,
+    variable_key = var,
+    label = coalesce(var_header, plot_label),
+    dataset = case_when(
+      type == "erddap" ~ str_extract(url, "(?<=griddap/)[^.]+"),
+      type == "nc" ~ "CESM2 LENS2",
+      TRUE ~ NA_character_
+    ),
+    spatial_res = parse_spatial_res(coalesce(dataset, url)),
+    time_min = if_else(!is.na(yr_beg), as.character(yr_beg), NA_character_),
+    time_max = if_else(!is.na(yr_end), as.character(yr_end), NA_character_),
+    units = str_extract(plot_label, "\\(.*\\)") |>
+      str_remove_all("[()]")
+  ) |>
+  select(
+    product,
+    variable,
+    variable_key,
+    label,
+    dataset,
+    spatial_res,
+    time_min,
+    time_max,
+    units
+  )
+```
+
+## Read eco-indicators
+
+```{r}
+#| label: read_eco
+copernicus_csv <- file.path(dir_eco, "data/copernicus_variables_trim.csv")
+erddap_csv <- file.path(dir_eco, "data/erddap.csv")
+
+d_cop <- read_csv(copernicus_csv) |>
+  filter(!str_detect(variable, "_uncertainty"), variable != "flags")
+
+vars_eco_cop <- d_cop |>
+  distinct(
+    dataset_id,
+    product_title,
+    variable,
+    standard_name,
+    units,
+    time_min,
+    time_max
+  ) |>
+  mutate(
+    product = "eco-indicators",
+    variable_key = variable,
+    label = standard_name,
+    dataset = dataset_id,
+    spatial_res = parse_spatial_res(dataset_id)
+  ) |>
+  select(
+    product,
+    variable,
+    variable_key,
+    label,
+    dataset,
+    spatial_res,
+    time_min,
+    time_max,
+    units
+  )
+
+d_erd <- read_csv(erddap_csv)
+vars_eco_erd <- d_erd |>
+  distinct(dataset, var) |>
+  mutate(
+    product = "eco-indicators",
+    variable = var,
+    variable_key = var,
+    label = "Precipitation",
+    spatial_res = parse_spatial_res(dataset),
+    time_min = format(min(as.Date(d_erd$time)), "%Y-%m-%d"),
+    time_max = format(max(as.Date(d_erd$time)), "%Y-%m-%d"),
+    units = "mm"
+  ) |>
+  select(
+    product,
+    variable,
+    variable_key,
+    label,
+    dataset,
+    spatial_res,
+    time_min,
+    time_max,
+    units
+  )
+
+vars_eco <- bind_rows(vars_eco_cop, vars_eco_erd)
+```
+
+## Combine & assign EOVs
+
+```{r}
+#| label: combine
+vars_all <- bind_rows(vars_app, vars_dash, vars_eco) |>
+  left_join(eov_map, by = "variable_key") |>
+  filter(!is.na(eov), eov %in% eov_levels) |>
+  mutate(
+    product = factor(product, levels = product_levels),
+    eov = factor(eov, levels = eov_levels)
+  )
+
+write_csv(vars_all, out_csv)
+```
+
+## EOV descriptions
+
+```{r}
+#| label: tbl_eov_desc
+datatable(
+  eov_desc,
+  rownames = FALSE,
+  options = list(pageLength = 20, dom = "t"),
+  colnames = c("EOV", "Description")
+)
+```
+
+## Coverage figure
+
+```{r}
+#| label: fig_coverage
+#| fig-width: 7
+#| fig-height: 5.5
+coverage <- expand_grid(
+  product = factor(product_levels, levels = product_levels),
+  eov = factor(eov_levels, levels = eov_levels)
+) |>
+  left_join(
+    vars_all |> distinct(product, eov) |> mutate(status = "live"),
+    by = c("product", "eov")
+  ) |>
+  mutate(status = coalesce(status, "gap"))
+
+ggplot(coverage, aes(product, eov, fill = status)) +
+  geom_tile(color = "white", linewidth = 0.6) +
+  scale_fill_manual(values = c(live = "#1f77b4", gap = "#d9d9d9")) +
+  scale_y_discrete(limits = rev(eov_levels)) +
+  labs(
+    title = "EOV coverage across three products",
+    subtitle = "Rows = proposal Table 1 variables · blue = live · grey = gap",
+    x = NULL,
+    y = NULL,
+    fill = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid = element_blank(),
+    legend.position = "bottom"
+  )
+```
+
+## Detail table
+
+One row per (EOV, product) with the underlying variable codes, source dataset,
+spatial resolution, and timespan. Export: [`data/summary_eov_coverage.csv`](data/summary_eov_coverage.csv).
+
+```{r}
+#| label: tbl_detail
+detail <- vars_all |>
+  group_by(eov, product) |>
+  summarize(
+    variables = paste(unique(variable), collapse = ", "),
+    dataset = paste(unique(dataset), collapse = "; "),
+    spatial_res = paste(unique(na.omit(spatial_res)), collapse = "; "),
+    timespan = paste(
+      na.omit(unique(paste0(time_min, " → ", time_max))),
+      collapse = "; "
+    ),
+    .groups = "drop"
+  ) |>
+  left_join(eov_desc, by = "eov") |>
+  relocate(description, .after = eov) |>
+  arrange(eov, product)
+
+datatable(
+  detail,
+  rownames = FALSE,
+  options = list(scrollX = TRUE, pageLength = 25)
+)
+```
