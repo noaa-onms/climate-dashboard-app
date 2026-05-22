@@ -1,24 +1,18 @@
-INFO [2026-05-21 00:00:08] global timer tic 0 secs -- Script starting up...
-INFO [2026-05-21 00:00:08] global timer toc 0.18 secs -- meta/copernicus_bgc-bio.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-bio/*, log/copernicus_bgc-bio.html
-INFO [2026-05-21 00:05:12] global timer toc 5.06 mins -- meta/copernicus_bgc-car.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-car/*, log/copernicus_bgc-car.html
-INFO [2026-05-21 00:09:57] global timer toc 4.75 mins -- meta/copernicus_bgc-co2.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-co2/*, log/copernicus_bgc-co2.html
-INFO [2026-05-21 00:14:12] global timer toc 4.26 mins -- meta/copernicus_bgc-nut.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-nut/*, log/copernicus_bgc-nut.html
-INFO [2026-05-21 00:19:16] global timer toc 5.06 mins -- meta/copernicus_bgc-pft.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-pft/*, log/copernicus_bgc-pft.html
-INFO [2026-05-21 00:32:35] global timer toc 13.32 mins -- meta/copernicus_bgc-plankton.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-plankton/*, log/copernicus_bgc-plankton.html
-INFO [2026-05-21 00:36:34] global timer toc 3.99 mins -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
-ERROR [2026-05-21 00:37:38] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
+INFO [2026-05-22 00:00:15] global timer tic 0 secs -- Script starting up...
+INFO [2026-05-22 00:00:15] global timer toc 0.06 secs -- meta/copernicus_bgc-bio.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-bio/*, log/copernicus_bgc-bio.html
+INFO [2026-05-22 00:04:32] global timer toc 4.3 mins -- meta/copernicus_bgc-car.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-car/*, log/copernicus_bgc-car.html
+INFO [2026-05-22 00:08:34] global timer toc 4.02 mins -- meta/copernicus_bgc-co2.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-co2/*, log/copernicus_bgc-co2.html
+INFO [2026-05-22 00:12:21] global timer toc 3.79 mins -- meta/copernicus_bgc-nut.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-nut/*, log/copernicus_bgc-nut.html
+INFO [2026-05-22 00:16:40] global timer toc 4.32 mins -- meta/copernicus_bgc-pft.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-pft/*, log/copernicus_bgc-pft.html
+INFO [2026-05-22 00:29:07] global timer toc 12.45 mins -- meta/copernicus_bgc-plankton.yml -[ process/copernicus.qmd ]-> data/copernicus_bgc-plankton/*, log/copernicus_bgc-plankton.html
+INFO [2026-05-22 00:32:37] global timer toc 3.5 mins -- meta/copernicus_phy.yml -[ process/copernicus.qmd ]-> data/copernicus_phy/*, log/copernicus_phy.html
+ERROR [2026-05-22 00:33:41] Error rendering copernicus_phy.yml -[ log/copernicus_phy.qmd ]-> log/copernicus_phy.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2026-05-21 00:37:38] global timer toc 1.06 mins -- meta/erddap_precip.yml -[ process/erddap.qmd ]-> data/erddap_precip/*, log/erddap_precip.html
-ERROR [2026-05-21 00:38:35] Error rendering erddap_precip.yml -[ log/erddap_precip.qmd ]-> log/erddap_precip.html}: ✖ Error running quarto cli.
+INFO [2026-05-22 00:33:41] global timer toc 1.06 mins -- meta/erddap_precip.yml -[ process/erddap.qmd ]-> data/erddap_precip/*, log/erddap_precip.html
+ERROR [2026-05-22 00:34:39] Error rendering erddap_precip.yml -[ log/erddap_precip.qmd ]-> log/erddap_precip.html}: ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
-INFO [2026-05-21 00:38:35] global timer toc 57.38 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
-ERROR [2026-05-21 00:39:34] Error rendering erddap_sss.yml -[ log/erddap_sss.qmd ]-> log/erddap_sss.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2026-05-21 00:39:34] global timer toc 59.13 secs -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
-ERROR [2026-05-21 00:40:35] Error rendering erddap_sst.yml -[ log/erddap_sst.qmd ]-> log/erddap_sst.html}: ✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-INFO [2026-05-21 00:40:35] global timer toc 1.01 mins -- Script done rendering, next git commit & push
+INFO [2026-05-22 00:34:39] global timer toc 57.41 secs -- meta/erddap_sss.yml -[ process/erddap.qmd ]-> data/erddap_sss/*, log/erddap_sss.html
+INFO [2026-05-22 00:36:51] global timer toc 2.2 mins -- meta/erddap_sst.yml -[ process/erddap.qmd ]-> data/erddap_sst/*, log/erddap_sst.html
+INFO [2026-05-22 00:39:32] global timer toc 2.69 mins -- Script done rendering, next git commit & push
