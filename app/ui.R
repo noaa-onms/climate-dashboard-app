@@ -23,7 +23,13 @@ page_sidebar(
       "sel_var",
       "Variable",
       choices_var,
-      selected_var) ),
+      selected_var),
+
+    selectInput(
+      "sel_palette",
+      "Color palette",
+      palette_choices,
+      "spectral_r") ),
 
   navset_card_underline(
   # map ----

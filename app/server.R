@@ -184,17 +184,20 @@ function(input, output, session) {
       st_bbox() |>
       as.numeric()
 
+    pal_key <- input$sel_palette %||% "spectral_r"
     map_then_now(
       r_then,
       r_now,
       lgnd_then,
       lgnd_now,
       rx$lbl,
-      dark_mode = isTRUE(input$dark_mode),
-      bbox = b,
-      lyrs_ctrl = F,
-      attr_ctrl = F,
-      nms       = nms)
+      palette     = palette_name[pal_key],
+      palette_rev = palette_rev_lookup[pal_key],
+      dark_mode   = isTRUE(input$dark_mode),
+      bbox        = b,
+      lyrs_ctrl   = F,
+      attr_ctrl   = F,
+      nms         = nms)
   })
 
   # plot_doy ----

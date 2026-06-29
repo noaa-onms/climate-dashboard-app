@@ -4,7 +4,7 @@
 librarian::shelf(
   bsicons, bslib, dplyr, glue, here, htmltools, leaflet, leaflet.extras2,
   lubridate, markdown, plotly, purrr, readr, scales, sf, shiny, slider, stringr,
-  terra, thematic, tibble, tidyr)
+  terra, thematic, tibble, tidyr, viridisLite)
 source(here("app/functions.R"))
 options(readr.show_col_types = F)
 
@@ -67,7 +67,29 @@ d_vars <- tribble(
   )
 # NOTE: var for copernicus needs to differentiate dataset.varid where dir_exists(glue("{dir_data}/{dataset}/{nms}"))
 
-# TODO: add color gradient
+# palette choices: default + color-blind friendly alternatives (via cblindplot CVD mappings)
+# deuteranopia -> viridis, protanopia -> cividis, tritanopia -> magma
+palette_choices <- c(
+  "Spectral (default)"        = "spectral_r",
+  "Viridis (deuteranopia)"    = "viridis",
+  "Cividis (protanopia)"      = "cividis",
+  "Magma (tritanopia)"        = "magma"
+)
+# leaflet colorNumeric() palette name per key
+palette_name <- c(
+  spectral_r = "Spectral",
+  viridis    = "viridis",
+  cividis    = "cividis",
+  magma      = "magma"
+)
+# reverse spectral so red = high; viridis family reads correctly as-is
+palette_rev_lookup <- c(
+  spectral_r = TRUE,
+  viridis    = FALSE,
+  cividis    = FALSE,
+  magma      = FALSE
+)
+
 var_label <- select(d_vars, var, label) |> deframe()
 var_lbl   <- select(d_vars, var, lbl)   |> deframe()
 # choices_var <- select(d_vars, label, var) |> deframe()
